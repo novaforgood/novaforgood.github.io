@@ -175,49 +175,49 @@ export default function Home({ data }) {
 
       <NovaSpacer y={40} />
 
+      <SectionBox>
+        <NovaH2>Who are we?</NovaH2>
+        <NovaSpacer y={24} />
+        <NovaP>
+          <ListItem>
+            Developers, designers, and businesspeople who love to solve
+            problems.
+          </ListItem>
+          <ListItem>
+            Students who seek to better understand the realities of
+            under-resourced communities.
+          </ListItem>
+          <ListItem>
+            A team who strongly believes that we can <b>change the world.</b>
+          </ListItem>
+        </NovaP>
+        {/* <NovaSpacer y={16} />
+        <NovaP>
+          Most importantly, we're a team that strongly believes that we can{" "}
+          <b>change the world.</b>
+        </NovaP> */}
+        <Img src={team} minHeight={"350px"} maxHeight={"45vh"} alt="The Team" />
+        <NovaP>
+          <Arrow />
+          <NovaLink underline to="/about">
+            Read more about us
+          </NovaLink>
+        </NovaP>
+      </SectionBox>
+
+      <NovaSpacer y={160} />
+
       <BodyContainer>
-        <SectionBox>
-          <NovaH2>Who are we?</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>
-            <ListItem>
-              Developers, designers, and businesspeople who love to create.
-            </ListItem>
-            <ListItem>
-              Learners who seek to better understand the realities of
-              under-resourced communities.
-            </ListItem>
-            <ListItem>
-              Friends who constantly challenge each other to go above and
-              beyond.
-            </ListItem>
-          </NovaP>
-          <NovaSpacer y={16} />
-          <NovaP>
-            Most importantly, we're a <b>team</b> that strongly believes that we
-            can change the world.
-          </NovaP>
-          <Img src={team} maxHeight={"400px"} alt="The Team" />
-          <NovaP>
-            <Arrow />
-            <NovaLink underline to="/about">
-              Read more about us
-            </NovaLink>
-          </NovaP>
-        </SectionBox>
-
-        <NovaSpacer y={96} />
-
         <SectionBox>
           <NovaH2>We create solutions.</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
             We were founded on the belief that even small solutions have the
-            potential to create an impact. We put together small
-            interdisciplinary teams to help bring a product vision to life
-            through ideation, design, and implementation.
+            potential to create a large impact. We put together small
+            interdisciplinary teams and work closely with nonprofits to bring a
+            product vision to life through ideation, design, and implementation.
           </NovaP>
-          <NovaSpacer y={36} />
+          <NovaSpacer y={48} />
           <CaseDiv>
             {data.allNovaProjectsMetadata.nodes
               .filter(node => node.Case_Study === "Yes")
@@ -228,7 +228,7 @@ export default function Home({ data }) {
           </CaseDiv>
         </SectionBox>
 
-        <NovaSpacer y={96} />
+        <NovaSpacer y={160} />
 
         <SectionBox>
           <PageHeightContainer>

@@ -40,7 +40,7 @@ const SpanDiv = styled.figcaption`
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   /* or 22px */
   color: #d7a3e1;
   margin-top: 8px;
@@ -48,7 +48,7 @@ const SpanDiv = styled.figcaption`
   display: table-caption;
   caption-side: bottom;
   ${mobile} {
-    font-size: 12px;
+    font-size: 14px;
   }
 `
 const NovaB = styled(NovaP)`

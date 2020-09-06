@@ -55,12 +55,12 @@ const Photo = styled.img`
 `
 
 export const CaseDiv = styled.div`
-  display: inline-grid;
+  /* display: inline-grid;
   grid-template-columns: 100%;
   grid-row-gap: 160px;
   ${mobile} {
     grid-row-gap: 120px;
-  }
+  } */
 `
 
 const PhoneRecording = ({ video, image }) => {
@@ -87,12 +87,15 @@ const PhoneRecording = ({ video, image }) => {
 
 const ProjectRopa = () => {
   return (
-    <Container>
-      <PhoneRecordingContainer>
-        <PhoneRecording video={projectRopaVideo} image={projectRopaImage} />
-      </PhoneRecordingContainer>
-      <Photo src={projectRopaPhoto1} />
-    </Container>
+    <React.Fragment>
+      <NovaSpacer y={160} />
+      <Container>
+        <PhoneRecordingContainer>
+          <PhoneRecording video={projectRopaVideo} image={projectRopaImage} />
+        </PhoneRecordingContainer>
+        <Photo src={projectRopaPhoto1} />
+      </Container>
+    </React.Fragment>
   )
 }
 
@@ -121,8 +124,8 @@ const HoverBubble = styled.div`
   position: relative;
   background: #282547;
   border-radius: 10px;
-  padding: 0 12px;
   width: 200px;
+  padding: 0 12px;
   margin: 0 auto;
   margin-bottom: 18px;
 

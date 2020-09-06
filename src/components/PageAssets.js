@@ -91,6 +91,8 @@ export const MainBox = styled.div`
 `
 
 export const NovaP = styled.p`
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
@@ -99,10 +101,10 @@ export const NovaP = styled.p`
   width: ${({ width }) => width || "auto"};
   /* or 38px */
   text-align: ${({ center }) => (center ? "center" : "left")};
-  color: #e5e5e5;
+  color: #ebebeb;
   margin: 0;
   ${mobile} {
-    font-size: 13px;
+    font-size: 16px;
   }
 `
 
@@ -221,6 +223,7 @@ export const Img = styled.img`
   width: 100%;
   margin: 48px 0;
   max-height: ${({ maxHeight }) => maxHeight || "auto"};
+  min-height: ${({ minHeight }) => minHeight || "auto"};
   object-fit: cover;
   ${mobile} {
     margin: 32px 0;

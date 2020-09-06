@@ -22,9 +22,10 @@
   font-family: "Rubik";
   src: url("../../static/fonts/Rubik-Light.ttf");
 }
+
 @font-face {
   font-family: "Rubik";
-  src: url("../../static/fonts/Rubik-Medium.ttf");
+  src: url("../../static/fonts/Rubik-Bold.ttf");
   font-weight: bold;
 }
 /* @font-face {

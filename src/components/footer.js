@@ -1,5 +1,5 @@
 import React from "react"
-import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa"
+import { FaFacebookF, FaGithub, FaInstagram, FaMedium } from "react-icons/fa"
 import styled from "@emotion/styled"
 import {
   NovaLink,
@@ -127,11 +127,15 @@ export default function Footer() {
             <IconLink href="https://github.com/novaforgood">
               <FaGithub size={iconSize} />
             </IconLink>
+            <IconLink href="https://medium.com/novaforgood">
+              <FaMedium size={iconSize} />
+            </IconLink>
           </div>
           <NovaSpacer y={12} />
           <NovaP>
-            Last updated {month} {date}
-            {nth(date)}, {year}
+            {/* Last updated {month} {date}
+            {nth(date)}, {year} */}
+            Last updated September 6th, 2020
           </NovaP>
         </div>
         <LinkDiv>
