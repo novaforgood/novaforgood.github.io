@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Prompt";
+  src: url("../../static/fonts/Prompt-Regular.ttf");
+}
+@font-face {
+  font-family: "Prompt";
+  src: url("../../static/fonts/Prompt-Medium.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Prompt";
+  src: url("../../static/fonts/Prompt-SemiBold.ttf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../../static/fonts/Rubik-Light.ttf");
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../../static/fonts/Rubik-Medium.ttf");
+  font-weight: bold;
+}
+/* @font-face {
+  font-family: "Rubik";
+  src: url("../../static/fonts/Rubik-Light.ttf");
+  font-weight: lighter;
+} */
+
+@font-face {
+  font-family: "Pixer";
+  src: url("../../static/fonts/Pixer-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Alata";
+  src: url("../../static/fonts/Alata-Regular.ttf");
+}
+
+html {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
