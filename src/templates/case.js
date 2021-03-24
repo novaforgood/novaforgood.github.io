@@ -12,7 +12,6 @@ import {
   NovaLink,
   ListItem,
 } from "../components/PageAssets"
-import { parseImageUrl } from "notabase/src/utils"
 import projectleft from "../assets/projectleft.svg"
 import projectright from "../assets/projectright.svg"
 import styled from "@emotion/styled"
@@ -166,7 +165,7 @@ const Content = ({ node, index, articleAssets }) => {
           <ImgContainerContainer>
             <ImgContainer>
               <img
-                src={parseImageUrl(url)}
+                src={url}
                 alt={caption}
                 style={{
                   maxHeight: "50vh",

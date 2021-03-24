@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import parse from "html-react-parser"
 import {
   NovaH1,
   SectionBox,
@@ -15,7 +14,6 @@ import aboutleft from "../assets/aboutleft.svg"
 import aboutright from "../assets/aboutright.svg"
 import aboutleft2 from "../assets/aboutleft2.svg"
 import aboutright2 from "../assets/aboutright2.svg"
-import { parseImageUrl } from "notabase/src/utils"
 import SEO from "../components/SEO"
 import "../styles/global.css"
 

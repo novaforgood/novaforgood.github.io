@@ -1,5 +1,4 @@
 import React from "react"
-import { parseImageUrl } from "notabase/src/utils"
 import styled from "@emotion/styled"
 
 const mobile = `@media (max-width: 800px)`

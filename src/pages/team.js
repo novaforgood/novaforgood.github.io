@@ -205,7 +205,6 @@ const Team = props => {
               )
               .map(person => {
                 console.log(person)
-                let imageURL = "";
                 return (
                   <MemberCard
                     name={person.name}
