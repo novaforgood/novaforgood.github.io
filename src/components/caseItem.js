@@ -166,24 +166,24 @@ const HoverP = styled.p`
 `
 
 export default ({ data }) => {
-  const { Name, Overview, Slug } = data
+  const { name, description, slug } = data
 
   return (
     <div>
-      {Name === "Coordinating Survival Kit Distribution" && (
+      {name === "Coordinating Survival Kit Distribution" && (
         <HoverBubble>
           <HoverP>{isMobile ? "Click" : "Hover"} to see it in action!</HoverP>
         </HoverBubble>
       )}
-      <CaseStudyImages name={Name} />
+      <CaseStudyImages name={name} />
       <NovaSpacer y={32} />
-      <NovaH2>{Name}</NovaH2>
+      <NovaH2>{name}</NovaH2>
       <NovaSpacer y={16} />
-      <NovaP>{Overview}</NovaP>
+      <NovaP>{description.description}</NovaP>
       <NovaSpacer y={24} />
       <NovaP>
         <Arrow />
-        <NovaLink underline to={`/work/${Slug}`}>
+        <NovaLink underline to={`/work/${slug}`}>
           View the case study
         </NovaLink>
       </NovaP>

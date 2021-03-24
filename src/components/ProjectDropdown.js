@@ -112,7 +112,7 @@ const Body = styled.div`
 */
 
 export default ({ data, onClick, open, idx }) => {
-  const { Name, Overview, Slug } = data
+  const { name, description, slug } = data
 
   // let ImageURL = parseImageUrl(Image[0], 1000)
   // const [maxHeight, setMaxHeight] = useState(0)
@@ -128,13 +128,13 @@ export default ({ data, onClick, open, idx }) => {
 
       <ContainDiv>
           <LeftDiv>
-            <b>{Name}</b>
+            <b>{name}</b>
           </LeftDiv>
           <MiddleDiv>
-            <NovaP>{Overview}</NovaP>
+            <NovaP>{description.description}</NovaP>
           </MiddleDiv>
           <RightDiv>
-             <NovaLink to={`/work/${Slug}`}>
+             <NovaLink to={`/work/${slug}`}>
                 <FaExternalLinkAlt size={iconSize}/>
               </NovaLink>
           </RightDiv>

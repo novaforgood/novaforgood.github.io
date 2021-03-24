@@ -188,7 +188,7 @@ export default function Home({ data }) {
             under-resourced communities.
           </ListItem>
           <ListItem>
-            A team who strongly believes that we can <b>change the world.</b>
+            A team who strongly believes that we can make a difference.
           </ListItem>
         </NovaP>
         {/* <NovaSpacer y={16} />
@@ -219,8 +219,8 @@ export default function Home({ data }) {
           </NovaP>
           <NovaSpacer y={48} />
           <CaseDiv>
-            {data.allNovaProjectsMetadata.nodes
-              .filter(node => node.Case_Study === "Yes")
+            {data.allContentfulProjectCaseStudy.nodes
+              .filter(node => node.featured === true)
               .sort((a, b) => (a.Name >= b.Name ? 1 : -1)) // Distribution < Project Ropa LOLOL
               .map(node => (
                 <CaseItem data={node} />
@@ -254,7 +254,7 @@ export default function Home({ data }) {
             </NovaP>
             <NovaSpacer y={24} />
             <NetworkDiv>
-              {data.allNovaNetworkMetadata.nodes.map(node => (
+              {data.allContentfulNonprofitInOurNetwork.nodes.map(node => (
                 <NetworkItem data={node} />
               ))}
             </NetworkDiv>
@@ -280,46 +280,26 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query {
-    allNotionPageNovaProjects(
-      filter: { isDraft: { eq: false } }
-      sort: { fields: [indexPage], order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          slug
-          excerpt
-          pageIcon
+    allContentfulProjectCaseStudy {
+      nodes {
+        id
+        slug
+        name
+        featured
+        description {
+          description
         }
       }
     }
-    allNotionPageNova(
-      filter: { isDraft: { eq: false } }
-      sort: { fields: [indexPage], order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          slug
-          excerpt
-          pageIcon
+    allContentfulNonprofitInOurNetwork {
+      nodes {
+        name
+        website
+        logo {
+          file {
+            url
+          }
         }
-      }
-    }
-    allNovaProjectsMetadata {
-      nodes {
-        Name
-        Slug
-        Overview
-        Case_Study
-        External
-      }
-    }
-    allNovaNetworkMetadata {
-      nodes {
-        Name
-        Image
-        External
       }
     }
   }

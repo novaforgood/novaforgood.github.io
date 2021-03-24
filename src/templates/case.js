@@ -17,6 +17,7 @@ import projectleft from "../assets/projectleft.svg"
 import projectright from "../assets/projectright.svg"
 import styled from "@emotion/styled"
 import SEO from "../components/SEO"
+import "../styles/global.css"
 
 import phoneFrame from "../assets/phone.png"
 import distributionVideo from "../assets/distribution.mp4"
@@ -46,6 +47,7 @@ const SpanDiv = styled.figcaption`
   margin-top: 8px;
   width: 100%;
   display: table-caption;
+  text-align: left;
   caption-side: bottom;
   ${mobile} {
     font-size: 14px;
@@ -78,137 +80,138 @@ const PageContainer = styled.div`
   }
 `
 
-const renderText = item => {
-  var content = item.text
-  var att
-  for (att of item.atts) {
-    switch (att.att) {
-      case "b":
+const renderText = (item) => {
+  console.log(item)
+  var content = item.value
+  for (let mark of item.marks) {
+    switch (mark.type) {
+      case "bold":
         content = <b>{content}</b>
-        break
-      case "a":
+        break;
+      case "link":
         content = (
-          <NovaA underline href={att.value}>
+          <NovaA underline href={mark.value}>
             {content}
           </NovaA>
         )
+        break;
+      default:
     }
   }
   return <span>{content}</span>
 }
 
-const Content = ({ block, index }) => {
-  switch (block.type) {
-    /*
-    case "meta":
-      const { text } = block.properties[0].value[0]
-      // if (text.startsWith("!!")) {
-      //   return <div>{text.slice(2)}</div>
-      // }
-      break
-	*/
-    case "text":
+const Content = ({ node, index, articleAssets }) => {
+  switch (node.nodeType) {
+
+    case "paragraph":
       return (
         <>
-          <NovaP>{block.properties[0].value.map(renderText)}</NovaP>
+          <NovaP>{node.content.map(renderText)}</NovaP>
+          <NovaSpacer y={16} />
         </>
       )
 
-    case "numbered_list":
+    case "unordered-list":
       return (
         <>
           <NovaP>
-            <ListItem>{block.properties[0].value.map(renderText)}</ListItem>
+            {node.content.map((listItem) => {
+            return  (
+              <React.Fragment>
+                <ListItem>{listItem.content[0].content.map(renderText)}</ListItem>
+                <NovaSpacer y={16} />
+              </React.Fragment>
+            )
+            })}
           </NovaP>
+          <NovaSpacer y={16} />
         </>
       )
 
-    case "header":
+    case "heading-1":
       return (
         <>
+          <NovaSpacer y={64} />
           <NovaH2>{index}</NovaH2>
           <NovaH2>
-            {block.properties[0].value.map(item => (
-              <span>{item.text}</span>
-            ))}
+            {node.content.map(renderText)}
           </NovaH2>
+          <NovaSpacer y={24} />
         </>
       )
 
-    case "sub_header":
+    case "heading-2":
       return (
         <>
+          <NovaSpacer y={16} />
           <NovaH4>
-            {block.properties[0].value.map(item => (
-              <span>{item.text}</span>
-            ))}
+            {node.content.map(renderText)}
           </NovaH4>
+          <NovaSpacer y={16} />
         </>
       )
 
-    case "image":
-      const url = block.properties[0].value[0].text
-      var captionHtml = ""
+    case "embedded-asset-block":
 
-      if (block.properties.length === 2) {
-        captionHtml = <SpanDiv>{block.properties[1].value[0].text}</SpanDiv>
-      }
+      const contentful_id = node.data.target.sys.id;
+      const imageData = articleAssets.get(contentful_id);
 
+      const url = imageData.file.url;
+      const caption = imageData.description;
+    
       return (
-        <ImgContainerContainer>
-          <ImgContainer>
-            <img
-              src={parseImageUrl(url)}
-              alt={captionHtml}
-              style={{
-                maxHeight: "50vh",
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-            />
-            {captionHtml}
-          </ImgContainer>
-        </ImgContainerContainer>
+        <>
+          <NovaSpacer y={24} />
+          <ImgContainerContainer>
+            <ImgContainer>
+              <img
+                src={parseImageUrl(url)}
+                alt={caption}
+                style={{
+                  maxHeight: "50vh",
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                }}
+              />
+              <SpanDiv>
+                {caption}
+              </SpanDiv>
+            </ImgContainer>
+          </ImgContainerContainer>
+          <NovaSpacer y={24} />
+        </>
       )
 
-    // const imageNode = data.notionPageNovaProjects.imageNodes.find(
-    //   v => v.imageUrl == url
-    // )
-    // if (!imageNode) return
-    // const imageURL = imageNode.localFile.publicURL
-    // return (
-    //   <div>
-    //     <img src={imageURL} style={{ width: "100px" }} />
-    //   </div>
-    // )
+      default:
+        return <></>
   }
-  return <></>
 }
 
-const CaseStudyHeader = ({ metadata }) => {
-  const { Name, Overview, Tech, Team, NPOs } = metadata
+const CaseStudyHeader = ({ pageData }) => {
+  const { name, description, technology, team, nonprofits } = pageData;
   // let imageURL = parseImageUrl(Image[0], 1000)
 
   return (
     <>
       {/* <Img alt={`${Name}`} src={imageURL} /> */}
       <NovaSpacer y={160} mobileY={50} />
-      <NovaH1>{Name}</NovaH1>
+      <NovaH1>{name}</NovaH1>
       <NovaSpacer y={24} />
-      <NovaP>{Overview}</NovaP>
+      <NovaP>{description.description}</NovaP>
       <NovaSpacer y={80} />
       <CaseStudyTable>
         {/* <NovaB>Medium</NovaB>
         <NovaP>{Medium}</NovaP> */}
 
         <NovaB>Technology</NovaB>
-        <NovaP>{Tech && Tech.join(", ")}</NovaP>
+        <NovaP>{technology && technology.map(t => t.name).join(", ")}</NovaP>
 
         <NovaB>NPOs involved</NovaB>
-        <NovaP>{NPOs}</NovaP>
+        <NovaP>{nonprofits && nonprofits.map((n) => n.name).join(", ")}</NovaP>
 
         <NovaB>Team</NovaB>
-        <NovaP>{Team && Team.join(", ")}</NovaP>
+        <NovaP>{team && (team.map((t) => t.name)).join(", ")}</NovaP>
       </CaseStudyTable>
       {/* {Image && (
           <img src={parseImageUrl(Image[0])} style={{ width: "100%" }} />
@@ -286,84 +289,34 @@ const CaseStudyVideoPreview = ({ name }) => {
       return (
         <PhoneRecording video={projectRopaVideo} image={projectRopaImage} />
       )
+    default:
+      return <></>
   }
-  return <></>
 }
 
 export default ({ data, pageContext }) => {
-  // const {
-  //   caseStudies: { Name, Overview, Tech, Team, Image, html, slug },
-  // } = data
-  const metadata = data.allNovaProjectsMetadata.nodes.filter(
-    m => m.Slug === pageContext.pathSlug
-  )[0]
-  var prevSpacing
-  var prevBlock
-  var prevHeaders = false
+
+  const pageData = data.allContentfulProjectCaseStudy.edges[0].node;
+
+  const articleContent = JSON.parse(pageData.bodyArticle.raw).content
+  const articleAssets = new Map(pageData.bodyArticle.references.map(i => [i.contentful_id, i]));
+  console.log(articleAssets)
+  console.log(articleContent)
+  console.log(data)
+
   return (
     <Layout>
       <SEO
-        metaTitle={"Nova | " + metadata.Name}
-        metaDescription={metadata.Overview}
+        metaTitle={"Nova | " + pageData.name}
+        metaDescription={pageData.description.description}
       />
       <PageContainer>
         <SectionBox>
-          {metadata && <CaseStudyHeader metadata={metadata} />}
-          <CaseStudyVideoPreview name={metadata.Name} />
-          <NovaSpacer y={72} />
-          {data.notionPageNovaProjects.blocks.map(block => {
-            if (!block.properties || block.properties.length === 0) {
-              return
-            }
-            if (
-              !block.properties[0].value ||
-              block.properties[0].value.length === 0
-            ) {
-              return
-            }
-            switch (block.type) {
-              case "header":
-                prevSpacing = prevHeaders ? 144 : 72
-                prevHeaders = true
-                break
-
-              case "sub_header":
-                prevSpacing = prevBlock === "image" ? 48 : 24
-                break
-
-              case "text":
-                switch (prevBlock) {
-                  case "header":
-                    prevSpacing = 24
-                    break
-                  case "image":
-                    prevSpacing = 48
-                    break
-                  default:
-                    prevSpacing = 12
-                }
-                break
-
-              case "image":
-                prevSpacing = 48
-                break
-
-              case "numbered_list":
-                prevSpacing = 24
-                break
-
-              default:
-                prevSpacing = 0
-            }
-
-            prevBlock = block.type
-
-            return (
-              <>
-                <NovaSpacer y={prevSpacing} />
-                <Content block={block} />
-              </>
-            )
+          {pageData && <CaseStudyHeader pageData={pageData} />}
+          <CaseStudyVideoPreview name={pageData.name} />
+          <NovaSpacer y={120} />
+          {articleContent.map(node => {
+            return <Content node={node} articleAssets={articleAssets} />
           })}
           <NovaSpacer y={96} />
           <NovaH2 center>
@@ -375,114 +328,54 @@ export default ({ data, pageContext }) => {
       </PageContainer>
     </Layout>
   )
-
-  // function replaceHtmlWithReact({ attribs, children }) {
-  //   if (!attribs) {
-  //     return
-  //   }
-
-  //   switch (attribs.class) {
-  //     case "notion-selectable notion-header-block":
-  //       return (
-  //         <SectionHeading>
-  //           {domToReact(children, { replace: replaceHtmlWithReact })}
-  //         </SectionHeading>
-  //       )
-
-  //     case "notion-selectable notion-sub_header-block":
-  //       return <SectionSubHeading>{domToReact(children)}</SectionSubHeading>
-
-  //     case "notion-selectable notion-sub_sub_header-block":
-  //       return <SectionSubHeading>{domToReact(children)}</SectionSubHeading>
-
-  //     case "notion-selectable notion-image-block":
-  //       return <div style={{ width: "100%" }}>{domToReact(children)}</div>
-
-  //     case "notion-selectable notion-text-block":
-  //       return <SectionParagraph>{domToReact(children)}</SectionParagraph>
-  //   }
-  // }
-
-  // return (
-  //   <Layout>
-  //     <a name="top" />
-  //     <MainBox>
-  //       <NovaH1>{Name}</NovaH1>
-  //       <SectionParagraph>{Overview}</SectionParagraph>
-  //     </MainBox>
-  //     <SectionBox>
-  //       <CaseStudyTable>
-  //         <tr>
-  //           <th>Nonprofit</th>
-  //           <td>{Name}</td>
-  //         </tr>
-  //         <tr>
-  //           <th>Technology</th>
-  //           <td>{Tech && Tech.join(", ")}</td>
-  //         </tr>
-  //         <tr>
-  //           <th>Team</th>
-  //           <td>{Team && Team.join(", ")}</td>
-  //         </tr>
-  //       </CaseStudyTable>
-  //     </SectionBox>
-  //     <SectionBox>
-  //       {parse(html, { replace: replaceHtmlWithReact })}
-  //       <SectionHeading>
-  //         &#8593;{" "}
-  //         <a href="#top" style={{ color: "white" }}>
-  //           Back to Top
-  //         </a>
-  //       </SectionHeading>
-  //     </SectionBox>
-  //   </Layout>
-  // )
 }
 
 export const query = graphql`
-  query($pageId: String) {
-    allNovaProjectsMetadata {
-      nodes {
-        Name
-        Slug
-        Overview
-        Team
-        Tech
-        NPOs
-      }
-    }
-    notionPageNovaProjects(pageId: { eq: $pageId }) {
-      blocks {
-        blockId
-        blockIds
-        type
-        attributes {
-          att
-          value
-        }
-        properties {
-          propName
-          value {
-            text
-            atts {
-              att
-              value
+  query($id: String) {
+
+    allContentfulProjectCaseStudy(filter: {id: {eq: $id}}) {
+      edges {
+        node {
+          id
+          slug
+          name
+          nonprofits {
+            name
+          }
+          technology {
+            name
+          }
+          team {
+            name
+          }
+          description {
+            description
+          }
+          bodyArticle {
+            raw
+            references {
+              file {
+                url
+                fileName
+              }
+              contentful_id
+              title
+              description
             }
+          }
+          sys {
+            contentType {
+              sys {
+                id
+                linkType
+                type
+              }
+            }
+            revision
+            type
           }
         }
       }
-      imageNodes {
-        imageUrl
-        localFile {
-          publicURL
-        }
-      }
-      pageId
-      slug
-      title
-      isDraft
-      id
-      indexPage
     }
   }
 `

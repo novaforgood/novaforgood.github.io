@@ -17,6 +17,7 @@ import aboutleft2 from "../assets/aboutleft2.svg"
 import aboutright2 from "../assets/aboutright2.svg"
 import { parseImageUrl } from "notabase/src/utils"
 import SEO from "../components/SEO"
+import "../styles/global.css"
 
 const mobile = `@media (max-width: 800px)`
 
@@ -86,7 +87,57 @@ const About = ({ data, pageContext }) => {
       <NovaSpacer y={64} />
       <PageContainer>
         <SectionBox>
-          {data.notionPageNova.blocks.map((block, index) => {
+          <NovaH1 center>About</NovaH1>
+          <NovaSpacer y={24} />
+          <NovaP>Hey there, we're Nova!</NovaP>
+          <NovaSpacer y={12} />
+          <NovaP>
+            We were founded in November 2018, when our co-founders—Bryan, Jessica, Max, and 
+            Stephanie—wanted to use their technical skills to make an active impact in the 
+            LA community. In the coming weeks, they cold-emailed nonprofits across the city, 
+            seeking out problems that technology could tackle. Four months later, the team 
+            rolled out their first prototypes: a food pantry locator for the food-insecure 
+            and an app coordinating care-package delivery for the homeless.
+          </NovaP>
+
+          <ImageDiv>
+            <Img src={"https://i.imgur.com/sWmJ2c8.png"} alt={"cannot load image"} />
+            <Img src={"https://i.imgur.com/mzNGAU0.png"} alt={"cannot load image"} />
+          </ImageDiv>
+
+          <NovaSpacer y={24} />
+          <NovaP>
+            It's this constant desire to learn and create that has brought together{" "}
+            <NovaLink underline to={"/team"}>
+              20+ committed members 
+            </NovaLink>
+            {" "}working year-round on projects to help nonprofits serve their communities more 
+            effectively. We are a close-knit group of CS, design, and business students at 
+            UCLA, each actively participating in outreach, problem-solving, and development.
+          </NovaP>
+
+          <ImageDiv>
+            <Img src={"https://i.imgur.com/H9y64NF.png"} alt={"cannot load image"} />
+            <Img src={"https://i.imgur.com/QMVhakQ.png"} alt={"cannot load image"} />
+          </ImageDiv>
+
+          <NovaSpacer y={24} />
+          <NovaP>
+            We strive to understand the reality of under-resourced communities by working closely 
+            with nonprofits. We represent an ambitious, fast-moving, and creative team aiming to 
+            make a lasting impact.
+          </NovaP>
+          <NovaSpacer y={24} />
+          <NovaP>
+            We believe in the idea that <b>anyone</b> can help bring change to the community.
+          </NovaP>
+          <NovaSpacer y={24} />
+          <NovaSpacer y={24} />
+          <NovaSpacer y={24} />
+          <NovaP>We are Nova.</NovaP>
+
+
+          {/* {data.notionPageNova.blocks.map((block, index) => {
             if (processedIndex > index) {
               return
             }
@@ -117,14 +168,7 @@ const About = ({ data, pageContext }) => {
                 } else {
                   return
                 }
-              /*
-				// If needed, use PageAssets components
-				case "header":
-				  return <div className="block-header">{text}</div>
 
-				case "sub_header":
-				  return <div className="block-sub-header">{text}</div>
-				*/
               case "text":
                 var height = 12
                 if (text.match("We are Nova.")) {
@@ -187,39 +231,15 @@ const About = ({ data, pageContext }) => {
                 processedIndex = index
                 return <ol>{parse(properHTML)}</ol>
             }
-          })}
+          })} */}
         </SectionBox>
       </PageContainer>
     </Layout>
   )
 }
 
-export const query = graphql`
-  query($pageId: String) {
-    notionPageNova(pageId: { eq: $pageId }) {
-      blocks {
-        type
-        properties {
-          value {
-            text
-            atts {
-              att
-              value
-            }
-          }
-        }
-      }
-      imageNodes {
-        imageUrl
-        localFile {
-          publicURL
-        }
-        id
-      }
-      pageId
-      title
-    }
-  }
-`
+// export const query = graphql`
+
+// `
 
 export default About

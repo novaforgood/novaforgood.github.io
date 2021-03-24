@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { parseImageUrl } from "notabase/src/utils"
 import zoom from "../assets/zoom.svg"
 import {
   NovaSpacer,
@@ -20,6 +19,7 @@ import workleft2 from "../assets/workleft2.svg"
 import workright2 from "../assets/workright2.svg"
 import SEO from "../components/SEO"
 import LazyLoad from "react-lazyload"
+import "../styles/global.css"
 
 const mobile = `@media (max-width: 800px)`
 
@@ -147,7 +147,7 @@ function shuffle(array) {
   return array
 }
 
-const MemberCard = ({ name, interests, imageURL, role, linkedin }) => {
+const MemberCard = ({ name, imageURL, role, linkedin }) => {
   return (
     <MemberCardContainer>
       <MemberCardImageContainer>
@@ -174,12 +174,9 @@ const MemberCard = ({ name, interests, imageURL, role, linkedin }) => {
   )
 }
 const Team = props => {
-  console.log(props)
-  const {
-    data: { allTeamMembers },
-  } = props
+  const memberData = shuffle(props.data.allContentfulMember.nodes)
+  console.log(memberData)
 
-  const people = shuffle([...allTeamMembers.nodes])
   return (
     <Layout>
       <SEO metaTitle={"Nova | Meet the Team"} />
@@ -199,26 +196,22 @@ const Team = props => {
         <NovaSpacer y={96} />
         <SectionBox>
           <MemberCardLayout>
-            {people
+            {memberData
               .filter(
                 person =>
-                  person.Name &&
-                  person.Name !== "Example Content" &&
-                  person.Name.length !== 0
+                  person.name &&
+                  person.name !== "Example Content" &&
+                  person.name.length !== 0
               )
               .map(person => {
-                let imageURL =
-                  person.Picture_of_Yourself__professional__high_res__facing_the_camera_
-                if (imageURL) {
-                  imageURL = parseImageUrl(imageURL[0])
-                }
+                console.log(person)
+                let imageURL = "";
                 return (
                   <MemberCard
-                    name={person.Name}
-                    interests={person.Column}
-                    imageURL={imageURL}
-                    role={person.Role}
-                    linkedin={person.LinkedIn_URL}
+                    name={person.name}
+                    imageURL={person.profilePicture.file.url}
+                    role={person.role}
+                    linkedin={person.linkedinURL}
                   />
                 )
               })}
@@ -240,13 +233,12 @@ const Team = props => {
               </NovaP>
               <NovaSpacer y={24} />
               <NovaP>
-                Our next recruitment cycle starts{" "}
-                <b>Week 2 of Fall Quarter 2020</b>. To stay updated, keep up
-                with us on{" "}
+                We're recruiting right now! Apps are due 10/7. Find more
+                information and keep updated with us on{" "}
                 <NovaA underline href="https://www.facebook.com/novaforgood">
                   Facebook
                 </NovaA>
-                .
+                !
               </NovaP>
             </JoinDiv>
             <JoinDiv>
@@ -267,15 +259,16 @@ export default Team
 
 export const query = graphql`
   query {
-    allTeamMembers {
+    allContentfulMember {
       nodes {
-        Column
-        Future_Career_Goals
-        LinkedIn_URL
-        Name
-        Picture_of_Yourself__professional__high_res__facing_the_camera_
-        _1_Sentence_Bio_for_Prospective_Members_and_Nonprofits
-        Role
+        name
+        linkedinURL
+        role
+        profilePicture {
+          file {
+            url
+          }
+        }
       }
     }
   }

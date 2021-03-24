@@ -14,6 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "predeploy": "yarn rmcache && yarn build",
     "deploy": "gh-pages -d public -b master"
   },
   "dependencies": {
@@ -23,10 +24,10 @@
     "aws-sdk": "^2.723.0",
     "gatsby": "^2.23.22",
     "gatsby-cli": "^2.12.64",
+    "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-source-contentful": "4.6.3",
     "gatsby-source-filesystem": "^2.3.23",
-    "gatsby-source-notion-database": "^0.6.9",
-    "gatsby-source-notionso": "^1.1.6",
     "gh-pages": "^3.1.0",
     "html-react-parser": "^0.13.0",
     "react": "^16.13.1",

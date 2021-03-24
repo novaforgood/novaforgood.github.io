@@ -35,13 +35,11 @@ const NetworkImg = styled.img`
 `
 
 export default ({ data }) => {
-  const { Name, Image, External } = data
-  let imageURL = Image && parseImageUrl(Image[0], 1000)
 
   return (
-    <a href={External} rel="noreferrer" target="_blank">
+    <a href={data.website} rel="noreferrer" target="_blank">
       <CenterDiv>
-        <NetworkImg alt={`${Name} Cover`} src={imageURL} />
+        <NetworkImg alt={`${data.name} Cover`} src={data.logo.file.url} />
       </CenterDiv>
     </a>
   )
