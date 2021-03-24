@@ -111,6 +111,7 @@ const DistributionTracker = () => {
 }
 
 const CaseStudyImages = ({ name }) => {
+  console.log(name)
   switch (name) {
     case "Coordinating Survival Kit Distribution":
       return <DistributionTracker />

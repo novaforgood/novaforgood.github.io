@@ -26,6 +26,7 @@ const ImageDiv = styled.div`
   grid-column-gap: 8px;
   ${mobile} {
     grid-template-columns: 100%;
+    width: 90%;
     margin-top: 24px;
     grid-row-gap: 24px;
   }
@@ -33,6 +34,11 @@ const ImageDiv = styled.div`
 
 const Img = styled.img`
   width: 100%;
+  height: 300px;
+  object-fit: cover;
+  ${mobile} {
+    height: auto;
+  }
 `
 
 const PageContainer = styled.div`
@@ -99,7 +105,8 @@ const About = ({ data, pageContext }) => {
           </NovaP>
 
           <ImageDiv>
-            <Img src={"https://i.imgur.com/sWmJ2c8.png"} alt={"cannot load image"} />
+            {/* <Img src={"https://i.imgur.com/sWmJ2c8.png"} alt={"cannot load image"} /> */}
+            <Img src={"https://i.imgur.com/5PEUGBB.jpg"} alt={"cannot load image"} />
             <Img src={"https://i.imgur.com/mzNGAU0.png"} alt={"cannot load image"} />
           </ImageDiv>
 

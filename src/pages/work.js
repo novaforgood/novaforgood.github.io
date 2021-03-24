@@ -57,8 +57,10 @@ const Work = ({ data, pageContext }) => {
             {projectsData
               .filter(node => node.featured === true)
               .sort((a, b) => (a.name >= b.name ? 1 : -1)) // Distribution < Project Ropa LOLOL
-              .map(node => (
-                <CaseItem data={node} />
+              .map((node, idx) => (
+                <React.Fragment key={idx}>
+                  <CaseItem data={node} />
+                </React.Fragment>
               ))}
           </CaseDiv>
           <NovaSpacer y={144} />

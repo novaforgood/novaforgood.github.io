@@ -82,21 +82,22 @@ const PageContainer = styled.div`
 const renderText = (item) => {
   console.log(item)
   var content = item.value
-  for (let mark of item.marks) {
-    switch (mark.type) {
-      case "bold":
-        content = <b>{content}</b>
-        break;
-      case "link":
-        content = (
-          <NovaA underline href={mark.value}>
-            {content}
-          </NovaA>
-        )
-        break;
-      default:
+  if (item.marks)
+    for (let mark of item.marks) {
+      switch (mark.type) {
+        case "bold":
+          content = <b>{content}</b>
+          break;
+        case "link":
+          content = (
+            <NovaA underline href={mark.value}>
+              {content}
+            </NovaA>
+          )
+          break;
+        default:
+      }
     }
-  }
   return <span>{content}</span>
 }
 
@@ -279,6 +280,7 @@ const PhoneRecording = ({ video, image }) => {
 }
 
 const CaseStudyVideoPreview = ({ name }) => {
+  console.log(name)
   switch (name) {
     case "Coordinating Survival Kit Distribution":
       return (
@@ -314,8 +316,12 @@ export default ({ data, pageContext }) => {
           {pageData && <CaseStudyHeader pageData={pageData} />}
           <CaseStudyVideoPreview name={pageData.name} />
           <NovaSpacer y={120} />
-          {articleContent.map(node => {
-            return <Content node={node} articleAssets={articleAssets} />
+          {articleContent.map((node, idx) => {
+            return (
+              <React.Fragment key={idx}>
+                <Content node={node} articleAssets={articleAssets} />
+              </React.Fragment>
+            )
           })}
           <NovaSpacer y={96} />
           <NovaH2 center>

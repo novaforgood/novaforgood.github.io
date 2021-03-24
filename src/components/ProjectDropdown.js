@@ -131,7 +131,7 @@ export default ({ data, onClick, open, idx }) => {
             <b>{name}</b>
           </LeftDiv>
           <MiddleDiv>
-            <NovaP>{description.description}</NovaP>
+            <NovaP>{description && description.description}</NovaP>
           </MiddleDiv>
           <RightDiv>
              <NovaLink to={`/work/${slug}`}>
