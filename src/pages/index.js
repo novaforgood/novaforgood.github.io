@@ -26,6 +26,7 @@ import {
   Img,
   ListItem,
   Arrow,
+  NovaA,
 } from "../components/PageAssets"
 import styled from "@emotion/styled"
 
@@ -221,7 +222,7 @@ export default function Home({ data }) {
           <CaseDiv>
             {data.allContentfulProjectCaseStudy.nodes
               .filter(node => node.featured === true)
-              .sort((a, b) => (a.Name >= b.Name ? 1 : -1)) // Distribution < Project Ropa LOLOL
+              .sort((a, b) => (a.name >= b.name ? 1 : -1)) // Distribution < Project Ropa LOLOL
               .map(node => (
                 <CaseItem data={node} />
               ))}
@@ -270,6 +271,44 @@ export default function Home({ data }) {
             </SparklyButton>
           </PageHeightContainer>
         </SectionBox>
+
+        <NovaSpacer y={160} />
+
+        <SectionBox>
+          <NovaH2>Our Sponsors</NovaH2>
+          <NovaSpacer y={24} />
+          <NovaP>
+            A huge thanks to our generous sponsors for supporting us!
+          </NovaP>
+          <NovaSpacer y={12} />
+          <NovaP>
+            Interested in sponsoring Nova? Send us an e-mail at{" "}
+            <NovaA underline href="mailto:hello@novaforgood.org">hello@novaforgood.org</NovaA>{" "}
+            and we'll get back to you with details!
+          </NovaP>
+          <NovaSpacer y={12} />
+          {/* <NovaP>
+            Interested in becoming a partner or advisor?{" "}
+            <NovaLink
+              underline
+              rel="noreferrer"
+              target="_blank"
+              to="https://forms.gle/g6gmjG4uYwL1AP5T9"
+            >
+              Let us know
+            </NovaLink>{" "}
+            — we’d love to talk to you!
+          </NovaP>
+          <NovaSpacer y={24} /> */}
+          <NetworkDiv>
+            {data.allContentfulSponsor.nodes.map(node => (
+              <NetworkItem data={node} />
+            ))}
+          </NetworkDiv>
+          <NovaSpacer y={48} />
+        </SectionBox>
+
+
       </BodyContainer>
       <DesktopView>
         <NovaSpacer y={300} />
@@ -298,6 +337,23 @@ export const query = graphql`
         logo {
           file {
             url
+          }
+          localFile {
+            publicURL
+          }
+        }
+      }
+    }
+    allContentfulSponsor {
+      nodes {
+        name 
+        website
+        logo {
+          file {
+            url
+          }
+          localFile {
+            publicURL
           }
         }
       }

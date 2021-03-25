@@ -8,7 +8,6 @@ import {
   NovaDiv,
   NovaP,
   NovaA,
-  NovaLink,
   SectionBox,
 } from "../components/PageAssets"
 import styled from "@emotion/styled"
@@ -129,6 +128,7 @@ const Img = styled.img`
 `
 
 const PageContainer = styled.div`
+  height: 100vh;
   position: relative;
   text-align: center;
   background-image: url(${workright}), url(${aboutleft}), url(${workright2}),
@@ -181,155 +181,31 @@ const MemberCard = ({ name, imageURL, role, linkedin }) => {
           </NameA>
         </b>
       </NovaDiv>
-      <NovaSpacer y={14} />
+      <NovaSpacer y={20} />
       <NovaDiv center>{role}</NovaDiv>
     </MemberCardContainer>
   )
 }
-const Team = props => {
-  const memberData = shuffle(props.data.allContentfulMember.nodes)
-  console.log(memberData)
+const Recruitment = props => {
 
   return (
     <Layout>
-      <SEO metaTitle={"Nova | Meet the Team"} />
+      <SEO metaTitle={"Nova | Recruitment"} />
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Meet the Team</NovaH1>
+          <NovaH1 center>Spring 2021 Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <PDiv>
             <NovaP center>
-              We are a close-knit group of CS, design, and business students at
-              UCLA, each actively participating in outreach, problem-solving,
-              and development. Come join us!
+              Information coming soon.
             </NovaP>
           </PDiv>
         </SectionBox>
-        <NovaSpacer y={96} />
-        <SectionBox>
-          <MemberCardLayout>
-            {memberData
-              .filter(
-                person =>
-                  person.name &&
-                  person.name !== "Example Content" &&
-                  person.name.length !== 0 &&
-                  person.active
-              )
-              .map(person => {
-                console.log(person)
-                return (
-                  <MemberCard
-                    name={person.name}
-                    imageURL={person.profilePicture.localFile.publicURL}
-                    role={person.role}
-                    linkedin={person.linkedinURL}
-                  />
-                )
-              })}
-          </MemberCardLayout>
-        </SectionBox>
-        <NovaSpacer y={144} />
-        <SectionBox>
-          <a id="join">
-            <NovaH1 center>Join the Team</NovaH1>
-          </a>
-          <NovaSpacer y={24} />
-          <JoinContain>
-            <JoinDiv>
-              <NovaP>
-                We're always looking to grow the family with fellow UCLA
-                students eager to use their skills to do good. Don't worry too
-                much about experience &#8212; we like to see drive and
-                potential.
-              </NovaP>
-              <NovaSpacer y={24} />
-              <NovaP>
-                We're recruiting right now! Apps are due 4/1. Find more
-                information and keep updated with us on{" "}
-                <NovaA underline href="https://www.facebook.com/novaforgood" target="_blank">
-                  Facebook
-                </NovaA>
-                !
-              </NovaP>
-            </JoinDiv>
-            <JoinDiv>
-              <Img src={zoom} alt="remote meetings" />
-            </JoinDiv>
-          </JoinContain>
-          <NovaSpacer y={20} />
-          {/* <Button backgroundColor="#CFCFCF" textColor="#000000">
-          Apply Here
-        </Button> */}
-        </SectionBox>
-
-        <NovaSpacer y={144} />
-
-        <SectionBox>
-          <NovaH1 center>Alumni</NovaH1>
-          <NovaSpacer y={96} />
-          <PDiv>
-            <NovaP center>
-            </NovaP>
-          </PDiv>
-          <MemberCardLayout>
-            {memberData
-            .filter(
-              person =>
-                person.name 
-                && person.name !== "Example Content" 
-                && person.name.length !== 0 
-                && !person.active
-            )
-            .map(person => {
-              return (
-                <AlumniCard
-                  name={person.name}
-                  linkedin={person.linkedinURL}
-                />
-              )
-            })}
-          </MemberCardLayout>
-        </SectionBox>
-        <NovaSpacer y={96} />
-      </PageContainer>
+       </PageContainer>
     </Layout>
   )
 }
 
+export default Recruitment
 
-const AlumniCard = ({name, linkedin}) => {
-  return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <NovaP>
-        <NovaA href={linkedin} target="_blank">
-          <b>{name}</b>
-        </NovaA>
-      </NovaP>
-    </div>
-  )
-}
-
-export default Team
-
-export const query = graphql`
-  query {
-    allContentfulMember {
-      nodes {
-        active
-        name
-        linkedinURL
-        role
-        profilePicture {
-          file {
-            url
-          }
-          localFile {
-            publicURL
-          }
-        }
-      }
-    }
-  }
-`

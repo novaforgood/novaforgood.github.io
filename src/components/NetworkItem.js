@@ -38,7 +38,7 @@ export default ({ data }) => {
   return (
     <a href={data.website} rel="noreferrer" target="_blank">
       <CenterDiv>
-        <NetworkImg alt={`${data.name} Cover`} src={data.logo.file.url} />
+        <NetworkImg alt={`${data.name} Cover`} src={data.logo.localFile.publicURL} />
       </CenterDiv>
     </a>
   )

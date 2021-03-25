@@ -43,15 +43,15 @@ const FooterDiv = styled.div`
   box-sizing: border-box;
   padding: 0 50px 72px 50px;
   ${mobile} {
-	padding 24px;
+	  padding: 24px;
     display: grid;
     grid-template-columns: 100%;
     grid-row-gap: 20px;
   }
   ${true_mobile} {
-	margin: 0 auto;
+	  margin: 0 auto;
   }
-`
+`;
 
 const Title = styled.h2`
   font-family: Prompt;
@@ -135,7 +135,7 @@ export default function Footer() {
           <NovaP>
             {/* Last updated {month} {date}
             {nth(date)}, {year} */}
-            Last updated September 6th, 2020
+            Last updated March 24th, 2021
           </NovaP>
         </div>
         <LinkDiv>

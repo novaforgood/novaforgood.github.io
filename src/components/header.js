@@ -191,7 +191,13 @@ export default function Header() {
             alignItems: "center",
           }}
         >
-          <NavLink activeClassName="active" to="/about">
+          {/* <NavLink activeClassName="active" to="/recruitment">
+            Recruitment
+          </NavLink> */}
+          <NavLink 
+            activeClassName="active" 
+            style={{ marginLeft: "24px" }}
+            to="/about">
             About
           </NavLink>
           <NavLink

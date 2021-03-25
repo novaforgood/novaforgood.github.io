@@ -32,8 +32,8 @@ module.exports = {
       options: {
         spaceId: `7rtxeab51ajj`,
         // accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        accessToken: "WB_MQbJBHUrJJK61Hcw7C-reZK50qdNnBR-GuFOGSNo"
-        // downloadLocal: true,
+        accessToken: "WB_MQbJBHUrJJK61Hcw7C-reZK50qdNnBR-GuFOGSNo",
+        downloadLocal: true,
       },
     },
   ],

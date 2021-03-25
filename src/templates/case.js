@@ -90,7 +90,7 @@ const renderText = (item) => {
           break;
         case "link":
           content = (
-            <NovaA underline href={mark.value}>
+            <NovaA underline href={mark.value} target="_blank">
               {content}
             </NovaA>
           )
@@ -157,7 +157,7 @@ const Content = ({ node, index, articleAssets }) => {
       const contentful_id = node.data.target.sys.id;
       const imageData = articleAssets.get(contentful_id);
 
-      const url = imageData.file.url;
+      const url = imageData.localFile.publicURL;
       const caption = imageData.description;
     
       return (
@@ -297,7 +297,7 @@ const CaseStudyVideoPreview = ({ name }) => {
 
 export default ({ data, pageContext }) => {
 
-  const pageData = data.allContentfulProjectCaseStudy.edges[0].node;
+  const pageData = data.allContentfulProjectCaseStudy.nodes[0];
 
   const articleContent = JSON.parse(pageData.bodyArticle.raw).content
   const articleAssets = new Map(pageData.bodyArticle.references.map(i => [i.contentful_id, i]));
@@ -339,46 +339,47 @@ export const query = graphql`
   query($id: String) {
 
     allContentfulProjectCaseStudy(filter: {id: {eq: $id}}) {
-      edges {
-        node {
-          id
-          slug
+      nodes {
+        id
+        slug
+        name
+        nonprofits {
           name
-          nonprofits {
-            name
-          }
-          technology {
-            name
-          }
-          team {
-            name
-          }
-          description {
+        }
+        technology {
+          name
+        }
+        team {
+          name
+        }
+        description {
+          description
+        }
+        bodyArticle {
+          raw
+          references {
+            file {
+              url
+              fileName
+            }
+            localFile {
+              publicURL
+            }
+            contentful_id
+            title
             description
           }
-          bodyArticle {
-            raw
-            references {
-              file {
-                url
-                fileName
-              }
-              contentful_id
-              title
-              description
+        }
+        sys {
+          contentType {
+            sys {
+              id
+              linkType
+              type
             }
           }
-          sys {
-            contentType {
-              sys {
-                id
-                linkType
-                type
-              }
-            }
-            revision
-            type
-          }
+          revision
+          type
         }
       }
     }
