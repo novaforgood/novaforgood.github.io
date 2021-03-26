@@ -152,7 +152,7 @@ export default function Home({ data }) {
         <NovaSpacer y={64} />
         <ButtonDiv>
           <SparklyButton
-            to="/team#join"
+            to="/join"
             textColor="#FFFFFF"
             backgroundColor="#000000"
             borderColor="#FFC650"

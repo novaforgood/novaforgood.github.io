@@ -191,9 +191,6 @@ export default function Header() {
             alignItems: "center",
           }}
         >
-          <NavLink activeClassName="active" to="/join">
-            Join
-          </NavLink>
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "24px" }}
@@ -214,6 +211,13 @@ export default function Header() {
             to="/team"
           >
             Our Team
+          </NavLink>
+          <NavLink
+            activeClassName="active"
+            style={{ marginLeft: "24px" }}
+            to="/join"
+          >
+            Join
           </NavLink>
           <DesktopView>
             <NavButton

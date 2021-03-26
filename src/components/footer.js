@@ -1,22 +1,22 @@
-import React from "react"
-import { FaFacebookF, FaGithub, FaInstagram, FaMedium } from "react-icons/fa"
-import styled from "@emotion/styled"
+import React from "react";
+import { FaFacebookF, FaGithub, FaInstagram, FaMedium } from "react-icons/fa";
+import styled from "@emotion/styled";
 import {
   NovaLink,
   NovaP,
   NovaA,
   NovaSpacer,
   NovaH4,
-} from "../components/PageAssets.js"
+} from "../components/PageAssets.js";
 
-const mobile = `@media (max-width: 900px)`
+const mobile = `@media (max-width: 900px)`;
 
-const true_mobile = `@media (max-width: 400px)`
+const true_mobile = `@media (max-width: 400px)`;
 
 const A = styled(NovaA)`
   margin-right: 20px;
-`
-const IconLink = props => <A href={props.href}>{props.children}</A>
+`;
+const IconLink = (props) => <A href={props.href}>{props.children}</A>;
 
 const LinkDiv = styled.div`
   display: grid;
@@ -28,13 +28,13 @@ const LinkDiv = styled.div`
     max-width: 375px;
     grid-column-gap: 16px;
   }
-`
+`;
 
 const LinkBox = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: start;
-`
+`;
 
 const FooterDiv = styled.div`
   display: flex;
@@ -43,13 +43,13 @@ const FooterDiv = styled.div`
   box-sizing: border-box;
   padding: 0 50px 72px 50px;
   ${mobile} {
-	  padding: 24px;
+    padding: 24px;
     display: grid;
     grid-template-columns: 100%;
     grid-row-gap: 20px;
   }
   ${true_mobile} {
-	  margin: 0 auto;
+    margin: 0 auto;
   }
 `;
 
@@ -69,7 +69,7 @@ const Title = styled.h2`
   ${mobile} {
     font-size: 14px;
   }
-`
+`;
 
 const NavLink = styled(NovaLink)`
   font-family: Rubik;
@@ -84,27 +84,27 @@ const NavLink = styled(NovaLink)`
   ${mobile} {
     font-size: 12px;
   }
-`
+`;
 
-const iconSize = 24
+const iconSize = 24;
 export default function Footer() {
-  const today = new Date()
-  const month = today.toLocaleString("default", { month: "long" })
-  const date = today.getDate()
-  const nth = d => {
-    if (d > 3 && d < 21) return "th"
+  const today = new Date();
+  const month = today.toLocaleString("default", { month: "long" });
+  const date = today.getDate();
+  const nth = (d) => {
+    if (d > 3 && d < 21) return "th";
     switch (d % 10) {
       case 1:
-        return "st"
+        return "st";
       case 2:
-        return "nd"
+        return "nd";
       case 3:
-        return "rd"
+        return "rd";
       default:
-        return "th"
+        return "th";
     }
-  }
-  const year = today.getFullYear()
+  };
+  const year = today.getFullYear();
   return (
     <>
       <NovaSpacer y={168} />
@@ -114,7 +114,7 @@ export default function Footer() {
             <span style={{ fontFamily: "Alata", fontWeight: "400" }}>
               &#169;
             </span>{" "}
-            2020 Nova for Good
+            2021 Nova for Good
           </NovaH4>
           <NovaSpacer y={12} />
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
@@ -149,7 +149,7 @@ export default function Footer() {
           <LinkBox>
             <Title>For Students</Title>
             <NovaSpacer y={12} />
-            <NavLink to="/team/#join">Join the Team</NavLink>
+            <NavLink to="/join">Join the Team</NavLink>
           </LinkBox>
           <LinkBox>
             <Title>For Nonprofits</Title>
@@ -161,5 +161,5 @@ export default function Footer() {
         </LinkDiv>
       </FooterDiv>
     </>
-  )
+  );
 }
