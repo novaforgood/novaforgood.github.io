@@ -1,20 +1,20 @@
-﻿import React from "react"
-import "../styles/global.css"
-import Layout from "../components/Layout"
-import CaseItem, { CaseDiv } from "../components/CaseItem"
-import NetworkItem, { NetworkDiv } from "../components/NetworkItem"
-import team from "../assets/team.png"
-import { graphql } from "gatsby"
-import mobileclouds from "../assets/mobileclouds.png"
-import clouds from "../assets/clouds.png"
-import city from "../assets/city.png"
-import coverstarsleft from "../assets/coverstarsleft.svg"
-import coverstarsright from "../assets/coverstarsright.svg"
-import aboutleft from "../assets/aboutleft.svg"
-import aboutright from "../assets/aboutright.svg"
-import workleft from "../assets/workleft.svg"
-import workright from "../assets/workright.svg"
-import SEO from "../components/SEO"
+﻿import React from "react";
+import "../styles/global.css";
+import Layout from "../components/Layout";
+import CaseItem, { CaseDiv } from "../components/CaseItem";
+import NetworkItem, { NetworkDiv } from "../components/NetworkItem";
+import team from "../assets/team.png";
+import { graphql } from "gatsby";
+import mobileclouds from "../assets/mobileclouds.png";
+import clouds from "../assets/clouds.png";
+import city from "../assets/city.png";
+import coverstarsleft from "../assets/coverstarsleft.svg";
+import coverstarsright from "../assets/coverstarsright.svg";
+import aboutleft from "../assets/aboutleft.svg";
+import aboutright from "../assets/aboutright.svg";
+import workleft from "../assets/workleft.svg";
+import workright from "../assets/workright.svg";
+import SEO from "../components/SEO";
 import {
   NovaH1,
   NovaH2,
@@ -27,22 +27,22 @@ import {
   ListItem,
   Arrow,
   NovaA,
-} from "../components/PageAssets"
-import styled from "@emotion/styled"
+} from "../components/PageAssets";
+import styled from "@emotion/styled";
 
-const mobile = `@media (max-width: 800px)`
-const notMobile = `@media (min-width: 801px)`
+const mobile = `@media (max-width: 800px)`;
+const notMobile = `@media (min-width: 801px)`;
 
 const MobileView = styled("div")`
   ${notMobile} {
     display: none;
   }
-`
+`;
 const DesktopView = styled("div")`
   ${mobile} {
     display: none;
   }
-`
+`;
 
 const ButtonDiv = styled.div`
   text-align: center;
@@ -50,7 +50,7 @@ const ButtonDiv = styled.div`
   ${mobile} {
     margin: 0 auto;
   }
-`
+`;
 
 const PageHeightContainer = styled.div`
   position: relative;
@@ -58,7 +58,7 @@ const PageHeightContainer = styled.div`
   ${mobile} {
     min-height: ${({ mobileHeight }) => `${mobileHeight || "100vh"}`};
   }
-`
+`;
 
 const MobileClouds = styled.img`
   position: absolute;
@@ -66,7 +66,7 @@ const MobileClouds = styled.img`
   width: 100%;
   object-fit: cover;
   z-index: -1;
-`
+`;
 
 const City = styled.img`
   position: absolute;
@@ -74,7 +74,7 @@ const City = styled.img`
   width: 100%;
   object-fit: cover;
   z-index: -1;
-`
+`;
 
 const CoverStarsLeft = styled.img`
   position: absolute;
@@ -85,7 +85,7 @@ const CoverStarsLeft = styled.img`
   align-self: center;
   z-index: -1;
   left: 80px;
-`
+`;
 const CoverStarsRight = styled.img`
   position: absolute;
   top: 0;
@@ -95,13 +95,13 @@ const CoverStarsRight = styled.img`
   align-self: center;
   z-index: -1;
   right: 80px;
-`
+`;
 
 const Description = styled(NovaP)`
   width: 80%;
   max-width: 650px;
   margin: 0 auto;
-`
+`;
 
 const BodyContainer = styled.div`
   position: relative;
@@ -115,7 +115,7 @@ const BodyContainer = styled.div`
   ${mobile} {
     background: none;
   }
-`
+`;
 
 export default function Home({ data }) {
   return (
@@ -221,9 +221,9 @@ export default function Home({ data }) {
           <NovaSpacer y={48} />
           <CaseDiv>
             {data.allContentfulProjectCaseStudy.nodes
-              .filter(node => node.featured === true)
+              .filter((node) => node.featured === true)
               .sort((a, b) => (a.name >= b.name ? 1 : -1)) // Distribution < Project Ropa LOLOL
-              .map(node => (
+              .map((node) => (
                 <CaseItem data={node} />
               ))}
           </CaseDiv>
@@ -255,9 +255,9 @@ export default function Home({ data }) {
             </NovaP>
             <NovaSpacer y={24} />
             <NetworkDiv>
-              {data.allContentfulNonprofitInOurNetwork.nodes.map(node => (
-                <NetworkItem data={node} />
-              ))}
+              {data.allContentfulNonprofitInOurNetwork.nodes.map(
+                (node) => node.showOnHomepage && <NetworkItem data={node} />
+              )}
             </NetworkDiv>
             <NovaSpacer y={48} />
             <SparklyButton
@@ -283,7 +283,9 @@ export default function Home({ data }) {
           <NovaSpacer y={12} />
           <NovaP>
             Interested in sponsoring Nova? Send us an e-mail at{" "}
-            <NovaA underline href="mailto:hello@novaforgood.org">hello@novaforgood.org</NovaA>{" "}
+            <NovaA underline href="mailto:hello@novaforgood.org">
+              hello@novaforgood.org
+            </NovaA>{" "}
             and we'll get back to you with details!
           </NovaP>
           <NovaSpacer y={12} />
@@ -301,20 +303,18 @@ export default function Home({ data }) {
           </NovaP>
           <NovaSpacer y={24} /> */}
           <NetworkDiv>
-            {data.allContentfulSponsor.nodes.map(node => (
+            {data.allContentfulSponsor.nodes.map((node) => (
               <NetworkItem data={node} />
             ))}
           </NetworkDiv>
           <NovaSpacer y={48} />
         </SectionBox>
-
-
       </BodyContainer>
       <DesktopView>
         <NovaSpacer y={300} />
       </DesktopView>
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -332,6 +332,7 @@ export const query = graphql`
     }
     allContentfulNonprofitInOurNetwork {
       nodes {
+        showOnHomepage
         name
         website
         logo {
@@ -346,7 +347,7 @@ export const query = graphql`
     }
     allContentfulSponsor {
       nodes {
-        name 
+        name
         website
         logo {
           file {
@@ -359,4 +360,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

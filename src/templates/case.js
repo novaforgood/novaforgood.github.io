@@ -1,6 +1,6 @@
-import React from "react"
-import Layout from "../components/Layout.js"
-import { graphql } from "gatsby"
+import React from "react";
+import Layout from "../components/Layout.js";
+import { graphql } from "gatsby";
 import {
   NovaH1,
   NovaH2,
@@ -11,30 +11,30 @@ import {
   NovaA,
   NovaLink,
   ListItem,
-} from "../components/PageAssets"
-import projectleft from "../assets/projectleft.svg"
-import projectright from "../assets/projectright.svg"
-import styled from "@emotion/styled"
-import SEO from "../components/SEO"
-import "../styles/global.css"
+} from "../components/PageAssets";
+import projectleft from "../assets/projectleft.svg";
+import projectright from "../assets/projectright.svg";
+import styled from "@emotion/styled";
+import SEO from "../components/SEO";
+import "../styles/global.css";
 
-import phoneFrame from "../assets/phone.png"
-import distributionVideo from "../assets/distribution.mp4"
-import distributionImage from "../assets/distribution.png"
-import projectRopaVideo from "../assets/projectropa.mp4"
-import projectRopaImage from "../assets/projectropa.png"
-import HoverVideoPlayer from "react-hover-video-player"
+import phoneFrame from "../assets/phone.png";
+import distributionVideo from "../assets/distribution.mp4";
+import distributionImage from "../assets/distribution.png";
+import projectRopaVideo from "../assets/projectropa.mp4";
+import projectRopaImage from "../assets/projectropa.png";
+import HoverVideoPlayer from "react-hover-video-player";
 
-const mobile = `@media (max-width: 700px)`
+const mobile = `@media (max-width: 700px)`;
 
 const ImgContainerContainer = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 const ImgContainer = styled.figure`
   display: table;
   margin: 0;
-`
+`;
 
 const SpanDiv = styled.figcaption`
   font-family: Rubik;
@@ -51,10 +51,10 @@ const SpanDiv = styled.figcaption`
   ${mobile} {
     font-size: 14px;
   }
-`
+`;
 const NovaB = styled(NovaP)`
   font-weight: bold;
-`
+`;
 
 const CaseStudyTable = styled.table`
   width: 100%;
@@ -65,7 +65,7 @@ const CaseStudyTable = styled.table`
   ${mobile} {
     grid-template-columns: 100px auto;
   }
-`
+`;
 
 const PageContainer = styled.div`
   position: relative;
@@ -77,89 +77,86 @@ const PageContainer = styled.div`
   ${mobile} {
     background: none;
   }
-`
+`;
 
 const renderText = (item) => {
-  console.log(item)
-  var content = item.value
+  console.log(item);
+  var content = item.value;
+  if (item.nodeType === "hyperlink") {
+    content = (
+      <NovaA underline href={item.data.uri} target="_blank">
+        {item.content[0].value}
+      </NovaA>
+    );
+  }
   if (item.marks)
     for (let mark of item.marks) {
+      console.log(mark.type);
       switch (mark.type) {
         case "bold":
-          content = <b>{content}</b>
-          break;
-        case "link":
-          content = (
-            <NovaA underline href={mark.value} target="_blank">
-              {content}
-            </NovaA>
-          )
+          content = <b>{content}</b>;
           break;
         default:
       }
     }
-  return <span>{content}</span>
-}
+  return <span>{content}</span>;
+};
 
 const Content = ({ node, index, articleAssets }) => {
   switch (node.nodeType) {
-
     case "paragraph":
       return (
         <>
           <NovaP>{node.content.map(renderText)}</NovaP>
           <NovaSpacer y={16} />
         </>
-      )
+      );
 
     case "unordered-list":
       return (
         <>
           <NovaP>
             {node.content.map((listItem) => {
-            return  (
-              <React.Fragment>
-                <ListItem>{listItem.content[0].content.map(renderText)}</ListItem>
-                <NovaSpacer y={16} />
-              </React.Fragment>
-            )
+              return (
+                <React.Fragment>
+                  <ListItem>
+                    {listItem.content[0].content.map(renderText)}
+                  </ListItem>
+                  <NovaSpacer y={16} />
+                </React.Fragment>
+              );
             })}
           </NovaP>
           <NovaSpacer y={16} />
         </>
-      )
+      );
 
     case "heading-1":
       return (
         <>
           <NovaSpacer y={64} />
           <NovaH2>{index}</NovaH2>
-          <NovaH2>
-            {node.content.map(renderText)}
-          </NovaH2>
+          <NovaH2>{node.content.map(renderText)}</NovaH2>
           <NovaSpacer y={24} />
         </>
-      )
+      );
 
     case "heading-2":
       return (
         <>
           <NovaSpacer y={16} />
-          <NovaH4>
-            {node.content.map(renderText)}
-          </NovaH4>
+          <NovaH4>{node.content.map(renderText)}</NovaH4>
           <NovaSpacer y={16} />
         </>
-      )
+      );
 
     case "embedded-asset-block":
-
       const contentful_id = node.data.target.sys.id;
       const imageData = articleAssets.get(contentful_id);
 
       const url = imageData.localFile.publicURL;
       const caption = imageData.description;
-    
+
       return (
         <>
           <NovaSpacer y={24} />
@@ -174,19 +171,17 @@ const Content = ({ node, index, articleAssets }) => {
                   objectFit: "contain",
                 }}
               />
-              <SpanDiv>
-                {caption}
-              </SpanDiv>
+              <SpanDiv>{caption}</SpanDiv>
             </ImgContainer>
           </ImgContainerContainer>
           <NovaSpacer y={24} />
         </>
-      )
+      );
 
-      default:
-        return <></>
+    default:
+      return <></>;
   }
-}
+};
 
 const CaseStudyHeader = ({ pageData }) => {
   const { name, description, technology, team, nonprofits } = pageData;
@@ -205,20 +200,20 @@ const CaseStudyHeader = ({ pageData }) => {
         <NovaP>{Medium}</NovaP> */}
 
         <NovaB>Technology</NovaB>
-        <NovaP>{technology && technology.map(t => t.name).join(", ")}</NovaP>
+        <NovaP>{technology && technology.map((t) => t.name).join(", ")}</NovaP>
 
         <NovaB>NPOs involved</NovaB>
         <NovaP>{nonprofits && nonprofits.map((n) => n.name).join(", ")}</NovaP>
 
         <NovaB>Team</NovaB>
-        <NovaP>{team && (team.map((t) => t.name)).join(", ")}</NovaP>
+        <NovaP>{team && team.map((t) => t.name).join(", ")}</NovaP>
       </CaseStudyTable>
       {/* {Image && (
           <img src={parseImageUrl(Image[0])} style={{ width: "100%" }} />
         )} */}
     </>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   height: 50vh;
@@ -231,7 +226,7 @@ const Container = styled.div`
   ${mobile} {
     margin-bottom: -48px;
   }
-`
+`;
 
 const PhoneRecordingDiv = styled.div`
   position: relative;
@@ -239,18 +234,18 @@ const PhoneRecordingDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-`
+`;
 
 const PhoneImg = styled.img`
   height: 100%;
   z-index: 2;
   position: relative;
   pointer-events: none;
-`
+`;
 
 const VideoImage = styled.img`
   height: 100%;
-`
+`;
 
 const PhoneRecording = ({ video, image }) => {
   return (
@@ -276,34 +271,35 @@ const PhoneRecording = ({ video, image }) => {
         </PhoneRecordingDiv>
       </Container>
     </React.Fragment>
-  )
-}
+  );
+};
 
 const CaseStudyVideoPreview = ({ name }) => {
-  console.log(name)
+  console.log(name);
   switch (name) {
     case "Coordinating Survival Kit Distribution":
       return (
         <PhoneRecording video={distributionVideo} image={distributionImage} />
-      )
+      );
     case "Project Ropa Offline Forms App":
       return (
         <PhoneRecording video={projectRopaVideo} image={projectRopaImage} />
-      )
+      );
     default:
-      return <></>
+      return <></>;
   }
-}
+};
 
 export default ({ data, pageContext }) => {
-
   const pageData = data.allContentfulProjectCaseStudy.nodes[0];
 
-  const articleContent = JSON.parse(pageData.bodyArticle.raw).content
-  const articleAssets = new Map(pageData.bodyArticle.references.map(i => [i.contentful_id, i]));
-  console.log(articleAssets)
-  console.log(articleContent)
-  console.log(data)
+  const articleContent = JSON.parse(pageData.bodyArticle.raw).content;
+  const articleAssets = new Map(
+    pageData.bodyArticle.references.map((i) => [i.contentful_id, i])
+  );
+  console.log(articleAssets);
+  console.log(articleContent);
+  console.log(data);
 
   return (
     <Layout>
@@ -321,7 +317,7 @@ export default ({ data, pageContext }) => {
               <React.Fragment key={idx}>
                 <Content node={node} articleAssets={articleAssets} />
               </React.Fragment>
-            )
+            );
           })}
           <NovaSpacer y={96} />
           <NovaH2 center>
@@ -332,13 +328,12 @@ export default ({ data, pageContext }) => {
         </SectionBox>
       </PageContainer>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($id: String) {
-
-    allContentfulProjectCaseStudy(filter: {id: {eq: $id}}) {
+    allContentfulProjectCaseStudy(filter: { id: { eq: $id } }) {
       nodes {
         id
         slug
@@ -384,4 +379,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

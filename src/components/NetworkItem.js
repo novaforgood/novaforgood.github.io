@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "@emotion/styled"
+import React from "react";
+import styled from "@emotion/styled";
 
-const mobile = `@media (max-width: 800px)`
+const mobile = `@media (max-width: 800px)`;
 
 export const NetworkDiv = styled.div`
   margin: 48px auto;
@@ -14,7 +14,7 @@ export const NetworkDiv = styled.div`
     grid-template-columns: 48% 48%;
     grid-column-gap: 4%;
   }
-`
+`;
 
 const CenterDiv = styled.div`
   display: flex;
@@ -27,19 +27,27 @@ const CenterDiv = styled.div`
     opacity: 1;
     filter: saturate(100%);
   }
-`
+`;
 
 const NetworkImg = styled.img`
   width: 100%;
-`
+`;
 
 export default ({ data }) => {
-
+  if (!data.logo) return <></>;
   return (
-    <a href={data.website} rel="noreferrer" target="_blank">
+    <a
+      href={data.website}
+      rel="noreferrer"
+      target="_blank"
+      style={{ minHeight: 80 }}
+    >
       <CenterDiv>
-        <NetworkImg alt={`${data.name} Cover`} src={data.logo.localFile.publicURL} />
+        <NetworkImg
+          alt={`${data.name} Cover`}
+          src={data.logo.localFile.publicURL}
+        />
       </CenterDiv>
     </a>
-  )
-}
+  );
+};

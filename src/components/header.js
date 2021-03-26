@@ -1,28 +1,28 @@
-import React from "react"
-import { Link } from "gatsby"
-import logo from "../assets/logo.svg"
-import "../styles/global.css"
-import styled from "@emotion/styled"
-import { NovaP, SparklyButton } from "./PageAssets"
-import { FaInfoCircle } from "react-icons/fa"
+import React from "react";
+import { Link } from "gatsby";
+import logo from "../assets/logo.svg";
+import "../styles/global.css";
+import styled from "@emotion/styled";
+import { NovaP, SparklyButton } from "./PageAssets";
+import { FaInfoCircle } from "react-icons/fa";
 
-const mobile = `@media (max-width: 800px)`
+const mobile = `@media (max-width: 800px)`;
 
 const DesktopView = styled("div")`
   ${mobile} {
     display: none;
   }
-`
+`;
 
 const Callout = styled.div`
   background: #282547;
-`
+`;
 
 const CalloutDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const CalloutP = styled(NovaP)`
   margin: 5px 20px;
@@ -30,10 +30,10 @@ const CalloutP = styled(NovaP)`
   ${mobile} {
     font-size: 10px;
   }
-`
+`;
 
-const DESKTOP_SIZE = 70
-const MOBILE_SIZE = 40
+const DESKTOP_SIZE = 70;
+const MOBILE_SIZE = 40;
 
 const LogoDiv = styled.div`
   transform: rotate(45deg);
@@ -58,7 +58,7 @@ const LogoDiv = styled.div`
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
   }
-`
+`;
 
 const Logo = styled.img`
   transform: rotate(-45deg);
@@ -66,7 +66,7 @@ const Logo = styled.img`
   -webkit-transform: rotate(-45deg);
   width: 100%;
   margin: 0;
-`
+`;
 
 const NavDiv = styled.div`
   display: flex;
@@ -84,7 +84,7 @@ const NavDiv = styled.div`
     padding: 10px;
     padding-top: 20px;
   }
-`
+`;
 
 const NavLink = styled(Link)`
   font-family: Rubik;
@@ -140,9 +140,9 @@ const NavLink = styled(Link)`
     font-size: 16px;
     margin-right: 5px;
   }
-`
+`;
 
-const NavButton = styled(SparklyButton)``
+const NavButton = styled(SparklyButton)``;
 
 export default function Header() {
   //   const [spacerHeight, setSpacerHeight] = useState(0)
@@ -165,19 +165,19 @@ export default function Header() {
 
   return (
     <React.Fragment>
-	  <a id="top">
-      <Callout id="callout">
-        <CalloutDiv>
-          <DesktopView>
-            <FaInfoCircle size={12} />
-          </DesktopView>
-          <CalloutP>
-            Due to COVID-19, Nova has gone remote. We're still hard at work on
-            projects, so contact us!
-          </CalloutP>
-        </CalloutDiv>
-      </Callout>
-	  </a>
+      <a id="top">
+        <Callout id="callout">
+          <CalloutDiv>
+            <DesktopView>
+              <FaInfoCircle size={12} />
+            </DesktopView>
+            <CalloutP>
+              Due to COVID-19, Nova has gone remote. We're still hard at work on
+              projects, so contact us!
+            </CalloutP>
+          </CalloutDiv>
+        </Callout>
+      </a>
       <NavDiv id="navbar">
         <LogoDiv>
           <Link to="/">
@@ -191,13 +191,14 @@ export default function Header() {
             alignItems: "center",
           }}
         >
-          {/* <NavLink activeClassName="active" to="/recruitment">
-            Recruitment
-          </NavLink> */}
-          <NavLink 
-            activeClassName="active" 
+          <NavLink activeClassName="active" to="/join">
+            Join
+          </NavLink>
+          <NavLink
+            activeClassName="active"
             style={{ marginLeft: "24px" }}
-            to="/about">
+            to="/about"
+          >
             About
           </NavLink>
           <NavLink
@@ -217,7 +218,7 @@ export default function Header() {
           <DesktopView>
             <NavButton
               style={{ marginLeft: "24px" }}
-			  rel="noreferrer"
+              rel="noreferrer"
               target="_blank"
               to="https://forms.gle/g6gmjG4uYwL1AP5T9"
               textColor="#000000"
@@ -233,5 +234,5 @@ export default function Header() {
         </div>
       </NavDiv>
     </React.Fragment>
-  )
+  );
 }

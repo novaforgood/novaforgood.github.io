@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import zoom from "../assets/zoom.svg"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import zoom from "../assets/zoom.svg";
 import {
   NovaSpacer,
   NovaH1,
@@ -10,19 +10,19 @@ import {
   NovaA,
   NovaLink,
   SectionBox,
-} from "../components/PageAssets"
-import styled from "@emotion/styled"
-import aboutleft from "../assets/aboutleft.svg"
-import workright from "../assets/workright.svg"
-import aboutleft2 from "../assets/aboutleft2.svg"
-import aboutright2 from "../assets/aboutright2.svg"
-import workleft2 from "../assets/workleft2.svg"
-import workright2 from "../assets/workright2.svg"
-import SEO from "../components/SEO"
-import LazyLoad from "react-lazyload"
-import "../styles/global.css"
+} from "../components/PageAssets";
+import styled from "@emotion/styled";
+import aboutleft from "../assets/aboutleft.svg";
+import workright from "../assets/workright.svg";
+import aboutleft2 from "../assets/aboutleft2.svg";
+import aboutright2 from "../assets/aboutright2.svg";
+import workleft2 from "../assets/workleft2.svg";
+import workright2 from "../assets/workright2.svg";
+import SEO from "../components/SEO";
+import LazyLoad from "react-lazyload";
+import "../styles/global.css";
 
-const mobile = `@media (max-width: 800px)`
+const mobile = `@media (max-width: 800px)`;
 
 const PDiv = styled.div`
   margin: 0 auto;
@@ -30,13 +30,13 @@ const PDiv = styled.div`
   ${mobile} {
     max-width: 500px;
   }
-`
+`;
 
 const NameA = styled(NovaA)`
   line-height: 140%;
-`
+`;
 
-const CW = 300 // Card width
+const CW = 300; // Card width
 
 const MemberCardLayout = styled("div")`
   width: 100%;
@@ -50,7 +50,7 @@ const MemberCardLayout = styled("div")`
     grid-row-gap: 50px;
     grid-column-gap: 8%;
   }
-`
+`;
 
 const MemberCardContainer = styled("div")`
   max-width: ${CW}px;
@@ -58,7 +58,7 @@ const MemberCardContainer = styled("div")`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-`
+`;
 
 const MemberCardImageContainer = styled("div")`
   display: flex;
@@ -82,7 +82,7 @@ const MemberCardImageContainer = styled("div")`
     width: 100px;
     height: 100px;
   }
-`
+`;
 const MemberCardImage = styled("img")`
   object-fit: cover;
   height: 100%;
@@ -99,7 +99,7 @@ const MemberCardImage = styled("img")`
   top: -20%;
   left: -20%;
   pointer-events: none; */
-`
+`;
 
 const JoinContain = styled.div`
   margin: 0 auto;
@@ -113,7 +113,7 @@ const JoinContain = styled.div`
     grid-template-columns: 100%;
     grid-row-gap: 48px;
   }
-`
+`;
 
 const JoinDiv = styled.div`
   margin: 0 auto;
@@ -122,11 +122,11 @@ const JoinDiv = styled.div`
   ${mobile} {
     width: 80%;
   }
-`
+`;
 
 const Img = styled.img`
   width: 100%;
-`
+`;
 
 const PageContainer = styled.div`
   position: relative;
@@ -140,24 +140,24 @@ const PageContainer = styled.div`
   ${mobile} {
     background: none;
   }
-`
+`;
 
 function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
-    randomIndex
+    randomIndex;
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
     // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex)
-    currentIndex -= 1
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
     // And swap it with the current element.
-    temporaryValue = array[currentIndex]
-    array[currentIndex] = array[randomIndex]
-    array[randomIndex] = temporaryValue
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
-  return array
+  return array;
 }
 
 const MemberCard = ({ name, imageURL, role, linkedin }) => {
@@ -184,11 +184,11 @@ const MemberCard = ({ name, imageURL, role, linkedin }) => {
       <NovaSpacer y={14} />
       <NovaDiv center>{role}</NovaDiv>
     </MemberCardContainer>
-  )
-}
-const Team = props => {
-  const memberData = shuffle(props.data.allContentfulMember.nodes)
-  console.log(memberData)
+  );
+};
+const Team = (props) => {
+  const memberData = shuffle(props.data.allContentfulMember.nodes);
+  console.log(memberData);
 
   return (
     <Layout>
@@ -211,14 +211,14 @@ const Team = props => {
           <MemberCardLayout>
             {memberData
               .filter(
-                person =>
+                (person) =>
                   person.name &&
                   person.name !== "Example Content" &&
                   person.name.length !== 0 &&
                   person.active
               )
-              .map(person => {
-                console.log(person)
+              .map((person) => {
+                console.log(person);
                 return (
                   <MemberCard
                     name={person.name}
@@ -226,7 +226,7 @@ const Team = props => {
                     role={person.role}
                     linkedin={person.linkedinURL}
                   />
-                )
+                );
               })}
           </MemberCardLayout>
         </SectionBox>
@@ -246,12 +246,11 @@ const Team = props => {
               </NovaP>
               <NovaSpacer y={24} />
               <NovaP>
-                We're recruiting right now! Apps are due 4/1. Find more
-                information and keep updated with us on{" "}
-                <NovaA underline href="https://www.facebook.com/novaforgood" target="_blank">
-                  Facebook
-                </NovaA>
-                !
+                We're recruiting right now! Apps are due 4/1. Visit the{" "}
+                <NovaLink underline to="/join">
+                  recruitment page
+                </NovaLink>{" "}
+                for more information!
               </NovaP>
             </JoinDiv>
             <JoinDiv>
@@ -269,49 +268,46 @@ const Team = props => {
         <SectionBox>
           <NovaH1 center>Alumni</NovaH1>
           <NovaSpacer y={96} />
-          <PDiv>
-            <NovaP center>
-            </NovaP>
-          </PDiv>
           <MemberCardLayout>
             {memberData
-            .filter(
-              person =>
-                person.name 
-                && person.name !== "Example Content" 
-                && person.name.length !== 0 
-                && !person.active
-            )
-            .map(person => {
-              return (
-                <AlumniCard
-                  name={person.name}
-                  linkedin={person.linkedinURL}
-                />
+              .filter(
+                (person) =>
+                  person.name &&
+                  person.name !== "Example Content" &&
+                  person.name.length !== 0 &&
+                  !person.active
               )
-            })}
+              .map((person) => {
+                return (
+                  <AlumniCard
+                    name={person.name}
+                    linkedin={person.linkedinURL}
+                  />
+                );
+              })}
           </MemberCardLayout>
         </SectionBox>
         <NovaSpacer y={96} />
       </PageContainer>
     </Layout>
-  )
-}
+  );
+};
 
-
-const AlumniCard = ({name, linkedin}) => {
+const AlumniCard = ({ name, linkedin }) => {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <NovaP>
+    <div
+      style={{ display: "flex", justifyContent: "center", textAlign: "center" }}
+    >
+      <NovaP center>
         <NovaA href={linkedin} target="_blank">
           <b>{name}</b>
         </NovaA>
       </NovaP>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;
 
 export const query = graphql`
   query {
@@ -332,4 +328,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
