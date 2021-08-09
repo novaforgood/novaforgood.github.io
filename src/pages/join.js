@@ -1,19 +1,18 @@
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import React from "react";
+import LazyLoad from "react-lazyload";
 import aboutleft from "../assets/aboutleft.svg";
 import aboutleft2 from "../assets/aboutleft2.svg";
 import aboutright2 from "../assets/aboutright2.svg";
 import workleft2 from "../assets/workleft2.svg";
 import workright from "../assets/workright.svg";
 import workright2 from "../assets/workright2.svg";
-import zoom from "../assets/zoom.svg";
 import Layout from "../components/Layout";
 import {
   NovaA,
   NovaDiv,
   NovaH1,
-  NovaLink,
   NovaP,
   NovaSpacer,
   SectionBox,
@@ -128,6 +127,7 @@ const Img = styled.img`
 `;
 
 const PageContainer = styled.div`
+  min-height: 50vh;
   position: relative;
   text-align: center;
   background-image: url(${workright}), url(${aboutleft}), url(${workright2}),
@@ -163,12 +163,14 @@ const MemberCard = ({ name, imageURL, role, linkedin }) => {
   return (
     <MemberCardContainer>
       <MemberCardImageContainer>
-        <MemberCardImage
-          src={
-            imageURL ||
-            "https://image.shutterstock.com/image-vector/smile-icon-vector-face-emoticon-260nw-1721368459.jpg"
-          }
-        />
+        <LazyLoad height={"100%"} once offset={100}>
+          <MemberCardImage
+            src={
+              imageURL ||
+              "https://image.shutterstock.com/image-vector/smile-icon-vector-face-emoticon-260nw-1721368459.jpg"
+            }
+          />
+        </LazyLoad>
       </MemberCardImageContainer>
       <NovaSpacer y={CW / 12} />
       <NovaDiv center>
@@ -178,149 +180,119 @@ const MemberCard = ({ name, imageURL, role, linkedin }) => {
           </NameA>
         </b>
       </NovaDiv>
-      <NovaSpacer y={14} />
+      <NovaSpacer y={20} />
       <NovaDiv center>{role}</NovaDiv>
     </MemberCardContainer>
   );
 };
-const Team = (props) => {
-  const memberData = shuffle(props.data.allContentfulMember.nodes);
-  console.log(memberData);
+const Recruitment = ({ data }) => {
+  const projectsData = data.allContentfulProjectCaseStudy.nodes;
 
   return (
     <Layout>
-      <SEO metaTitle={"Nova | Meet the Team"} />
+      <SEO metaTitle={"Nova | Join us"} />
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Meet the Team</NovaH1>
+          <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
-          <PDiv>
-            <NovaP center>
-              We are a close-knit group of CS, design, and business students at
-              UCLA, each actively participating in outreach, problem-solving,
-              and development. Come join us!
-            </NovaP>
-          </PDiv>
+          <NovaP>
+            Thanks for your interest—Nova will be recruiting again in{" "}
+            <b>Fall 2021!</b> Check back on this site at the beginning of the
+            quarter for more details.
+          </NovaP>
         </SectionBox>
-        <NovaSpacer y={96} />
-        <SectionBox>
-          <MemberCardLayout>
-            {memberData
-              .filter(
-                (person) =>
-                  person.name &&
-                  person.name !== "Example Content" &&
-                  person.name.length !== 0 &&
-                  person.active
-              )
-              .map((person) => {
-                console.log(person);
-                return (
-                  <MemberCard
-                    name={person.name}
-                    imageURL={person.profilePicture.localFile.publicURL}
-                    role={person.role}
-                    linkedin={person.linkedinURL}
-                  />
-                );
-              })}
-          </MemberCardLayout>
-        </SectionBox>
-        <NovaSpacer y={144} />
-        <SectionBox>
-          <a id="join">
-            <NovaH1 center>Join the Team</NovaH1>
-          </a>
+        {/* <SectionBox>
+          <NovaSpacer y={64} />
+          <NovaH1 center>Spring 2021 Recruitment</NovaH1>
           <NovaSpacer y={24} />
-          <JoinContain>
-            <JoinDiv>
-              <NovaP>
-                We're always looking to grow the family with fellow UCLA
-                students eager to use their skills to do good. Don't worry too
-                much about experience &#8212; we like to see drive and
-                potential.
-              </NovaP>
-              <NovaSpacer y={24} />
-              <NovaP>
-                We're recruiting right now! Apps are due 4/1. Visit the{" "}
-                <NovaLink underline to="/join">
-                  recruitment page
-                </NovaLink>{" "}
-                for more information!
-              </NovaP>
-            </JoinDiv>
-            <JoinDiv>
-              <Img src={zoom} alt="remote meetings" />
-            </JoinDiv>
-          </JoinContain>
-          <NovaSpacer y={20} />
-          {/* <Button backgroundColor="#CFCFCF" textColor="#000000">
-          Apply Here
-        </Button> */}
+          <NovaP>
+            Nova is recruiting developers, designers, project leads, and
+            outreach managers to join our team in Spring 2021. See below for
+            details on recruitment events, how to apply, and projects we've been
+            working on!
+          </NovaP>
+          <NovaSpacer y={64} />
+          <NovaH2>Important Links</NovaH2>
+          <NovaSpacer y={24} />
+          <NovaP>
+            <ListItem>
+              <NovaA
+                href="https://tinyurl.com/novaspringapp2021"
+                target="_blank"
+                underline
+              >
+                <b>Application</b>
+              </NovaA>{" "}
+              — <i>Due Thursday, 4/1 at 11:59pm PST!</i>
+            </ListItem>
+            <NovaSpacer y={12} />
+            <ListItem>
+              <NovaA
+                href="https://www.facebook.com/events/3874258672653674"
+                target="_blank"
+                underline
+              >
+                <b>Infosession Facebook Event</b>
+              </NovaA>{" "}
+              — Don't miss out on our infosessions, as we will have super
+              special guests from nonprofits to talk about the issues that we're
+              tackling together! <i>Dates: 3/28 and 4/1 at 6:00pm PST!</i>
+            </ListItem>
+            <NovaSpacer y={12} />
+            <ListItem>
+              <NovaA
+                href="https://www.instagram.com/novaforgood/"
+                underline
+                target="_blank"
+              >
+                <b>Instagram</b>
+              </NovaA>{" "}
+              — We will be posting daily updates here during recruitment. Follow
+              us!
+            </ListItem>
+          </NovaP>
+          <NovaSpacer y={64} />
+          <NovaH2>Ongoing Projects</NovaH2>
+          <NovaSpacer y={24} />
+          <NovaP>Here's a glimpse at our current projects:</NovaP>
+          <NovaSpacer y={36} />
+          <ProjectDiv>
+            {projectsData
+              .filter((node) => !node.featured && node.inProgress)
+              .sort((a, b) => (a.name < b.name ? 1 : -1))
+              .map((node, i) => (
+                <ProjectDropdown
+                  data={node}
+                  idx={i}
+                  // open={selectedDropdown === i}
+                  // onClick={() => {
+                  //   if (selectedDropdown === i) setSelectedDropdown(-1);
+                  //   else setSelectedDropdown(i);
+                  // }}
+                />
+              ))}
+          </ProjectDiv>
         </SectionBox>
-
-        <NovaSpacer y={144} />
-
-        <SectionBox>
-          <NovaH1 center>Alumni</NovaH1>
-          <NovaSpacer y={96} />
-          <MemberCardLayout>
-            {memberData
-              .filter(
-                (person) =>
-                  person.name &&
-                  person.name !== "Example Content" &&
-                  person.name.length !== 0 &&
-                  !person.active
-              )
-              .map((person) => {
-                return (
-                  <AlumniCard
-                    name={person.name}
-                    linkedin={person.linkedinURL}
-                  />
-                );
-              })}
-          </MemberCardLayout>
-        </SectionBox>
-        <NovaSpacer y={96} />
+        <NovaSpacer y={64} /> */}
       </PageContainer>
     </Layout>
   );
 };
 
-const AlumniCard = ({ name, linkedin }) => {
-  return (
-    <div
-      style={{ display: "flex", justifyContent: "center", textAlign: "center" }}
-    >
-      <NovaP center>
-        <NovaA href={linkedin} target="_blank">
-          <b>{name}</b>
-        </NovaA>
-      </NovaP>
-    </div>
-  );
-};
-
-export default Team;
+export default Recruitment;
 
 export const query = graphql`
   query {
-    allContentfulMember {
+    allContentfulProjectCaseStudy {
       nodes {
-        active
+        id
+        slug
         name
-        linkedinURL
-        role
-        profilePicture {
-          file {
-            url
-          }
-          localFile {
-            publicURL
-          }
+        featured
+        inProgress
+        description {
+          description
         }
       }
     }
