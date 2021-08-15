@@ -6,13 +6,24 @@ Built using Gatsby.js and Contentful :)
 
 ## Develop
 
+Add Contentful keys to `.env.development` file:
+```
+CONTENTFUL_SPACE_ID=
+CONTENTFUL_ACCESS_TOKEN=
+```
+
 ```
 yarn
-yarn clean
 yarn start
 ```
 
 ## Deploy
+
+Add Contentful keys to `.env.development` file:
+```
+CONTENTFUL_SPACE_ID=
+CONTENTFUL_ACCESS_TOKEN=
+```
 
 ```
 yarn deploy
