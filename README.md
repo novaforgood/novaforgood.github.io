@@ -12,6 +12,7 @@ CONTENTFUL_SPACE_ID=
 CONTENTFUL_ACCESS_TOKEN=
 ```
 
+Then, to start the project:
 ```
 yarn
 yarn start
@@ -25,6 +26,7 @@ CONTENTFUL_SPACE_ID=
 CONTENTFUL_ACCESS_TOKEN=
 ```
 
+Then, to deploy:
 ```
 yarn deploy
 ```
