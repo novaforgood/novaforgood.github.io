@@ -159,7 +159,7 @@ function shuffle(array) {
   return array;
 }
 
-const MemberCard = ({ name, imageURL, role, linkedin }) => {
+const MemberCard = ({ name, imageURL, projectList, linkedin }) => {
   return (
     <MemberCardContainer>
       <MemberCardImageContainer>
@@ -179,7 +179,7 @@ const MemberCard = ({ name, imageURL, role, linkedin }) => {
         </b>
       </NovaDiv>
       <NovaSpacer y={14} />
-      <NovaDiv center>{role}</NovaDiv>
+      <NovaDiv center>{projectList}</NovaDiv>
     </MemberCardContainer>
   );
 };
@@ -216,11 +216,12 @@ const Team = (props) => {
               )
               .map((person) => {
                 console.log(person);
+                const projects = person.project_case_study && person.project_case_study.map(p => p.name).join(", ")
                 return (
                   <MemberCard
                     name={person.name}
                     imageURL={person.profilePicture.localFile.publicURL}
-                    // role={person.role}
+                    // projectList={projects}
                     linkedin={person.linkedinURL}
                   />
                 );
@@ -314,6 +315,9 @@ export const query = graphql`
         name
         linkedinURL
         role
+        project_case_study {
+          name
+        }
         profilePicture {
           file {
             url
