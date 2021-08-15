@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import logo from "../assets/logo.svg";
 import "../styles/global.css";
 import styled from "@emotion/styled";
-import { NovaP, SparklyButton } from "./PageAssets";
+import { NovaP, NovaA, SparklyButton } from "./PageAssets";
 import { FaInfoCircle } from "react-icons/fa";
 
 const mobile = `@media (max-width: 800px)`;
@@ -173,7 +173,9 @@ export default function Header() {
             </DesktopView>
             <CalloutP>
               Due to COVID-19, Nova has gone remote. We're still hard at work on
-              projects, so contact us!
+              projects, so{" "}<NovaA
+                href="https://forms.gle/g6gmjG4uYwL1AP5T9">
+              contact us</NovaA>!
             </CalloutP>
           </CalloutDiv>
         </Callout>

@@ -122,7 +122,7 @@ const About = ({ data, pageContext }) => {
             It's this constant desire to learn and create that has brought
             together{" "}
             <NovaLink underline to={"/team"}>
-              20+ committed members
+              30+ committed members
             </NovaLink>{" "}
             working year-round on projects to help nonprofits serve their
             communities more effectively. We are a close-knit group of CS,

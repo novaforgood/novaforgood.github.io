@@ -135,7 +135,7 @@ export default function Footer() {
           <NovaP>
             {/* Last updated {month} {date}
             {nth(date)}, {year} */}
-            Last updated March 24th, 2021
+            Last updated August 15th, 2021
           </NovaP>
         </div>
         <LinkDiv>

@@ -190,16 +190,20 @@ const Recruitment = ({ data }) => {
 
   return (
     <Layout>
-      <SEO metaTitle={"Nova | Join us"} />
+      <SEO metaTitle={"Nova | Join Us"} />
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>
-            Thanks for your interest—Nova will be recruiting again in{" "}
-            <b>Fall 2021!</b> Check back on this site at the beginning of the
-            quarter for more details.
+            Thanks for your interest in Nova! We will be recruiting again in{" "}
+            <b>Fall 2021!</b>{" "}
+            Please fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfEM2GWqGStxpemyJeva0TBVatt2UHHBSTeozfrIRmtZkNwjA/viewform" target="_blank" underline>interest form</NovaA> 
+            {" "}and make sure to follow us on{" "}<NovaA href = "https://www.facebook.com/novaforgood" target="_blank" underline>Facebook</NovaA> 
+            {" "}and{" "}<NovaA href = "https://www.instagram.com/novaforgood/" target="_blank" underline>Instagram</NovaA> 
+            {" "}to receive updates on upcoming
+            recruitment events!
           </NovaP>
         </SectionBox>
         {/* <SectionBox>

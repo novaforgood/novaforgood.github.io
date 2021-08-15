@@ -199,7 +199,7 @@ const Team = (props) => {
             <NovaP center>
               We are a close-knit group of CS, design, and business students at
               UCLA, each actively participating in outreach, problem-solving,
-              and development. Come join us!
+              and development. 
             </NovaP>
           </PDiv>
         </SectionBox>
@@ -220,7 +220,7 @@ const Team = (props) => {
                   <MemberCard
                     name={person.name}
                     imageURL={person.profilePicture.localFile.publicURL}
-                    role={person.role}
+                    // role={person.role}
                     linkedin={person.linkedinURL}
                   />
                 );
@@ -243,7 +243,7 @@ const Team = (props) => {
               </NovaP>
               <NovaSpacer y={24} />
               <NovaP>
-                We're recruiting right now! Apps are due 4/1. Visit the{" "}
+                  Our Fall 2021 Recruitment events are coming up! Visit the{" "}
                 <NovaLink underline to="/join">
                   recruitment page
                 </NovaLink>{" "}

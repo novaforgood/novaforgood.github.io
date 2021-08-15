@@ -189,7 +189,7 @@ export default function Home({ data }) {
             under-resourced communities.
           </ListItem>
           <ListItem>
-            A team who strongly believes that we can make a difference.
+            A team that strongly believes in making a difference.
           </ListItem>
         </NovaP>
         {/* <NovaSpacer y={16} />
@@ -274,7 +274,7 @@ export default function Home({ data }) {
 
         <NovaSpacer y={160} />
 
-        <SectionBox>
+        {/* <SectionBox>
           <NovaH2>Our Sponsors</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
@@ -283,13 +283,13 @@ export default function Home({ data }) {
           <NovaSpacer y={12} />
           <NovaP>
             Interested in sponsoring Nova? Send us an e-mail at{" "}
-            <NovaA underline href="mailto:hello@novaforgood.org">
-              hello@novaforgood.org
+            <NovaA underline href="mailto:sponsorships@novaforgood.org">
+              sponsorships@novaforgood.org
             </NovaA>{" "}
             and we'll get back to you with details!
           </NovaP>
           <NovaSpacer y={12} />
-          {/* <NovaP>
+          <NovaP>
             Interested in becoming a partner or advisor?{" "}
             <NovaLink
               underline
@@ -301,14 +301,14 @@ export default function Home({ data }) {
             </NovaLink>{" "}
             — we’d love to talk to you!
           </NovaP>
-          <NovaSpacer y={24} /> */}
+          <NovaSpacer y={24} /> 
           <NetworkDiv>
             {data.allContentfulSponsor.nodes.map((node) => (
               <NetworkItem data={node} />
             ))}
           </NetworkDiv>
           <NovaSpacer y={48} />
-        </SectionBox>
+        </SectionBox> */}
       </BodyContainer>
       <DesktopView>
         <NovaSpacer y={300} />
