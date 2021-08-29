@@ -1,14 +1,14 @@
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
-import React, { useState } from "react"
-import Sparkles from "./Sparkle"
-import Fade from "react-reveal/fade"
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
+import React, { useState } from "react";
+import Sparkles from "./Sparkle";
+import Fade from "react-reveal/fade";
 
 const fonts = {
   main: "Prompt",
-}
+};
 
-const mobile = `@media (max-width: 800px)`
+export const mobile = `@media (max-width: 800px)`;
 
 export const NovaH1 = styled.div`
   font-family: ${fonts.main};
@@ -24,7 +24,7 @@ export const NovaH1 = styled.div`
   ${mobile} {
     font-size: 32px;
   }
-`
+`;
 export const NovaH2 = styled.div`
   font-family: ${fonts.main};
   font-style: normal;
@@ -40,7 +40,7 @@ export const NovaH2 = styled.div`
   ${mobile} {
     font-size: 24px;
   }
-`
+`;
 
 export const NovaH4 = styled.div`
   font-family: ${fonts.main};
@@ -57,7 +57,7 @@ export const NovaH4 = styled.div`
   ${mobile} {
     font-size: 18px;
   }
-`
+`;
 
 export const NovaDiv = styled.div`
   font-family: Rubik;
@@ -68,7 +68,7 @@ export const NovaDiv = styled.div`
   ${mobile} {
     font-size: ${({ fontSize }) => `${(2 / 3) * fontSize || 12}px`};
   }
-`
+`;
 
 export const NovaSpacer = styled.div`
   width: 100%;
@@ -76,7 +76,7 @@ export const NovaSpacer = styled.div`
   ${mobile} {
     height: ${({ mobileY, y }) => `${mobileY || (2 / 3) * y}`}px;
   }
-`
+`;
 
 export const MainBox = styled.div`
   margin-top: 100px;
@@ -88,7 +88,7 @@ export const MainBox = styled.div`
     width: 95%;
     min-width: 0;
   }
-`
+`;
 
 export const NovaP = styled.p`
   -webkit-font-smoothing: antialiased;
@@ -106,7 +106,7 @@ export const NovaP = styled.p`
   ${mobile} {
     font-size: 16px;
   }
-`
+`;
 
 export const Button = styled(Link)`
   color: ${({ textColor }) => `${textColor || "#FFFFFF"}`};
@@ -132,10 +132,10 @@ export const Button = styled(Link)`
     padding: 12px 15px;
     margin: 5px;
   }
-`
+`;
 
 export function SparklyButton(props) {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
   return (
     <Sparkles hide={!hover}>
       <Button
@@ -147,7 +147,7 @@ export function SparklyButton(props) {
         {props.children}
       </Button>
     </Sparkles>
-  )
+  );
 }
 
 const SectionBoxStyled = styled.div`
@@ -159,15 +159,15 @@ const SectionBoxStyled = styled.div`
     width: 95%;
     min-width: 0;
   }
-`
+`;
 
 export const SectionBox = ({ children }) => {
   return (
     <Fade>
       <SectionBoxStyled>{children}</SectionBoxStyled>
     </Fade>
-  )
-}
+  );
+};
 
 export const SectionHeading = styled(NovaH2)`
   font-family: ${fonts.main};
@@ -181,7 +181,7 @@ export const SectionHeading = styled(NovaH2)`
   margin: 0;
   /* identical to box height, or 65px */
   letter-spacing: 0.05em;
-`
+`;
 
 export const SectionSubHeading = styled.h2`
   font-family: ${fonts.main};
@@ -196,7 +196,7 @@ export const SectionSubHeading = styled.h2`
   ${mobile} {
     font-size: 20px;
   }
-`
+`;
 
 export const NovaLink = styled(Link)`
   color: #ffffff;
@@ -206,7 +206,7 @@ export const NovaLink = styled(Link)`
   &:hover {
     color: #ffc650;
   }
-`
+`;
 
 export const NovaA = styled.a`
   color: #ffffff;
@@ -217,7 +217,7 @@ export const NovaA = styled.a`
   &:hover {
     color: #ffc650;
   }
-`
+`;
 
 export const Img = styled.img`
   width: 100%;
@@ -228,7 +228,7 @@ export const Img = styled.img`
   ${mobile} {
     margin: 32px 0;
   }
-`
+`;
 
 export const Span = styled.span`
   font-family: Rubik;
@@ -238,7 +238,7 @@ export const Span = styled.span`
   line-height: 160%;
   /* or 22px */
   color: #d7a3e1;
-`
+`;
 
 export const ListItem = styled.li`
   list-style-type: none;
@@ -248,7 +248,7 @@ export const ListItem = styled.li`
   &::before {
     content: "•\xa0\xa0";
   }
-`
+`;
 
 const ArrowStyled = styled.b`
   color: #ffc650;
@@ -258,7 +258,7 @@ const ArrowStyled = styled.b`
   ${mobile} {
     font-size: 14px;
   }
-`
+`;
 export const Arrow = () => {
-  return <ArrowStyled>&#8594;&ensp;</ArrowStyled>
-}
+  return <ArrowStyled>&#8594;&ensp;</ArrowStyled>;
+};
