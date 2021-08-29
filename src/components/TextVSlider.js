@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { mobile, NovaH1 } from "./PageAssets";
+import Sparkles from "./Sparkle";
 
 // First pass: keyframes for the text slider will be fixed, so if user
 // were to add more elements, they would need to change the keyframes
@@ -19,18 +20,36 @@ const DimensionedDiv = styled.div`
   }
 `;
 
+// Vertical slider (move up)
+// Keeping just in case we want to revert.
+// const SlideV = keyframes`
+//   0% { bottom: 0; }
+//   16% { bottom: 0; }
+//   20% { bottom: 100%; }
+//   36% { bottom: 100%; }
+//   40% { bottom: 200%; }
+//   56% { bottom: 200%; }
+//   60% { bottom: 300%; }
+//   76% { bottom: 300%; }
+//   80% { bottom: 400%; }
+//   100% { bottom: 400%; }
+// `;
+
+// Vertical slider (move down)
 const SlideV = keyframes`
-  0% { bottom: 0; }
-  18% { bottom: 0; }
-  20% { bottom: 100%; }
-  38% { bottom: 100%; }
+  0% { bottom: 400%; }
+  16% { bottom: 400%; }
+  20% { bottom: 300%; }
+  36% { bottom: 300%; }
   40% { bottom: 200%; }
-  58% { bottom: 200%; }
-  60% { bottom: 300%; }
-  78% { bottom: 300%; }
-  80% { bottom: 400%; }
-  100% { bottom: 400%; }
+  56% { bottom: 200%; }
+  60% { bottom: 100%; }
+  76% { bottom: 100%; }
+  80% { bottom: 0%; }
+  100% { bottom: 0%; }
 `;
+
+// TODO: "for Good" horizontal re-centering
 
 const VWrap = styled(DimensionedDiv)`
   overflow: hidden;
@@ -52,13 +71,13 @@ const TextVSlider = (params) => {
   return (
     <VWrap>
       <VMove>
-        {verbs.map((verb) => {
+        {verbs.map((verb, i, a) => {
           return (
             // <VSlide as={NovaH1} center>
             //   <NovaH1 as center>{verb} for Good</NovaH1>
             // </VSlide>
             <VSlide as={NovaH1} center>
-              {verb} for Good
+              {a[a.length - i - 1]} for Good
             </VSlide>
           );
         })}
