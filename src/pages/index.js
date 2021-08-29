@@ -29,6 +29,7 @@ import {
   NovaA,
 } from "../components/PageAssets";
 import styled from "@emotion/styled";
+import TextVSlider from "../components/TextVSlider";
 
 const mobile = `@media (max-width: 800px)`;
 const notMobile = `@media (min-width: 801px)`;
@@ -140,8 +141,8 @@ export default function Home({ data }) {
           <MobileView>
             <NovaSpacer y={48} />
           </MobileView>
-          <NovaH1 center>Nova, Tech for Good.</NovaH1>
-          <NovaSpacer y={36} />
+          <TextVSlider />
+          <NovaSpacer y={34} />
           <Description center>
             We are a team of students at UCLA who aim to create high-impact
             technology that empowers nonprofits to better serve their
