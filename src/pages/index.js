@@ -18,6 +18,7 @@ import NetworkItem, { NetworkDiv } from "../components/NetworkItem";
 import {
   Arrow,
   ListItem,
+  NovaA,
   NovaH1,
   NovaH2,
   NovaLink,
