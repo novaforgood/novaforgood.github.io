@@ -199,7 +199,7 @@ const Team = (props) => {
             <NovaP center>
               We are a close-knit group of CS, design, and business students at
               UCLA, each actively participating in outreach, problem-solving,
-              and development. 
+              and development.
             </NovaP>
           </PDiv>
         </SectionBox>
@@ -216,11 +216,13 @@ const Team = (props) => {
               )
               .map((person) => {
                 console.log(person);
-                const projects = person.project_case_study && person.project_case_study.map(p => p.name).join(", ")
+                const projects =
+                  person.project_case_study &&
+                  person.project_case_study.map((p) => p.name).join(", ");
                 return (
                   <MemberCard
                     name={person.name}
-                    imageURL={person.profilePicture.localFile.publicURL}
+                    imageURL={person.profilePicture.file.url}
                     // projectList={projects}
                     linkedin={person.linkedinURL}
                   />
@@ -244,7 +246,7 @@ const Team = (props) => {
               </NovaP>
               <NovaSpacer y={24} />
               <NovaP>
-                  Our Fall 2021 Recruitment events are coming up! Visit the{" "}
+                Our Fall 2021 Recruitment events are coming up! Visit the{" "}
                 <NovaLink underline to="/join">
                   recruitment page
                 </NovaLink>{" "}
