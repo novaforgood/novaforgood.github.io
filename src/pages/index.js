@@ -18,6 +18,7 @@ import NetworkItem, { NetworkDiv } from "../components/NetworkItem";
 import {
   Arrow,
   ListItem,
+  NovaA,
   NovaH1,
   NovaH2,
   NovaLink,
@@ -290,11 +291,11 @@ export default function Home({ data }) {
 
         <NovaSpacer y={160} />
 
-        {/* <SectionBox>
-          <NovaH2>Our Sponsors</NovaH2>
+        <SectionBox>
+          <NovaH2>Our Partners</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
-            A huge thanks to our generous sponsors for supporting us!
+            A huge thanks to our generous partners for supporting us!
           </NovaP>
           <NovaSpacer y={12} />
           <NovaP>
@@ -324,7 +325,7 @@ export default function Home({ data }) {
             ))}
           </NetworkDiv>
           <NovaSpacer y={48} />
-        </SectionBox> */}
+        </SectionBox>
       </BodyContainer>
       <DesktopView>
         <NovaSpacer y={300} />
