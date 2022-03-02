@@ -195,13 +195,15 @@ const Recruitment = ({ data }) => {
     <Layout>
       <SEO metaTitle={"Nova | Join Us"} />
       <PageContainer>
-        {/* <SectionBox>
+        <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>
-            Thanks for your interest in Nova! We will be recruiting again in{" "}
-            <b>Fall 2021!</b> Please fill out this{" "}
+            Thanks for your interest in Nova! We appreciate you checking out our
+            website and the work that we do. Fall 2021 recruitment is now
+            closed, but please check back later for further updates! Please fill
+            out this{" "}
             <NovaA
               href="https://docs.google.com/forms/d/e/1FAIpQLSfEM2GWqGStxpemyJeva0TBVatt2UHHBSTeozfrIRmtZkNwjA/viewform"
               target="_blank"
@@ -227,89 +229,6 @@ const Recruitment = ({ data }) => {
             </NovaA>{" "}
             to receive updates on upcoming recruitment events!
           </NovaP>
-        </SectionBox> */}
-        <SectionBox>
-          <NovaSpacer y={64} />
-          <NovaH1 center>Fall 2021 Recruitment</NovaH1>
-          <NovaSpacer y={24} />
-          <NovaP>
-            This fall, Nova is looking for innovators and creators who are
-            passionate about harnessing technology for good to join our family!
-          </NovaP>
-          <NovaSpacer y={64} />
-          <NovaH2>Links</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>
-            <ListItem>
-              <NovaA
-                href="https://tinyurl.com/nova-fall2021app"
-                target="_blank"
-                underline
-              >
-                <b>Application</b>
-              </NovaA>{" "}
-              —{" "}
-              <i>
-                <b>Due:</b> Friday, 10/1 at 11:59pm PST!
-              </i>
-            </ListItem>
-
-            <NovaSpacer y={12} />
-            <ListItem>
-              <NovaA href="https://fb.me/e/1n7cnmoMC" target="_blank" underline>
-                <b>Infosession Facebook Event</b>
-              </NovaA>{" "}
-              — Don't miss out on our infosessions, as we will have super
-              special guests from nonprofits to talk about our projects!{" "}
-              <i>
-                <b>Dates:</b> Sunday 9/26 from 5-6PM, Tuesday 9/28 from 8-9PM
-              </i>
-            </ListItem>
-            <NovaSpacer y={12} />
-            <ListItem>
-              <NovaA
-                href="https://tinyurl.com/nova-fall2021rsvp "
-                target="_blank"
-                underline
-              >
-                <b>Infosession RSVP</b>
-              </NovaA>
-            </ListItem>
-
-            <NovaSpacer y={12} />
-            <ListItem>
-              <NovaA
-                href="https://www.instagram.com/novaforgood/"
-                underline
-                target="_blank"
-              >
-                <b>Instagram</b>
-              </NovaA>{" "}
-              — We will be posting daily updates here during recruitment. Follow
-              us!
-            </ListItem>
-          </NovaP>
-          <NovaSpacer y={64} />
-          <NovaH2>Ongoing Projects</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>Here's a glimpse at our current projects:</NovaP>
-          <NovaSpacer y={36} />
-          <ProjectDiv>
-            {projectsData
-              .filter((node) => !node.featured && node.inProgress)
-              .sort((a, b) => (a.name < b.name ? 1 : -1))
-              .map((node, i) => (
-                <ProjectDropdown
-                  data={node}
-                  idx={i}
-                  // open={selectedDropdown === i}
-                  // onClick={() => {
-                  //   if (selectedDropdown === i) setSelectedDropdown(-1);
-                  //   else setSelectedDropdown(i);
-                  // }}
-                />
-              ))}
-          </ProjectDiv>
         </SectionBox>
         <NovaSpacer y={64} />
       </PageContainer>
