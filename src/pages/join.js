@@ -195,7 +195,7 @@ const Recruitment = ({ data }) => {
     <Layout>
       <SEO metaTitle={"Nova | Join Us"} />
       <PageContainer>
-        {/* <SectionBox>
+        <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
@@ -207,34 +207,9 @@ const Recruitment = ({ data }) => {
             {" "}and{" "}<NovaA href = "https://www.instagram.com/novaforgood/" target="_blank" underline>Instagram</NovaA> 
             {" "}to receive updates on upcoming
             recruitment events!
-            <b>Fall 2021!</b> Please fill out this{" "}
-            <NovaA
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfEM2GWqGStxpemyJeva0TBVatt2UHHBSTeozfrIRmtZkNwjA/viewform"
-              target="_blank"
-              underline
-            >
-              interest form
-            </NovaA>{" "}
-            and make sure to follow us on{" "}
-            <NovaA
-              href="https://www.facebook.com/novaforgood"
-              target="_blank"
-              underline
-            >
-              Facebook
-            </NovaA>{" "}
-            and{" "}
-            <NovaA
-              href="https://www.instagram.com/novaforgood/"
-              target="_blank"
-              underline
-            >
-              Instagram
-            </NovaA>{" "}
-            to receive updates on upcoming recruitment events!
           </NovaP>
-        </SectionBox> */}
-        <SectionBox>
+        </SectionBox>
+        {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>Fall 2021 Recruitment</NovaH1>
           <NovaSpacer y={24} />
@@ -316,7 +291,7 @@ const Recruitment = ({ data }) => {
                 />
               ))}
           </ProjectDiv>
-        </SectionBox>
+        </SectionBox> */}
         <NovaSpacer y={64} />
       </PageContainer>
     </Layout>
