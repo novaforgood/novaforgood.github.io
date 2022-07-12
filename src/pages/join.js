@@ -198,7 +198,7 @@ const Recruitment = ({ data }) => {
           <NovaSpacer y={24} />
           <NovaP>
             Thanks for your interest in Nova! We will be recruiting again in{" "}
-            <b>Fall 2021!</b>{" "}
+            <b>Fall 2022!</b>{" "}
             Please fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfEM2GWqGStxpemyJeva0TBVatt2UHHBSTeozfrIRmtZkNwjA/viewform" target="_blank" underline>interest form</NovaA> 
             {" "}and make sure to follow us on{" "}<NovaA href = "https://www.facebook.com/novaforgood" target="_blank" underline>Facebook</NovaA> 
             {" "}and{" "}<NovaA href = "https://www.instagram.com/novaforgood/" target="_blank" underline>Instagram</NovaA> 
