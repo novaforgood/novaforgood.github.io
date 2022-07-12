@@ -10,13 +10,16 @@ import workright from "../assets/workright.svg";
 import workright2 from "../assets/workright2.svg";
 import Layout from "../components/Layout";
 import {
+  ListItem,
   NovaA,
   NovaDiv,
   NovaH1,
+  NovaH2,
   NovaP,
   NovaSpacer,
   SectionBox,
 } from "../components/PageAssets";
+import ProjectDropdown, { ProjectDiv } from "../components/ProjectDropdown";
 import SEO from "../components/SEO";
 import "../styles/global.css";
 
@@ -192,7 +195,7 @@ const Recruitment = ({ data }) => {
     <Layout>
       <SEO metaTitle={"Nova | Join Us"} />
       <PageContainer>
-        <SectionBox>
+        {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
@@ -204,45 +207,81 @@ const Recruitment = ({ data }) => {
             {" "}and{" "}<NovaA href = "https://www.instagram.com/novaforgood/" target="_blank" underline>Instagram</NovaA> 
             {" "}to receive updates on upcoming
             recruitment events!
+            <b>Fall 2021!</b> Please fill out this{" "}
+            <NovaA
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfEM2GWqGStxpemyJeva0TBVatt2UHHBSTeozfrIRmtZkNwjA/viewform"
+              target="_blank"
+              underline
+            >
+              interest form
+            </NovaA>{" "}
+            and make sure to follow us on{" "}
+            <NovaA
+              href="https://www.facebook.com/novaforgood"
+              target="_blank"
+              underline
+            >
+              Facebook
+            </NovaA>{" "}
+            and{" "}
+            <NovaA
+              href="https://www.instagram.com/novaforgood/"
+              target="_blank"
+              underline
+            >
+              Instagram
+            </NovaA>{" "}
+            to receive updates on upcoming recruitment events!
           </NovaP>
-        </SectionBox>
-        {/* <SectionBox>
+        </SectionBox> */}
+        <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Spring 2021 Recruitment</NovaH1>
+          <NovaH1 center>Fall 2021 Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>
-            Nova is recruiting developers, designers, project leads, and
-            outreach managers to join our team in Spring 2021. See below for
-            details on recruitment events, how to apply, and projects we've been
-            working on!
+            This fall, Nova is looking for innovators and creators who are
+            passionate about harnessing technology for good to join our family!
           </NovaP>
           <NovaSpacer y={64} />
-          <NovaH2>Important Links</NovaH2>
+          <NovaH2>Links</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
             <ListItem>
               <NovaA
-                href="https://tinyurl.com/novaspringapp2021"
+                href="https://tinyurl.com/nova-fall2021app"
                 target="_blank"
                 underline
               >
                 <b>Application</b>
               </NovaA>{" "}
-              — <i>Due Thursday, 4/1 at 11:59pm PST!</i>
+              —{" "}
+              <i>
+                <b>Due:</b> Friday, 10/1 at 11:59pm PST!
+              </i>
+            </ListItem>
+
+            <NovaSpacer y={12} />
+            <ListItem>
+              <NovaA href="https://fb.me/e/1n7cnmoMC" target="_blank" underline>
+                <b>Infosession Facebook Event</b>
+              </NovaA>{" "}
+              — Don't miss out on our infosessions, as we will have super
+              special guests from nonprofits to talk about our projects!{" "}
+              <i>
+                <b>Dates:</b> Sunday 9/26 from 5-6PM, Tuesday 9/28 from 8-9PM
+              </i>
             </ListItem>
             <NovaSpacer y={12} />
             <ListItem>
               <NovaA
-                href="https://www.facebook.com/events/3874258672653674"
+                href="https://tinyurl.com/nova-fall2021rsvp "
                 target="_blank"
                 underline
               >
-                <b>Infosession Facebook Event</b>
-              </NovaA>{" "}
-              — Don't miss out on our infosessions, as we will have super
-              special guests from nonprofits to talk about the issues that we're
-              tackling together! <i>Dates: 3/28 and 4/1 at 6:00pm PST!</i>
+                <b>Infosession RSVP</b>
+              </NovaA>
             </ListItem>
+
             <NovaSpacer y={12} />
             <ListItem>
               <NovaA
@@ -278,7 +317,7 @@ const Recruitment = ({ data }) => {
               ))}
           </ProjectDiv>
         </SectionBox>
-        <NovaSpacer y={64} /> */}
+        <NovaSpacer y={64} />
       </PageContainer>
     </Layout>
   );

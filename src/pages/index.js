@@ -1,34 +1,34 @@
-﻿import React from "react";
-import "../styles/global.css";
-import Layout from "../components/Layout";
-import CaseItem, { CaseDiv } from "../components/CaseItem";
-import NetworkItem, { NetworkDiv } from "../components/NetworkItem";
-import team from "../assets/team.png";
+﻿import styled from "@emotion/styled";
 import { graphql } from "gatsby";
-import mobileclouds from "../assets/mobileclouds.png";
-import clouds from "../assets/clouds.png";
-import city from "../assets/city.png";
-import coverstarsleft from "../assets/coverstarsleft.svg";
-import coverstarsright from "../assets/coverstarsright.svg";
+import React from "react";
 import aboutleft from "../assets/aboutleft.svg";
 import aboutright from "../assets/aboutright.svg";
+import city from "../assets/city.png";
+import clouds from "../assets/clouds.png";
+import coverstarsleft from "../assets/coverstarsleft.svg";
+import coverstarsright from "../assets/coverstarsright.svg";
+import mobileclouds from "../assets/mobileclouds.png";
+// import team from "../assets/team.png";
+import team from "../assets/team.jpg";
 import workleft from "../assets/workleft.svg";
 import workright from "../assets/workright.svg";
-import SEO from "../components/SEO";
+import CaseItem, { CaseDiv } from "../components/CaseItem";
+import Layout from "../components/Layout";
+import NetworkItem, { NetworkDiv } from "../components/NetworkItem";
 import {
+  Arrow,
+  ListItem,
+  NovaA,
   NovaH1,
   NovaH2,
-  NovaP,
-  SectionBox,
-  NovaSpacer,
   NovaLink,
+  NovaP,
+  NovaSpacer,
+  SectionBox,
   SparklyButton,
-  Img,
-  ListItem,
-  Arrow,
-  NovaA,
 } from "../components/PageAssets";
-import styled from "@emotion/styled";
+import SEO from "../components/SEO";
+import "../styles/global.css";
 
 const mobile = `@media (max-width: 800px)`;
 const notMobile = `@media (min-width: 801px)`;
@@ -117,6 +117,18 @@ const BodyContainer = styled.div`
   }
 `;
 
+export const TeamImage = styled.img`
+  width: 100%;
+  margin: 48px 0;
+  max-height: ${({ maxHeight }) => maxHeight || "auto"};
+  min-height: ${({ minHeight }) => minHeight || "auto"};
+  object-fit: cover;
+  object-position: left bottom;
+  ${mobile} {
+    margin: 32px 0;
+  }
+`;
+
 export default function Home({ data }) {
   return (
     <Layout>
@@ -197,7 +209,12 @@ export default function Home({ data }) {
           Most importantly, we're a team that strongly believes that we can{" "}
           <b>change the world.</b>
         </NovaP> */}
-        <Img src={team} minHeight={"350px"} maxHeight={"45vh"} alt="The Team" />
+        <TeamImage
+          src={team}
+          minHeight={"470px"}
+          maxHeight={"45vh"}
+          alt="The Team"
+        />
         <NovaP>
           <Arrow />
           <NovaLink underline to="/about">
@@ -274,11 +291,11 @@ export default function Home({ data }) {
 
         <NovaSpacer y={160} />
 
-        {/* <SectionBox>
-          <NovaH2>Our Sponsors</NovaH2>
+        <SectionBox>
+          <NovaH2>Our Partners</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
-            A huge thanks to our generous sponsors for supporting us!
+            A huge thanks to our generous partners for supporting us!
           </NovaP>
           <NovaSpacer y={12} />
           <NovaP>
@@ -308,7 +325,7 @@ export default function Home({ data }) {
             ))}
           </NetworkDiv>
           <NovaSpacer y={48} />
-        </SectionBox> */}
+        </SectionBox>
       </BodyContainer>
       <DesktopView>
         <NovaSpacer y={300} />
