@@ -197,26 +197,91 @@ const Recruitment = ({ data }) => {
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Recruitment</NovaH1>
+          <NovaH1 center>Fall 2022 Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>
             Thanks for your interest in Nova! We will be recruiting again in{" "}
             <b>Fall 2022!</b>{" "}
-            Please fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfMp0p7tqPaNZqq-eQ3ery1VbtPNfn7Q0rvmOGwC6DG_oCreg/viewform" target="_blank" underline>interest form</NovaA> 
-            {" "}and make sure to follow us on{" "}<NovaA href = "https://www.facebook.com/novaforgood" target="_blank" underline>Facebook</NovaA> 
+            Please 
+            {/* fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfMp0p7tqPaNZqq-eQ3ery1VbtPNfn7Q0rvmOGwC6DG_oCreg/viewform" target="_blank" underline>interest form</NovaA>  */}
+            {" "}make sure to follow us on{" "}<NovaA href = "https://www.facebook.com/novaforgood" target="_blank" underline>Facebook</NovaA> 
             {" "}and{" "}<NovaA href = "https://www.instagram.com/novaforgood/" target="_blank" underline>Instagram</NovaA> 
             {" "}to receive updates on upcoming
             recruitment events!
           </NovaP>
         </SectionBox>
-        {/* <SectionBox>
+        <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Fall 2021 Recruitment</NovaH1>
+          <NovaH2>Links</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
-            This fall, Nova is looking for innovators and creators who are
-            passionate about harnessing technology for good to join our family!
+            <ListItem>
+              <NovaA
+                href="https://tinyurl.com/nova-fall2022app"
+                target="_blank"
+                underline
+              >
+                <b>Application</b>
+              </NovaA>{" "}
+              —{" "}
+              <i>
+                <b>Due:</b> Monday, 10/3 at 11:59pm PST!
+              </i>
+            </ListItem>
+            <NovaSpacer y={12} />
+            <ListItem>
+              <NovaA
+                href="https://tinyurl.com/nova-fall2022rsvp "
+                target="_blank"
+                underline
+              >
+                <b>Infosession RSVP</b>
+              </NovaA>
+            </ListItem>
+            <NovaSpacer y={12} />
+            <ListItem>
+              <NovaA href="https://ucla.zoom.us/j/92038295876?pwd=cHlnQmdIYjVoTlVreCsySmNIemNIUT09" target="_blank" underline>
+                <b>Infosession #1</b>
+              </NovaA>{" "}
+              —{" "}
+              <i>
+                 Sunday, 9/25 from 7-8pm PST [Zoom]{" "}
+              </i>
+            </ListItem>
+            <NovaSpacer y={12} />
+            <ListItem>
+              <NovaA href="https://fb.me/e/1n7cnmoMC" target="_blank" underline>
+                <b>Infosession #2</b>
+              </NovaA>{" "}
+              —{" "}
+              <i>
+                 Tuesday, 9/27 from 8-9pm PST [Startup UCLA | 203 Covel Commons] {" "}
+              </i>
+            </ListItem>
           </NovaP>
+          {/* <NovaSpacer y={64} />
+          <NovaH2>Ongoing Projects</NovaH2>
+          <NovaSpacer y={24} />
+          <NovaP>Here's a glimpse at our current projects:</NovaP>
+          <NovaSpacer y={36} />
+          <ProjectDiv>
+            {projectsData
+              .filter((node) => !node.featured && node.inProgress)
+              .sort((a, b) => (a.name < b.name ? 1 : -1))
+              .map((node, i) => (
+                <ProjectDropdown
+                  data={node}
+                  idx={i}
+                  // open={selectedDropdown === i}
+                  // onClick={() => {
+                  //   if (selectedDropdown === i) setSelectedDropdown(-1);
+                  //   else setSelectedDropdown(i);
+                  // }}
+                />
+              ))}
+          </ProjectDiv> */}
+        </SectionBox>
+        {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH2>Links</NovaH2>
           <NovaSpacer y={24} />

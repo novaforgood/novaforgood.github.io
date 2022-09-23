@@ -165,7 +165,7 @@ export default function Header() {
 
   return (
     <React.Fragment>
-      <a id="top">
+      {/* <a id="top">
         <Callout id="callout">
           <CalloutDiv>
             <DesktopView>
@@ -179,7 +179,7 @@ export default function Header() {
             </CalloutP>
           </CalloutDiv>
         </Callout>
-      </a>
+      </a> */}
       <NavDiv id="navbar">
         <LogoDiv>
           <Link to="/">
