@@ -197,20 +197,18 @@ const Recruitment = ({ data }) => {
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Fall 2022 Recruitment</NovaH1>
+          <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>
-            Thanks for your interest in Nova! We will be recruiting again in{" "}
-            <b>Fall 2022!</b>{" "}
+            Thanks for your interest in Nova! Fall 2022 recruitment has ended.{" "}
             Please 
             {/* fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfMp0p7tqPaNZqq-eQ3ery1VbtPNfn7Q0rvmOGwC6DG_oCreg/viewform" target="_blank" underline>interest form</NovaA>  */}
             {" "}make sure to follow us on{" "}<NovaA href = "https://www.facebook.com/novaforgood" target="_blank" underline>Facebook</NovaA> 
             {" "}and{" "}<NovaA href = "https://www.instagram.com/novaforgood/" target="_blank" underline>Instagram</NovaA> 
-            {" "}to receive updates on upcoming
-            recruitment events!
-          </NovaP>
+            {" "}to stay up to date on future recruitment announcements!
+           </NovaP>
         </SectionBox>
-        <SectionBox>
+        {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH2>Links</NovaH2>
           <NovaSpacer y={24} />
@@ -258,7 +256,7 @@ const Recruitment = ({ data }) => {
                  Tuesday, 9/27 from 8-9pm PST [Startup UCLA | 203 Covel Commons] {" "}
               </i>
             </ListItem>
-          </NovaP>
+          </NovaP> */}
           {/* <NovaSpacer y={64} />
           <NovaH2>Ongoing Projects</NovaH2>
           <NovaSpacer y={24} />
@@ -280,7 +278,7 @@ const Recruitment = ({ data }) => {
                 />
               ))}
           </ProjectDiv> */}
-        </SectionBox>
+        {/* </SectionBox> */}
         {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH2>Links</NovaH2>
