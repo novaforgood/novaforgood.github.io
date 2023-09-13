@@ -3,13 +3,13 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M84.0927 263.914L82.7714 258.683L81.4575 263.885L78.1418 264.627L81.4244 265.362L82.7717 270.696L84.1265 265.332L87.2767 264.627L84.0927 263.914Z" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M36.2867 23.9143L37.608 18.6833L38.9219 23.8848L42.2375 24.6271L38.955 25.362L37.6077 30.6959L36.2529 25.3323L33.1027 24.6271L36.2867 23.9143Z" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M68.4333 248.369L66.381 240.244L64.3404 248.323L59.1897 249.476L64.2878 250.617L66.3804 258.902L68.4847 250.571L73.3771 249.476L68.4333 248.369Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M51.9461 8.36906L53.9984 0.243896L56.039 8.32261L61.1897 9.47569L56.0916 10.617L53.999 18.9017L51.8947 10.5711L47.0023 9.47583L51.9461 8.36906Z" fill="#FA522B"/>
-<circle r="3" transform="matrix(-1 0 0 1 84.1897 138.244)" fill="#FA522B"/>
-<circle r="3" transform="matrix(-1 0 0 1 6.1897 72.2439)" fill="#FFC650"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M51.9461 8.36906L53.9984 0.243896L56.039 8.32261L61.1897 9.47569L56.0916 10.617L53.999 18.9017L51.8947 10.5711L47.0023 9.47583L51.9461 8.36906Z" fill="white"/>
+<circle r="3" transform="matrix(-1 0 0 1 84.1897 138.244)" fill="white"/>
+<circle r="3" transform="matrix(-1 0 0 1 6.1897 72.2439)" fill="white"/>
 <circle r="1.5" transform="matrix(-1 0 0 1 79.6897 102.744)" fill="white"/>
 <circle cx="118.69" cy="276.744" r="1.5" fill="white"/>
-<circle r="1.5" transform="matrix(-1 0 0 1 1.6897 36.7439)" fill="#FFC650"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M63.3396 360.049L61.2872 351.924L59.2466 360.002L54.0959 361.155L59.194 362.297L61.2867 370.581L63.3909 362.251L68.2834 361.156L63.3396 360.049Z" fill="#D7A3E1"/>
-<circle r="1.5" transform="matrix(-1 0 0 1 118.596 533.424)" fill="#FFC650"/>
-<circle r="1.5" transform="matrix(-1 0 0 1 98.5959 533.424)" fill="#FFC650"/>
+<circle r="1.5" transform="matrix(-1 0 0 1 1.6897 36.7439)" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M63.3396 360.049L61.2872 351.924L59.2466 360.002L54.0959 361.155L59.194 362.297L61.2867 370.581L63.3909 362.251L68.2834 361.156L63.3396 360.049Z" fill="white"/>
+<circle r="1.5" transform="matrix(-1 0 0 1 118.596 533.424)" fill="white"/>
+<circle r="1.5" transform="matrix(-1 0 0 1 98.5959 533.424)" fill="white"/>
 </svg>

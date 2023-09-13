@@ -44,9 +44,21 @@
   src: url("../../static/fonts/Alata-Regular.ttf");
 }
 
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../../static/fonts/SpaceGrotesk-Regular.otf");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../../static/fonts/SpaceGrotesk-Medium.otf");
+  font-weight: bold;
+}
+
 html {
-  background-color: #000000;
-  color: #ffffff;
+  /* background-color: #ff0000; */
+  background-image: linear-gradient(#c5e6f5, #e9bfe3, #c95981);
+  color: #013668;
   margin: 0;
   padding: 0;
 }

@@ -14,6 +14,10 @@ import aboutleft from "../assets/aboutleft.svg";
 import aboutright from "../assets/aboutright.svg";
 import aboutleft2 from "../assets/aboutleft2.svg";
 import aboutright2 from "../assets/aboutright2.svg";
+import pic1 from "../assets/devsnova.jpg";
+import pic2 from "../assets/willieholdsstar.jpg";
+import pic3 from "../assets/heartstgt.jpg";
+import pic4 from "../assets/designerstar.jpg";
 import SEO from "../components/SEO";
 import "../styles/global.css";
 
@@ -91,7 +95,7 @@ const About = ({ data, pageContext }) => {
       <NovaSpacer y={64} />
       <PageContainer>
         <SectionBox>
-          <NovaH1 center>About</NovaH1>
+          <NovaH1 center>about</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>Hey there, we're Nova!</NovaP>
           <NovaSpacer y={12} />
@@ -107,14 +111,8 @@ const About = ({ data, pageContext }) => {
 
           <ImageDiv>
             {/* <Img src={"https://i.imgur.com/sWmJ2c8.png"} alt={"cannot load image"} /> */}
-            <Img
-              src={"https://i.imgur.com/5PEUGBB.jpg"}
-              alt={"cannot load image"}
-            />
-            <Img
-              src={"https://i.imgur.com/mzNGAU0.png"}
-              alt={"cannot load image"}
-            />
+            <Img src={pic1} alt={"cannot load image"} />
+            <Img src={pic2} alt={"cannot load image"} />
           </ImageDiv>
 
           <NovaSpacer y={24} />
@@ -122,7 +120,7 @@ const About = ({ data, pageContext }) => {
             It's this constant desire to learn and create that has brought
             together{" "}
             <NovaLink underline to={"/team"}>
-              30+ committed members
+              40+ committed members
             </NovaLink>{" "}
             working year-round on projects to help nonprofits serve their
             communities more effectively. We are a close-knit group of CS,
@@ -131,14 +129,8 @@ const About = ({ data, pageContext }) => {
           </NovaP>
 
           <ImageDiv>
-            <Img
-              src={"https://i.imgur.com/H9y64NF.png"}
-              alt={"cannot load image"}
-            />
-            <Img
-              src={"https://i.imgur.com/QMVhakQ.png"}
-              alt={"cannot load image"}
-            />
+            <Img src={pic3} alt={"cannot load image"} />
+            <Img src={pic4} alt={"cannot load image"} />
           </ImageDiv>
 
           <NovaSpacer y={24} />

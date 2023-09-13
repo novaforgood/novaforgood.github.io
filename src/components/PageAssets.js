@@ -5,7 +5,7 @@ import Fade from "react-reveal/fade";
 import Sparkles from "./Sparkle";
 
 const fonts = {
-  main: "Prompt",
+  main: "SpaceGrotesk",
 };
 
 const mobile = `@media (max-width: 800px)`;
@@ -17,6 +17,7 @@ export const NovaH1 = styled.div`
   font-size: 48px;
   line-height: 135%;
   /* identical to box height, or 65px */
+  color: #013668;
 
   text-align: ${({ center }) => (center ? "center" : "left")};
   letter-spacing: 0.05em;
@@ -35,7 +36,7 @@ export const NovaH2 = styled.div`
   text-align: ${({ center }) => (center ? "center" : "left")};
   letter-spacing: 0.05em;
   margin: 0;
-  color: ${({ color }) => color || "white"};
+  color: #013668;
 
   ${mobile} {
     font-size: 24px;
@@ -60,7 +61,7 @@ export const NovaH4 = styled.div`
 `;
 
 export const NovaDiv = styled.div`
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   line-height: ${({ lineHeight }) => `${lineHeight || "100%"}`};
   font-size: ${({ fontSize }) => `${fontSize || 20}px`};
   text-align: ${({ center }) => (center ? "center" : "left")};
@@ -93,7 +94,7 @@ export const MainBox = styled.div`
 export const NovaP = styled.p`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -101,7 +102,7 @@ export const NovaP = styled.p`
   width: ${({ width }) => width || "auto"};
   /* or 38px */
   text-align: ${({ center }) => (center ? "center" : "left")};
-  color: #ebebeb;
+  color: #013668;
   margin: 0;
   ${mobile} {
     font-size: 16px;
@@ -111,11 +112,11 @@ export const NovaP = styled.p`
 export const Button = styled(Link)`
   color: ${({ textColor }) => `${textColor || "#FFFFFF"}`};
   background-color: ${({ backgroundColor }) =>
-    `${backgroundColor || "#FFC650"}`};
+    `${backgroundColor || "#00A0FF"}`};
   border: ${({ borderColor }) => `1.5px solid ${borderColor || "#000000"}`};
   box-sizing: border-box;
   border-radius: ${({ borderRadius }) => `${borderRadius || "10px"}`};
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: 600;
   line-height: 160%;
@@ -154,7 +155,7 @@ const SectionBoxStyled = styled.div`
   width: 50%;
   min-width: 760px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0);
   ${mobile} {
     width: 95%;
     min-width: 0;
@@ -199,12 +200,12 @@ export const SectionSubHeading = styled.h2`
 `;
 
 export const NovaLink = styled(Link)`
-  color: #ffffff;
+  color: #013668;
   text-decoration: none;
   border-bottom: ${({ underline }) =>
-    underline ? "2px solid #FFC650" : "none"};
+    underline ? "2px solid #013668" : "none"};
   &:hover {
-    color: #ffc650;
+    color: #013668;
   }
 `;
 
@@ -212,10 +213,12 @@ export const NovaA = styled.a`
   color: #ffffff;
   text-decoration: none;
   border-bottom: ${({ underline }) =>
-    underline ? "2px solid #FFC650" : "none"};
+    underline ? "2px solid #ffffff" : "none"};
 
   &:hover {
-    color: #ffc650;
+    color: #013668;
+    border-bottom: ${({ underline }) =>
+      underline ? "2px solid #013668" : "none"};
   }
 `;
 
@@ -231,13 +234,13 @@ export const Img = styled.img`
 `;
 
 export const Span = styled.span`
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 160%;
   /* or 22px */
-  color: #d7a3e1;
+  color: #ffffff;
 `;
 
 export const ListItem = styled.li`
@@ -251,7 +254,7 @@ export const ListItem = styled.li`
 `;
 
 const ArrowStyled = styled.b`
-  color: #ffc650;
+  color: #013668;
   font-family: Prompt;
   font-size: 24px;
   font-weight: 900;

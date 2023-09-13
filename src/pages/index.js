@@ -165,21 +165,22 @@ export default function Home({ data }) {
         <ButtonDiv>
           <SparklyButton
             to="/join"
-            textColor="#FFFFFF"
-            backgroundColor="#000000"
-            borderColor="#FFC650"
+            textColor="#ffffff"
+            backgroundColor="#78C7F6"
+            borderColor="#78C7F6"
           >
-            Join the Team
+            join the team
           </SparklyButton>
           <MobileView>
             <NovaSpacer y={12} />
           </MobileView>
           <SparklyButton
             to="/work"
-            textColor="#07042D"
-            backgroundColor="#FFC650"
+            textColor="#ffffff"
+            backgroundColor="#78C7F6"
+            borderColor="#78C7F6"
           >
-            See Our Work
+            see our work
           </SparklyButton>
         </ButtonDiv>
 
@@ -189,7 +190,7 @@ export default function Home({ data }) {
       <NovaSpacer y={40} />
 
       <SectionBox>
-        <NovaH2>Who are we?</NovaH2>
+        <NovaH2>who are we?</NovaH2>
         <NovaSpacer y={24} />
         <NovaP>
           <ListItem>
@@ -227,7 +228,7 @@ export default function Home({ data }) {
 
       <BodyContainer>
         <SectionBox>
-          <NovaH2>We create solutions.</NovaH2>
+          <NovaH2>we create solutions.</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
             We were founded on the belief that even small solutions have the
@@ -250,7 +251,7 @@ export default function Home({ data }) {
 
         <SectionBox>
           <PageHeightContainer>
-            <NovaH2>Our Network</NovaH2>
+            <NovaH2>our network</NovaH2>
             <NovaSpacer y={24} />
             <NovaP>
               We wouldn't be able to do what we love alone. We’re grateful for
@@ -281,10 +282,11 @@ export default function Home({ data }) {
               rel="noreferrer"
               target="_blank"
               to="https://forms.gle/g6gmjG4uYwL1AP5T9"
-              textColor="#07042D"
-              backgroundColor="#FFC650"
+              textColor="#013668"
+              backgroundColor="#C5E6F5"
+              borderColor="#C5E6F5"
             >
-              Work with Us
+              work with us
             </SparklyButton>
           </PageHeightContainer>
         </SectionBox>
@@ -292,7 +294,7 @@ export default function Home({ data }) {
         <NovaSpacer y={160} />
 
         <SectionBox>
-          <NovaH2>Our Partners</NovaH2>
+          <NovaH2>our partners</NovaH2>
           <NovaSpacer y={24} />
           <NovaP>
             A huge thanks to our generous partners for supporting us!
@@ -318,7 +320,7 @@ export default function Home({ data }) {
             </NovaLink>{" "}
             — we’d love to talk to you!
           </NovaP>
-          <NovaSpacer y={24} /> 
+          <NovaSpacer y={24} />
           <NetworkDiv>
             {data.allContentfulSponsor.nodes.map((node) => (
               <NetworkItem data={node} />

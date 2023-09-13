@@ -43,7 +43,7 @@ const Work = ({ data, pageContext }) => {
       <PageContainer>
         <NovaSpacer y={64} />
         <SectionBox>
-          <NovaH1 center>Our Work</NovaH1>
+          <NovaH1 center>our work</NovaH1>
           <NovaSpacer y={24} />
           <NovaP>
             Take a look at some of the projects we are working on now or have
@@ -63,7 +63,7 @@ const Work = ({ data, pageContext }) => {
               ))}
           </CaseDiv>
           <NovaSpacer y={144} />
-          <NovaH2>More of our work</NovaH2>
+          <NovaH2>more of our work</NovaH2>
           <NovaSpacer y={36} />
           <ProjectDiv>
             {projectsData

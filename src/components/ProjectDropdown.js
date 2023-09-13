@@ -1,19 +1,17 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { NovaP, NovaLink, NovaSpacer } from "./PageAssets"
-import { FaExternalLinkAlt } from "react-icons/fa"
-import {
-	isMobile
-} from "react-device-detect"
+import React from "react";
+import styled from "@emotion/styled";
+import { NovaP, NovaLink, NovaSpacer } from "./PageAssets";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { isMobile } from "react-device-detect";
 
-const mobile = `@media (max-width: 800px)`
+const mobile = `@media (max-width: 800px)`;
 
-const iconSize = isMobile ? 12 : 18
+const iconSize = isMobile ? 12 : 18;
 
 const Hr = styled.hr`
   width: 100%;
-  border: 1px solid rgba(196, 196, 196, 0.5);
-`
+  border: 1px solid #e9bfe3;
+`;
 
 const ContainDiv = styled.div`
   width: 100%;
@@ -21,64 +19,64 @@ const ContainDiv = styled.div`
   grid-template-columns: 150px auto 24px;
   grid-column-gap: 30px;
   ${mobile} {
-  	  grid-template-columns: 74px auto 16px;
-	  grid-column-gap: 20px;
+    grid-template-columns: 74px auto 16px;
+    grid-column-gap: 20px;
   }
-`
+`;
 
 const LeftDiv = styled.div`
   place-self: start;
-  font-family: Prompt;
+  font-family: SpaceGrotesk;
   font-size: 20px;
   text-align: left;
   ${mobile} {
     font-size: 14px;
   }
-`
+`;
 
 const MiddleDiv = styled.div`
   place-self: left;
   ${mobile} {
   }
-`
+`;
 
 const RightDiv = styled.div`
   place-self: right;
-`
+`;
 
 const SubheaderContain = styled.div`
-	display: grid;
-	grid-template-columns: 150px auto;
-	grid-column-gap: 30px;
-	${mobile} {
-		grid-template-columns: 74px auto;
-		grid-column-gap: 20px;
-	}
-`
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-column-gap: 30px;
+  ${mobile} {
+    grid-template-columns: 74px auto;
+    grid-column-gap: 20px;
+  }
+`;
 
 const Subheader = styled.div`
-	font-family: Rubik;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 18px;
-	text-align: left;
-	color: #565656;
-	${mobile} {
-		font-size: 12px;
-	}
-`
+  font-family: SpaceGrotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  color: #ffffff;
+  ${mobile} {
+    font-size: 12px;
+  }
+`;
 
 export function ProjectDiv({ children }) {
-	return(
-		<>
-			<SubheaderContain>
-				<Subheader>PARTNER</Subheader>
-				<Subheader>PROJECT DESCRIPTION</Subheader>
-			</SubheaderContain>
-			{children}
-			<Hr/>
-		</>
-	)
+  return (
+    <>
+      <SubheaderContain>
+        <Subheader>PARTNER</Subheader>
+        <Subheader>PROJECT DESCRIPTION</Subheader>
+      </SubheaderContain>
+      {children}
+      <Hr />
+    </>
+  );
 }
 
 // const Description = styled(NovaP)`
@@ -112,7 +110,7 @@ const Body = styled.div`
 */
 
 export default ({ data, onClick, open, idx }) => {
-  const { name, description, slug } = data
+  const { name, description, slug } = data;
 
   // let ImageURL = parseImageUrl(Image[0], 1000)
   // const [maxHeight, setMaxHeight] = useState(0)
@@ -127,23 +125,23 @@ export default ({ data, onClick, open, idx }) => {
       <NovaSpacer y={12} />
 
       <ContainDiv>
-          <LeftDiv>
-            <b>{name}</b>
-          </LeftDiv>
-          <MiddleDiv>
-            <NovaP>{description && description.description}</NovaP>
-          </MiddleDiv>
-          <RightDiv>
-             <NovaLink to={`/work/${slug}`}>
-                <FaExternalLinkAlt size={iconSize}/>
-              </NovaLink>
-          </RightDiv>
+        <LeftDiv>
+          <b>{name}</b>
+        </LeftDiv>
+        <MiddleDiv>
+          <NovaP>{description && description.description}</NovaP>
+        </MiddleDiv>
+        <RightDiv>
+          <NovaLink to={`/work/${slug}`}>
+            <FaExternalLinkAlt size={iconSize} />
+          </NovaLink>
+        </RightDiv>
         {/* <Body open={open} maxHeight={maxHeight} id={`accordion_${idx}`}>
           <Img src={ImageURL} onLoad={() => {}}></Img>
         </Body> */}
       </ContainDiv>
 
-	  <NovaSpacer y={12} />
+      <NovaSpacer y={12} />
     </div>
-  )
-}
+  );
+};

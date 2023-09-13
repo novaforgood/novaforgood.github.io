@@ -37,12 +37,12 @@ const ImgContainer = styled.figure`
 `;
 
 const SpanDiv = styled.figcaption`
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   /* or 22px */
-  color: #d7a3e1;
+  color: #ffffff;
   margin-top: 8px;
   width: 100%;
   display: table-caption;
@@ -321,9 +321,9 @@ export default ({ data, pageContext }) => {
           })}
           <NovaSpacer y={96} />
           <NovaH2 center>
-            <NovaLink underline to="#top">
+            {/* <NovaLink underline to="#top">
               &#8593; Back to Top
-            </NovaLink>
+            </NovaLink> */}
           </NovaH2>
         </SectionBox>
       </PageContainer>

@@ -1,14 +1,14 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import image from "../assets/meta.jpg"
+import React from "react";
+import { Helmet } from "react-helmet";
+import image from "../assets/meta.jpg";
 
 export default ({ metaTitle, metaDescription }) => {
   // METADATA
 
-  const title = metaTitle || "Nova, Tech for Good"
+  const title = metaTitle || "Nova, Tech for Good";
   const description =
     metaDescription ||
-    "We are a team of students at UCLA who aim to create high-impact technology that empowers nonprofits to better serve their communities."
+    "We are a team of students at UCLA who aim to create high-impact technology that empowers nonprofits to better serve their communities.";
 
   return (
     <Helmet
@@ -48,5 +48,5 @@ export default ({ metaTitle, metaDescription }) => {
         },
       ]}
     />
-  )
-}
+  );
+};

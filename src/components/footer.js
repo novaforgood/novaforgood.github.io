@@ -54,7 +54,7 @@ const FooterDiv = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: Prompt;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -72,14 +72,14 @@ const Title = styled.h2`
 `;
 
 const NavLink = styled(NovaLink)`
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 160%;
   /* identical to box height, or 29px */
 
-  color: #e5e5e5;
+  color: #ffffff;
 
   ${mobile} {
     font-size: 12px;
@@ -111,10 +111,10 @@ export default function Footer() {
       <FooterDiv>
         <div>
           <NovaH4>
-            <span style={{ fontFamily: "Alata", fontWeight: "400" }}>
+            <span style={{ fontFamily: "SpaceGrotesk", fontWeight: "400" }}>
               &#169;
             </span>{" "}
-            2021 Nova for Good
+            2023 Nova for Good
           </NovaH4>
           <NovaSpacer y={12} />
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
@@ -132,30 +132,30 @@ export default function Footer() {
             </IconLink>
           </div>
           <NovaSpacer y={12} />
-          <NovaP>
+          <NovaP style={{ color: "white" }}>
             {/* Last updated {month} {date}
             {nth(date)}, {year} */}
-            Last updated August 15th, 2021
+            Last updated September 12th, 2023
           </NovaP>
         </div>
         <LinkDiv>
           <LinkBox>
-            <Title>General</Title>
+            <Title>general</Title>
             <NovaSpacer y={12} />
-            <NavLink to="/work">Projects</NavLink>
+            <NavLink to="/work">projects</NavLink>
             <NovaSpacer y={12} />
-            <NavLink to="/team">Our Team</NavLink>
+            <NavLink to="/team">our team</NavLink>
           </LinkBox>
           <LinkBox>
-            <Title>For Students</Title>
+            <Title>for students</Title>
             <NovaSpacer y={12} />
-            <NavLink to="/join">Join the Team</NavLink>
+            <NavLink to="/join">join the team</NavLink>
           </LinkBox>
           <LinkBox>
-            <Title>For Nonprofits</Title>
+            <Title>for nonprofits</Title>
             <NovaSpacer y={12} />
             <NavLink target="_blank" to="https://forms.gle/g6gmjG4uYwL1AP5T9">
-              Work with Us
+              work with us
             </NavLink>
           </LinkBox>
         </LinkDiv>

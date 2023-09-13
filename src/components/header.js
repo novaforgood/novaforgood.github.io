@@ -64,7 +64,7 @@ const Logo = styled.img`
   transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-  width: 100%;
+  width: 80%;
   margin: 0;
 `;
 
@@ -78,7 +78,7 @@ const NavDiv = styled.div`
   z-index: 1000;
   padding: 48px 64px 0px 64px;
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0);
 
   ${mobile} {
     padding: 10px;
@@ -87,7 +87,7 @@ const NavDiv = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  font-family: Rubik;
+  font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -96,7 +96,7 @@ const NavLink = styled(Link)`
   /* identical to box height, or 32px */
 
   text-decoration: none;
-  color: #ffffff;
+  color: #013668;
   position: relative;
 
   &::before {
@@ -106,7 +106,7 @@ const NavLink = styled(Link)`
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #fa522b;
+    background-color: #e9bfe3;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
     z-index: -1;
@@ -119,7 +119,7 @@ const NavLink = styled(Link)`
 
   /*
   &:hover {
-    border-bottom: 3px solid #fa522b;
+    border-bottom: 3px solid #00A0FF;
     margin-bottom: -4px;
   }
   */
@@ -132,7 +132,7 @@ const NavLink = styled(Link)`
       height: 3px;
       bottom: 0;
       left: 0;
-      background-color: #d7a3e1;
+      background-color: #c95981;
     }
   }
 
@@ -198,28 +198,28 @@ export default function Header() {
             style={{ marginLeft: "24px" }}
             to="/about"
           >
-            About
+            about
           </NavLink>
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "24px" }}
             to="/work"
           >
-            Work
+            work
           </NavLink>
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "24px" }}
             to="/team"
           >
-            Our Team
+            our team
           </NavLink>
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "24px" }}
             to="/join"
           >
-            Join
+            join
           </NavLink>
           <DesktopView>
             <NavButton
@@ -227,14 +227,14 @@ export default function Header() {
               rel="noreferrer"
               target="_blank"
               to="https://forms.gle/g6gmjG4uYwL1AP5T9"
-              textColor="#000000"
-              backgroundColor="#FFC650"
-              borderColor="#000000"
+              textColor="#ffffff"
+              backgroundColor="#C95981"
+              borderColor="#C95981"
               disappear
               padding="8px 30px"
               borderRadius="4px"
             >
-              Work with Us
+              work with us
             </NavButton>
           </DesktopView>
         </div>

@@ -7,7 +7,7 @@ import aboutright2 from "../assets/aboutright2.svg";
 import workleft2 from "../assets/workleft2.svg";
 import workright from "../assets/workright.svg";
 import workright2 from "../assets/workright2.svg";
-import zoom from "../assets/zoom.svg";
+import zoom from "../assets/zoom.jpg";
 import Layout from "../components/Layout";
 import {
   NovaA,
@@ -193,7 +193,7 @@ const Team = (props) => {
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>Meet the Team</NovaH1>
+          <NovaH1 center>meet the team</NovaH1>
           <NovaSpacer y={24} />
           <PDiv>
             <NovaP center>
@@ -233,7 +233,7 @@ const Team = (props) => {
         <NovaSpacer y={144} />
         <SectionBox>
           <a id="join">
-            <NovaH1 center>Join the Team</NovaH1>
+            <NovaH1 center>join the team</NovaH1>
           </a>
           <NovaSpacer y={24} />
           <JoinContain>
@@ -246,7 +246,7 @@ const Team = (props) => {
               </NovaP>
               <NovaSpacer y={24} />
               <NovaP>
-                Our Fall 2021 Recruitment events are coming up! Visit the{" "}
+                Our Fall 2023 Recruitment events are coming up! Visit the{" "}
                 <NovaLink underline to="/join">
                   recruitment page
                 </NovaLink>{" "}
@@ -266,7 +266,7 @@ const Team = (props) => {
         <NovaSpacer y={144} />
 
         <SectionBox>
-          <NovaH1 center>Alumni</NovaH1>
+          <NovaH1 center>alumni</NovaH1>
           <NovaSpacer y={96} />
           <MemberCardLayout>
             {memberData
