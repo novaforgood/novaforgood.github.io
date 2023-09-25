@@ -22,7 +22,7 @@
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "aws-sdk": "^2.723.0",
-    "gatsby": "^2.23.22",
+    "gatsby": "^2.25.00",
     "gatsby-cli": "^2.12.64",
     "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-react-helmet": "^5.18.0",

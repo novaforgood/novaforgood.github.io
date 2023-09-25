@@ -1,7 +1,11 @@
-const path = require(`path`)
+const path = require(`path`);
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 exports.createPages = async ({ graphql, actions, reporter }, options) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   await graphql(`
     query {
@@ -14,9 +18,9 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      reporter.panic(result.errors)
+      reporter.panic(result.errors);
     }
     result.data.allContentfulProjectCaseStudy.edges.forEach(({ node }) => {
       createPage({
@@ -26,7 +30,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
           pathSlug: node.slug,
           id: node.id,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};

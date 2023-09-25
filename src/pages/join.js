@@ -223,8 +223,19 @@ const Recruitment = ({ data }) => {
           <NovaSpacer y={24} />
           <NovaH4 center>applications open</NovaH4>
           <NovaSpacer y={12} />
-          <NovaP center>SEPTEMBER 26 | 12PM</NovaP>
+          {/* <NovaP center>SEPTEMBER 25 | 2PM</NovaP> */}
           <NovaP center>
+            Apply now @{" "}
+            <NovaA
+              href="https://tinyurl.com/nova-f23app"
+              target="_blank"
+              underline
+              style={{ color: "#013668", borderBottomColor: "#013668" }}
+            >
+              https://tinyurl.com/nova-f23app
+            </NovaA>{" "}
+          </NovaP>
+          {/* <NovaP center>
             Make sure to follow us on{" "}
             <NovaA
               href="https://www.facebook.com/novaforgood"
@@ -244,7 +255,7 @@ const Recruitment = ({ data }) => {
               Instagram
             </NovaA>{" "}
             to stay up to date on future recruitment announcements!
-          </NovaP>
+          </NovaP> */}
           <NovaSpacer y={24} />
           <NovaH4 center>infosession #1</NovaH4>
           <NovaSpacer y={12} />
