@@ -19,7 +19,9 @@ import {
   Arrow,
   ListItem,
   NovaA,
+  NovaH0,
   NovaH1,
+  NovaSub,
   NovaH2,
   NovaLink,
   NovaP,
@@ -74,6 +76,9 @@ const City = styled.img`
   width: 100%;
   object-fit: cover;
   z-index: -1;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const CoverStarsLeft = styled.img`
@@ -152,7 +157,8 @@ export default function Home({ data }) {
           <MobileView>
             <NovaSpacer y={48} />
           </MobileView>
-          <NovaH1 center>Nova, Tech for Good.</NovaH1>
+          <NovaH0 center>Nova</NovaH0>
+          <NovaSub center>TECH FOR GOOD</NovaSub>
           <NovaSpacer y={36} />
           <Description center>
             We are a team of students at UCLA who aim to create high-impact

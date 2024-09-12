@@ -10,6 +10,42 @@ const fonts = {
 
 const mobile = `@media (max-width: 800px)`;
 
+export const NovaH0 = styled.div`
+  font-family: "TheBillion";
+  font-style: normal;
+  font-weight: 100px;
+  font-size: 200px;
+  line-height: 60%;
+  /* identical to box height, or 65px */
+  color: #013668;
+
+  text-align: ${({ center }) => (center ? "center" : "left")};
+  // letter-spacing: 0.05em;
+
+  ${mobile} {
+    font-size: 100px;
+  }
+`;
+
+export const NovaSub = styled.div`
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: SpaceGrotesk;
+  font-style: normal;
+  font-weight: 60px;
+  font-size: 24px;
+  line-height: 150%;
+  width: ${({ width }) => width || "auto"};
+  /* or 38px */
+  text-align: ${({ center }) => (center ? "center" : "left")};
+  color: #013668;
+  margin-left: 6%;
+  ${mobile} {
+    margin-left: 10%;
+    font-size: 13px;
+  }
+`;
+
 export const NovaH1 = styled.div`
   font-family: ${fonts.main};
   font-style: normal;

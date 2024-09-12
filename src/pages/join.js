@@ -219,12 +219,12 @@ const Recruitment = ({ data }) => {
         </SectionBox>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH2 center>fall 2023: reach for the stars</NovaH2>
+          <NovaH2 center>fall 2024: to the moon & back</NovaH2>
           <NovaSpacer y={24} />
           <NovaH4 center>applications open</NovaH4>
           <NovaSpacer y={12} />
-          {/* <NovaP center>SEPTEMBER 25 | 2PM</NovaP> */}
-          <NovaP center>
+          <NovaP center>SEPTEMBER 23 | 2PM</NovaP>
+          {/* <NovaP center>
             Apply now @{" "}
             <NovaA
               href="https://tinyurl.com/nova-f23app"
@@ -234,8 +234,8 @@ const Recruitment = ({ data }) => {
             >
               https://tinyurl.com/nova-f23app
             </NovaA>{" "}
-          </NovaP>
-          {/* <NovaP center>
+          </NovaP> */}
+          <NovaP center>
             Make sure to follow us on{" "}
             <NovaA
               href="https://www.facebook.com/novaforgood"
@@ -255,8 +255,10 @@ const Recruitment = ({ data }) => {
               Instagram
             </NovaA>{" "}
             to stay up to date on future recruitment announcements!
-          </NovaP> */}
-          <NovaSpacer y={24} />
+          </NovaP>
+
+          {/* uncomment this when apps open:  */}
+          {/* <NovaSpacer y={24} />
           <NovaH4 center>infosession #1</NovaH4>
           <NovaSpacer y={12} />
           <NovaP center> OCTOBER 1 | 7PM</NovaP>
@@ -293,7 +295,8 @@ const Recruitment = ({ data }) => {
           <NovaH4 center>interviews</NovaH4>
           <NovaSpacer y={12} />
           <NovaP center> OCTOBER 15-20</NovaP>
-          <NovaP center>Invite only</NovaP>
+          <NovaP center>Invite only</NovaP> */}
+
           {/* <NovaSpacer y={64} />
           <NovaH2>Links</NovaH2>
           <NovaSpacer y={24} />

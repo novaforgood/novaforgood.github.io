@@ -55,9 +55,15 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "TheBillion";
+  src: url("../../static/fonts/The-Billion.ttf");
+  font-weight: bold;
+}
+
 html {
   /* background-color: #ff0000; */
-  background-image: linear-gradient(#c5e6f5, #e9bfe3, #c95981);
+  background-image: linear-gradient(#c5e6f5, #7eaecf, #396097);
   color: #013668;
   margin: 0;
   padding: 0;
