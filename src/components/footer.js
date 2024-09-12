@@ -114,7 +114,7 @@ export default function Footer() {
             <span style={{ fontFamily: "SpaceGrotesk", fontWeight: "400" }}>
               &#169;
             </span>{" "}
-            2023 Nova for Good
+            2024 nova for good
           </NovaH4>
           <NovaSpacer y={12} />
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
@@ -135,7 +135,7 @@ export default function Footer() {
           <NovaP style={{ color: "white" }}>
             {/* Last updated {month} {date}
             {nth(date)}, {year} */}
-            Last updated September 12th, 2023
+            Last updated September 12th, 2024
           </NovaP>
         </div>
         <LinkDiv>
