@@ -73,7 +73,7 @@ const NavDiv = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  position: relative;
+  position: fixed;
   top: 0;
   z-index: 1000;
   padding: 48px 64px 0px 64px;
@@ -87,7 +87,8 @@ const NavDiv = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  font-family: SpaceGrotesk;
+  font-family: "Space Mono";
+  text-transform: uppercase;s
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -96,17 +97,17 @@ const NavLink = styled(Link)`
   /* identical to box height, or 32px */
 
   text-decoration: none;
-  color: #013668;
+  color: black;s
   position: relative;
 
-  &::before {
+  /*&::before {
     content: "";
     position: absolute;
     width: 0;
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #e9bfe3;
+    background-color: black;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
     z-index: -1;
@@ -117,24 +118,25 @@ const NavLink = styled(Link)`
     width: 100%;
   }
 
-  /*
-  &:hover {
-    border-bottom: 3px solid #00A0FF;
-    margin-bottom: -4px;
-  }
-  */
-
+  
   &.active {
     &.active::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      bottom: 0;
-      left: 0;
-      background-color: #c95981;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        }
+}*/
+
+    /*
+    &:hover {
+        border-bottom: 3px solid #00A0FF;
+        margin-bottom: -4px;
     }
-  }
+    */
 
   ${mobile} {
     font-size: 16px;
@@ -142,7 +144,12 @@ const NavLink = styled(Link)`
   }
 `;
 
-const NavButton = styled(SparklyButton)``;
+const NavButton = styled(SparklyButton)`
+  background-color: black;
+  border-color: black;
+  color: white;
+  font-family: "Space Mono";
+`;
 
 export default function Header() {
   //   const [spacerHeight, setSpacerHeight] = useState(0)
@@ -193,27 +200,27 @@ export default function Header() {
             alignItems: "center",
           }}
         >
-          <NavLink
+          {/* <NavLink
             activeClassName="active"
-            style={{ marginLeft: "24px" }}
+            style={{ marginLeft: "14px" }}
             to="/about"
           >
             about
           </NavLink>
           <NavLink
             activeClassName="active"
-            style={{ marginLeft: "24px" }}
+            style={{ marginLeft: "14px" }}
             to="/work"
           >
             work
           </NavLink>
           <NavLink
             activeClassName="active"
-            style={{ marginLeft: "24px" }}
+            style={{ marginLeft: "14px" }}
             to="/team"
           >
             our team
-          </NavLink>
+          </NavLink> */}
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "24px" }}

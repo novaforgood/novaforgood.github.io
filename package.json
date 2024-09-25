@@ -22,8 +22,10 @@
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "aws-sdk": "^2.723.0",
+    "classnames": "^2.5.1",
     "gatsby": "^2.25.00",
     "gatsby-cli": "^2.12.64",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-react-helmet": "^5.18.0",
     "gatsby-source-contentful": "4.6.3",
@@ -45,7 +47,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "gatsby-plugin-postcss": "^6.13.1",
+    "gatsby-plugin-postcss": "5",
     "postcss": "^8.4.47",
     "prettier": "2.0.5",
     "tailwindcss": "^3.4.13"

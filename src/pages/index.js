@@ -1,27 +1,27 @@
-﻿import styled from "@emotion/styled";
+﻿import classNames from "classnames";
+import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import React from "react";
 import aboutleft from "../assets/aboutleft.svg";
 import aboutright from "../assets/aboutright.svg";
-import city from "../assets/city.png";
-import clouds from "../assets/clouds.png";
 import coverstarsleft from "../assets/coverstarsleft.svg";
 import coverstarsright from "../assets/coverstarsright.svg";
-import mobileclouds from "../assets/mobileclouds.png";
 // import team from "../assets/team.png";
-import team from "../assets/team.jpg";
 import workleft from "../assets/workleft.svg";
 import workright from "../assets/workright.svg";
+import HeaderColorGradient from "../assets/24-25/header-color-gradient.webp";
+import NovaHeaderBg from "../assets/24-25/nova-header-bg.svg";
+import NovaHeaderCircle from "../assets/24-25/nova-header-circle.svg";
+import NovaHeaderFg from "../assets/24-25/nova-header-fg.svg";
+import BlueBlur from "../assets/24-25/blue-blur.svg";
+import NovaTeam from "../assets/24-25/nova-team.webp";
+import GoldStars1 from "../assets/24-25/gold-stars-1.webp";
+import GoldStars2 from "../assets/24-25/gold-stars-2.webp";
 import CaseItem, { CaseDiv } from "../components/CaseItem";
 import Layout from "../components/Layout";
 import NetworkItem, { NetworkDiv } from "../components/NetworkItem";
 import {
-  Arrow,
-  ListItem,
   NovaA,
-  NovaH0,
-  NovaH1,
-  NovaSub,
   NovaH2,
   NovaLink,
   NovaP,
@@ -138,8 +138,157 @@ export default function Home({ data }) {
   return (
     <Layout>
       <SEO />
-      <City src={city} />
-      <PageHeightContainer height="90vh">
+      {/* <City src={city} /> */}
+
+      <div
+        className={classNames(
+          "bg-white mobile:bg-black h-screen w-screen relative",
+          "desktop:bg-gradient-to-b from-white via-[#FFE7FF] to-[#AFCFFF]"
+        )}
+      >
+        <img
+          src={NovaHeaderCircle}
+          alt="Nova Header Circle"
+          className="absolute top-0 left-0 w-screen h-screen object-cover mobile:hidden"
+        />
+
+        <img
+          src={NovaHeaderBg}
+          alt="Nova Header Background"
+          className="absolute top-0 left-0 w-screen h-screen object-cover opacity-60 mix-blend-multiply mobile:hidden"
+        />
+
+        <img
+          src={HeaderColorGradient}
+          alt="Header Color Gradient"
+          className="absolute top-0 left-0 w-screen h-screen object-cover mix-blend-color mobile:hidden"
+        />
+
+        <img
+          src={NovaHeaderFg}
+          alt="Nova Header Foreground"
+          className="absolute top-0 left-0 w-screen h-screen object-cover opacity-60 mobile:hidden"
+        />
+
+        <img
+          src={BlueBlur}
+          alt="Blue Blur"
+          className="absolute top-0 left-0 w-screen h-screen object-cover mix-blend-plus-darker mobile:hidden"
+        />
+
+        <div className="h-screen desktop:w-1/2 mobile:w-full flex flex-col justify-center items-center absolute top-0 left-0 desktop:pl-24 mobile:px-8">
+          <h1
+            className={classNames(
+              "text-[10rem] font-normal text w-full font-display -ml-6 mobile:text-[6rem]",
+              "text-white"
+            )}
+            style={{
+              // text glow effect
+              textShadow: "0px 0px 2rem #FB9D87",
+            }}
+          >
+            NOVA
+          </h1>
+          <h2
+            className={classNames(
+              "desktop:text-[3rem] font-normal text w-full font-body text-white mobile: text-4xl"
+            )}
+          >
+            TECH FOR GOOD
+          </h2>
+
+          <p
+            className={classNames(
+              "text-white text-2xl font-normal text mt-16 font-body"
+            )}
+          >
+            We are a team of students at UCLA who aim to create high-impact
+            technology that empowers nonprofits to better serve their
+            communities.
+          </p>
+
+          <div className="flex  items-center flex-row w-full">
+            <SparklyButton
+              to="/join"
+              textColor="#ffffff"
+              backgroundColor="#78C7F6"
+              borderColor="#78C7F6"
+              className="!mt-8 !bg-transparent ring-2 ring-white !border-none !ml-0 mobile:!ml-2"
+            >
+              JOIN THE TEAM
+            </SparklyButton>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-8 z-50">
+          <p className="text-white text-lg font-normal text font-body">
+            2024-2025
+          </p>
+          <p className="text-white text-lg font-normal text font-body">
+            “TO THE MOON & BACK”
+          </p>
+        </div>
+
+        <img
+          src={GoldStars1}
+          alt="Gold Stars 1"
+          className="absolute top-[10vh] left-[50vw] h-[80vh] object-cover mobile:hidden"
+        />
+      </div>
+
+      <div
+        className={classNames(
+          "bg-black min-h-screen w-screen flex flex-row desktop:pl-12 relative mobile:flex-col"
+        )}
+      >
+        <div className="desktop:w-[40%] h-full desktop:h-screen desktop:px-12 mobile:px-8 flex justify-center items-center flex-col mobile:w-full">
+          <h1
+            className={classNames(
+              " text-6xl font-normal text-center pt-20 w-full font-display"
+              //   "bg-gradient-to-r from-[#F855C4] to-[#EF751D] bg-clip-text text-transparent"
+            )}
+            style={{
+              // gradient text effect
+              background: "linear-gradient(90deg, #F855C4, #EF751D)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            WHO ARE WE?
+          </h1>
+          <ul className="text-white text-2xl font-normal text-left pt-20 w-full font-body list-disc pl-8">
+            <li>
+              Developers, designers, and businesspeople who{" "}
+              <span className="text-[#F855C4]">love</span> to solve problems.
+            </li>
+            <li>
+              Students who seek to{" "}
+              <span className="text-[#DA8BE9]">better understand</span> the
+              realities of under-resourced communities.
+            </li>
+            <li>
+              A team that{" "}
+              <span className="text-[#FB9D87]">strongly believes</span> in
+              making a difference.
+            </li>
+          </ul>
+        </div>
+        <div className="flex justify-center items-center flex-1 flex-col overflow-hidden">
+          <img
+            src={NovaTeam}
+            alt="Nova Team"
+            className="object-cover mobile:w-[200vw] mobile:max-w-none"
+          />
+        </div>
+
+        <img
+          src={GoldStars2}
+          alt="Gold Stars 2"
+          className="absolute top-[-10vh] right-[10vw] h-[120vh] object-cover mobile:hidden"
+        />
+      </div>
+
+      {/* <PageHeightContainer height="90vh">
         <DesktopView>
           <CoverStarsLeft src={coverstarsleft} />
           <CoverStarsRight src={coverstarsright} />
@@ -191,9 +340,9 @@ export default function Home({ data }) {
         </ButtonDiv>
 
         <NovaSpacer y={160} />
-      </PageHeightContainer>
+      </PageHeightContainer> */}
 
-      <NovaSpacer y={40} />
+      {/* <NovaSpacer y={40} />
 
       <SectionBox>
         <NovaH2>who are we?</NovaH2>
@@ -211,11 +360,6 @@ export default function Home({ data }) {
             A team that strongly believes in making a difference.
           </ListItem>
         </NovaP>
-        {/* <NovaSpacer y={16} />
-        <NovaP>
-          Most importantly, we're a team that strongly believes that we can{" "}
-          <b>change the world.</b>
-        </NovaP> */}
         <TeamImage
           src={team}
           minHeight={"470px"}
@@ -228,11 +372,45 @@ export default function Home({ data }) {
             Read more about us
           </NovaLink>
         </NovaP>
-      </SectionBox>
+      </SectionBox> */}
 
-      <NovaSpacer y={160} />
+      {/* <NovaSpacer y={160} /> */}
 
-      <BodyContainer>
+      <div
+        className={classNames(
+          "bg-black desktop:min-h-screen w-screen flex justify-center items-center flex-col mobile:pb-20"
+        )}
+      >
+        <h1
+          className={classNames(
+            "text-6xl font-normal text-center w-full font-display"
+            // "bg-gradient-to-r from-[#F855C4] to-[#EF751D] bg-clip-text text-transparent"
+          )}
+          style={{
+            // gradient text effect
+            background: "linear-gradient(90deg, #F855C4, #EF751D)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          WE CREATE SOLUTIONS
+        </h1>
+
+        <p
+          className={classNames(
+            "text-white text-2xl font-normal text-left pt-20 font-body",
+            "w-3/4 px-12",
+            "mobile:w-full mobile:px-8"
+          )}
+        >
+          We were founded on the belief that even small solutions have the
+          potential to create a large impact. We put together small
+          interdisciplinary teams and work closely with nonprofits to bring a
+          product vision to life through ideation, design, and implementation.
+        </p>
+      </div>
+
+      {/* <BodyContainer>
         <SectionBox>
           <NovaH2>we create solutions.</NovaH2>
           <NovaSpacer y={24} />
@@ -334,10 +512,10 @@ export default function Home({ data }) {
           </NetworkDiv>
           <NovaSpacer y={48} />
         </SectionBox>
-      </BodyContainer>
-      <DesktopView>
+      </BodyContainer> */}
+      {/* <DesktopView>
         <NovaSpacer y={300} />
-      </DesktopView>
+      </DesktopView> */}
     </Layout>
   );
 }

@@ -15,6 +15,9 @@ const true_mobile = `@media (max-width: 400px)`;
 
 const A = styled(NovaA)`
   margin-right: 20px;
+  &:hover {
+    color: #f855c4;
+  }
 `;
 const IconLink = (props) => <A href={props.href}>{props.children}</A>;
 
@@ -27,6 +30,7 @@ const LinkDiv = styled.div`
   ${mobile} {
     max-width: 375px;
     grid-column-gap: 16px;
+    display: none;
   }
 `;
 
@@ -42,7 +46,8 @@ const FooterDiv = styled.div`
   align-items: center;
   box-sizing: border-box;
   padding: 0 50px 72px 50px;
-  ${mobile} {
+  background-color: #000000;
+  e ${mobile} {
     padding: 24px;
     display: grid;
     grid-template-columns: 100%;
@@ -107,7 +112,7 @@ export default function Footer() {
   const year = today.getFullYear();
   return (
     <>
-      <NovaSpacer y={168} />
+      {/* <NovaSpacer y={168} /> */}
       <FooterDiv>
         <div>
           <NovaH4>
@@ -135,7 +140,7 @@ export default function Footer() {
           <NovaP style={{ color: "white" }}>
             {/* Last updated {month} {date}
             {nth(date)}, {year} */}
-            Last updated September 12th, 2024
+            Last updated September 25th, 2024
           </NovaP>
         </div>
         <LinkDiv>

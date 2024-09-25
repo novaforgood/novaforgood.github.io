@@ -24,6 +24,7 @@ import {
 import ProjectDropdown, { ProjectDiv } from "../components/ProjectDropdown";
 import SEO from "../components/SEO";
 import "../styles/global.css";
+import classNames from "classnames";
 
 const mobile = `@media (max-width: 800px)`;
 
@@ -204,8 +205,71 @@ const Recruitment = ({ data }) => {
   return (
     <Layout>
       <SEO metaTitle={"Nova | Join Us"} />
-      <PageContainer>
-        <SectionBox>
+      <div className="min-h-screen w-screen bg-black px-12 flex flex-col items-center justify-center relative ">
+        <h1
+          className={classNames(
+            "font-normal text-centerd font-display text-4xl"
+            // "bg-gradient-to-r from-[#F855C4] to-[#EF751D] bg-clip-text text-transparent"
+            // "md:text-2xl sm:text-2xl"
+          )}
+          style={{
+            // gradient text effect
+            background: "linear-gradient(90deg, #F855C4, #EF751D)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          RECRUITMENT
+        </h1>
+        <p className="text-center text-white text-lg mt-4 font-body lg:w-1/2">
+          At Nova, we’re building a team of developers and designers passionate
+          about improving our communities through tech. We are so excited for
+          you to join us this fall!
+        </p>
+
+        <ul className="text-white text-lg mt-8 font-body lg:w-1/2 pl-4 list-disc">
+          <li>DUE BY FRIDAY, 10/4</li>
+          <li>
+            Make sure to follow us on{" "}
+            <a
+              href="https://www.instagram.com/novaforgood/"
+              target="_blank"
+              className="underline"
+            >
+              Instagram
+            </a>{" "}
+            to stay up to date on future recruitment announcements!
+          </li>
+        </ul>
+
+        <a
+          href="https://tinyurl.com/nova-f24app"
+          target="_blank"
+          className={classNames(
+            " text-2xl mt-8 uppercase font-body"
+            // "bg-gradient-to-r from-[#F855C4] to-[#EF751D] bg-clip-text text-transparent"
+          )}
+          style={{
+            // gradient text effect
+            background: "linear-gradient(90deg, #F855C4, #EF751D)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          apply here
+        </a>
+
+        <div className="absolute bottom-8 left-8 z-50">
+          <p className="text-white text-lg font-normal text font-body">
+            2024-2025
+          </p>
+          <p className="text-white text-lg font-normal text font-body">
+            “TO THE MOON & BACK”
+          </p>
+        </div>
+      </div>
+      {/* <PageContainer> */}
+      {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>recruitment</NovaH1>
           <NovaSpacer y={24} />
@@ -214,27 +278,31 @@ const Recruitment = ({ data }) => {
             analysts, product managers passionate about improving our
             communities through tech. We are so excited for you to join us this
             fall!
-            {/* fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfMp0p7tqPaNZqq-eQ3ery1VbtPNfn7Q0rvmOGwC6DG_oCreg/viewform" target="_blank" underline>interest form</NovaA>  */}{" "}
           </NovaP>
-        </SectionBox>
-        <SectionBox>
+        </SectionBox> */}
+      {/* fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfMp0p7tqPaNZqq-eQ3ery1VbtPNfn7Q0rvmOGwC6DG_oCreg/viewform" target="_blank" underline>interest form</NovaA>  */}{" "}
+      {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH2 center>fall 2024: to the moon & back</NovaH2>
           <NovaSpacer y={24} />
-          <NovaH4 center>applications open</NovaH4>
+          <NovaH4 center>
+            <NovaA href="https://tinyurl.com/nova-f24app">
+              applications open now!
+            </NovaA>
+          </NovaH4>
           <NovaSpacer y={12} />
-          <NovaP center>SEPTEMBER 23 | 2PM</NovaP>
-          {/* <NovaP center>
+          <NovaP center>DUE BY FRIDAY, 10/4</NovaP>
+          <NovaP center>
             Apply now @{" "}
             <NovaA
-              href="https://tinyurl.com/nova-f23app"
+              href="https://tinyurl.com/nova-f24app"
               target="_blank"
               underline
               style={{ color: "#013668", borderBottomColor: "#013668" }}
             >
-              https://tinyurl.com/nova-f23app
+              https://tinyurl.com/nova-f24app
             </NovaA>{" "}
-          </NovaP> */}
+          </NovaP>
           <NovaP center>
             Make sure to follow us on{" "}
             <NovaA
@@ -257,118 +325,8 @@ const Recruitment = ({ data }) => {
             to stay up to date on future recruitment announcements!
           </NovaP>
 
-          {/* uncomment this when apps open:  */}
-          {/* <NovaSpacer y={24} />
-          <NovaH4 center>infosession #1</NovaH4>
-          <NovaSpacer y={12} />
-          <NovaP center> OCTOBER 1 | 7PM</NovaP>
-          <NovaP center>
-            Online @{" "}
-            <NovaA
-              href="https://tinyurl.com/nova-f23info"
-              target="_blank"
-              underline
-              style={{ color: "#013668", borderBottomColor: "#013668" }}
-            >
-              https://tinyurl.com/nova-f23info
-            </NovaA>{" "}
-          </NovaP>
-          <NovaSpacer y={24} />
-          <NovaH4 center>infosession #2</NovaH4>
-          <NovaSpacer y={12} />
-          <NovaP center> OCTOBER 3 | 8PM</NovaP>
-          <NovaP center>In-person @ Startup UCLA (203 Covel Commons)</NovaP>
-          <NovaSpacer y={24} />
-          <NovaH4 center>applications due</NovaH4>
-          <NovaSpacer y={12} />
-          <NovaP center> OCTOBER 6 | 11:59PM</NovaP>
-          <NovaP center>
-            The application is your chance to show us who you are and what
-            you're passionate about!
-          </NovaP>
-          <NovaSpacer y={24} />
-          <NovaH4 center>meet and greet</NovaH4>
-          <NovaSpacer y={12} />
-          <NovaP center> OCTOBER 10 | 8PM</NovaP>
-          <NovaP center>Invite only</NovaP>
-          <NovaSpacer y={24} />
-          <NovaH4 center>interviews</NovaH4>
-          <NovaSpacer y={12} />
-          <NovaP center> OCTOBER 15-20</NovaP>
-          <NovaP center>Invite only</NovaP> */}
-
-          {/* <NovaSpacer y={64} />
-          <NovaH2>Links</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>
-            <ListItem>
-              <NovaA
-                href="https://tinyurl.com/nova-fall2022app"
-                target="_blank"
-                underline
-              >
-                <b>Application</b>
-              </NovaA>{" "}
-              —{" "}
-              <i>
-                <b>Due:</b> Monday, 10/3 at 11:59pm PST!
-              </i>
-            </ListItem>
-            <NovaSpacer y={12} />
-            <ListItem>
-              <NovaA
-                href="https://tinyurl.com/nova-fall2022rsvp "
-                target="_blank"
-                underline
-              >
-                <b>Infosession RSVP</b>
-              </NovaA>
-            </ListItem>
-            <NovaSpacer y={12} />
-            <ListItem>
-              <NovaA
-                href="https://ucla.zoom.us/j/92038295876?pwd=cHlnQmdIYjVoTlVreCsySmNIemNIUT09"
-                target="_blank"
-                underline
-              >
-                <b>Infosession #1</b>
-              </NovaA>{" "}
-              — <i>Sunday, 9/25 from 7-8pm PST [Zoom] </i>
-            </ListItem>
-            <NovaSpacer y={12} />
-            <ListItem>
-              <NovaA href="https://fb.me/e/1n7cnmoMC" target="_blank" underline>
-                <b>Infosession #2</b>
-              </NovaA>{" "}
-              —{" "}
-              <i>
-                Tuesday, 9/27 from 8-9pm PST [Startup UCLA | 203 Covel Commons]{" "}
-              </i>
-            </ListItem>
-          </NovaP> */}
-          {/* <NovaSpacer y={64} /> */}
-          {/* <NovaH2>Ongoing Projects</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>Here's a glimpse at our current projects:</NovaP>
-          <NovaSpacer y={36} /> */}
-          {/* <ProjectDiv>
-            {projectsData
-              .filter((node) => !node.featured && node.inProgress)
-              .sort((a, b) => (a.name < b.name ? 1 : -1))
-              .map((node, i) => (
-                <ProjectDropdown
-                  data={node}
-                  idx={i}
-                  // open={selectedDropdown === i}
-                  // onClick={() => {
-                  //   if (selectedDropdown === i) setSelectedDropdown(-1);
-                  //   else setSelectedDropdown(i);
-                  // }}
-                />
-              ))}
-          </ProjectDiv> */}
-        </SectionBox>
-        {/* <SectionBox>
+        </SectionBox> */}
+      {/* <SectionBox>
           <NovaSpacer y={64} />
           <NovaH2>Links</NovaH2>
           <NovaSpacer y={24} />
@@ -444,8 +402,8 @@ const Recruitment = ({ data }) => {
               ))}
           </ProjectDiv>
         </SectionBox> */}
-        {/* <NovaSpacer y={24} /> */}
-      </PageContainer>
+      {/* <NovaSpacer y={24} /> */}
+      {/* </PageContainer> */}
     </Layout>
   );
 };
