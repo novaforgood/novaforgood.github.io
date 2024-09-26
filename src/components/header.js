@@ -141,6 +141,7 @@ const NavLink = styled(Link)`
   ${mobile} {
     font-size: 16px;
     margin-right: 5px;
+    color: white;
   }
 `;
 
@@ -206,11 +207,12 @@ export default function Header() {
             to="/about"
           >
             about
-          </NavLink>
+          </NavLink>*/}
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "14px" }}
-            to="/work"
+            to="https://docs.google.com/presentation/d/1lrPIRLjq0C2UVC_7GCI_ZsP3iduYkxREjDS5iIa936c/pub?start=false&loop=true&delayms=10000"
+            target="_blank"
           >
             work
           </NavLink>
@@ -220,7 +222,7 @@ export default function Header() {
             to="/team"
           >
             our team
-          </NavLink> */}
+          </NavLink>
           <NavLink
             activeClassName="active"
             style={{ marginLeft: "24px" }}
@@ -233,7 +235,7 @@ export default function Header() {
               style={{ marginLeft: "24px" }}
               rel="noreferrer"
               target="_blank"
-              to="https://forms.gle/g6gmjG4uYwL1AP5T9"
+              to="https://forms.gle/hnuPunhCqdK2nes4A"
               textColor="#ffffff"
               backgroundColor="#C95981"
               borderColor="#C95981"

@@ -229,6 +229,8 @@ const Recruitment = ({ data }) => {
 
         <ul className="text-white text-lg mt-8 font-body lg:w-1/2 pl-4 list-disc">
           <li>DUE BY FRIDAY, 10/4</li>
+          <li>INFOSESSION 1, 10/2, 8PM @ Startup UCLA</li>
+          <li>INFOSESSION 2, 10/3, Online</li>
           <li>
             Make sure to follow us on{" "}
             <a

@@ -47,16 +47,19 @@ export const NovaSub = styled.div`
 `;
 
 export const NovaH1 = styled.div`
-  font-family: ${fonts.main};
+  font-family: "Silkscreen";
   font-style: normal;
-  font-weight: 600;
+  font-weight: normal;
   font-size: 48px;
   line-height: 135%;
   /* identical to box height, or 65px */
-  color: #013668;
 
   text-align: ${({ center }) => (center ? "center" : "left")};
   letter-spacing: 0.05em;
+
+  background: linear-gradient(90deg, #f855c4, #ef751d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   ${mobile} {
     font-size: 32px;
@@ -130,7 +133,7 @@ export const MainBox = styled.div`
 export const NovaP = styled.p`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: SpaceGrotesk;
+  font-family: "Space Mono";
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -138,7 +141,9 @@ export const NovaP = styled.p`
   width: ${({ width }) => width || "auto"};
   /* or 38px */
   text-align: ${({ center }) => (center ? "center" : "left")};
-  color: #013668;
+
+  color: white;
+
   margin: 0;
   ${mobile} {
     font-size: 16px;
@@ -236,10 +241,13 @@ export const SectionSubHeading = styled.h2`
 `;
 
 export const NovaLink = styled(Link)`
-  color: #013668;
+  //   color: #013668;
+  font-family: "Space Mono";
   text-decoration: none;
-  border-bottom: ${({ underline }) =>
-    underline ? "2px solid #013668" : "none"};
+  background: linear-gradient(90deg, #f855c4, #ef751d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: ${({ underline }) => (underline ? "2px solid white" : "none")};
   &:hover {
     color: #013668;
   }

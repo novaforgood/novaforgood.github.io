@@ -147,7 +147,12 @@ export default function Footer() {
           <LinkBox>
             <Title>general</Title>
             <NovaSpacer y={12} />
-            <NavLink to="/work">projects</NavLink>
+            <NavLink
+              targer="_blank"
+              to="https://docs.google.com/presentation/d/1lrPIRLjq0C2UVC_7GCI_ZsP3iduYkxREjDS5iIa936c/pub?start=false&loop=true&delayms=10000"
+            >
+              projects
+            </NavLink>
             <NovaSpacer y={12} />
             <NavLink to="/team">our team</NavLink>
           </LinkBox>

@@ -213,7 +213,7 @@ export default function Home({ data }) {
               textColor="#ffffff"
               backgroundColor="#78C7F6"
               borderColor="#78C7F6"
-              className="!mt-8 !bg-transparent ring-2 ring-white !border-none !ml-0 mobile:!ml-2"
+              className="!mt-8 !bg-transparent !border-2 !border-white !ml-0"
             >
               JOIN THE TEAM
             </SparklyButton>
@@ -408,6 +408,14 @@ export default function Home({ data }) {
           interdisciplinary teams and work closely with nonprofits to bring a
           product vision to life through ideation, design, and implementation.
         </p>
+
+        <NovaLink
+          to="https://docs.google.com/presentation/d/1lrPIRLjq0C2UVC_7GCI_ZsP3iduYkxREjDS5iIa936c/pub?start=false&loop=true&delayms=10000"
+          className="mt-12 text-2xl text-left mobile:px-8"
+          target="_blank"
+        >
+          SEE OUR WORK
+        </NovaLink>
       </div>
 
       {/* <BodyContainer>
