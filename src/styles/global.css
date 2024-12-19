@@ -4,73 +4,7 @@
 
 /* 24-25 STYLES */
 
-@font-face {
-  font-family: "Montserrat";
-  src: url("../../static/fonts/Montserrat-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Prompt";
-  src: url("../../static/fonts/Prompt-Regular.ttf");
-}
-@font-face {
-  font-family: "Prompt";
-  src: url("../../static/fonts/Prompt-Medium.ttf");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Prompt";
-  src: url("../../static/fonts/Prompt-SemiBold.ttf");
-  font-weight: 900;
-}
-
-@font-face {
-  font-family: "Rubik";
-  src: url("../../static/fonts/Rubik-Light.ttf");
-}
-
-@font-face {
-  font-family: "Rubik";
-  src: url("../../static/fonts/Rubik-Bold.ttf");
-  font-weight: bold;
-}
-/* @font-face {
-  font-family: "Rubik";
-  src: url("../../static/fonts/Rubik-Light.ttf");
-  font-weight: lighter;
-} */
-
-@font-face {
-  font-family: "Pixer";
-  src: url("../../static/fonts/Pixer-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Alata";
-  src: url("../../static/fonts/Alata-Regular.ttf");
-}
-
-@font-face {
-  font-family: "SpaceGrotesk";
-  src: url("../../static/fonts/SpaceGrotesk-Regular.otf");
-}
-
-@font-face {
-  font-family: "SpaceGrotesk";
-  src: url("../../static/fonts/SpaceGrotesk-Medium.otf");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "TheBillion";
-  src: url("../../static/fonts/The-Billion.ttf");
-  font-weight: bold;
-}
-
 html {
-  /* background-color: #ff0000; */
-  background-image: linear-gradient(#c5e6f5, #7eaecf, #396097);
-  color: #013668;
   margin: 0;
   padding: 0;
 }

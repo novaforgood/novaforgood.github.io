@@ -1,10 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import image from "../assets/meta.jpg";
 
 export default ({ metaTitle, metaDescription }) => {
-  // METADATA
-
   const title = metaTitle || "Nova, Tech for Good";
   const description =
     metaDescription ||

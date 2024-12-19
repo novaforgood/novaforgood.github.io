@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "predeploy": "yarn rmcache && yarn build",
+    "predeploy": "npm run rmcache && npm run build",
     "deploy": "gh-pages -d public -b master"
   },
   "dependencies": {
@@ -46,11 +46,16 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "autoprefixer": "^10.4.20",
     "gatsby-plugin-postcss": "5",
     "postcss": "^8.4.47",
-    "prettier": "2.0.5",
-    "tailwindcss": "^3.4.13"
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.7.2"
   },
   "repository": {
     "type": "git",

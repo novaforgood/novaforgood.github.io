@@ -1,21 +1,13 @@
 import React from "react";
-import Header from "./Header";
 import Footer from "./Footer";
+import Header from "./Header";
 
-import styled from "@emotion/styled";
-
-const Container = styled("div")`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background-color: black;
-`;
 export default function Layout({ home, children }) {
-  return (
-    <Container>
-      <Header />
-      {children}
-      <Footer />
-    </Container>
-  );
+	return (
+		<div className="flex flex-col min-h-screen">
+			{/* <Header /> */}
+			{children}
+			{/* <Footer /> */}
+		</div>
+	);
 }
