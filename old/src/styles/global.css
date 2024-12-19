@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 24-25 STYLES */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
