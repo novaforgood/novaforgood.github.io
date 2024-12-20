@@ -6,14 +6,20 @@ require("dotenv").config({
 
 const config: GatsbyConfig = {
     siteMetadata: {
-        title: `nova-site-24-25`,
-        siteUrl: `https://www.yourdomain.tld`,
+        title: `Nova, Tech for Good`,
+        siteUrl: `https://novaforgood.org`,
     },
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin
     // Learn more at: https://gatsby.dev/graphql-typegen
     graphqlTypegen: true,
     plugins: [
+        {
+            resolve: "gatsby-plugin-manifest",
+            options: {
+                icon: "src/assets/favicon.png",
+            },
+        },
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
@@ -26,7 +32,7 @@ const config: GatsbyConfig = {
             options: {
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-                downloadLocal: false,
+                downloadLocal: true,
             },
         },
         {
@@ -47,6 +53,13 @@ const config: GatsbyConfig = {
                         file: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
                     },
                 ],
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `pages`,
+                path: `${__dirname}/src/pages`,
             },
         },
         "gatsby-plugin-image",

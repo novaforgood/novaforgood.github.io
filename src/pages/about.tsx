@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-// import SEO from "../components/SEO";
+
 import Layout from "../components/layout";
 
 import HomeBg from "../assets/24-25/home/bg.webp";
@@ -8,12 +8,14 @@ import HomeHeader from "../components/pages/home/HomeHeader";
 import HomeAbout from "../components/pages/home/HomeAbout";
 import HomeInterested from "../components/pages/home/HomeInterested";
 import HomeProjects from "../components/pages/home/HomeProjects";
+import AboutHeader from "../components/pages/about/AboutHeader";
+import AboutTeam from "../components/pages/about/AboutTeam";
+import AboutStory from "../components/pages/about/AboutStory";
 
-const IndexPage: React.FC<PageProps> = () => {
+const AboutPage: React.FC<PageProps> = () => {
     return (
         <Layout>
             {/* <SEO /> */}
-            {/* TODO: bring back seo */}
             <img
                 src={HomeBg}
                 alt="Home Background"
@@ -21,18 +23,13 @@ const IndexPage: React.FC<PageProps> = () => {
             />
             {/* <div> */}
             {/* </div> */}
-            <HomeHeader />
-            <HomeAbout />
-            <HomeProjects />
-            <HomeInterested />
+            <AboutHeader />
+            <AboutStory />
+            <AboutTeam />
         </Layout>
     );
 };
 
-export default IndexPage;
+export default AboutPage;
 
-export const Head: HeadFC = () => (
-    <>
-        <title>Nova, Tech for Good</title>
-    </>
-);
+export const Head: HeadFC = () => <title>Home Page</title>;

@@ -55,6 +55,7 @@ type ContentfulAsset = ContentfulReference & Node & RemoteFile & {
   readonly contentful_id: Scalars['String'];
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly fields: Maybe<ContentfulAssetFields>;
   readonly file: Maybe<ContentfulAssetFile>;
   readonly filename: Scalars['String'];
   readonly filesize: Maybe<Scalars['Int']>;
@@ -64,6 +65,7 @@ type ContentfulAsset = ContentfulReference & Node & RemoteFile & {
   readonly height: Maybe<Scalars['Int']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly localFile: Maybe<File>;
   readonly mimeType: Scalars['String'];
   readonly node_locale: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
@@ -192,6 +194,7 @@ type ContentfulAssetFieldSelector = {
   readonly contentful_id: InputMaybe<FieldSelectorEnum>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly fields: InputMaybe<ContentfulAssetFieldsFieldSelector>;
   readonly file: InputMaybe<ContentfulAssetFileFieldSelector>;
   readonly filename: InputMaybe<FieldSelectorEnum>;
   readonly filesize: InputMaybe<FieldSelectorEnum>;
@@ -200,6 +203,7 @@ type ContentfulAssetFieldSelector = {
   readonly height: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly localFile: InputMaybe<FileFieldSelector>;
   readonly mimeType: InputMaybe<FieldSelectorEnum>;
   readonly node_locale: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
@@ -213,6 +217,22 @@ type ContentfulAssetFieldSelector = {
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
   readonly url: InputMaybe<FieldSelectorEnum>;
   readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
+type ContentfulAssetFields = {
+  readonly localFile: Maybe<Scalars['String']>;
+};
+
+type ContentfulAssetFieldsFieldSelector = {
+  readonly localFile: InputMaybe<FieldSelectorEnum>;
+};
+
+type ContentfulAssetFieldsFilterInput = {
+  readonly localFile: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ContentfulAssetFieldsSortInput = {
+  readonly localFile: InputMaybe<SortOrderEnum>;
 };
 
 type ContentfulAssetFile = {
@@ -288,6 +308,7 @@ type ContentfulAssetFilterInput = {
   readonly contentful_id: InputMaybe<StringQueryOperatorInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly fields: InputMaybe<ContentfulAssetFieldsFilterInput>;
   readonly file: InputMaybe<ContentfulAssetFileFilterInput>;
   readonly filename: InputMaybe<StringQueryOperatorInput>;
   readonly filesize: InputMaybe<IntQueryOperatorInput>;
@@ -296,6 +317,7 @@ type ContentfulAssetFilterInput = {
   readonly height: InputMaybe<IntQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly localFile: InputMaybe<FileFilterInput>;
   readonly mimeType: InputMaybe<StringQueryOperatorInput>;
   readonly node_locale: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
@@ -361,6 +383,7 @@ type ContentfulAssetSortInput = {
   readonly contentful_id: InputMaybe<SortOrderEnum>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly fields: InputMaybe<ContentfulAssetFieldsSortInput>;
   readonly file: InputMaybe<ContentfulAssetFileSortInput>;
   readonly filename: InputMaybe<SortOrderEnum>;
   readonly filesize: InputMaybe<SortOrderEnum>;
@@ -369,6 +392,7 @@ type ContentfulAssetSortInput = {
   readonly height: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly localFile: InputMaybe<FileSortInput>;
   readonly mimeType: InputMaybe<SortOrderEnum>;
   readonly node_locale: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
@@ -3237,6 +3261,8 @@ type File = Node & {
   readonly birthtime: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
   readonly birthtimeMs: Maybe<Scalars['Float']>;
+  readonly blksize: Maybe<Scalars['Int']>;
+  readonly blocks: Maybe<Scalars['Int']>;
   readonly changeTime: Scalars['Date'];
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
@@ -3261,6 +3287,8 @@ type File = Node & {
   readonly nlink: Scalars['Int'];
   readonly parent: Maybe<Node>;
   readonly prettySize: Scalars['String'];
+  /** Copy file to static directory and return public url to it */
+  readonly publicURL: Maybe<Scalars['String']>;
   readonly rdev: Scalars['Int'];
   readonly relativeDirectory: Scalars['String'];
   readonly relativePath: Scalars['String'];
@@ -3268,6 +3296,7 @@ type File = Node & {
   readonly size: Scalars['Int'];
   readonly sourceInstanceName: Scalars['String'];
   readonly uid: Scalars['Int'];
+  readonly url: Maybe<Scalars['String']>;
 };
 
 
@@ -3380,6 +3409,8 @@ type FileFieldSelector = {
   readonly birthTime: InputMaybe<FieldSelectorEnum>;
   readonly birthtime: InputMaybe<FieldSelectorEnum>;
   readonly birthtimeMs: InputMaybe<FieldSelectorEnum>;
+  readonly blksize: InputMaybe<FieldSelectorEnum>;
+  readonly blocks: InputMaybe<FieldSelectorEnum>;
   readonly changeTime: InputMaybe<FieldSelectorEnum>;
   readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
@@ -3402,6 +3433,7 @@ type FileFieldSelector = {
   readonly nlink: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly prettySize: InputMaybe<FieldSelectorEnum>;
+  readonly publicURL: InputMaybe<FieldSelectorEnum>;
   readonly rdev: InputMaybe<FieldSelectorEnum>;
   readonly relativeDirectory: InputMaybe<FieldSelectorEnum>;
   readonly relativePath: InputMaybe<FieldSelectorEnum>;
@@ -3409,6 +3441,7 @@ type FileFieldSelector = {
   readonly size: InputMaybe<FieldSelectorEnum>;
   readonly sourceInstanceName: InputMaybe<FieldSelectorEnum>;
   readonly uid: InputMaybe<FieldSelectorEnum>;
+  readonly url: InputMaybe<FieldSelectorEnum>;
 };
 
 type FileFilterInput = {
@@ -3420,6 +3453,8 @@ type FileFilterInput = {
   readonly birthTime: InputMaybe<DateQueryOperatorInput>;
   readonly birthtime: InputMaybe<DateQueryOperatorInput>;
   readonly birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  readonly blksize: InputMaybe<IntQueryOperatorInput>;
+  readonly blocks: InputMaybe<IntQueryOperatorInput>;
   readonly changeTime: InputMaybe<DateQueryOperatorInput>;
   readonly childImageSharp: InputMaybe<ImageSharpFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -3442,6 +3477,7 @@ type FileFilterInput = {
   readonly nlink: InputMaybe<IntQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly prettySize: InputMaybe<StringQueryOperatorInput>;
+  readonly publicURL: InputMaybe<StringQueryOperatorInput>;
   readonly rdev: InputMaybe<IntQueryOperatorInput>;
   readonly relativeDirectory: InputMaybe<StringQueryOperatorInput>;
   readonly relativePath: InputMaybe<StringQueryOperatorInput>;
@@ -3449,6 +3485,7 @@ type FileFilterInput = {
   readonly size: InputMaybe<IntQueryOperatorInput>;
   readonly sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
   readonly uid: InputMaybe<IntQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
 };
 
 type FileGroupConnection = {
@@ -3501,6 +3538,8 @@ type FileSortInput = {
   readonly birthTime: InputMaybe<SortOrderEnum>;
   readonly birthtime: InputMaybe<SortOrderEnum>;
   readonly birthtimeMs: InputMaybe<SortOrderEnum>;
+  readonly blksize: InputMaybe<SortOrderEnum>;
+  readonly blocks: InputMaybe<SortOrderEnum>;
   readonly changeTime: InputMaybe<SortOrderEnum>;
   readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
@@ -3523,6 +3562,7 @@ type FileSortInput = {
   readonly nlink: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly prettySize: InputMaybe<SortOrderEnum>;
+  readonly publicURL: InputMaybe<SortOrderEnum>;
   readonly rdev: InputMaybe<SortOrderEnum>;
   readonly relativeDirectory: InputMaybe<SortOrderEnum>;
   readonly relativePath: InputMaybe<SortOrderEnum>;
@@ -3530,6 +3570,7 @@ type FileSortInput = {
   readonly size: InputMaybe<SortOrderEnum>;
   readonly sourceInstanceName: InputMaybe<SortOrderEnum>;
   readonly uid: InputMaybe<SortOrderEnum>;
+  readonly url: InputMaybe<SortOrderEnum>;
 };
 
 type FloatQueryOperatorInput = {
@@ -4424,6 +4465,7 @@ type Query_contentfulAssetArgs = {
   contentful_id: InputMaybe<StringQueryOperatorInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   description: InputMaybe<StringQueryOperatorInput>;
+  fields: InputMaybe<ContentfulAssetFieldsFilterInput>;
   file: InputMaybe<ContentfulAssetFileFilterInput>;
   filename: InputMaybe<StringQueryOperatorInput>;
   filesize: InputMaybe<IntQueryOperatorInput>;
@@ -4432,6 +4474,7 @@ type Query_contentfulAssetArgs = {
   height: InputMaybe<IntQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  localFile: InputMaybe<FileFilterInput>;
   mimeType: InputMaybe<StringQueryOperatorInput>;
   node_locale: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
@@ -4707,6 +4750,8 @@ type Query_fileArgs = {
   birthTime: InputMaybe<DateQueryOperatorInput>;
   birthtime: InputMaybe<DateQueryOperatorInput>;
   birthtimeMs: InputMaybe<FloatQueryOperatorInput>;
+  blksize: InputMaybe<IntQueryOperatorInput>;
+  blocks: InputMaybe<IntQueryOperatorInput>;
   changeTime: InputMaybe<DateQueryOperatorInput>;
   childImageSharp: InputMaybe<ImageSharpFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -4729,6 +4774,7 @@ type Query_fileArgs = {
   nlink: InputMaybe<IntQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   prettySize: InputMaybe<StringQueryOperatorInput>;
+  publicURL: InputMaybe<StringQueryOperatorInput>;
   rdev: InputMaybe<IntQueryOperatorInput>;
   relativeDirectory: InputMaybe<StringQueryOperatorInput>;
   relativePath: InputMaybe<StringQueryOperatorInput>;
@@ -4736,6 +4782,7 @@ type Query_fileArgs = {
   size: InputMaybe<IntQueryOperatorInput>;
   sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
   uid: InputMaybe<IntQueryOperatorInput>;
+  url: InputMaybe<StringQueryOperatorInput>;
 };
 
 
