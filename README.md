@@ -14,8 +14,8 @@ CONTENTFUL_ACCESS_TOKEN=
 
 Then, to start the project:
 ```
-yarn
-yarn start
+npm install
+npm start
 ```
 
 ## Deploy
@@ -28,5 +28,5 @@ CONTENTFUL_ACCESS_TOKEN=
 
 Then, to deploy:
 ```
-yarn deploy
+npm run deploy
 ```
