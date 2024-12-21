@@ -9,11 +9,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <main className="relative flex min-h-screen flex-col overflow-hidden">
             {/* <Navbar /> */}
             <div className="pointer-events-none fixed top-0 z-50 flex w-screen justify-center">
-                <div className="pointer-events-auto mt-8 flex h-12 w-[58rem] flex-row items-center rounded-full bg-white bg-opacity-25 backdrop-blur-md">
+                <div className="pointer-events-auto mt-8 flex h-12 w-[58rem] flex-row items-center rounded-full bg-white bg-opacity-25 backdrop-blur-md mobile:mt-4 mobile:bg-transparent mobile:backdrop-blur-none">
                     <img src={Logo} alt="Nova Logo" className="ml-4 h-10" />
                     {/* spacer */}
                     <div className="flex-1"></div>
-                    <div className="flex h-full flex-row items-center justify-center gap-8">
+                    <div className="flex h-full flex-row items-center justify-center gap-8 mobile:hidden">
                         <Link
                             to="about"
                             className="font-body font-light uppercase"
@@ -44,7 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <img src={Logo} alt="Nova Logo" className="h-10" />
                     <p className="font-body font-light">nova tech for good</p>
                 </div>
-                <div className="flex items-center justify-center gap-12">
+                <div className="flex items-center justify-center gap-12 mobile:hidden">
                     <Link to="about" className="font-body font-light">
                         about
                     </Link>
@@ -58,13 +58,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         work with us
                     </Link>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center mobile:flex-col mobile:gap-4">
                     <div className="flex flex-1 items-center justify-center">
                         <p className="=font-body font-light">
                             hello@novaforgood.org
                         </p>
                     </div>
-                    <div className="flex flex-1 items-center justify-center">
+                    <div className="flex flex-1 items-center justify-center mobile:mb-8">
                         <p className="font-body font-light">
                             © 2024 nova for good | Last updated December 2024
                         </p>
