@@ -24,7 +24,7 @@ const AboutTeam = (props: Props) => {
         <StaticQuery
             query={graphql`
                 query {
-                    allContentfulMember(sort: { fields: name, order: ASC }) {
+                    allContentfulMember {
                         nodes {
                             active
                             name
@@ -54,6 +54,7 @@ const AboutTeam = (props: Props) => {
                         person.name.length !== 0,
                 );
                 let actives = memberData.filter((person) => person.active);
+                console.log(memberData);
                 // shuffle actives
                 actives = actives.sort(() => Math.random() - 0.5);
                 let inactives = memberData.filter((person) => !person.active);
@@ -72,11 +73,14 @@ const AboutTeam = (props: Props) => {
                             <div className="grid grid-cols-4 gap-16">
                                 {actives.map((person) => {
                                     return (
-                                        <div className="flex flex-col items-center gap-4">
+                                        <div
+                                            className="flex flex-col items-center gap-4"
+                                            key={person.name}
+                                        >
                                             <img
                                                 src={
                                                     person.profilePicture
-                                                        .localFile.publicURL
+                                                        .localFile?.publicURL
                                                 }
                                                 alt={person.name}
                                                 className="aspect-square object-cover"

@@ -7,23 +7,23 @@ interface Props {}
 const HomeProjects = (props: Props) => {
     return (
         <div className="mt-24 flex min-h-screen w-screen justify-center">
-            <div className="relative flex w-[66rem] items-center justify-center">
+            <div className="relative flex w-[66rem] items-center justify-center mobile:w-[20rem]">
                 <img
                     src={Star1}
                     alt="Star 1"
-                    className="absolute right-[120px] top-[-130px] z-10"
+                    className="absolute right-[120px] top-[-130px] z-10 mobile:right-[40px] mobile:top-[-50px] mobile:w-[100px]"
                 />
-                <div className="flex w-[58rem] flex-col gap-12">
-                    <h1 className="font-display text-[96px] font-bold leading-[96px] text-black">
-                        Our favorite projects
+                <div className="flex w-[58rem] flex-col gap-12 mobile:w-[20rem]">
+                    <h1 className="font-display text-[96px] font-bold leading-[96px] text-black mobile:text-[48px] mobile:leading-[48px]">
+                        Our <br className="desktop:hidden" /> favorite projects
                         <NovaButton
                             arrow
                             standalone
-                            className="ml-6 inline-flex h-[90px] w-[90px] align-middle"
+                            className="ml-6 inline-flex h-[90px] w-[90px] align-middle mobile:h-[60px] mobile:w-[60px]"
                             to="/about"
                         />
                     </h1>
-                    <div className="flex flex-row gap-8">
+                    <div className="flex flex-row gap-8 mobile:flex-col">
                         <div className="flex aspect-video flex-1 items-center justify-center bg-gray-200">
                             img placeholder
                         </div>
@@ -41,7 +41,7 @@ const HomeProjects = (props: Props) => {
                             </NovaButton>
                         </div>
                     </div>
-                    <div className="flex flex-row gap-8">
+                    <div className="flex flex-row gap-8 mobile:flex-col">
                         <div className="flex aspect-video flex-1 items-center justify-center bg-gray-200">
                             img placeholder
                         </div>

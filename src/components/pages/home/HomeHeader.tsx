@@ -17,7 +17,7 @@ const HomeHeader = (props: Props) => {
                     alt="Home Header Stars"
                     className="absolute left-[315px] top-[-5px] z-10 w-[652px] max-w-none mobile:-left-10 mobile:-top-6 mobile:w-[25rem]"
                 />
-                <h1 className="absolute left-[100px] top-[0px] font-display text-[200px] font-bold text-black mobile:left-0 mobile:top-[0px] mobile:text-[96px]">
+                <h1 className="absolute left-[100px] top-[0px] z-20 font-display text-[200px] font-bold text-black mobile:left-0 mobile:top-[0px] mobile:text-[96px]">
                     nova
                 </h1>
                 <h1 className="absolute left-[0px] top-[160px] font-display text-[200px] font-bold text-black mobile:left-0 mobile:top-[100px] mobile:text-[96px]">

@@ -65,8 +65,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         </p>
                     </div>
                     <div className="flex flex-1 items-center justify-center mobile:mb-8">
-                        <p className="font-body font-light">
-                            © 2024 nova for good | Last updated December 2024
+                        <p className="text-center font-body font-light mobile:flex mobile:flex-col mobile:gap-4">
+                            <span>© 2024 nova for good</span>
+                            <span className="mx-2 mobile:hidden">|</span>
+                            <span>Last updated December 2024</span>
                         </p>
                     </div>
                     <div className="flex flex-1 items-center justify-center">
