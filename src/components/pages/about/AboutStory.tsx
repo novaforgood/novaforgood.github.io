@@ -14,11 +14,11 @@ interface Props {}
 
 const GRID_IMAGES_DESKTOP = [
     TeamJanss,
-    TeamHike,
-    TeamThanksgiving,
     TeamPie,
-    TeamVolunteering,
+    TeamHike,
     TeamFruit,
+    TeamThanksgiving,
+    TeamVolunteering,
 ];
 const GRID_IMAGES_MOBILE = [TeamJanss, TeamThanksgiving, TeamVolunteering];
 
@@ -60,7 +60,7 @@ const AboutStory = (props: Props) => {
                     </div>
                 </div>
 
-                <ResponsiveMasonry
+                {/* <ResponsiveMasonry
                     columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
                 >
                     <Masonry style={{ gap: "2rem" }} gutter="2rem">
@@ -75,7 +75,58 @@ const AboutStory = (props: Props) => {
                             />
                         ))}
                     </Masonry>
-                </ResponsiveMasonry>
+                </ResponsiveMasonry> */}
+
+                {/* 3 wide 2 tall made of 3 side by side flex boxes */}
+                {/* map 6 images to 3 vertical flex boxes */}
+                <div className="flex gap-8 mobile:hidden">
+                    <div className="flex flex-1 flex-col gap-8">
+                        <img
+                            src={GRID_IMAGES[0]}
+                            alt="Team Janss"
+                            className="object-cover"
+                        />
+                        <img
+                            src={GRID_IMAGES[1]}
+                            alt="Team Pie"
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-8">
+                        <img
+                            src={GRID_IMAGES[2]}
+                            alt="Team Hike"
+                            className="object-cover"
+                        />
+                        <img
+                            src={GRID_IMAGES[5]}
+                            alt="Team Volunteering"
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-8">
+                        <img
+                            src={GRID_IMAGES[4]}
+                            alt="Team Thanksgiving"
+                            className="object-cover"
+                        />
+                        <img
+                            src={GRID_IMAGES[3]}
+                            alt="Team Fruit"
+                            className="object-cover"
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col gap-8 desktop:hidden">
+                    {GRID_IMAGES.map((src, i) => (
+                        <img
+                            key={i}
+                            src={src}
+                            alt={`Team ${i}`}
+                            className="object-cover"
+                        />
+                    ))}
+                </div>
 
                 <p className="font-body text-base font-light">
                     We strive to understand the reality of under-resourced

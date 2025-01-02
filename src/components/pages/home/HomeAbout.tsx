@@ -3,7 +3,7 @@ import Star1 from "../../../assets/24-25/home/about-star-1.webp";
 import Star2 from "../../../assets/24-25/home/about-star-2.webp";
 import Star3 from "../../../assets/24-25/home/about-star-3.webp";
 import NovaButton from "../../ui/NovaButton";
-import TeamBeach from "../../../assets/24-25/pics/team-beach.webp";
+import Team2024 from "../../../assets/24-25/pics/team-2024.webp";
 
 interface Props {}
 
@@ -39,17 +39,17 @@ const HomeAbout = (props: Props) => {
                             />
                         </h1>
                         <p className="text-md font-body font-light leading-6 text-black desktop:pr-8">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Mauris aliquam lorem fringilla vehicula
-                            ultrices. Etiam elementum est est, vitae consectetur
-                            metus ullamcorper eget.
+                            We’re a team of developers, designers, and
+                            businesspeople who love solving problems, addressing
+                            challenges faced communities around us, and making a
+                            difference.
                         </p>
                     </div>
 
                     <div className="flex flex-1 items-center justify-center bg-gray-200">
                         <img
-                            src={TeamBeach}
-                            alt="Team Beach"
+                            src={Team2024}
+                            alt="Team Fall 2024"
                             className="object-cover"
                         />
                     </div>
