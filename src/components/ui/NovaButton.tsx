@@ -12,8 +12,8 @@ interface BaseProps {
 }
 
 type Props =
-    | (BaseProps & { onClick: () => void; to?: never }) // Requires `onClick`, disallows `to`
-    | (BaseProps & { to: string; onClick?: never }); // Requires `to`, disallows `onClick`
+    | (BaseProps & { onClick: () => void; to?: never; target?: never }) // Requires `onClick`, disallows `to`
+    | (BaseProps & { to: string; onClick?: never; target?: string }); // Requires `to`, disallows `onClick`
 
 const NovaButton = ({
     children,
@@ -22,10 +22,12 @@ const NovaButton = ({
     onClick,
     to,
     standalone,
+    target,
 }: Props) => {
     if (to) {
         return (
             <Link
+                target={target}
                 to={to}
                 className={clsx(
                     "group flex items-center justify-center rounded-full bg-black px-6 py-2 font-body text-lg font-light uppercase text-white ring-2 ring-inset ring-black transition-all duration-200 ease-in-out hover:bg-transparent hover:text-black",

@@ -3,6 +3,7 @@ import Star1 from "../../../assets/24-25/home/interested-star-1.webp";
 import Star2 from "../../../assets/24-25/home/interested-star-2.webp";
 import Star3 from "../../../assets/24-25/home/interested-star-3.webp";
 import NovaButton from "../../ui/NovaButton";
+import { COLLAB_FORM, INTEREST_FORM } from "../../../links";
 
 interface Props {}
 
@@ -30,10 +31,10 @@ const HomeInterested = (props: Props) => {
                         Interested?
                     </h1>
                     <div className="flex flex-row gap-12 mobile:flex-col mobile:gap-8">
-                        <NovaButton arrow to={"/collab"}>
+                        <NovaButton arrow to={COLLAB_FORM} target="_blank">
                             Work with us
                         </NovaButton>
-                        <NovaButton arrow to={"/join"}>
+                        <NovaButton arrow to={INTEREST_FORM} target="_blank">
                             Join our team
                         </NovaButton>
                     </div>

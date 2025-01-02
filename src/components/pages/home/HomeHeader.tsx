@@ -3,6 +3,7 @@ import HomeHeaderStars from "../../../assets/24-25/home/header-stars.webp";
 import HomeHeaderStarsMobile from "../../../assets/24-25/home/header-stars-m.webp";
 import NovaButton from "../../ui/NovaButton";
 import { useMediaQuery } from "usehooks-ts";
+import { COLLAB_FORM } from "../../../links";
 
 interface Props {}
 
@@ -35,7 +36,7 @@ const HomeHeader = (props: Props) => {
                         high-impact technology that empowers nonprofits to
                         better serve their communities.
                     </p>
-                    <NovaButton arrow to="collab">
+                    <NovaButton arrow to={COLLAB_FORM} target="_blank">
                         Work with us
                     </NovaButton>
                 </div>
