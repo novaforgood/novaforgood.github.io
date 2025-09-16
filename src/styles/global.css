@@ -61,10 +61,28 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "Unbounded";
+  src: url("../../static/fonts/Unbounded-Black.ttf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url("../../static/fonts/Unbounded-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "InstrumentSans";
+  src: url("../../static/fonts/InstrumentSans-Medium.ttf");
+  font-weight: 500;
+}
+
 html {
-  /* background-color: #ff0000; */
-  background-image: linear-gradient(#c5e6f5, #7eaecf, #396097);
-  color: #013668;
+  background: white;
+  background-size: cover; /* stretch across the viewport */
+  color: black; /* keep your text color */
   margin: 0;
   padding: 0;
 }

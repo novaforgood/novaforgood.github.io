@@ -8,11 +8,16 @@ import {
   NovaSpacer,
   NovaH4,
 } from "../components/PageAssets.js";
+import footerBg from "../assets/footerbackground.png";
 
 const mobile = `@media (max-width: 900px)`;
 
 const true_mobile = `@media (max-width: 400px)`;
 
+const FooterBG = styled.div`
+  background: linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%);
+  color: #fff; /* ensure text is readable */
+`;
 const A = styled(NovaA)`
   margin-right: 20px;
 `;
@@ -107,59 +112,61 @@ export default function Footer() {
   const year = today.getFullYear();
   return (
     <>
-      <NovaSpacer y={168} />
-      <FooterDiv>
-        <div>
-          <NovaH4>
-            <span style={{ fontFamily: "SpaceGrotesk", fontWeight: "400" }}>
-              &#169;
-            </span>{" "}
-            2024 nova for good
-          </NovaH4>
-          <NovaSpacer y={12} />
-          <div style={{ display: "flex", justifyContent: "flex-start" }}>
-            <IconLink href="https://www.facebook.com/novaforgood">
-              <FaFacebookF size={iconSize} />
-            </IconLink>
-            <IconLink href="https://www.instagram.com/novaforgood/">
-              <FaInstagram size={iconSize} />
-            </IconLink>
-            <IconLink href="https://github.com/novaforgood">
-              <FaGithub size={iconSize} />
-            </IconLink>
-            <IconLink href="https://medium.com/novaforgood">
-              <FaMedium size={iconSize} />
-            </IconLink>
-          </div>
-          <NovaSpacer y={12} />
-          <NovaP style={{ color: "white" }}>
-            {/* Last updated {month} {date}
+      <FooterBG>
+        <NovaSpacer y={100} />
+        <FooterDiv>
+          <div>
+            <NovaH4>
+              <span style={{ fontFamily: "SpaceGrotesk", fontWeight: "400" }}>
+                &#169;
+              </span>{" "}
+              2024 nova for good
+            </NovaH4>
+            <NovaSpacer y={12} />
+            <div style={{ display: "flex", justifyContent: "flex-start" }}>
+              <IconLink href="https://www.facebook.com/novaforgood">
+                <FaFacebookF size={iconSize} />
+              </IconLink>
+              <IconLink href="https://www.instagram.com/novaforgood/">
+                <FaInstagram size={iconSize} />
+              </IconLink>
+              <IconLink href="https://github.com/novaforgood">
+                <FaGithub size={iconSize} />
+              </IconLink>
+              <IconLink href="https://medium.com/novaforgood">
+                <FaMedium size={iconSize} />
+              </IconLink>
+            </div>
+            <NovaSpacer y={12} />
+            <NovaP style={{ color: "white" }}>
+              {/* Last updated {month} {date}
             {nth(date)}, {year} */}
-            Last updated September 12th, 2024
-          </NovaP>
-        </div>
-        <LinkDiv>
-          <LinkBox>
-            <Title>general</Title>
-            <NovaSpacer y={12} />
-            <NavLink to="/work">projects</NavLink>
-            <NovaSpacer y={12} />
-            <NavLink to="/team">our team</NavLink>
-          </LinkBox>
-          <LinkBox>
-            <Title>for students</Title>
-            <NovaSpacer y={12} />
-            <NavLink to="/join">join the team</NavLink>
-          </LinkBox>
-          <LinkBox>
-            <Title>for nonprofits</Title>
-            <NovaSpacer y={12} />
-            <NavLink target="_blank" to="https://forms.gle/g6gmjG4uYwL1AP5T9">
-              work with us
-            </NavLink>
-          </LinkBox>
-        </LinkDiv>
-      </FooterDiv>
+              Last updated September 12th, 2024
+            </NovaP>
+          </div>
+          <LinkDiv>
+            <LinkBox>
+              <Title>general</Title>
+              <NovaSpacer y={12} />
+              <NavLink to="/work">projects</NavLink>
+              <NovaSpacer y={12} />
+              <NavLink to="/team">our team</NavLink>
+            </LinkBox>
+            <LinkBox>
+              <Title>for students</Title>
+              <NovaSpacer y={12} />
+              <NavLink to="/join">join the team</NavLink>
+            </LinkBox>
+            <LinkBox>
+              <Title>for nonprofits</Title>
+              <NovaSpacer y={12} />
+              <NavLink target="_blank" to="https://forms.gle/g6gmjG4uYwL1AP5T9">
+                work with us
+              </NavLink>
+            </LinkBox>
+          </LinkDiv>
+        </FooterDiv>
+      </FooterBG>
     </>
   );
 }

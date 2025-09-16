@@ -91,7 +91,7 @@ const MemberCardImage = styled("img")`
   height: 150%;
   transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg); 
+  -webkit-transform: rotate(-45deg);
   position: absolute;
   z-index: 10;
   object-fit: cover;
@@ -212,7 +212,8 @@ const Team = (props) => {
                   person.name &&
                   person.name !== "Example Content" &&
                   person.name.length !== 0 &&
-                  person.active
+                  person.active &&
+                  person.role === "Developer"
               )
               .map((person) => {
                 console.log(person);

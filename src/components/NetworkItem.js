@@ -34,7 +34,14 @@ const NetworkImg = styled.img`
 `;
 
 export default ({ data }) => {
-  if (!data.logo) return <></>;
+  if (!data?.logo) return <></>;
+
+  const logoUrl =
+    data.logo.localFile?.publicURL ??
+    (data.logo.file?.url ? `https:${data.logo.file.url}` : null);
+
+  if (!logoUrl) return <></>;
+
   return (
     <a
       href={data.website}
@@ -43,10 +50,7 @@ export default ({ data }) => {
       style={{ minHeight: 80 }}
     >
       <CenterDiv>
-        <NetworkImg
-          alt={`${data.name} Cover`}
-          src={data.logo.localFile.publicURL}
-        />
+        <NetworkImg alt={`${data.name} Cover`} src={logoUrl} />
       </CenterDiv>
     </a>
   );

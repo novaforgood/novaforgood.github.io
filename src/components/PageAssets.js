@@ -5,22 +5,19 @@ import Fade from "react-reveal/fade";
 import Sparkles from "./Sparkle";
 
 const fonts = {
-  main: "SpaceGrotesk",
+  main: "InstrumentSans",
 };
 
 const mobile = `@media (max-width: 800px)`;
 
 export const NovaH0 = styled.div`
-  font-family: "TheBillion";
+  font-family: "Unbounded";
   font-style: normal;
-  font-weight: 100px;
-  font-size: 200px;
+  font-weight: 900; /* Black */
+  font-size: 158px;
   line-height: 60%;
-  /* identical to box height, or 65px */
-  color: #013668;
-
+  color: black;
   text-align: ${({ center }) => (center ? "center" : "left")};
-  // letter-spacing: 0.05em;
 
   ${mobile} {
     font-size: 100px;
@@ -30,16 +27,20 @@ export const NovaH0 = styled.div`
 export const NovaSub = styled.div`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: SpaceGrotesk;
+  font-family: "Unbounded";
   font-style: normal;
-  font-weight: 60px;
-  font-size: 24px;
+  font-weight: 800; /* ExtraBold */
+  font-size: 72px;
   line-height: 150%;
   width: ${({ width }) => width || "auto"};
-  /* or 38px */
   text-align: ${({ center }) => (center ? "center" : "left")};
-  color: #013668;
-  margin-left: 6%;
+  color: black;
+  margin-top: 1%;
+
+  white-space: nowrap;
+  word-break: keep-all; /* don’t break within words */
+  overflow-wrap: normal;
+
   ${mobile} {
     margin-left: 10%;
     font-size: 13px;
@@ -97,7 +98,7 @@ export const NovaH4 = styled.div`
 `;
 
 export const NovaDiv = styled.div`
-  font-family: SpaceGrotesk;
+  font-family: InstrumentSans;
   line-height: ${({ lineHeight }) => `${lineHeight || "100%"}`};
   font-size: ${({ fontSize }) => `${fontSize || 20}px`};
   text-align: ${({ center }) => (center ? "center" : "left")};
@@ -130,15 +131,15 @@ export const MainBox = styled.div`
 export const NovaP = styled.p`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: SpaceGrotesk;
+  font-family: InstrumentSans;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 150%;
   width: ${({ width }) => width || "auto"};
   /* or 38px */
   text-align: ${({ center }) => (center ? "center" : "left")};
-  color: #013668;
+  color: black;
   margin: 0;
   ${mobile} {
     font-size: 16px;
@@ -146,13 +147,27 @@ export const NovaP = styled.p`
 `;
 
 export const Button = styled(Link)`
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
   color: ${({ textColor }) => `${textColor || "#FFFFFF"}`};
-  background-color: ${({ backgroundColor }) =>
-    `${backgroundColor || "#00A0FF"}`};
-  border: ${({ borderColor }) => `1.5px solid ${borderColor || "#000000"}`};
+
+  /* solid color fallback */
+  ${({ backgroundColor }) =>
+    backgroundColor && !`${backgroundColor}`.includes("gradient")
+      ? `background-color: ${backgroundColor};`
+      : ""}
+
+  /* gradient or custom background */
+  ${({ background, bg, backgroundColor }) => {
+    const val = background || bg || backgroundColor;
+    return val && `${val}`.includes("gradient") ? `background: ${val};` : "";
+  }}
+
+  border: ${({ borderColor }) => `1.5px solid ${borderColor || ""}`};
   box-sizing: border-box;
   border-radius: ${({ borderRadius }) => `${borderRadius || "10px"}`};
-  font-family: SpaceGrotesk;
+  font-family: InstrumentSans;
   font-style: normal;
   font-weight: 600;
   line-height: 160%;
@@ -160,8 +175,47 @@ export const Button = styled(Link)`
   padding: ${({ padding }) => `${padding || "15px 70px"}`};
   margin: 0 10px;
   text-decoration: none;
-  display: inline-block;
   text-align: center;
+
+  /* ✨ Hover micro-interactions */
+  transition:
+    transform 200ms ease,
+    /*box-shadow 200ms ease,*/
+    filter 200ms ease,
+    background 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+  will-change: transform;
+
+  &:hover {
+    transform: translateY(-2px);
+    /*box-shadow: 0 10px 24px rgba(0,0,0,0.15);*/
+  }
+  &:active {
+    transform: translateY(0);
+    filter: brightness(0.98);
+    /*box-shadow: 0 6px 16px rgba(0,0,0,0.12);*/
+  }
+
+  /* 💡 subtle “shine” sweep */
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255,255,255,0.32),
+      transparent
+    );
+    transform: translateX(-120%);
+    transition: transform 300ms ease;
+  }
+  &:hover::before {
+    transform: translateX(120%);
+  }
 
   ${mobile} {
     font-size: 14px;
@@ -197,6 +251,10 @@ const SectionBoxStyled = styled.div`
     min-width: 0;
   }
 `;
+
+export const SectionFillWidth = ({ children }) => {
+  return <Fade>{children}</Fade>;
+};
 
 export const SectionBox = ({ children }) => {
   return (
@@ -246,16 +304,52 @@ export const NovaLink = styled(Link)`
 `;
 
 export const NovaA = styled.a`
-  color: #ffffff;
+  /* base + theme vars */
+  --grad: var(
+    --Gradient,
+    linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%)
+  );
+
+  position: relative;
+  color: #000000;
   text-decoration: none;
   border-bottom: ${({ underline }) =>
-    underline ? "2px solid #ffffff" : "none"};
+    underline ? "2px solid #000000" : "none"};
+  transition: color 200ms ease;
 
+  /* Fallback hover color (for browsers without background-clip:text) */
   &:hover {
-    color: #013668;
-    border-bottom: ${({ underline }) =>
-      underline ? "2px solid #013668" : "none"};
+    color: #b78df2;
   }
+
+  /* Gradient text on hover (where supported) */
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    &:hover {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent; /* Safari/WebKit */
+      color: transparent; /* others */
+    }
+  }
+
+  /* Gradient underline on hover when underline=true */
+  ${({ underline }) =>
+    underline &&
+    `
+    &:hover {
+      border-bottom: none; /* replace the solid underline */
+    }
+    &:hover::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      bottom: -2px;
+      height: 2px;
+      background: var(--grad);
+      border-radius: 1px;
+    }
+  `}
 `;
 
 export const Img = styled.img`
@@ -270,7 +364,7 @@ export const Img = styled.img`
 `;
 
 export const Span = styled.span`
-  font-family: SpaceGrotesk;
+  font-family: InstrumentSans;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
