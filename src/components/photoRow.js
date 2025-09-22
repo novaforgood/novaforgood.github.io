@@ -5,13 +5,32 @@ import { keyframes } from "@emotion/react";
 
 const mobile = `@media (max-width: 800px)`;
 
+/* ---------- helpers: seeded RNG + Fisher–Yates shuffle ---------- */
+function mulberry32(seed) {
+  let t = seed >>> 0;
+  return function () {
+    t += 0x6d2b79f5;
+    let r = Math.imul(t ^ (t >>> 15), 1 | t);
+    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function shuffleArray(arr, rng = Math.random) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 /* Continuous scroll */
 const scroll = keyframes`
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 `;
 
-/* Viewport: exposes CSS vars for duration + row heights, optional edge mask */
+/* Viewport */
 const RowViewport = styled("div", {
   shouldForwardProp: (p) =>
     !["duration", "rowHeight", "rowHeightMobile", "gap", "maskEdges"].includes(
@@ -34,7 +53,7 @@ const RowViewport = styled("div", {
       : ""}
 `;
 
-/* Track: duplicates slides externally; reverses direction when asked */
+/* Track */
 const Track = styled("div", {
   shouldForwardProp: (p) => p !== "reverse",
 })`
@@ -55,39 +74,32 @@ const Track = styled("div", {
   }
 `;
 
-/* Slide: fixed height, width = height × ratio; uses bg image; no DOM prop leaks */
+/* Slide */
 const SlideCard = styled.div`
-  /* Same row height for every card */
   height: var(--row-h, 240px);
-
-  /* Let content (the <img>) define width from its intrinsic ratio */
   flex: 0 0 auto;
   display: inline-block;
-
   border-radius: 20px;
-  border: 1px solid #000;
-  overflow: hidden; /* keep rounded corners clean */
+  border: 1.5px solid #000;
+  overflow: hidden;
 
   ${mobile} {
     height: var(--row-h-mobile, 180px);
   }
 `;
-
 const SlideImg = styled.img`
   height: 100%;
-  width: auto; /* ⬅️ keeps intrinsic aspect */
-  display: block; /* avoid baseline gap */
+  width: auto;
+  display: block;
 `;
 
 /**
  * InfinitePhotoRow
- * images: Array<string | { src: string, alt?: string, ratio?: number }>
- *   - ratio = width/height per card (e.g., 1 for square, 1.6 for wide)
- * duration: CSS time (e.g., "30s")
- * reverse: boolean (flip direction)
- * rowHeight / rowHeightMobile: CSS sizes (e.g., "220px")
- * gap: CSS size between cards (default 16px)
- * maskEdges: fade viewport edges (default true)
+ * props:
+ *  - images: Array<string | { src, alt? }>
+ *  - duration, reverse, rowHeight, rowHeightMobile, gap, maskEdges
+ *  - shuffle?: boolean (default true)
+ *  - seed?: number (use to keep order stable across SSR/CSR)
  */
 export default function InfinitePhotoRow({
   images,
@@ -99,24 +111,29 @@ export default function InfinitePhotoRow({
   maskEdges = true,
   className,
   ariaLabel = "Rotating photo row",
+  shuffle = true,
+  seed,
 }) {
-  // Normalize input -> {src, alt, ratio}
+  // normalize input
   const slides = useMemo(
     () =>
       (images || []).map((im) =>
         typeof im === "string"
-          ? { src: im, alt: "", ratio: 1.333 }
-          : {
-              src: im.src,
-              alt: im.alt || "",
-              ratio: typeof im.ratio === "number" ? im.ratio : 1.333,
-            }
+          ? { src: im, alt: "" }
+          : { src: im.src, alt: im.alt || "" }
       ),
     [images]
   );
 
-  // Duplicate once for seamless loop
-  const loop = [...slides, ...slides];
+  // optionally shuffle (seeded if provided)
+  const ordered = useMemo(() => {
+    if (!shuffle) return slides;
+    const rng = typeof seed === "number" ? mulberry32(seed) : Math.random;
+    return shuffleArray(slides, rng);
+  }, [slides, shuffle, seed]);
+
+  // duplicate for seamless loop
+  const loop = useMemo(() => [...ordered, ...ordered], [ordered]);
 
   return (
     <RowViewport
@@ -133,7 +150,7 @@ export default function InfinitePhotoRow({
         {loop.map(({ src, alt }, i) => (
           <SlideCard
             key={i}
-            aria-label={alt || `Slide ${(i % slides.length) + 1}`}
+            aria-label={alt || `Slide ${(i % ordered.length) + 1}`}
           >
             <SlideImg src={src} alt={alt || ""} loading="lazy" />
           </SlideCard>

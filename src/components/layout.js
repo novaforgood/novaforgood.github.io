@@ -20,7 +20,7 @@ const ContentWrap = styled("div", {
   padding-top: ${({ home }) => (home ? "0" : "clamp(5rem, 8vw, 6.5rem)")};
 
   ${mobile} {
-    padding-top: ${({ home }) => (home ? "0" : "4.5rem")};
+    padding-top: 0;
   }
 `;
 

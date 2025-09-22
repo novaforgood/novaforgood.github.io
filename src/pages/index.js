@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import aboutleft from "../assets/aboutleft.svg";
 import aboutright from "../assets/aboutright.svg";
+import arrow from "../assets/arrow.svg";
 import centerstar from "../assets/centerstar.svg";
 import city from "../assets/city.png";
 import clouds from "../assets/clouds.png";
@@ -250,6 +251,169 @@ export const TeamImage = styled.img`
   }
 `;
 
+/* Card shell */
+const InfoCard = styled.div`
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #000;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: clamp(20px, 4vw, 48px);
+`;
+
+/* Layout: text on left, CTA on right */
+const InfoRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+
+  ${mobile} {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+`;
+
+/* Heading + body */
+const InfoTitle = styled(NovaSub)`
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  font-size: clamp(28px, 6vw, 64px);
+  color: #000;
+`;
+
+const InfoBody = styled(NovaP)`
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  line-height: 1.6;
+  margin: 0;
+  color: #000;
+`;
+
+/* Ghost CTA (fills with gradient on hover) */
+const GhostButton = styled(Link)`
+  --grad: var(
+    --Gradient,
+    linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%)
+  );
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1.5px solid #000;
+  border-radius: 9999px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-family: InstrumentSans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0 10px;
+  justify-content: center;
+
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease,
+    border-color 180ms ease;
+
+  &:hover {
+    background: var(--grad);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-1px);
+  }
+
+  /* arrow */
+  & > span {
+    display: inline-block;
+    transition: transform 180ms ease;
+  }
+  &:hover > span {
+    transform: translateX(2px) rotate(45deg);
+  }
+
+  ${mobile} {
+    justify-self: start; /* on mobile, button sits under text, left-aligned */
+  }
+`;
+
+// Section shell
+const ProjectsWrap = styled.section`
+  text-align: center;
+`;
+
+// Title styled like NovaSub but sized for the section
+const ProjectsTitle = styled(NovaSub)`
+  margin: 0;
+  font-size: clamp(40px, 10vw, 120px);
+  line-height: 0.9;
+  white-space: normal; /* allow wrapping for long words here */
+`;
+
+// Subtitle under title
+const ProjectsSubtitle = styled(NovaP)`
+  max-width: 1000px;
+  margin: 16px auto 40px;
+`;
+
+// Grid of cards
+const ProjectsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 32px);
+  justify-items: center;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+// Card
+const ProjectCard = styled(Link)`
+  width: 270px;
+  color: inherit;
+  text-decoration: none;
+
+  /* lift on hover */
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  &:hover {
+    transform: translateY(-3px);
+  }
+`;
+
+// Image block (1:1), rounded + black stroke like mock
+const ProjectImage = styled.div`
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 22px;
+  background: ${({ src }) =>
+    src ? `url(${src}) center / cover no-repeat` : `#0e4a78`};
+  /*box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);*/
+`;
+
+// Title + blurb under image
+const ProjectName = styled.div`
+  font-family: "Unbounded", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin-top: 18px;
+`;
+
+const ProjectDesc = styled(NovaP)`
+  max-width: 28ch;
+  margin: 8px auto 0;
+  opacity: 0.9;
+`;
+
 export default function Home({ data }) {
   const teamImages = (data.allContentfulMember?.nodes || [])
     .map(
@@ -258,6 +422,13 @@ export default function Home({ data }) {
         (m?.profilePicture?.file?.url
           ? `https:${m.profilePicture.file.url}`
           : null)
+    )
+    .filter(Boolean);
+  const slideImages = (data.allContentfulPhoto?.nodes || [])
+    .map(
+      (p) =>
+        p?.pic?.localFile?.publicURL ||
+        (p?.pic?.file?.url ? `https:${p.pic.file.url}` : null)
     )
     .filter(Boolean);
   return (
@@ -313,172 +484,148 @@ export default function Home({ data }) {
 
       {/* WHITE → IMAGE → WHITE band behind "who are we?" */}
       <GradientToImage>
-        <NovaSpacer y={40} />
-        <SectionBox>
-          <NovaH2>who are we?</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>
-            <ListItem>
-              Developers, designers, and businesspeople who love to solve
-              problems.
-            </ListItem>
-            <ListItem>
-              Students who seek to better understand the realities of
-              under-resourced communities.
-            </ListItem>
-            <ListItem>
-              A team that strongly believes in making a difference.
-            </ListItem>
-          </NovaP>
-
-          <TeamImage
-            src={team}
-            minHeight={"470px"}
-            maxHeight={"45vh"}
-            alt="The Team"
-          />
-
-          <NovaP>
-            <Arrow />
-            <NovaLink underline to="/about">
-              Read more about us
-            </NovaLink>
-          </NovaP>
-        </SectionBox>
-        <NovaSpacer y={160} />
-        <NovaSpacer y={40} />
+        <NovaSpacer y={500} />
         <SectionFillWidth>
           {/* Row 1 — left-to-right (or default direction) */}
           <InfinitePhotoRow
-            images={teamImages}
-            duration="600s"
+            images={slideImages}
+            duration="60s"
             rowHeight="30vh"
           />
           <NovaSpacer y={12} />
           {/* Row 2 — counter-rotating */}
           <InfinitePhotoRow
-            images={[...teamImages].reverse()} // optional variety
-            duration="500s" // slightly different speed feels nicer
+            images={[...slideImages].reverse()} // optional variety
+            duration="70s"
             reverse // opposite direction
             rowHeight="30vh"
           />
         </SectionFillWidth>
-        <NovaSpacer y={160} />
-        {/* Mid-page decorative background stays the same */}
-        <BodyContainer>
-          <SectionBox>
-            <NovaH2>we create solutions.</NovaH2>
-            <NovaSpacer y={24} />
-            <NovaP>
-              We were founded on the belief that even small solutions have the
-              potential to create a large impact. We put together small
-              interdisciplinary teams and work closely with nonprofits to bring
-              a product vision to life through ideation, design, and
-              implementation.
-            </NovaP>
-            <NovaSpacer y={48} />
-            <CaseDiv>
-              {data.allContentfulProjectCaseStudy.nodes
-                .filter((node) => node.featured === true)
-                .sort((a, b) => (a.name >= b.name ? 1 : -1))
-                .map((node) => (
-                  <CaseItem key={node.id} data={node} />
-                ))}
-            </CaseDiv>
-          </SectionBox>
-          <NovaSpacer y={160} />
+        <NovaSpacer y={50} />
+        <SectionBox>
+          <InfoCard>
+            <InfoRow>
+              <div>
+                <InfoTitle>Who We Are</InfoTitle>
+                <NovaSpacer y={12} />
+                <InfoBody>
+                  <ListItem>
+                    Developers, designers, and businesspeople who love to solve
+                    problems.
+                  </ListItem>
+                  <ListItem>
+                    Students who seek to better understand the realities of
+                    under-resourced communities.
+                  </ListItem>
+                  <ListItem>
+                    A team that strongly believes in making a difference.
+                  </ListItem>
+                </InfoBody>
+              </div>
 
-          <SectionBox>
-            <PageHeightContainer>
-              <NovaH2>our network</NovaH2>
-              <NovaSpacer y={24} />
-              <NovaP>
-                We wouldn't be able to do what we love alone. We’re grateful for
-                these organizations who have advised us and given us a hand in
-                better understanding the social sector.
-              </NovaP>
-              <NovaSpacer y={12} />
-              <NovaP>
-                Interested in becoming a partner or advisor?{" "}
-                <NovaLink
-                  underline
-                  rel="noreferrer"
-                  target="_blank"
-                  to="https://forms.gle/g6gmjG4uYwL1AP5T9"
-                >
-                  Let us know
-                </NovaLink>{" "}
-                — we’d love to talk to you!
-              </NovaP>
-              <NovaSpacer y={24} />
-              <NetworkDiv>
-                {data.allContentfulNonprofitInOurNetwork.nodes.map(
-                  (node) =>
-                    node.showOnHomepage && (
-                      <NetworkItem key={node.name} data={node} />
-                    )
-                )}
-              </NetworkDiv>
-              <NovaSpacer y={48} />
-              <SparklyButton
-                rel="noreferrer"
-                target="_blank"
-                to="https://forms.gle/g6gmjG4uYwL1AP5T9"
-                textColor="#013668"
-                backgroundColor="#C5E6F5"
-                borderColor="#C5E6F5"
-              >
-                work with us
-              </SparklyButton>
-            </PageHeightContainer>
-          </SectionBox>
-        </BodyContainer>
-        <NovaSpacer y={160} />
+              <GhostButton to="/about" aria-label="Learn more about us">
+                Learn More <span>↗</span>
+              </GhostButton>
+            </InfoRow>
+          </InfoCard>
+        </SectionBox>
+        <NovaSpacer y={50} />
+        <SectionFillWidth>
+          {/* Row 1 — left-to-right (or default direction) */}
+          <InfinitePhotoRow
+            images={slideImages}
+            duration="70s"
+            rowHeight="30vh"
+          />
+        </SectionFillWidth>
+        {/* Mid-page decorative background stays the same */}
+
+        <NovaSpacer y={500} />
       </GradientToImage>
       {/* Partners: back to white */}
+
       <WhiteSection>
         <NovaSpacer y={40} />
         <SectionBox>
           <ColoredStars />
-          <NovaH2>our partners</NovaH2>
-          <NovaSpacer y={24} />
-          <NovaP>
-            A huge thanks to our generous partners for supporting us!
-          </NovaP>
-          <NovaSpacer y={12} />
-          <NovaP>
-            Interested in sponsoring Nova? Send us an e-mail at{" "}
-            <NovaA underline href="mailto:sponsorships@novaforgood.org">
-              sponsorships@novaforgood.org
-            </NovaA>{" "}
-            and we'll get back to you with details!
-          </NovaP>
-          <NovaSpacer y={12} />
-          <NovaP>
-            Interested in becoming a partner or advisor?{" "}
-            <NovaLink
-              underline
-              rel="noreferrer"
-              target="_blank"
-              to="https://forms.gle/g6gmjG4uYwL1AP5T9"
-            >
-              Let us know
-            </NovaLink>{" "}
-            — we’d love to talk to you!
-          </NovaP>
-          <NovaSpacer y={24} />
-          <NetworkDiv>
-            {data.allContentfulSponsor.nodes.map((node) => (
-              <NetworkItem key={node.name} data={node} />
-            ))}
-          </NetworkDiv>
-          <NovaSpacer y={48} />
-        </SectionBox>
 
-        <DesktopView>
-          <NovaSpacer y={300} />
-        </DesktopView>
+          <ProjectsWrap>
+            <ProjectsTitle center>Projects</ProjectsTitle>
+            <ProjectsSubtitle center>
+              We were founded on the belief that even small solutions have the
+              potential to create a large impact. We put together small
+              interdisciplinary teams and work closely with nonprofits to bring
+              a product to life through ideation, design, and implementation.{" "}
+            </ProjectsSubtitle>
+
+            <ProjectsGrid>
+              {(data.allContentfulProjectCaseStudy.nodes || [])
+                .filter((n) => n.featured) // or slice(0,3)
+                .slice(0, 3)
+                .map((n, i) => {
+                  const imgSrc = n?.preview?.localFile?.publicURL;
+                  const desc =
+                    n.description?.description ||
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elementum maximus risus ut.";
+                  return (
+                    <ProjectCard key={n.id} to={`/work#${n.slug || n.id}`}>
+                      <ProjectImage src={imgSrc} />
+                      <ProjectName>{n.name}</ProjectName>
+                      <ProjectDesc>{desc}</ProjectDesc>
+                    </ProjectCard>
+                  );
+                })}
+            </ProjectsGrid>
+
+            <NovaSpacer y={24} />
+            <GhostButton to="/work">
+              More Projects <span>↗</span>
+            </GhostButton>
+          </ProjectsWrap>
+        </SectionBox>
+        <NovaSpacer y={300} />
+        <SectionBox>
+          <ColoredStars />
+          <PageHeightContainer>
+            <ProjectsTitle center>Our Network</ProjectsTitle>
+            <NovaSpacer y={56} />
+            <NovaP>
+              We wouldn't be able to do what we love alone. We’re grateful for
+              these organizations who have advised us and given us a hand in
+              better understanding the social sector.
+            </NovaP>
+            <NovaSpacer y={12} />
+            <NovaP>
+              Interested in becoming a partner or advisor?{" "}
+              <NovaLink
+                underline
+                rel="noreferrer"
+                target="_blank"
+                to="https://forms.gle/g6gmjG4uYwL1AP5T9"
+              >
+                Let us know
+              </NovaLink>{" "}
+              — we’d love to talk to you!
+            </NovaP>
+            <NovaSpacer y={24} />
+            <NetworkDiv>
+              {data.allContentfulNonprofitInOurNetwork.nodes.map(
+                (node) =>
+                  node.showOnHomepage && (
+                    <NetworkItem key={node.name} data={node} />
+                  )
+              )}
+            </NetworkDiv>
+            <NovaSpacer y={10} />
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <GhostButton to="/contact">
+                Work with us <span>↗</span>
+              </GhostButton>
+            </div>
+          </PageHeightContainer>
+        </SectionBox>
       </WhiteSection>
+      <NovaSpacer y={100} />
     </Layout>
   );
 }
@@ -493,6 +640,15 @@ export const query = graphql`
         featured
         description {
           description
+        }
+        preview {
+          # choose one or more of these depending on how you render images
+          localFile {
+            publicURL
+          } # if you use plain <img> or bg url
+          file {
+            url
+          } # CDN url fallback (prefix with https:)
         }
       }
     }
@@ -529,6 +685,18 @@ export const query = graphql`
       nodes {
         name
         profilePicture {
+          file {
+            url
+          }
+          localFile {
+            publicURL
+          }
+        }
+      }
+    }
+    allContentfulPhoto {
+      nodes {
+        pic {
           file {
             url
           }

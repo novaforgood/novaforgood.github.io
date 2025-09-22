@@ -13,6 +13,7 @@ import {
   NovaA,
   NovaDiv,
   NovaH1,
+  NovaSub,
   NovaLink,
   NovaP,
   NovaSpacer,
@@ -159,7 +160,7 @@ function shuffle(array) {
   return array;
 }
 
-const MemberCard = ({ name, imageURL, projectList, linkedin }) => {
+const MemberCard = ({ name, imageURL, role, linkedin }) => {
   return (
     <MemberCardContainer>
       <MemberCardImageContainer>
@@ -179,12 +180,39 @@ const MemberCard = ({ name, imageURL, projectList, linkedin }) => {
         </b>
       </NovaDiv>
       <NovaSpacer y={14} />
-      <NovaDiv center>{projectList}</NovaDiv>
+      <NovaDiv center>{role}</NovaDiv>
     </MemberCardContainer>
   );
 };
-const Team = (props) => {
-  const memberData = shuffle(props.data.allContentfulMember.nodes);
+const Team = ({ data }) => {
+  const nodes = data.allContentfulMember.nodes;
+  const memberData = shuffle(nodes);
+
+  // --- Leadership helpers ---
+  const LEADER_ROLES = [
+    "President",
+    "Internal Vice President",
+    "External Vice President",
+    "Design Director",
+    "Finance Director",
+  ];
+  const roleOrder = LEADER_ROLES.reduce(
+    (m, r, i) => ((m[r.toLowerCase()] = i), m),
+    {}
+  );
+  const norm = (s) => (s || "").trim().toLowerCase();
+  const isLeader = (p) => LEADER_ROLES.some((r) => norm(p.role) === norm(r));
+  const picURL = (p) =>
+    p?.profilePicture?.localFile?.publicURL ||
+    (p?.profilePicture?.file?.url ? `https:${p.profilePicture.file.url}` : "");
+
+  const leaders = nodes
+    .filter((p) => p.name && isLeader(p))
+    .sort(
+      (a, b) =>
+        (roleOrder[norm(a.role)] ?? 999) - (roleOrder[norm(b.role)] ?? 999)
+    );
+  const leaderNames = new Set(leaders.map((p) => p.name));
   console.log(memberData);
 
   return (
@@ -193,7 +221,7 @@ const Team = (props) => {
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>meet the team</NovaH1>
+          <NovaH1 center>Meet The Team</NovaH1>
           <NovaSpacer y={24} />
           <PDiv>
             <NovaP center>
@@ -205,6 +233,26 @@ const Team = (props) => {
         </SectionBox>
         <NovaSpacer y={96} />
         <SectionBox>
+          <NovaSpacer y={64} />
+          <NovaSub center>25-26 Board</NovaSub>
+          <NovaSpacer y={48} />
+          <MemberCardLayout>
+            {leaders.map((person) => (
+              <MemberCard
+                key={person.name}
+                name={person.name}
+                imageURL={picURL(person)}
+                role={person.role}
+                linkedin={person.linkedinURL}
+              />
+            ))}
+          </MemberCardLayout>
+        </SectionBox>
+        <NovaSpacer y={96} />
+        <SectionBox>
+          <NovaSpacer y={64} />
+          <NovaSub center>Members</NovaSub>
+          <NovaSpacer y={48} />
           <MemberCardLayout>
             {memberData
               .filter(
@@ -213,7 +261,7 @@ const Team = (props) => {
                   person.name !== "Example Content" &&
                   person.name.length !== 0 &&
                   person.active &&
-                  person.role === "Developer"
+                  !leaderNames.has(person.name)
               )
               .map((person) => {
                 console.log(person);
@@ -224,7 +272,7 @@ const Team = (props) => {
                   <MemberCard
                     name={person.name}
                     imageURL={person.profilePicture.file.url}
-                    // projectList={projects}
+                    role={person.role}
                     linkedin={person.linkedinURL}
                   />
                 );
@@ -234,7 +282,7 @@ const Team = (props) => {
         <NovaSpacer y={144} />
         <SectionBox>
           <a id="join">
-            <NovaH1 center>join the team</NovaH1>
+            <NovaSub center>Join The Team</NovaSub>
           </a>
           <NovaSpacer y={24} />
           <JoinContain>
@@ -247,7 +295,7 @@ const Team = (props) => {
               </NovaP>
               <NovaSpacer y={24} />
               <NovaP>
-                Our Fall 2023 Recruitment events are coming up! Visit the{" "}
+                Our Fall 2025 Recruitment is here! Visit the{" "}
                 <NovaLink underline to="/join">
                   recruitment page
                 </NovaLink>{" "}
@@ -267,7 +315,7 @@ const Team = (props) => {
         <NovaSpacer y={144} />
 
         <SectionBox>
-          <NovaH1 center>alumni</NovaH1>
+          <NovaH1 center>Alumni</NovaH1>
           <NovaSpacer y={96} />
           <MemberCardLayout>
             {memberData

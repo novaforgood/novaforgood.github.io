@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "../components/Layout.js";
 import { graphql } from "gatsby";
 import {
-  NovaH1,
-  NovaH2,
+  NovaH0,
+  NovaSub,
   NovaH4,
   NovaSpacer,
   SectionBox,
@@ -135,8 +135,8 @@ const Content = ({ node, index, articleAssets }) => {
       return (
         <>
           <NovaSpacer y={64} />
-          <NovaH2>{index}</NovaH2>
-          <NovaH2>{node.content.map(renderText)}</NovaH2>
+          <NovaSub>{index}</NovaSub>
+          <NovaSub>{node.content.map(renderText)}</NovaSub>
           <NovaSpacer y={24} />
         </>
       );
@@ -191,7 +191,7 @@ const CaseStudyHeader = ({ pageData }) => {
     <>
       {/* <Img alt={`${Name}`} src={imageURL} /> */}
       <NovaSpacer y={160} mobileY={50} />
-      <NovaH1>{name}</NovaH1>
+      <NovaSub>{name}</NovaSub>
       <NovaSpacer y={24} />
       <NovaP>{description.description}</NovaP>
       <NovaSpacer y={80} />
@@ -320,11 +320,11 @@ export default ({ data, pageContext }) => {
             );
           })}
           <NovaSpacer y={96} />
-          <NovaH2 center>
+          <NovaSub center>
             {/* <NovaLink underline to="#top">
               &#8593; Back to Top
             </NovaLink> */}
-          </NovaH2>
+          </NovaSub>
         </SectionBox>
       </PageContainer>
     </Layout>

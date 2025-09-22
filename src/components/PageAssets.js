@@ -29,38 +29,44 @@ export const NovaSub = styled.div`
   -moz-osx-font-smoothing: grayscale;
   font-family: "Unbounded";
   font-style: normal;
-  font-weight: 800; /* ExtraBold */
-  font-size: 72px;
-  line-height: 150%;
+  font-weight: 800;
+  /* fluid between 32px and 72px, driven by viewport width */
+  font-size: clamp(32px, 7vw, 72px);
+  line-height: 1.1;
   width: ${({ width }) => width || "auto"};
   text-align: ${({ center }) => (center ? "center" : "left")};
   color: black;
-  margin-top: 1%;
+  margin-top: 0; /* 1% is relative to width and can feel jumpy */
 
-  white-space: nowrap;
-  word-break: keep-all; /* don’t break within words */
+  word-break: keep-all;
   overflow-wrap: normal;
 
   ${mobile} {
-    margin-left: 10%;
-    font-size: 13px;
+    margin-left: 0; /* avoid pushing it right on small screens */
+    /* no font-size override here */
   }
 `;
 
 export const NovaH1 = styled.div`
-  font-family: ${fonts.main};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Unbounded";
   font-style: normal;
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 135%;
-  /* identical to box height, or 65px */
-  color: #013668;
-
+  font-weight: 800;
+  /* fluid between 32px and 72px, driven by viewport width */
+  font-size: clamp(32px, 8vw, 108px);
+  line-height: 1.1;
+  width: ${({ width }) => width || "auto"};
   text-align: ${({ center }) => (center ? "center" : "left")};
-  letter-spacing: 0.05em;
+  color: black;
+  margin-top: 0; /* 1% is relative to width and can feel jumpy */
+
+  word-break: keep-all;
+  overflow-wrap: normal;
 
   ${mobile} {
-    font-size: 32px;
+    margin-left: 0; /* avoid pushing it right on small screens */
+    /* no font-size override here */
   }
 `;
 export const NovaH2 = styled.div`
@@ -242,7 +248,7 @@ export function SparklyButton(props) {
 }
 
 const SectionBoxStyled = styled.div`
-  width: 50%;
+  width: 60%;
   min-width: 760px;
   margin: 0 auto;
   background: rgba(0, 0, 0, 0);

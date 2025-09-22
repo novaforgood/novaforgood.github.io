@@ -8,6 +8,7 @@ import {
   NovaSpacer,
   NovaH4,
 } from "../components/PageAssets.js";
+import logowhite from "../assets/logowhite.svg";
 import footerBg from "../assets/footerbackground.png";
 
 const mobile = `@media (max-width: 900px)`;
@@ -56,6 +57,11 @@ const FooterDiv = styled.div`
   ${true_mobile} {
     margin: 0 auto;
   }
+`;
+
+const LogoImg = styled.img`
+  height: 2.5rem;
+  width: auto;
 `;
 
 const Title = styled.h2`
@@ -116,6 +122,7 @@ export default function Footer() {
         <NovaSpacer y={100} />
         <FooterDiv>
           <div>
+            <LogoImg src={logowhite} alt="Nova For Good Logo" />
             <NovaH4>
               <span style={{ fontFamily: "SpaceGrotesk", fontWeight: "400" }}>
                 &#169;

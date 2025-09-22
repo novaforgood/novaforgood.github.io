@@ -378,7 +378,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.27.1"
 
-"@babel/plugin-syntax-jsx@^7.0.0", "@babel/plugin-syntax-jsx@^7.2.0", "@babel/plugin-syntax-jsx@^7.22.5", "@babel/plugin-syntax-jsx@^7.27.1":
+"@babel/plugin-syntax-jsx@^7.0.0", "@babel/plugin-syntax-jsx@^7.17.12", "@babel/plugin-syntax-jsx@^7.2.0", "@babel/plugin-syntax-jsx@^7.22.5", "@babel/plugin-syntax-jsx@^7.27.1":
   version "7.27.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.27.1.tgz#2f9beb5eff30fa507c5532d107daac7b888fa34c"
   integrity sha512-y8YTNIeKoyhGd9O0Jiyzyyqk8gdjnumGTQPsz0xOZOQ2RmkVJeZ1vmmfIvFEKqucBG6axJGBZDE/7iI5suUI/w==
@@ -758,7 +758,7 @@
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.27.1"
 
-"@babel/plugin-transform-react-jsx@^7.0.0", "@babel/plugin-transform-react-jsx@^7.12.1", "@babel/plugin-transform-react-jsx@^7.27.1":
+"@babel/plugin-transform-react-jsx@^7.0.0", "@babel/plugin-transform-react-jsx@^7.12.1", "@babel/plugin-transform-react-jsx@^7.17.12", "@babel/plugin-transform-react-jsx@^7.27.1":
   version "7.27.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.27.1.tgz#1023bc94b78b0a2d68c82b5e96aed573bcfb9db0"
   integrity sha512-2KH4LWGSrJIkVf5tSiBFYuXDAoWRq2MMwgivCf+93dd0GQi8RXLjKA/0EvRnVV5G0hrHczsquXuD01L8s6dmBw==
@@ -1064,7 +1064,14 @@
   dependencies:
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
-"@emotion/babel-plugin@^11.13.5":
+"@emotion/babel-plugin-jsx-pragmatic@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@emotion/babel-plugin-jsx-pragmatic/-/babel-plugin-jsx-pragmatic-0.3.0.tgz#12bde56c351f5981e5de66c99e62c371df6c42ca"
+  integrity sha512-XkRI5RdNl+f7HqpJADfTWlzZkd4tNaz2Gjzt97ZqN72jFSOqpL0grGGLdzKJ9dMQHXJBT/KZV+kphTycOblIsQ==
+  dependencies:
+    "@babel/plugin-syntax-jsx" "^7.17.12"
+
+"@emotion/babel-plugin@^11.12.0", "@emotion/babel-plugin@^11.13.5":
   version "11.13.5"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.13.5.tgz#eab8d65dbded74e0ecfd28dc218e75607c4e7bc0"
   integrity sha512-pxHCpT2ex+0q+HH91/zsdHkw/lXd468DIN2zvfvLtPKLLMo6gQj7oLObq8PhkrxOZb/gGCq03S3Z7PDhS8pduQ==
@@ -1091,6 +1098,16 @@
     "@babel/runtime" "^7.5.5"
     "@emotion/babel-plugin-jsx-pragmatic" "^0.1.5"
     babel-plugin-emotion "^10.0.27"
+
+"@emotion/babel-preset-css-prop@^11.11.0":
+  version "11.12.0"
+  resolved "https://registry.yarnpkg.com/@emotion/babel-preset-css-prop/-/babel-preset-css-prop-11.12.0.tgz#a3d51df9a8edb214fa23e2adeddf396a17d98c64"
+  integrity sha512-wJYhkqVvH4nbxqwmw6XEkF/IWFFRQhYXiv69p7gibbT/e4S/5bMatoukDxRVxZla7aNvpZbXnfPeeNDlFehkKA==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.17.12"
+    "@babel/runtime" "^7.18.3"
+    "@emotion/babel-plugin" "^11.12.0"
+    "@emotion/babel-plugin-jsx-pragmatic" "^0.3.0"
 
 "@emotion/cache@^10.0.27":
   version "10.0.29"
@@ -5931,6 +5948,14 @@ gatsby-parcel-config@1.15.0:
     "@parcel/runtime-js" "2.8.3"
     "@parcel/transformer-js" "2.8.3"
     "@parcel/transformer-json" "2.8.3"
+
+gatsby-plugin-emotion@^8.15.0:
+  version "8.15.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-8.15.0.tgz#6c5716005a812c79fd0d9182722a6af14149a90c"
+  integrity sha512-n3ft6Um7XU+NldOn3bRwuWbQzzq4fzK5+jpB1+RB0wn02knClDhIFHgpt6zy4OCZkfWmyONiuSXvGKxWEi8cWA==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    "@emotion/babel-preset-css-prop" "^11.11.0"
 
 gatsby-plugin-google-analytics@^2.3.13:
   version "2.11.0"

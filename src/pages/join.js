@@ -14,10 +14,12 @@ import {
   ListItem,
   NovaA,
   NovaDiv,
+  NovaSub,
   NovaH1,
   NovaH2,
   NovaH4,
   NovaP,
+  SectionFillWidth,
   NovaSpacer,
   SectionBox,
 } from "../components/PageAssets";
@@ -95,7 +97,7 @@ const MemberCardImage = styled("img")`
   height: 150%;
   transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg); 
+  -webkit-transform: rotate(-45deg);
   position: absolute;
   z-index: 10;
   object-fit: cover;
@@ -171,6 +173,90 @@ function shuffle(array) {
   }
   return array;
 }
+/* ===== Recruitment Timeline styles ===== */
+const TimelineWrap = styled.section`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 64px) clamp(16px, 4vw, 24px);
+  text-align: left;
+`;
+
+const TimelineTitle = styled(NovaSub)`
+  text-align: center;
+  margin: 0 auto;
+  font-size: clamp(44px, 7vw, 124px);
+  line-height: 0.9;
+  white-space: normal;
+
+  ${mobile} {
+    margin-left: 0;
+  }
+`;
+
+const TimelineDesc = styled(NovaP)`
+  max-width: 820px;
+  margin: clamp(12px, 2.2vw, 24px) auto clamp(24px, 4vw, 48px);
+`;
+
+const TLGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* left label, right details */
+  gap: clamp(18px, 2.6vw, 28px) clamp(20px, 8vw, 140px);
+  align-items: start;
+
+  ${mobile} {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+`;
+
+/* Left column label */
+const TLLabel = styled.div`
+  font-family: "Unbounded", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(22px, 3.2vw, 40px);
+  color: #000;
+`;
+
+/* Right column details */
+const TLDetail = styled.div`
+  text-align: right;
+  color: #000;
+  ${mobile} {
+    text-align: left;
+  }
+`;
+
+const TLStrong = styled.div`
+  font-family: InstrumentSans, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 700;
+`;
+
+const TLSub = styled.div`
+  font-family: InstrumentSans, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  opacity: 0.9;
+`;
+
+const TLEmph = styled.div`
+  font-family: "Unbounded", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(22px, 3.2vw, 40px);
+  color: #b78df2;
+`;
+
+const TLLink = styled.a`
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+`;
 
 const MemberCard = ({ name, imageURL, role, linkedin }) => {
   return (
@@ -207,7 +293,7 @@ const Recruitment = ({ data }) => {
       <PageContainer>
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH1 center>recruitment</NovaH1>
+          <NovaH1 center>Recruitment</NovaH1>
           <NovaSpacer y={24} />
           <NovaP center>
             At Nova, we’re building a team of developers, designers, data
@@ -217,13 +303,75 @@ const Recruitment = ({ data }) => {
             {/* fill out this{" "}<NovaA href = "https://docs.google.com/forms/d/e/1FAIpQLSfMp0p7tqPaNZqq-eQ3ery1VbtPNfn7Q0rvmOGwC6DG_oCreg/viewform" target="_blank" underline>interest form</NovaA>  */}{" "}
           </NovaP>
         </SectionBox>
+        {/* --- Recruitment Timeline --- */}
+        <SectionBox>
+          <TimelineWrap>
+            <NovaSub center>Fall 2025</NovaSub>
+            <TimelineTitle>Chase the Horizon</TimelineTitle>
+            <TimelineDesc>
+              Interested in joining Nova? Here are the key dates for this cycle.
+            </TimelineDesc>
+
+            <TLGrid>
+              {/* Row 1 */}
+              <TLEmph>App Opens</TLEmph>
+              <TLDetail>
+                <TLStrong>Tues, 9/23 | 5PM</TLStrong>
+                <TLSub>
+                  <TLLink
+                    href="https://tinyurl.com/nova2526"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    tinyurl.com/nova2526
+                  </TLLink>
+                </TLSub>
+              </TLDetail>
+
+              {/* Row 2 */}
+              <TLLabel>Infosesh #1</TLLabel>
+              <TLDetail>
+                <TLStrong>Tues, 9/30 | 8PM</TLStrong>
+                <TLSub>in-person @ MS 5147</TLSub>
+              </TLDetail>
+
+              {/* Row 3 */}
+              <TLLabel>Infosesh #2</TLLabel>
+              <TLDetail>
+                <TLStrong>Wed, 10/1 | 7PM</TLStrong>
+                <TLSub>on Zoom</TLSub>
+              </TLDetail>
+
+              {/* Row 4 */}
+              <TLEmph>App Due</TLEmph>
+              <TLDetail>
+                <TLStrong>Fri, 10/3 | 11:59PM</TLStrong>
+              </TLDetail>
+
+              {/* Row 5 */}
+              <TLLabel>Meet &amp; Greet</TLLabel>
+              <TLDetail>
+                <TLStrong>Tues, 10/7</TLStrong>
+                <TLSub>invite only</TLSub>
+              </TLDetail>
+
+              {/* Row 6 */}
+              <TLLabel>Interview</TLLabel>
+              <TLDetail>
+                <TLStrong>10/13–16</TLStrong>
+                <TLSub>invite only</TLSub>
+              </TLDetail>
+            </TLGrid>
+          </TimelineWrap>
+        </SectionBox>
+
         <SectionBox>
           <NovaSpacer y={64} />
-          <NovaH2 center>fall 2024: to the moon & back</NovaH2>
+          {/* <NovaH2 center>fall 2024: to the moon & back</NovaH2>
           <NovaSpacer y={24} />
           <NovaH4 center>applications open</NovaH4>
           <NovaSpacer y={12} />
-          <NovaP center>SEPTEMBER 23 | 2PM</NovaP>
+          <NovaP center>SEPTEMBER 23 | 2PM</NovaP>*/}
           {/* <NovaP center>
             Apply now @{" "}
             <NovaA
@@ -256,6 +404,7 @@ const Recruitment = ({ data }) => {
             </NovaA>{" "}
             to stay up to date on future recruitment announcements!
           </NovaP>
+          <NovaSpacer y={64} />
 
           {/* uncomment this when apps open:  */}
           {/* <NovaSpacer y={24} />
