@@ -1,179 +1,209 @@
 import React from "react";
-import { FaFacebookF, FaGithub, FaInstagram, FaMedium } from "react-icons/fa";
 import styled from "@emotion/styled";
-import {
-  NovaLink,
-  NovaP,
-  NovaA,
-  NovaSpacer,
-  NovaH4,
-} from "../components/PageAssets.js";
+import { Link } from "gatsby";
+import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
 import logowhite from "../assets/logowhite.svg";
-import footerBg from "../assets/footerbackground.png";
 
 const mobile = `@media (max-width: 900px)`;
 
-const true_mobile = `@media (max-width: 400px)`;
-
-const FooterBG = styled.div`
+/* Gradient backdrop */
+const FooterWrap = styled.footer`
   background: linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%);
-  color: #fff; /* ensure text is readable */
+  color: #fff;
 `;
-const A = styled(NovaA)`
-  margin-right: 20px;
-`;
-const IconLink = (props) => <A href={props.href}>{props.children}</A>;
 
-const LinkDiv = styled.div`
+/* Centered max-width container */
+const Inner = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) clamp(16px, 4vw, 32px);
+`;
+
+/* Two columns: brand (centered) on left, nav/socials right */
+const TopGrid = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 24px;
-  width: 100%;
-  max-width: 450px;
-  ${mobile} {
-    max-width: 375px;
-    grid-column-gap: 16px;
-  }
-`;
-
-const LinkBox = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: start;
-`;
-
-const FooterDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  box-sizing: border-box;
-  padding: 0 50px 72px 50px;
+  gap: clamp(16px, 3vw, 40px);
+
   ${mobile} {
-    padding: 24px;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-row-gap: 20px;
-  }
-  ${true_mobile} {
-    margin: 0 auto;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
   }
 `;
 
-const LogoImg = styled.img`
-  height: 2.5rem;
-  width: auto;
+/* Brand block */
+const Brand = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 6px;
+
+  ${mobile} {
+    justify-items: center;
+    grid-template-columns: auto 1fr;
+  }
 `;
 
-const Title = styled.h2`
-  font-family: SpaceGrotesk;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 135%;
-  /* identical to box height, or 27px */
+const BrandLogo = styled.img`
+  width: clamp(36px, 5vw, 56px);
+  height: auto;
+  grid-row: span 2;
+`;
+
+const BrandTitle = styled.h1`
   margin: 0;
-
-  letter-spacing: 0.05em;
-
-  color: #ffffff;
+  font-family: "Unbounded", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  font-size: clamp(22px, 4.4vw, 40px);
+  line-height: 1.1;
+  text-align: center;
 
   ${mobile} {
-    font-size: 14px;
+    grid-column: 1 / -1;
   }
 `;
 
-const NavLink = styled(NovaLink)`
-  font-family: SpaceGrotesk;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 160%;
-  /* identical to box height, or 29px */
-
+const SubLine = styled.p`
+  margin: 0;
   color: #ffffff;
+  opacity: 0.95;
+  font-family: InstrumentSans, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-size: clamp(12px, 1.6vw, 16px);
+  text-align: center;
+
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 
   ${mobile} {
-    font-size: 12px;
+    grid-column: 1 / -1;
   }
 `;
 
-const iconSize = 24;
+/* Right column: nav links and social icons */
+const RightCol = styled.div`
+  display: grid;
+  gap: 16px;
+  justify-items: end;
+
+  ${mobile} {
+    justify-items: center;
+  }
+`;
+
+const NavList = styled.nav`
+  display: flex;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+`;
+
+const NavItem = styled(Link)`
+  color: #ffffff;
+  text-decoration: none;
+  font-family: InstrumentSans, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  letter-spacing: 0.01em;
+  transition: opacity 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.85;
+    outline: none;
+  }
+`;
+
+const Socials = styled.div`
+  display: flex;
+  gap: 16px;
+`;
+
+const SocialCircle = styled.a`
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6dbff2; /* icon color */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease, color 160ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    color: #b78df2;
+  }
+`;
+
 export default function Footer() {
   const today = new Date();
   const month = today.toLocaleString("default", { month: "long" });
-  const date = today.getDate();
-  const nth = (d) => {
-    if (d > 3 && d < 21) return "th";
-    switch (d % 10) {
-      case 1:
-        return "st";
-      case 2:
-        return "nd";
-      case 3:
-        return "rd";
-      default:
-        return "th";
-    }
-  };
   const year = today.getFullYear();
+
   return (
-    <>
-      <FooterBG>
-        <NovaSpacer y={100} />
-        <FooterDiv>
-          <div>
-            <LogoImg src={logowhite} alt="Nova For Good Logo" />
-            <NovaH4>
-              <span style={{ fontFamily: "SpaceGrotesk", fontWeight: "400" }}>
-                &#169;
-              </span>{" "}
-              2024 nova for good
-            </NovaH4>
-            <NovaSpacer y={12} />
-            <div style={{ display: "flex", justifyContent: "flex-start" }}>
-              <IconLink href="https://www.facebook.com/novaforgood">
-                <FaFacebookF size={iconSize} />
-              </IconLink>
-              <IconLink href="https://www.instagram.com/novaforgood/">
-                <FaInstagram size={iconSize} />
-              </IconLink>
-              <IconLink href="https://github.com/novaforgood">
-                <FaGithub size={iconSize} />
-              </IconLink>
-              <IconLink href="https://medium.com/novaforgood">
-                <FaMedium size={iconSize} />
-              </IconLink>
-            </div>
-            <NovaSpacer y={12} />
-            <NovaP style={{ color: "white" }}>
-              {/* Last updated {month} {date}
-            {nth(date)}, {year} */}
-              Last updated September 12th, 2024
-            </NovaP>
-          </div>
-          <LinkDiv>
-            <LinkBox>
-              <Title>general</Title>
-              <NovaSpacer y={12} />
-              <NavLink to="/work">projects</NavLink>
-              <NovaSpacer y={12} />
-              <NavLink to="/team">our team</NavLink>
-            </LinkBox>
-            <LinkBox>
-              <Title>for students</Title>
-              <NovaSpacer y={12} />
-              <NavLink to="/join">join the team</NavLink>
-            </LinkBox>
-            <LinkBox>
-              <Title>for nonprofits</Title>
-              <NovaSpacer y={12} />
-              <NavLink target="_blank" to="https://forms.gle/g6gmjG4uYwL1AP5T9">
-                work with us
-              </NavLink>
-            </LinkBox>
-          </LinkDiv>
-        </FooterDiv>
-      </FooterBG>
-    </>
+    <FooterWrap>
+      <Inner>
+        <TopGrid>
+          {/* Brand left/center */}
+          <Brand>
+            <BrandLogo src={logowhite} alt="Nova logo" />
+            <BrandTitle>Nova, Tech for Good</BrandTitle>
+            <SubLine>
+              <a href="mailto:hello@novaforgood.org">hello@novaforgood.org</a> |
+              Last updated {month}, {year}
+            </SubLine>
+          </Brand>
+
+          {/* Nav + socials right */}
+          <RightCol>
+            <NavList aria-label="Footer navigation">
+              <NavItem to="/about">About</NavItem>
+              <NavItem to="/work">Work</NavItem>
+              <NavItem to="/team">Our Team</NavItem>
+              <NavItem to="/join">For Students</NavItem>
+
+              <NavItem to="/contact">Contact</NavItem>
+            </NavList>
+
+            <Socials>
+              <SocialCircle
+                href="https://www.facebook.com/novaforgood"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebookF size={18} />
+              </SocialCircle>
+              <SocialCircle
+                href="https://www.instagram.com/novaforgood/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={18} />
+              </SocialCircle>
+              <SocialCircle
+                href="https://github.com/novaforgood"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <FaGithub size={18} />
+              </SocialCircle>
+            </Socials>
+          </RightCol>
+        </TopGrid>
+      </Inner>
+    </FooterWrap>
   );
 }

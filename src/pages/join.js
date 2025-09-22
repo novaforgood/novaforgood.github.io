@@ -5,6 +5,8 @@ import LazyLoad from "react-lazyload";
 import aboutleft from "../assets/aboutleft.svg";
 import aboutleft2 from "../assets/aboutleft2.svg";
 import aboutright2 from "../assets/aboutright2.svg";
+import coloredstars from "../assets/coloredstars.svg";
+import Sparkles from "../components/Sparkle";
 import workleft2 from "../assets/workleft2.svg";
 import workright from "../assets/workright.svg";
 import workright2 from "../assets/workright2.svg";
@@ -200,7 +202,7 @@ const TimelineDesc = styled(NovaP)`
 
 const TLGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr; /* left label, right details */
+  grid-template-columns: 2fr 1fr; /* left label, right details */
   gap: clamp(18px, 2.6vw, 28px) clamp(20px, 8vw, 140px);
   align-items: start;
 
@@ -243,21 +245,63 @@ const TLSub = styled.div`
   opacity: 0.9;
 `;
 
-const TLEmph = styled.div`
-  font-family: "Unbounded", system-ui, -apple-system, Segoe UI, Roboto,
-    sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  font-size: clamp(22px, 3.2vw, 40px);
-  color: #b78df2;
-`;
-
 const TLLink = styled.a`
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
 `;
 
+/* Gradient subheading (small) */
+const GradientSub = styled(TLLabel)`
+  color: #000; /* fallback if background-clip isn't supported */
+
+  /* gradient text */
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    background: var(
+      --Gradient,
+      linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+`;
+
+/* Gradient big title as <h2> (centered, fluid) */
+const GradientTitle = styled(NovaSub)`
+  text-align: center;
+  margin: 0 auto;
+  color: #000; /* fallback if background-clip isn't supported */
+
+  /* gradient text */
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    background: var(
+      --Gradient,
+      linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+`;
+const ColoredStars = styled.div`
+  position: absolute;
+  z-index: 2; /* under spotlight + text */
+  left: 10%;
+  top: 20%; /* your offset */
+  width: 80%;
+  height: 90%;
+  pointer-events: none;
+
+  /* stars image */
+  background: url(${coloredstars}) center / contain no-repeat;
+
+  @media (max-width: 800px) {
+    /* smaller, slightly lower on mobile (tweak to taste) */
+  }
+`;
 const MemberCard = ({ name, imageURL, role, linkedin }) => {
   return (
     <MemberCardContainer>
@@ -291,6 +335,7 @@ const Recruitment = ({ data }) => {
     <Layout>
       <SEO metaTitle={"Nova | Join Us"} />
       <PageContainer>
+        <ColoredStars />
         <SectionBox>
           <NovaSpacer y={64} />
           <NovaH1 center>Recruitment</NovaH1>
@@ -306,15 +351,16 @@ const Recruitment = ({ data }) => {
         {/* --- Recruitment Timeline --- */}
         <SectionBox>
           <TimelineWrap>
-            <NovaSub center>Fall 2025</NovaSub>
-            <TimelineTitle>Chase the Horizon</TimelineTitle>
+            <GradientTitle center>Fall 2025</GradientTitle>{" "}
+            <Sparkles size="large">
+              <TimelineTitle>Chase the Horizon</TimelineTitle>{" "}
+            </Sparkles>
             <TimelineDesc>
               Interested in joining Nova? Here are the key dates for this cycle.
             </TimelineDesc>
-
             <TLGrid>
               {/* Row 1 */}
-              <TLEmph>App Opens</TLEmph>
+              <GradientSub>Applications Open</GradientSub>
               <TLDetail>
                 <TLStrong>Tues, 9/23 | 5PM</TLStrong>
                 <TLSub>
@@ -329,21 +375,21 @@ const Recruitment = ({ data }) => {
               </TLDetail>
 
               {/* Row 2 */}
-              <TLLabel>Infosesh #1</TLLabel>
+              <TLLabel>Infosession #1</TLLabel>
               <TLDetail>
                 <TLStrong>Tues, 9/30 | 8PM</TLStrong>
                 <TLSub>in-person @ MS 5147</TLSub>
               </TLDetail>
 
               {/* Row 3 */}
-              <TLLabel>Infosesh #2</TLLabel>
+              <TLLabel>Infosession #2</TLLabel>
               <TLDetail>
                 <TLStrong>Wed, 10/1 | 7PM</TLStrong>
                 <TLSub>on Zoom</TLSub>
               </TLDetail>
 
               {/* Row 4 */}
-              <TLEmph>App Due</TLEmph>
+              <GradientSub>Applications Due</GradientSub>
               <TLDetail>
                 <TLStrong>Fri, 10/3 | 11:59PM</TLStrong>
               </TLDetail>
@@ -356,7 +402,7 @@ const Recruitment = ({ data }) => {
               </TLDetail>
 
               {/* Row 6 */}
-              <TLLabel>Interview</TLLabel>
+              <TLLabel>Interviews</TLLabel>
               <TLDetail>
                 <TLStrong>10/13–16</TLStrong>
                 <TLSub>invite only</TLSub>

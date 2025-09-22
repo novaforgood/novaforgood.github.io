@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import "../styles/global.css";
 import Layout from "../components/Layout";
 import CaseItem, { CaseDiv } from "../components/CaseItem";
+import coloredstars from "../assets/coloredstars.svg";
 import ProjectDropdown, { ProjectDiv } from "../components/ProjectDropdown";
 import {
   NovaH1,
@@ -31,6 +32,23 @@ const PageContainer = styled.div`
   background-position: left 5%, left bottom, right -100px top 5%, right bottom;
   ${mobile} {
     background: none;
+  }
+`;
+
+const ColoredStars = styled.div`
+  position: absolute;
+  z-index: 2; /* under spotlight + text */
+  left: 10%;
+  top: 20%; /* your offset */
+  width: 80%;
+  height: 90%;
+  pointer-events: none;
+
+  /* stars image */
+  background: url(${coloredstars}) center / contain no-repeat;
+
+  @media (max-width: 800px) {
+    /* smaller, slightly lower on mobile (tweak to taste) */
   }
 `;
 
@@ -116,6 +134,7 @@ const Work = ({ data, pageContext }) => {
       <SEO metaTitle={"Nova | Our Work"} />
       <PageContainer>
         <NovaSpacer y={64} />
+        <ColoredStars />
 
         <SectionBox>
           <ProjectsWrap>

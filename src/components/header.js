@@ -71,17 +71,73 @@ const Nav = styled.div`
   gap: 2rem;
 `;
 export const NavLink = styled(Link)`
+  /* theme vars */
+  --grad: var(
+    --Gradient,
+    linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%)
+  );
+  --active-underline: var(
+    linear-gradient(270deg, var(--Purple, #b78df2) 0%, #6dbff2 100%)
+  );
+
   font-family: "InstrumentSans", system-ui, -apple-system, Segoe UI, Roboto,
     sans-serif;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.48px;
-  color: #000;
   text-decoration: none;
+  color: #000;
   position: relative;
-  transition: opacity 0.2s;
+  transition: color 200ms ease, opacity 200ms ease;
+
+  /* subtle base hover */
   &:hover {
     opacity: 0.85;
+  }
+
+  /* gradient text on hover/focus (with safe fallback) */
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    outline: none;
+  }
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    &:hover,
+    &:focus-visible {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+
+  /* underline base (hidden) */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: transparent;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 200ms ease, background 200ms ease, opacity 200ms ease;
+  }
+
+  /* gradient underline on hover/focus */
+  &:hover::after,
+  &:focus-visible::after {
+    background: var(--grad);
+    transform: scaleX(1);
+  }
+
+  /* active state underline (solid/accent) */
+  &.active::after {
+    background: var(--active-underline);
+    transform: scaleX(1);
   }
 `;
 

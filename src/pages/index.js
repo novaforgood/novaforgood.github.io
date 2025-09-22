@@ -16,6 +16,7 @@ import InfinitePhotoRow from "../components/photoRow";
 import spotlight from "../assets/spotlight.svg";
 // import team from "../assets/team.png";
 import team from "../assets/team.jpg";
+import whitestars from "../assets/whitestars.svg";
 import workleft from "../assets/workleft.svg";
 import workright from "../assets/workright.svg";
 import CaseItem, { CaseDiv } from "../components/CaseItem";
@@ -87,6 +88,23 @@ const ColoredStars = styled.div`
 
   /* stars image */
   background: url(${coloredstars}) center / contain no-repeat;
+
+  @media (max-width: 800px) {
+    /* smaller, slightly lower on mobile (tweak to taste) */
+  }
+`;
+
+const WhiteStars = styled.div`
+  position: absolute;
+  z-index: 0; /* under spotlight + text */
+  left: 10%;
+  top: 20%; /* your offset */
+  width: 80%;
+  height: 90%;
+  pointer-events: none;
+
+  /* stars image */
+  background: url(${whitestars}) center / contain no-repeat;
 
   @media (max-width: 800px) {
     /* smaller, slightly lower on mobile (tweak to taste) */
@@ -484,6 +502,7 @@ export default function Home({ data }) {
 
       {/* WHITE → IMAGE → WHITE band behind "who are we?" */}
       <GradientToImage>
+        <WhiteStars />
         <NovaSpacer y={500} />
         <SectionFillWidth>
           {/* Row 1 — left-to-right (or default direction) */}
@@ -563,12 +582,17 @@ export default function Home({ data }) {
                 .filter((n) => n.featured) // or slice(0,3)
                 .slice(0, 3)
                 .map((n, i) => {
-                  const imgSrc = n?.preview?.localFile?.publicURL;
+                  console.log(n);
+                  const imgSrc =
+                    n?.preview?.localFile?.publicURL ||
+                    (n?.preview?.file?.url
+                      ? `https:${n.preview.file.url}`
+                      : null);
                   const desc =
                     n.description?.description ||
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elementum maximus risus ut.";
                   return (
-                    <ProjectCard key={n.id} to={`/work#${n.slug || n.id}`}>
+                    <ProjectCard key={n.id} to={`/work/${n.slug}`}>
                       <ProjectImage src={imgSrc} />
                       <ProjectName>{n.name}</ProjectName>
                       <ProjectDesc>{desc}</ProjectDesc>
@@ -638,6 +662,7 @@ export const query = graphql`
         slug
         name
         featured
+        inProgress
         description {
           description
         }

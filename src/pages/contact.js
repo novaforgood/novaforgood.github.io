@@ -1,10 +1,28 @@
 import React from "react";
+import coloredstars from "../assets/coloredstars.svg";
 import styled from "@emotion/styled";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
 const mobile = `@media (max-width: 800px)`;
+
+const ColoredStars = styled.div`
+  position: absolute;
+  z-index: 2; /* under spotlight + text */
+  left: 10%;
+  top: 20%; /* your offset */
+  width: 80%;
+  height: 90%;
+  pointer-events: none;
+
+  /* stars image */
+  background: url(${coloredstars}) center / contain no-repeat;
+
+  @media (max-width: 800px) {
+    /* smaller, slightly lower on mobile (tweak to taste) */
+  }
+`;
 
 const Wrap = styled.main`
   max-width: 1100px;
@@ -88,6 +106,7 @@ export default function Contact() {
     <Layout>
       <SEO metaTitle="Contact Us | Nova for Good" />
       <Wrap>
+        <ColoredStars />
         <Title>Contact Us</Title>
         <Sub>
           Interested? Email{" "}

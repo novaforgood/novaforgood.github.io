@@ -10,6 +10,7 @@ import {
   NovaA,
   NovaSpacer,
 } from "../components/PageAssets";
+import coloredstars from "../assets/coloredstars.svg";
 import styled from "@emotion/styled";
 import aboutleft from "../assets/aboutleft.svg";
 import aboutright from "../assets/aboutright.svg";
@@ -55,6 +56,22 @@ const PageContainer = styled.div`
   background-position: left 10%, right 10%, left bottom, right bottom;
   ${mobile} {
     background: none;
+  }
+`;
+const ColoredStars = styled.div`
+  position: absolute;
+  z-index: -1; /* under spotlight + text */
+  left: 10%;
+  top: 20%; /* your offset */
+  width: 80%;
+  height: 90%;
+  pointer-events: none;
+
+  /* stars image */
+  background: url(${coloredstars}) center / contain no-repeat;
+
+  @media (max-width: 800px) {
+    /* smaller, slightly lower on mobile (tweak to taste) */
   }
 `;
 
@@ -146,6 +163,7 @@ const About = ({ data, pageContext }) => {
         <AboutWrap>
           {/* Grid #1: text left, image right */}
           <GridTwo>
+            <ColoredStars />
             <div>
               <NovaSpacer y={100} />
               <StoryTitle>Our Story</StoryTitle>
@@ -190,6 +208,7 @@ const About = ({ data, pageContext }) => {
 
           {/* Optional: one more alternating row if you want two images like the mock */}
           <GridTwo>
+            <ColoredStars />
             <div>
               <Blurb>
                 We strive to understand the reality of under-resourced

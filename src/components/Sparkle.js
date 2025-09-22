@@ -3,8 +3,7 @@
 
 import React from "react";
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/core";
-
+import { keyframes } from "@emotion/react";
 const mobile = `@media (max-width: 700px)`;
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
