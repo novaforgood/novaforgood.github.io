@@ -488,7 +488,6 @@ export default function Home({ data }) {
                 to="/work"
                 textColor="#ffffff"
                 background="linear-gradient(270deg, var(--Purple, #B78DF2) 0%, #6DBFF2 100%)"
-                borderColor="#78C7F6"
                 borderRadius="200px"
               >
                 Learn more
@@ -508,14 +507,14 @@ export default function Home({ data }) {
           {/* Row 1 — left-to-right (or default direction) */}
           <InfinitePhotoRow
             images={slideImages}
-            duration="60s"
+            duration="250s"
             rowHeight="30vh"
           />
           <NovaSpacer y={12} />
           {/* Row 2 — counter-rotating */}
           <InfinitePhotoRow
             images={[...slideImages].reverse()} // optional variety
-            duration="70s"
+            duration="210s"
             reverse // opposite direction
             rowHeight="30vh"
           />
@@ -553,7 +552,7 @@ export default function Home({ data }) {
           {/* Row 1 — left-to-right (or default direction) */}
           <InfinitePhotoRow
             images={slideImages}
-            duration="70s"
+            duration="230s"
             rowHeight="30vh"
           />
         </SectionFillWidth>

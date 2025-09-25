@@ -26,7 +26,7 @@ const ContainDiv = styled.div`
 
 const LeftDiv = styled.div`
   place-self: start;
-  font-family: SpaceGrotesk;
+  font-family: InstrumentSans;
   font-size: 20px;
   text-align: left;
   ${mobile} {
@@ -55,7 +55,7 @@ const SubheaderContain = styled.div`
 `;
 
 const Subheader = styled.div`
-  font-family: SpaceGrotesk;
+  font-family: InstrumentSans;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;

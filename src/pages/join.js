@@ -196,6 +196,7 @@ const TimelineTitle = styled(NovaSub)`
 `;
 
 const TimelineDesc = styled(NovaP)`
+  text-align: center;
   max-width: 820px;
   margin: clamp(12px, 2.2vw, 24px) auto clamp(24px, 4vw, 48px);
 `;
