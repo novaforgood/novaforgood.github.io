@@ -386,7 +386,15 @@ const Recruitment = ({ data }) => {
               <TLLabel>Infosession #2</TLLabel>
               <TLDetail>
                 <TLStrong>Wed, 10/1 | 7PM</TLStrong>
-                <TLSub>on Zoom</TLSub>
+                <TLSub>
+                  <TLLink
+                    href="https://tinyurl.com/novainfo2526"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    tinyurl.com/novainfo2526
+                  </TLLink>
+                </TLSub>
               </TLDetail>
 
               {/* Row 4 */}
