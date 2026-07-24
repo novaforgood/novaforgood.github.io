@@ -240,20 +240,19 @@ function Logo() {
   return <Link className="logo" href="/" aria-label="Nova home">
     <span className="logo-diamond">
       <span className="logo-art">
-        <svg className="logo-mark logo-mark-base" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="currentColor" />)}
-        </svg>
-        <svg className="logo-mark logo-mark-hover" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg className="logo-mark" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs><linearGradient id="logoGradient" x1="0" y1="0" x2="46.6736" y2="33.2718" gradientUnits="userSpaceOnUse"><stop stopColor="var(--blue)" /><stop offset="1" stopColor="var(--pink)" /></linearGradient></defs>
           {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="url(#logoGradient)" />)}
+        </svg>
+        <svg className="logo-mark logo-mark-overlay" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#176bdf" />)}
         </svg>
       </span>
     </span>
   </Link>
 }
 
-function SocialIcon({ name }: { name: 'facebook' | 'instagram' | 'github' }) {
-  if (name === 'facebook') return <svg viewBox="0 0 34.02 34.02" aria-hidden="true"><path d="M34.02 16v2.18c-.4 4.67-2.57 9.05-6.19 12.04a17.03 17.03 0 0 1-8.74 3.8V20.65h4.01l.71-4.84h-4.72v-3.84c0-.82.83-1.56 1.65-1.56H24V6.18c-2.68-.22-5.81-.71-7.99 1.18-2.38 2.12-1.88 5.57-1.93 8.45h-4.07v4.84h4.07v13.18C2.22 31.78-3.81 18.31 2.6 7.95 11.26-6.05 33.01-.43 34.02 16Z"/></svg>
+function SocialIcon({ name }: { name: 'instagram' | 'github' }) {
   if (name === 'github') return <svg viewBox="0 0 34.5 34.02" aria-hidden="true"><path d="M12.93 33.24c-.28 1.6-2.6.32-3.49-.15C-6.54 24.8-.96.33 16.65 0c17.62-.32 24.71 23.4 9.58 32.46-.76.46-4.15 2.5-4.56 1.04-.27-1.97.25-4.5-.04-6.4-.12-.72-.9-1.22-.87-1.98 2.46-.21 5.19-1.27 6.47-3.51 1.36-2.4 1.62-5.82.43-8.34-.22-.45-.87-1.17-.92-1.57-.12-.99.4-2.1.06-3.56-.36-1.54-1.36-.97-2.48-.58-.7.24-2.26 1.26-2.62 1.31-.48.08-2.45-.4-3.18-.43-.68-.04-1.5-.04-2.18-.01-.9.04-3.02.56-3.66.34-.59-.21-1.38-.86-2.08-1.14-2.11-.82-2.79-.67-2.9 1.75-.04.78.25 1.9.14 2.49-.08.43-.81 1.21-1.04 1.74-.92 2.12-.54 6.26.75 8.22 1.6 2.43 3.61 2.68 6.17 3.29.18.04.27-.1.22.22l-1.11 2.28c-1.71.57-2.96.45-4.26-.81-1.02-.99-2.26-3.43-4.06-2.19.5.78 1.24 1.2 1.8 1.98.8 1.11 1.15 2.6 2.5 3.19.13.06.79.31.85.31h3.27c-.12.95.15 2.24 0 3.15Z"/></svg>
   return <svg viewBox="0 0 34.02 34.02" aria-hidden="true"><circle cx="17.01" cy="17.01" r="17.01"/><rect x="8.1" y="8.1" width="17.82" height="17.82" rx="5.3" fill="none" stroke="white" strokeWidth="2.2"/><circle cx="17.01" cy="17.01" r="4.45" fill="none" stroke="white" strokeWidth="2.2"/><circle cx="23.1" cy="10.95" r="1.3" fill="white"/></svg>
 }
@@ -286,7 +285,6 @@ function Footer() {
     </div>
     <small>© 2026 nova for good | Last updated June 13, 2026</small>
     <div className="footer-socials" aria-label="Social links">
-      <a href="https://www.facebook.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on Facebook"><SocialIcon name="facebook" /></a>
       <a href="https://www.instagram.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on Instagram"><SocialIcon name="instagram" /></a>
       <a href="https://github.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on GitHub"><SocialIcon name="github" /></a>
     </div>
@@ -636,7 +634,7 @@ function NonprofitsPage() {
 
 function StudentsPage() {
   const events = [
-    ['Applications open', 'TBD', 'tinyurl.com/nova2526'],
+    ['Applications open', 'TBD', 'tinyurl.com/nova-2627'],
     ['Infosession #1', 'TBD', 'in-person @ MS 5147'],
     ['Infosession #2', 'TBD', 'on Zoom'],
     ['Applications Due', 'TBD', ''],

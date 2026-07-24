@@ -454,7 +454,6 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-mending-kids.figma-detail-hero {
   height:745px;
   padding-top:104px;
-  overflow:visible;
   background:#fff;
 }
 .project-mending-kids .figma-detail-gradient {
@@ -538,8 +537,8 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   min-height:0;
   padding-top:48px;
   background:
-    url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) 2460px no-repeat,
-    linear-gradient(180deg,#fff 0%,#fff 43%,#f7d5f1 57%,#74b6ff 78%,#0077db 100%);
+    url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) 2000px no-repeat,
+    linear-gradient(180deg,#fff 0%,#fff 60%,#f7d5f1 75%,#74b6ff 88%,#0077db 100%);
 }
 .project-mending-kids + .figma-case-study::before {
   display:none;
