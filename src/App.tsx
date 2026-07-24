@@ -406,9 +406,9 @@ function CtaSection() {
 
 function WorkPage() {
   const featuredProjects = [
-    { ...projects[0], displayName: 'Medical Inventory System', client: '@Mending Kids', image: '/assets/figma/work/mending-kids.png' },
-    { ...projects[1], displayName: 'Foster Onboarding Tracker', client: '@Wags and Walks', image: '/assets/figma/work/wags-walks.png' },
-    { ...projects[2], displayName: 'Donation Allocation Portal', client: '@Center for Restorative Justice Works', image: '/assets/figma/work/crjw.png' },
+    { ...projects[0], displayName: 'Medical Inventory System', client: '@Mending Kids', clientUrl: 'https://www.mendingkids.org/', image: '/assets/figma/work/mending-kids.png' },
+    { ...projects[1], displayName: 'Foster Onboarding Tracker', client: '@Wags and Walks', clientUrl: 'https://www.wagsandwalks.org/', image: '/assets/figma/work/wags-walks.png' },
+    { ...projects[2], displayName: 'Donation Allocation Portal', client: '@Center for Restorative Justice Works', clientUrl: 'https://www.crjw.org/', image: '/assets/figma/work/crjw.png' },
   ]
 
   return <AppShell skeleton={<WorkSkeleton />}>
@@ -424,13 +424,13 @@ function WorkPage() {
           <p>Take a look at some of the projects we’ve worked on! Whether they're web development, mobile development, data science, or design, our solutions have been able to serve a wide variety of nonprofits.</p>
         </header>
         <div className="work-featured-list">
-          {featuredProjects.map(project => <Link className="work-featured-project" href={`/work/${project.slug}`} key={project.slug}>
-            <div className="work-featured-image"><img src={project.image} alt={`${project.name} product preview`} /></div>
+          {featuredProjects.map(project => <div className="work-featured-project" key={project.slug}>
+            <Link className="work-featured-image" href={`/work/${project.slug}`}><img src={project.image} alt={`${project.name} product preview`} /></Link>
             <div className="work-featured-copy">
-              <div><h2>{project.displayName}</h2><strong>{project.client}</strong></div>
+              <div><h2>{project.displayName}</h2><a href={project.clientUrl} target="_blank" rel="noreferrer"><strong>{project.client}</strong></a></div>
               <p>{project.summary}</p>
             </div>
-          </Link>)}
+          </div>)}
         </div>
         <section className="work-more-projects">
           <h2>...and more!</h2>
@@ -577,12 +577,12 @@ function NonprofitsPage() {
 
 function StudentsPage() {
   const events = [
-    ['Applications open', 'Tues, 9/22 | 5PM', 'tinyurl.com/nova2526'],
-    ['Infosession #1', 'Tues, 9/29 | 8PM', 'in-person @ MS 5147'],
-    ['Infosession #2', 'Wed, 9/30 | 7PM', 'on Zoom'],
-    ['Applications Due', 'Fri, 10/2 | 11:59PM', ''],
-    ['Meet & Greet', 'Tues, 10/6', 'Invite only'],
-    ['Interviews', '10/12–15', 'Invite only'],
+    ['Applications open', 'TBD', 'tinyurl.com/nova2526'],
+    ['Infosession #1', 'TBD', 'in-person @ MS 5147'],
+    ['Infosession #2', 'TBD', 'on Zoom'],
+    ['Applications Due', 'TBD', ''],
+    ['Meet & Greet', 'TBD', 'Invite only'],
+    ['Interviews', 'TBD', 'Invite only'],
   ]
   const reflections = [
     ['Jimin Kim', 'Developer', 'i didn’t apply to a single club until my sophomore year out of fear of how intensive and competitive technical clubs can be. i just knew that i wanted to surround myself with people who work not for a line on a resume, but out of empathy and creativity. stalking nova’s instagram & EAF booth, it was clear that nova was exactly that :)'],
