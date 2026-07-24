@@ -565,8 +565,23 @@ function NonprofitsPage() {
     <section className="testimonials section-shell">
       <h2>Client Testimonials</h2>
       <div className="testimonial-stack">
-        <blockquote>“Nova’s thoughtful, solutions-oriented approach and genuine investment in our mission has helped streamline processes and ultimately allow our team to spend less time on administrative tasks and more time focusing on what matters most—supporting our fosters and saving dogs.<br/><br/>We are so grateful for Nova’s partnership, creativity, and dedication. Their work will have a lasting impact on our organization, and we would highly recommend them to any nonprofit looking to enhance their operations through thoughtful, mission-driven technology solutions.”<cite>— Eitan Nir, Foster Lead, Wags & Walks</cite></blockquote>
-        <blockquote>“This is much more like streamline process... there’s just less steps. It’s way better than what we’re working with now for sure!”<cite>— Mary Zimmerman, Mending Kids</cite></blockquote>
+        <div className="testimonial-row">
+          <div className="testimonial-person">
+            <img className="testimonial-photo" src="/assets/figma/nonprofits-exact/testimonial-eitan.png" alt="Eitan Nir" />
+            <div className="testimonial-person-info"><strong>Eitan Nir</strong><span>Foster Lead</span></div>
+            <img className="testimonial-logo" src="/assets/figma/logos/wags.png" alt="Wags & Walks" />
+          </div>
+          <blockquote>“Nova’s thoughtful, solutions-oriented approach and genuine investment in our mission has helped streamline processes and ultimately allow our team to spend less time on administrative tasks and more time focusing on what matters most—supporting our fosters and saving dogs.<br/><br/>We are so grateful for Nova’s partnership, creativity, and dedication. Their work will have a lasting impact on our organization, and we would highly recommend them to any nonprofit looking to enhance their operations through thoughtful, mission-driven technology solutions.”</blockquote>
+        </div>
+        <div className="testimonial-row">
+          <div className="testimonial-person">
+            <img className="testimonial-photo" src="/assets/figma/nonprofits-exact/testimonial-mary.png" alt="Mary Zimmerman" />
+            <div className="testimonial-person-info"><strong>Mary Zimmerman</strong><span>Foster Lead</span></div>
+            <img className="testimonial-logo" src="/assets/figma/logos/mending-kids.png" alt="Mending Kids" />
+          </div>
+          <blockquote>“This is a much more streamlined process... there’s just less steps. It’s way better than what we’re working with now for sure!”</blockquote>
+          <img className="testimonial-moon" src="/assets/figma/nonprofits-exact/testimonial-moon.png" alt="" aria-hidden="true" />
+        </div>
       </div>
     </section>
     <NetworkSection />

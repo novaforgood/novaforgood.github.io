@@ -15,15 +15,27 @@ img { display:block; max-width:100%; }
 .logo-art { position:absolute; top:-9.39px; left:-9.73px; display:grid; width:56.53px; height:56.53px; place-items:center; }
 .logo img { width:46.674px; height:33.272px; max-width:none; transform:rotate(-45deg); }
 .nav-links { display:flex; align-items:center; gap:24px; margin-left:24px; width:100%; font-weight:500; color:#176bdf; }
-.nav-links>a:not(.button) { white-space:nowrap; font-family:'Red Hat Text',sans-serif; font-size:20px; letter-spacing:-.03em; }
+.nav-links>a:not(.button) { position:relative; white-space:nowrap; font-family:'Red Hat Text',sans-serif; font-size:20px; letter-spacing:-.03em; }
+.nav-links>a:not(.button)::after { content:''; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:linear-gradient(90deg,var(--blue),var(--pink)); transform:scaleX(0); transform-origin:left; transition:transform .2s ease; }
+.nav-links>a:not(.button):hover { background:linear-gradient(90deg,var(--blue),var(--pink)); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+.nav-links>a:not(.button):hover::after,.nav-links>a:not(.button):active::after { transform:scaleX(1); }
+.nav-links>a:not(.button):active { opacity:.8; }
 .nav-links .button { margin-left:auto; }
 .nav .button-solid { background:#176bdf; }
-.menu-button { display:none; margin-left:auto; border:0; background:transparent; color:#176bdf; }
-.button { display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; padding:12px 24px; font-weight:600; font-size:16px; transition:transform .2s,box-shadow .2s; }
+.menu-button { display:none; margin-left:auto; border:0; background:transparent; color:#176bdf; cursor:pointer; transition:color .15s ease; }
+.menu-button:hover { color:var(--blue); }
+.menu-button:active { color:var(--pink); }
+.button { display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; padding:12px 24px; font-weight:600; font-size:16px; cursor:pointer; transition:transform .2s,box-shadow .2s,background .2s,color .2s; }
 .button:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,88,161,.18); }
+.button:active { transform:translateY(0); box-shadow:0 2px 8px rgba(0,88,161,.18); }
 .button-solid { color:white; background:var(--accent); }
+.button-solid:hover { background:var(--blue); }
+.button-solid:active { background:#003f73; }
 .button-gradient { color:white; background:linear-gradient(100deg,var(--blue),var(--light-pink)); }
+.button-gradient:active { background:linear-gradient(100deg,var(--accent),var(--pink)); }
 .button-outline { border:1px solid var(--accent); color:var(--accent); background:rgba(255,255,255,.75); }
+.button-outline:hover { background:var(--accent); color:white; }
+.button-outline:active { background:var(--accent); color:white; opacity:.85; }
 .landing-canvas { position:relative; overflow:hidden; background:#fafcff url('/assets/figma/landing/gradient-halo-4.png') top center/100% auto no-repeat; }
 .hero { min-height:890px; position:relative; display:grid; place-items:center; padding:170px 24px 100px; overflow:hidden; }
 .hero-copy { position:relative; z-index:3; text-align:center; max-width:840px; }
@@ -85,6 +97,15 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .testimonial-stack { display:grid; gap:34px; }
 .testimonials blockquote { max-width:720px; margin:0 auto; padding:34px; border:1px solid #99caf2; border-radius:18px; background:rgba(255,255,255,.82); box-shadow:0 12px 35px rgba(0,119,219,.15); line-height:1.65; }
 .testimonials cite { display:block; margin-top:20px; color:var(--accent); font-style:normal; font-weight:700; }
+.testimonial-row { display:flex; align-items:flex-start; gap:48px; text-align:left; position:relative; overflow:hidden; border-radius:24px; }
+.testimonial-person { display:flex; flex-direction:column; align-items:flex-start; gap:8px; width:202px; flex-shrink:0; }
+.testimonial-photo { width:160px; height:160px; border-radius:50%; object-fit:cover; box-shadow:0 0 3px 1.5px #fff; }
+.testimonial-person-info { display:flex; flex-direction:column; gap:4px; }
+.testimonial-person-info strong { font:600 24px/32px 'Raleway'; text-transform:uppercase; letter-spacing:0; }
+.testimonial-person-info span { font:400 16px/24px 'Raleway'; color:var(--ink); }
+.testimonial-logo { width:160px; height:auto; max-height:74px; object-fit:contain; object-position:left; }
+.testimonial-row blockquote { flex:1 0 0; margin:0; max-width:none; position:relative; z-index:1; }
+.testimonial-moon { position:absolute; right:-120px; top:-40px; width:340px; height:auto; filter:blur(2px); opacity:.85; transform:rotate(-78deg); pointer-events:none; z-index:0; }
 .student-banner { display:flex; align-items:center; justify-content:center; gap:18px; color:var(--accent); }
 .student-banner span { color:white; text-shadow:0 3px 8px #288bdc; font-size:42px; }
 .students h3 { margin:28px 0; font-family:'Syncopate'; color:var(--accent); text-transform:uppercase; font-size:28px; }
@@ -375,7 +396,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .work-featured-project { display:grid; grid-template-columns:500px minmax(0,1fr); align-items:center; gap:24px; min-height:360px; padding:24px 0; color:#000; }
 .work-featured-image { height:312px; overflow:hidden; border:1px solid rgba(23,107,223,.2); border-radius:8px; background:#fff; }
 .work-featured-image img { width:100%; height:100%; max-width:none; object-fit:cover; object-position:top left; transition:transform .25s ease; }
-.work-featured-project:hover .work-featured-image img { transform:scale(1.015); }
+.work-featured-image:hover img { transform:scale(1.015); }
 .work-featured-copy { display:flex; flex-direction:column; gap:12px; padding:16px; }
 .work-featured-copy h2 { margin:0 0 8px; font-family:'Syncopate',sans-serif; font-size:36px; font-weight:700; line-height:.82; text-transform:uppercase; letter-spacing:-1.08px; }
 .work-featured-copy strong { display:block; font-family:'Syncopate',sans-serif; font-size:16px; line-height:20px; text-transform:uppercase; text-decoration:underline; text-underline-offset:2px; letter-spacing:-.48px; }
@@ -694,7 +715,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .landing-hero-copy h1 { width:752px; margin:23px 0 0; font-family:'Syncopate',sans-serif; font-size:64px; line-height:55px; letter-spacing:-1.92px; text-transform:uppercase; color:#fff; text-shadow:0 4px 4px #176bdf; }
 .landing-hero-copy p { width:395px; margin:72px 0 32px; font-family:'Raleway',sans-serif; font-size:16px; line-height:24px; color:#050505; }
 .landing-hero-star { position:absolute; z-index:1; top:195px; left:calc(50% - 659px); width:401px; height:384px; pointer-events:none; }
-.landing-ufo-flight { position:absolute; z-index:3; top:420px; right:110px; left:auto; width:144px; height:135px; pointer-events:none; will-change:transform; }
+.landing-ufo-flight { position:absolute; z-index:3; top:420px; right:min(110px,calc(50% - 590px)); left:auto; width:144px; height:135px; pointer-events:none; will-change:transform; }
 .landing-ufo { width:100%; height:100%; max-width:none; transform:rotate(-25deg); transform-origin:50% 50%; will-change:transform; }
 .landing-ufo-flight.is-handed-off { opacity:0; transition:opacity .18s ease; }
 .landing-hero-copy { z-index:2; }
@@ -879,7 +900,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .about-page,.team-page{min-height:0;padding:110px 16px 72px}.about-story,.team-content{width:100%}.about-story h1,.team-content>h1{font-size:clamp(34px,10vw,64px);height:auto;padding-top:24px;margin-bottom:52px}.about-background-mesh{width:100%;height:auto;min-height:100%;object-fit:cover}.about-constellation{left:0;width:100%;height:auto}.team-bg-mesh{width:100%;height:auto;min-height:900px;object-fit:cover}.team-bg-halo-middle{top:1800px;left:-1700px}.team-bg-halo-bottom{top:5200px;left:-1300px}.team-star-right-large{left:calc(100% - 90px)}.team-ring-right{display:none}
   .about-story article,.about-story article.reverse{grid-template-columns:1fr;gap:24px}.about-story article.reverse img,.about-story article.reverse p{grid-column:auto;grid-row:auto}.about-story article.reverse p{order:-1}.about-story img{width:100%;height:auto}.about-actions{flex-wrap:wrap;margin-top:64px}
   .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 12px}.team-member>img{width:min(38vw,238px);height:min(38vw,238px)}.team-member h3{font-size:14px}.team-join{grid-template-columns:1fr}.team-join img{width:100%;height:auto}.team-alumni h2{font-size:clamp(34px,9vw,64px)}.team-alumni ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 18px;width:100%;padding:24px 0}.team-alumni li{font-size:14px;line-height:20px}
-  .nonprofits-page,.students-page{min-height:0}.nonprofits-bg-top,.nonprofits-bg-bottom{width:100%;object-fit:cover}.nonprofits-constellation{left:0;width:100%;height:auto}.nonprofits-page .section-shell,.students-page .section-shell,.students-page .page-hero{width:calc(100% - 32px)}.nonprofits-page .split-hero{height:auto;grid-template-columns:1fr;grid-template-rows:auto;padding:130px 0 72px}.nonprofits-page .split-hero h1{grid-column:1;font-size:clamp(34px,9vw,64px);line-height:1.05;white-space:normal}.nonprofits-page .split-hero img{width:100%;height:auto}.nonprofits-page .looking-for,.nonprofits-page .process,.nonprofits-page .testimonials,.nonprofits-page .landing-network{height:auto;min-height:0;padding:72px 0}.nonprofits-page .looking-for h2,.nonprofits-page .process h2,.nonprofits-page .testimonials h2,.nonprofits-page .landing-network .landing-section-intro h2{font-size:clamp(32px,9vw,64px);line-height:1.05}.nonprofits-page .criteria-grid{grid-template-columns:1fr}.nonprofits-page .criteria-grid img{width:100%}.timeline{grid-template-columns:1fr;gap:40px}.timeline:before{left:22px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,var(--blue),var(--pink))}.timeline article{padding:0 0 0 56px;text-align:left}.timeline span{position:absolute;left:0;top:0;margin:0}.nonprofit-cta{height:auto;padding:72px 16px}.nonprofit-cta>div{flex-wrap:wrap}.nonprofit-cta h2{font-size:clamp(36px,10vw,64px)}
+  .nonprofits-page,.students-page{min-height:0}.nonprofits-bg-top,.nonprofits-bg-bottom{width:100%;object-fit:cover}.nonprofits-constellation{left:0;width:100%;height:auto}.nonprofits-page .section-shell,.students-page .section-shell,.students-page .page-hero{width:calc(100% - 32px)}.nonprofits-page .split-hero{height:auto;grid-template-columns:1fr;grid-template-rows:auto;padding:130px 0 72px}.nonprofits-page .split-hero h1{grid-column:1;font-size:clamp(34px,9vw,64px);line-height:1.05;white-space:normal}.nonprofits-page .split-hero img{width:100%;height:auto}.nonprofits-page .looking-for,.nonprofits-page .process,.nonprofits-page .testimonials,.nonprofits-page .landing-network{height:auto;min-height:0;padding:72px 0}.nonprofits-page .looking-for h2,.nonprofits-page .process h2,.nonprofits-page .testimonials h2,.nonprofits-page .landing-network .landing-section-intro h2{font-size:clamp(32px,9vw,64px);line-height:1.05}.nonprofits-page .criteria-grid{grid-template-columns:1fr}.nonprofits-page .criteria-grid img{width:100%}.testimonial-row{flex-direction:column;align-items:center;text-align:center}.testimonial-person{align-items:center}.testimonial-moon{display:none}.timeline{grid-template-columns:1fr;gap:40px}.timeline:before{left:22px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,var(--blue),var(--pink))}.timeline article{padding:0 0 0 56px;text-align:left}.timeline span{position:absolute;left:0;top:0;margin:0}.nonprofit-cta{height:auto;padding:72px 16px}.nonprofit-cta>div{flex-wrap:wrap}.nonprofit-cta h2{font-size:clamp(36px,10vw,64px)}
   .students-page .page-hero{min-height:230px;padding-top:140px}.students-page .event-list article{grid-template-columns:1fr}.students-page .event-list small,.students-page .event-list a{grid-column:1}.students-page .reflections article,.students-page .reflections article.reverse{grid-template-columns:1fr}.students-page .reflections article.reverse img,.students-page .reflections article.reverse div{grid-column:auto;grid-row:auto}.students-page .reflections article>div{padding:34px;border-radius:24px}.students-page .reflections article img{margin:auto}
 }
 
