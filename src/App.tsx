@@ -635,7 +635,7 @@ function NonprofitsPage() {
 function StudentsPage() {
   const events = [
     ['Applications open', 'TBD', 'tinyurl.com/nova-2627'],
-    ['Infosession #1', 'TBD', 'in-person @ MS 5147'],
+    ['Infosession #1', 'TBD', 'in-person'],
     ['Infosession #2', 'TBD', 'on Zoom'],
     ['Applications Due', 'TBD', ''],
     ['Meet & Greet', 'TBD', 'Invite only'],
