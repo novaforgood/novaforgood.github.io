@@ -163,7 +163,24 @@ const landingPhotos: LandingPhoto[] = Array.from({ length: 15 }, (_, index) => {
     jpegSrcSet: `${base}-640.jpg 640w, ${base}-1280.jpg 1280w`,
   }
 })
-const landingPartners = Array.from({ length: 16 }, (_, index) => `/assets/figma/landing/partner-${index + 1}.png`)
+const landingPartners = [
+  { name: 'Center for Restorative Justice Works', url: 'https://www.crjw.org/' },
+  { name: 'Wags & Walks', url: 'https://www.wagsandwalks.org/' },
+  { name: 'Mending Kids', url: 'https://www.mendingkids.org/' },
+  { name: 'Save Cantonese', url: 'https://www.savecantonese.org/' },
+  { name: "Alzheimer's San Diego", url: 'https://www.alzsd.org/' },
+  { name: 'Inner City Visions', url: 'https://innercityvisions.org/' },
+  { name: 'L.A. Waterkeeper', url: 'https://www.lawaterkeeper.org/' },
+  { name: 'Los Angeles Food Policy Council', url: 'https://www.goodfoodla.org/' },
+  { name: 'CoachArt', url: 'https://www.coachart.org/' },
+  { name: 'oneAll', url: null },
+  { name: 'HURIDOCS', url: 'https://huridocs.org/' },
+  { name: 'Gravyty', url: 'https://gravyty.com/' },
+  { name: 'Friends of the Semel Institute', url: 'https://www.friendsofsemelinstitute.org/' },
+  { name: 'Handle with Care', url: 'https://handlewithcareus.org/' },
+  { name: 'Beloved Beauty', url: 'https://www.belovedbeauty.org/' },
+  { name: 'Swipe Out Hunger', url: 'https://www.swipehunger.org/' },
+].map((partner, index) => ({ ...partner, src: `/assets/figma/landing/partner-${index + 1}.png` }))
 
 // When false, the hero UFO just idle-bobs in place instead of wandering the
 // hero and running the carousel abduction/sucking sequence.
@@ -204,9 +221,34 @@ function Link({ href, children, className, onClick, ...props }: React.AnchorHTML
   }} {...props}>{children}</a>
 }
 
+const NOVA_LOGO_PATHS = [
+  'M8.48183 3.85332L0 12.3352L11.5648 23.9L20.0467 15.4182L8.48183 3.85332Z',
+  'M9.64461 1.81385L23.4441 15.6133C23.4441 15.6133 22.1698 16.8399 20.937 18.0528C19.8048 19.1667 18.5732 20.0157 19.4823 21.1269C20.3915 22.2381 18.1186 20.8996 18.1186 20.8996L17.5731 21.3996L17.664 23.2179C16.3912 21.8542 15.1951 23.7467 14.1519 24.9055L0.352447 11.106L9.64461 1.81385Z',
+  'M38.1918 3.35755L46.6736 11.8394L34.097 24.416L25.6152 15.9341L38.1918 3.35755Z',
+  'M16.0018 23.9517C16.3569 23.5967 16.9325 23.5967 17.2876 23.9517L18.3161 24.9803C18.6712 25.3353 18.6712 25.911 18.3161 26.266L16.7964 27.7858L14.4821 25.4715L16.0018 23.9517Z',
+  'M18.9413 26.7104C19.2963 26.3554 19.872 26.3554 20.227 26.7104L21.1905 27.6739C21.5455 28.029 21.5455 28.6046 21.1905 28.9596L19.6707 30.4794L17.4215 28.2302L18.9413 26.7104Z',
+  'M21.623 29.4067C21.9781 29.0516 22.5537 29.0516 22.9088 29.4067L24.6263 31.1242L22.4788 33.2718L20.1184 30.9113L21.623 29.4067Z',
+  'M37.2347 2.94409L39.549 5.25838L23.2833 21.5241C22.5732 22.2342 21.4219 22.2342 20.7118 21.5241L20.3261 21.1384C19.9711 20.7833 19.9711 20.2077 20.3261 19.8527L37.2347 2.94409Z',
+  'M13.3277 18.8837L15.257 16.9545L28.4722 30.1696L26.5429 32.0989L13.3277 18.8837Z',
+  'M25.2115 20.7888L27.2367 18.7635L33.7597 25.2865L31.7344 27.3117L25.2115 20.7888Z',
+  'M22.6658 23.3342L24.691 21.309L31.214 27.8319L29.1887 29.8572L22.6658 23.3342Z',
+  'M21.9601 22.7193C22.5809 22.805 23.2079 22.6136 23.6749 22.1958L24.6661 21.3089L24.2115 24.8546L21.9601 22.7193Z',
+  'M23.5744 0L27.9458 4.37145L23.5744 8.7429L19.2029 4.37145L23.5744 0Z',
+]
+
 function Logo() {
   return <Link className="logo" href="/" aria-label="Nova home">
-    <span className="logo-diamond"><span className="logo-art"><img src="/assets/figma/landing/nav-logo.svg" alt="" /></span></span>
+    <span className="logo-diamond">
+      <span className="logo-art">
+        <svg className="logo-mark logo-mark-base" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="currentColor" />)}
+        </svg>
+        <svg className="logo-mark logo-mark-hover" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="logoGradient" x1="0" y1="0" x2="46.6736" y2="33.2718" gradientUnits="userSpaceOnUse"><stop stopColor="var(--blue)" /><stop offset="1" stopColor="var(--pink)" /></linearGradient></defs>
+          {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="url(#logoGradient)" />)}
+        </svg>
+      </span>
+    </span>
   </Link>
 }
 
@@ -396,7 +438,9 @@ function ProjectCard({ project }: { project: Project }) {
 function NetworkSection() {
   return <section className="landing-network">
     <div className="landing-section-intro"><h2>Our Network</h2><p>We wouldn't be able to do what we love alone. We're grateful for these organizations who have advised us and given us a hand in better understanding the social sector. Interested in becoming a partner or advisor? <a href="https://forms.gle/g6gmjG4uYwL1AP5T9" target="_blank" rel="noreferrer"><u>Let us know</u></a> — we'd love to talk with you!</p></div>
-    <div className="landing-partners">{landingPartners.map(src => <img key={src} src={src} alt="Nova partner" />)}</div>
+    <div className="landing-partners">{landingPartners.map(partner => partner.url
+      ? <a key={partner.src} href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={partner.name}><img src={partner.src} alt={partner.name} /></a>
+      : <img key={partner.src} src={partner.src} alt={partner.name} />)}</div>
   </section>
 }
 

@@ -13,8 +13,8 @@ img { display:block; max-width:100%; }
 .logo { width:46.8px; height:46.8px; flex:0 0 auto; display:grid; place-items:center; }
 .logo-diamond { position:relative; display:block; width:33.092px; height:33.092px; overflow:hidden; border:1px solid #176bdf; border-radius:10px; background:#fafcff; transform:rotate(45deg); }
 .logo-art { position:absolute; top:-9.39px; left:-9.73px; display:grid; width:56.53px; height:56.53px; place-items:center; }
-.logo-mark { position:absolute; inset:0; width:46.674px; height:33.272px; max-width:none; transform:rotate(-45deg); transition:opacity .2s ease; }
-.logo-mark-base { position:relative; color:#176bdf; }
+.logo-mark { position:absolute; top:50%; left:50%; width:46.674px; height:33.272px; max-width:none; transform:translate(-50%,-50%) rotate(-45deg); transition:opacity .2s ease; }
+.logo-mark-base { color:#176bdf; }
 .logo-mark-hover { opacity:0; }
 .logo:hover .logo-mark-base { opacity:0; }
 .logo:hover .logo-mark-hover { opacity:1; }
@@ -742,7 +742,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .landing-about h2,.landing-section-intro h2,.landing-cta h2 { margin:0; font-family:'Syncopate',sans-serif; font-size:64px; line-height:1; letter-spacing:-1.92px; text-transform:uppercase; color:#176bdf; }
 .landing-about p { width:580px; margin:24px 0 0; font-family:'Raleway',sans-serif; font-size:16px; line-height:24px; color:#050505; }
 .landing-about .button { position:relative; z-index:2; font-family:'Raleway',sans-serif; font-weight:400; }
-.landing-about-planet { --planet-size:clamp(120px,16vw,222px); position:absolute; top:calc(var(--planet-size) * -0.856); right:calc(var(--planet-size) * -0.541); width:var(--planet-size); height:var(--planet-size); }
+.landing-about-planet { position:absolute; top:-60px; right:-18px; width:110px; height:110px; }
 .landing-bottom-strip { width:100%; margin:0; }
 
 /* Landing gallery UFO abduction */
@@ -803,6 +803,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .landing-network .landing-section-intro { padding-top:0; }
 .landing-partners { display:grid; width:min(882px,calc(100% - 32px)); height:1269px; grid-template-columns:repeat(3,1fr); gap:24px 32px; margin-top:32px; padding:56px; border:1px solid rgba(23,107,223,.5); border-radius:8px; background:#fafcff; }
 .landing-partners img { width:100%; height:114px; object-fit:contain; }
+.landing-partners a { display:flex; align-items:center; justify-content:center; }
 .landing-cta { display:flex; height:338px; flex-direction:column; align-items:center; padding-top:0; text-align:center; }
 .landing-cta h2 { font-size:64px; color:#fff; text-shadow:0 4px 4px #176bdf; }
 .landing-cta .cta-actions { display:flex; gap:48px; margin-top:48px; }
@@ -1240,7 +1241,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .landing-projects .landing-section-intro h2,.landing-network .landing-section-intro h2,.landing-cta h2 { font-size:clamp(34px,9vw,64px); letter-spacing:normal; }
   .landing-network .landing-section-intro h2 { max-width:100%; }
   .landing-about p { width:auto; font-size:14px; line-height:21px; }
-  .landing-about-planet { width:120px; height:120px; top:-64px; right:-20px; }
+  .landing-about-planet { width:80px; height:80px; top:-36px; right:-14px; }
   .landing-bottom-strip { width:100%; margin-bottom:72px; }
   .landing-projects { padding:80px 0; }
   .landing-project-list { gap:48px; }
