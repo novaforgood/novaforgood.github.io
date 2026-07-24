@@ -689,7 +689,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .landing-decor-network-star-small { top:4709px; left:calc(50% - 638px); width:182px; height:178px; }
 .landing-page > section { position:relative; z-index:1; }
 .landing-hero { position:relative; height:896px; overflow:hidden; }
-.landing-hero-copy { position:absolute; top:270px; left:50%; display:flex; width:756px; flex-direction:column; align-items:center; transform:translateX(-50%); text-align:center; }
+.landing-hero-copy { position:absolute; top:207px; left:50%; display:flex; width:756px; flex-direction:column; align-items:center; transform:translateX(-50%); text-align:center; }
 .landing-wordmark { width:756px; height:171px; margin:0 auto; object-fit:contain; }
 .landing-hero-copy h1 { width:752px; margin:23px 0 0; font-family:'Syncopate',sans-serif; font-size:64px; line-height:55px; letter-spacing:-1.92px; text-transform:uppercase; color:#fff; text-shadow:0 4px 4px #176bdf; }
 .landing-hero-copy p { width:395px; margin:72px 0 32px; font-family:'Raleway',sans-serif; font-size:16px; line-height:24px; color:#050505; }
