@@ -496,12 +496,12 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   content:'';
   position:absolute;
   z-index:1;
-  top:32.77px;
+  top:28.5px;
   left:115.166px;
   width:479.753px;
-  height:299.432px;
+  height:303.702px;
   border-radius:0;
-  background:url('/assets/figma/details/mk-laptop-inner.png') -0.75px -0.48px/100.31% 112.8% no-repeat;
+  background:#fff;
   filter:none;
 }
 .project-mending-kids .figma-laptop img {
@@ -679,9 +679,9 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .project-mending-kids .figma-detail-gradient h1 { width:90%; }
   .project-mending-kids .figma-laptop { width:min(709.928px,76vw); height:auto; aspect-ratio:709.928/383.055; }
   .project-mending-kids .figma-laptop::after,
-  .project-mending-kids .figma-laptop img { top:8.555%; left:16.222%; width:67.578%; }
-  .project-mending-kids .figma-laptop::after { height:78.17%; }
-  .project-mending-kids .figma-laptop img { height:78.17%; }
+  .project-mending-kids .figma-laptop img { left:16.222%; width:67.578%; }
+  .project-mending-kids .figma-laptop::after { top:7.44%; height:79.285%; }
+  .project-mending-kids .figma-laptop img { top:8.555%; height:78.17%; }
   .project-mending-kids + .figma-case-study .figma-problem,
   .project-mending-kids + .figma-case-study .figma-testimonial { width:100%; }
 }
