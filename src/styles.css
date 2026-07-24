@@ -13,7 +13,11 @@ img { display:block; max-width:100%; }
 .logo { width:46.8px; height:46.8px; flex:0 0 auto; display:grid; place-items:center; }
 .logo-diamond { position:relative; display:block; width:33.092px; height:33.092px; overflow:hidden; border:1px solid #176bdf; border-radius:10px; background:#fafcff; transform:rotate(45deg); }
 .logo-art { position:absolute; top:-9.39px; left:-9.73px; display:grid; width:56.53px; height:56.53px; place-items:center; }
-.logo img { width:46.674px; height:33.272px; max-width:none; transform:rotate(-45deg); }
+.logo-mark { position:absolute; inset:0; width:46.674px; height:33.272px; max-width:none; transform:rotate(-45deg); transition:opacity .2s ease; }
+.logo-mark-base { position:relative; color:#176bdf; }
+.logo-mark-hover { opacity:0; }
+.logo:hover .logo-mark-base { opacity:0; }
+.logo:hover .logo-mark-hover { opacity:1; }
 .nav-links { display:flex; align-items:center; gap:24px; margin-left:24px; width:100%; font-weight:500; color:#176bdf; }
 .nav-links>a:not(.button) { position:relative; white-space:nowrap; font-family:'Red Hat Text',sans-serif; font-size:20px; letter-spacing:-.03em; }
 .nav-links>a:not(.button)::after { content:''; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:linear-gradient(90deg,var(--blue),var(--pink)); transform:scaleX(0); transform-origin:left; transition:transform .2s ease; }
@@ -544,11 +548,15 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-mending-kids + .figma-case-study .figma-meta p { margin-bottom:16px; }
 .project-mending-kids + .figma-case-study .figma-meta ul { margin-top:12px; }
 .project-mending-kids + .figma-case-study .figma-copy-block h2,
-.project-mending-kids + .figma-case-study .figma-problem h2,
 .project-mending-kids + .figma-case-study .figma-team h2 {
   margin-bottom:32px;
   color:#176bdf;
 }
+.project-mending-kids + .figma-case-study .figma-problem h2 {
+  margin-bottom:32px;
+  color:#ff83ed;
+}
+.project-mending-kids + .figma-case-study .figma-solution h2 { color:#aca1e9; }
 .project-mending-kids + .figma-case-study .figma-copy-block p,
 .project-mending-kids + .figma-case-study .figma-problem p { font-size:16px; line-height:24px; }
 .project-mending-kids + .figma-case-study .figma-problem {
@@ -561,7 +569,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   background:transparent;
 }
 .project-mending-kids + .figma-case-study .figma-problem h2 { margin-bottom:24px; }
-.project-mending-kids + .figma-case-study .figma-solution { border-color:#176bdf; }
+.project-mending-kids + .figma-case-study .figma-solution { border-color:#aca1e9; }
 .project-mending-kids + .figma-case-study .figma-features { min-height:507px; }
 .project-mending-kids + .figma-case-study .figma-solution-grid {
   gap:24px;
@@ -734,7 +742,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .landing-about h2,.landing-section-intro h2,.landing-cta h2 { margin:0; font-family:'Syncopate',sans-serif; font-size:64px; line-height:1; letter-spacing:-1.92px; text-transform:uppercase; color:#176bdf; }
 .landing-about p { width:580px; margin:24px 0 0; font-family:'Raleway',sans-serif; font-size:16px; line-height:24px; color:#050505; }
 .landing-about .button { position:relative; z-index:2; font-family:'Raleway',sans-serif; font-weight:400; }
-.landing-about-planet { position:absolute; top:-190px; right:-120px; width:222px; height:222px; }
+.landing-about-planet { --planet-size:clamp(120px,16vw,222px); position:absolute; top:calc(var(--planet-size) * -0.856); right:calc(var(--planet-size) * -0.541); width:var(--planet-size); height:var(--planet-size); }
 .landing-bottom-strip { width:100%; margin:0; }
 
 /* Landing gallery UFO abduction */
