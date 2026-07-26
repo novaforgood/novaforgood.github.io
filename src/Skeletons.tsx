@@ -1,3 +1,5 @@
+import type { Project } from './App'
+
 export function GenericSkeleton() {
   return <div className="skel-generic" style={{ padding: '96px 24px', display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
     <div className="skel-line skel-line-heading" style={{ width: 240 }} />
@@ -252,12 +254,12 @@ export function StudentsSkeleton() {
   </div>
 }
 
-export function ProjectDetailSkeleton() {
+export function ProjectDetailSkeleton({ project }: { project: Project }) {
   return <div>
-    <section className="figma-detail-hero">
+    <section className={`figma-detail-hero project-${project.slug}`}>
       <div className="figma-detail-gradient">
         <div className="skel-line skel-line-heading" style={{ width: 260, margin: '0 auto 24px' }} />
-        <div className="figma-laptop"><div className="skel-block" style={{ width: '100%', height: 320 }} /></div>
+        <div className="figma-laptop" />
       </div>
     </section>
     <section className="figma-case-study">
@@ -267,7 +269,7 @@ export function ProjectDetailSkeleton() {
           <div className="skel-line" />
           <div>
             <div className="skel-line skel-line-short" />
-            <ul>{[0, 1, 2].map(index => <li key={index}><div className="skel-line skel-line-short" /></li>)}</ul>
+            <ul>{project.teamMembers.map((_, index) => <li key={index}><div className="skel-line skel-line-short" /></li>)}</ul>
           </div>
         </div>
         <section className="figma-copy-block">
@@ -287,29 +289,28 @@ export function ProjectDetailSkeleton() {
         <section className="figma-copy-block figma-features">
           <div className="skel-line skel-line-heading" style={{ width: 180 }} />
           <div className="figma-solution-grid">
-            {Array.from({ length: 4 }, (_, index) => <article key={index}>
+            {project.solutions.map((_, index) => <article key={index}>
               <div className="skel-line skel-line-heading" style={{ width: '50%' }} />
               <div className="skel-line" />
             </article>)}
           </div>
         </section>
-        <section className="figma-impact">
+        {project.testimonial ? <section className="figma-impact">
           <div className="skel-line skel-line-heading" style={{ width: 220 }} />
-          <div className="metric-grid">
-            {[0, 1, 2].map(index => <article key={index}>
+          {project.metrics ? <div className="metric-grid">
+            {project.metrics.map((_, index) => <article key={index}>
               <div className="skel-line skel-line-heading" style={{ width: 80, margin: '0 auto' }} />
               <div className="skel-line skel-line-short" style={{ margin: '0 auto' }} />
             </article>)}
-          </div>
+          </div> : null}
           <div className="figma-testimonial">
             <div className="skel-line skel-line-heading" style={{ width: 180 }} />
             <div className="skel-line" />
           </div>
-        </section>
+        </section> : null}
         <section className="figma-team">
           <div className="skel-line skel-line-heading" style={{ width: 140 }} />
-          <div className="skel-block" style={{ width: '48%', height: 200, display: 'inline-block', marginRight: '2%' }} />
-          <div className="skel-block" style={{ width: '48%', height: 200, display: 'inline-block' }} />
+          {project.teamImages.map((src, index) => <div className="skel-block" style={{ width: '100%', height: 300, marginTop: index ? 32 : 0 }} key={src} />)}
         </section>
       </div>
     </section>

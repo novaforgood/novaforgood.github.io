@@ -4,7 +4,7 @@ import { LandingAbduction } from './LandingAbduction'
 import { useImagesLoaded } from './useImagesLoaded'
 import { GenericSkeleton, LandingSkeleton, WorkSkeleton, AboutSkeleton, TeamSkeleton, NonprofitsSkeleton, StudentsSkeleton, ProjectDetailSkeleton } from './Skeletons'
 
-type Project = {
+export type Project = {
   slug: string
   name: string
   image: string
@@ -689,7 +689,7 @@ function ProjectDetailPage({ project }: { project: Project }) {
   const projectIndex = projects.findIndex(item => item.slug === project.slug)
   const previous = projects[(projectIndex + projects.length - 1) % projects.length]
   const next = projects[(projectIndex + 1) % projects.length]
-  return <AppShell skeleton={<ProjectDetailSkeleton />}>
+  return <AppShell skeleton={<ProjectDetailSkeleton project={project} />}>
     <section className={`figma-detail-hero project-${project.slug}`} data-node-id={project.figmaNode}>
       <img className="detail-deco detail-star detail-star-left" src="/assets/figma/details/star2.png" alt="" />
       <img className="detail-deco detail-star detail-star-right" src="/assets/figma/details/star2.png" alt="" />
