@@ -666,7 +666,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-mending-kids + .figma-case-study .figma-detail-nav { padding-bottom:96px; }
 
 @media (max-width:960px) {
-  .project-mending-kids .figma-detail-gradient h1 { width:90%; }
+  .project-mending-kids .figma-detail-gradient h1 { width:90%; height:auto; font-size:clamp(32px,6vw,64px); line-height:1.05; }
   .project-mending-kids .figma-laptop { width:min(709.928px,76vw); height:auto; aspect-ratio:709.928/383.055; }
   .project-mending-kids .figma-laptop::after,
   .project-mending-kids .figma-laptop img { left:16.222%; width:67.578%; }
@@ -1164,6 +1164,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
     object-position:top center;
   }
   .project-crjw + .figma-case-study {
+    min-height:0;
     background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/100% auto no-repeat;
   }
 }
