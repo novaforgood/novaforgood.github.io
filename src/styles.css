@@ -236,31 +236,10 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-wags-walks + .figma-case-study {
   min-height:3894px;
   padding-top:0;
-  background:#fff;
+  background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
 }
 .project-wags-walks + .figma-case-study:before {
-  z-index:0;
-  top:1675.543px;
-  height:2218.457px;
-  opacity:.12;
-  background-image:url('/assets/hero-texture.png');
-  background-size:420px auto;
-}
-.project-wags-walks + .figma-case-study:after {
-  content:'';
-  position:absolute;
-  z-index:0;
-  top:1675.543px;
-  right:0;
-  bottom:0;
-  left:0;
-  background:
-    radial-gradient(ellipse 52% 26% at 4% 11%,rgba(255,131,237,.66) 0%,rgba(255,201,238,.54) 40%,transparent 76%),
-    radial-gradient(ellipse 48% 32% at 96% 17%,rgba(255,248,222,.98) 0%,rgba(255,251,239,.82) 45%,transparent 76%),
-    radial-gradient(ellipse 62% 38% at 47% 25%,rgba(255,201,238,.86) 0%,rgba(172,161,233,.48) 47%,transparent 80%),
-    radial-gradient(ellipse 49% 35% at 12% 47%,rgba(116,182,255,.86) 0%,transparent 78%),
-    radial-gradient(ellipse 54% 35% at 83% 52%,rgba(255,248,222,.72) 0%,transparent 76%),
-    linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(116,182,255,.42) 31%,#238ce0 72%,#0077db 100%);
+  display:none;
 }
 .project-wags-walks + .figma-case-study .figma-case-inner {
   width:880px;
@@ -348,8 +327,10 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 }
 
 @media(max-width:920px) {
+  .project-wags-walks.figma-detail-hero { height:520px; padding-top:92px; overflow:hidden; }
+  .project-wags-walks .figma-detail-gradient { height:410px; min-height:410px; padding-top:48px; background-size:cover; }
   .project-wags-walks .figma-laptop {
-    width:min(709.928px,88vw);
+    width:min(709.928px,76vw);
     height:auto;
     aspect-ratio:709.928/383.055;
   }
@@ -367,6 +348,8 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
     font-size:clamp(30px,7vw,64px);
     line-height:1;
   }
+  .project-wags-walks .detail-star-left { content:url('/assets/figma/details/mk-star-left.png'); top:390px; left:-48px; width:150px; height:auto; transform:none; }
+  .project-wags-walks .detail-star-right { display:none; }
   .project-wags-walks + .figma-case-study {
     min-height:0;
     padding:36px 0 0;
@@ -374,6 +357,15 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .project-wags-walks + .figma-case-study .figma-case-inner {
     width:calc(100% - 40px);
   }
+  .project-wags-walks + .figma-case-study .figma-meta { height:auto; padding-top:0; }
+  .project-wags-walks + .figma-case-study .figma-problem { min-height:0; height:auto; padding:32px 24px; border-radius:40px; }
+  .project-wags-walks + .figma-case-study .figma-features { height:auto; }
+  .project-wags-walks + .figma-case-study .figma-solution-grid article { height:auto; min-height:0; grid-template-columns:28px 1fr; padding:22px 24px 18px; }
+  .project-wags-walks + .figma-case-study .figma-impact { height:auto; }
+  .project-wags-walks + .figma-case-study .figma-testimonial { height:auto; padding:28px 24px; }
+  .project-wags-walks + .figma-case-study .figma-team { height:auto; }
+  .project-wags-walks + .figma-case-study .figma-team img:first-of-type,
+  .project-wags-walks + .figma-case-study .figma-team img:last-of-type { height:auto; }
 }
 @media(max-width:820px){.header{top:18px}.nav{position:relative}.menu-button{display:block}.nav-links{display:none;position:absolute;top:64px;left:0;margin:0;padding:24px;flex-direction:column;align-items:stretch;background:white;border:1px solid var(--accent);border-radius:22px;box-shadow:0 18px 50px rgba(0,88,161,.2)}.nav-links.open{display:flex}.nav-links .button{margin:0}.hero{min-height:760px}.photo-ribbon img{width:150px;height:150px}.about-card{grid-template-columns:1fr;gap:20px;padding:34px 28px}.project-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto 44px}.project-card p{min-height:0}.logo-panel{padding:25px;grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr}.footer-links{flex-wrap:wrap}}
 @media(max-width:520px){.hero h1{font-size:22vw}.hero h2{font-size:8vw}.hero-copy p{font-size:15px}.section-shell{width:min(100% - 28px,1040px)}.photo-ribbon img{width:120px;height:120px}.about{padding-top:40px}.logo-panel{grid-template-columns:1fr 1fr}.cta-actions{flex-direction:column;align-items:stretch}.footer-brand strong{font-size:12px}}
@@ -536,9 +528,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-mending-kids + .figma-case-study {
   min-height:0;
   padding-top:48px;
-  background:
-    url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) 2000px no-repeat,
-    linear-gradient(180deg,#fff 0%,#fff 60%,#f7d5f1 75%,#74b6ff 88%,#0077db 100%);
+  background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
 }
 .project-mending-kids + .figma-case-study::before {
   display:none;
@@ -719,7 +709,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .landing-page > section { position:relative; z-index:1; }
 .landing-hero { position:relative; height:896px; overflow:hidden; }
 .landing-hero-copy { position:absolute; top:207px; left:50%; display:flex; width:756px; flex-direction:column; align-items:center; transform:translateX(-50%); text-align:center; }
-.landing-wordmark { width:756px; height:171px; margin:0 auto; object-fit:contain; }
+.landing-wordmark { width:756px; height:171px; margin:0 auto; object-fit:contain; filter:drop-shadow(0 4px 4px rgba(23,107,223,1)); }
 .landing-hero-copy h1 { width:752px; margin:23px 0 0; font-family:'Syncopate',sans-serif; font-size:64px; line-height:55px; letter-spacing:-1.92px; text-transform:uppercase; color:#fff; text-shadow:0 4px 4px #176bdf; }
 .landing-hero-copy p { width:395px; margin:72px 0 32px; font-family:'Raleway',sans-serif; font-size:16px; line-height:24px; color:#050505; }
 .landing-hero-star { position:absolute; z-index:1; top:195px; left:calc(50% - 659px); width:401px; height:384px; pointer-events:none; }
@@ -1032,9 +1022,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .project-crjw + .figma-case-study {
     min-height:3568px;
     padding-top:0;
-    background:
-      url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) 2460px no-repeat,
-      linear-gradient(180deg,#fff 0%,#fff 43%,#f7d5f1 57%,#74b6ff 78%,#0077db 100%);
+    background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
   }
   .project-crjw + .figma-case-study::before { display:none; }
   .project-crjw + .figma-case-study .figma-case-inner {
@@ -1137,11 +1125,18 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 }
 
 @media (max-width:820px) {
+  .project-crjw.figma-detail-hero { height:520px; padding-top:92px; overflow:hidden; }
   .project-crjw .figma-detail-gradient {
+    width:calc(100% - 28px);
+    height:410px;
+    min-height:410px;
+    padding-top:48px;
     background:url('/assets/figma/details/mk-hero-gradient.png') center/cover no-repeat;
   }
   .project-crjw .figma-detail-gradient::before,
   .project-crjw .figma-detail-gradient::after { display:none; }
+  .project-crjw > .detail-star-left { content:url('/assets/figma/details/mk-star-left.png'); top:390px; left:-48px; width:150px; height:auto; transform:none; }
+  .project-crjw > .detail-star-right { display:none; }
   .project-crjw .figma-laptop::before {
     background:url('/assets/figma/details/mk-laptop-outer.png') 50% 50%/91.02% 97.65% no-repeat;
   }
@@ -1169,7 +1164,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
     object-position:top center;
   }
   .project-crjw + .figma-case-study {
-    background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/auto 58% no-repeat;
+    background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/100% auto no-repeat;
   }
 }
 
@@ -1230,7 +1225,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .landing-wordmark { width:min(756px,90vw); height:auto; }
   .landing-hero-copy h1 { width:auto; margin-top:23px; font-size:clamp(28px,7vw,64px); line-height:1; }
   .landing-hero-copy p { width:min(395px,90vw); margin-top:56px; }
-  .landing-hero-star { width:220px; height:auto; top:290px; left:-95px; }
+  .landing-hero-star { display:none; }
   .landing-ufo-flight { top:285px; right:-40px; left:auto; width:96px; height:90px; }
   .ufo-abduction-ship { width:92px; height:86px; }
   .ufo-tractor-beam { filter:drop-shadow(0 0 8px rgba(116,182,255,.72)); }
