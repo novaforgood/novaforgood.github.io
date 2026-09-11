@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { LandingAbduction } from './LandingAbduction'
 import { useImagesLoaded } from './useImagesLoaded'
 import { GenericSkeleton, LandingSkeleton, WorkSkeleton, AboutSkeleton, TeamSkeleton, NonprofitsSkeleton, StudentsSkeleton, ProjectDetailSkeleton } from './Skeletons'
+import { usePath, Link } from './router'
 
 export type Project = {
   slug: string
@@ -185,41 +186,6 @@ const landingPartners = [
 // When false, the hero UFO just idle-bobs in place instead of wandering the
 // hero and running the carousel abduction/sucking sequence.
 const UFO_MOTION_ENABLED = false
-
-function usePath() {
-  const [path, setPath] = useState(window.location.pathname)
-
-  useEffect(() => {
-    const onPopState = () => setPath(window.location.pathname)
-    window.addEventListener('popstate', onPopState)
-    return () => window.removeEventListener('popstate', onPopState)
-  }, [])
-
-  return path
-}
-
-function go(path: string) {
-  if (`${window.location.pathname}${window.location.hash}` === path) return
-  window.history.pushState({}, '', path)
-  window.dispatchEvent(new PopStateEvent('popstate'))
-  const hash = path.split('#')[1]
-  if (hash) {
-    requestAnimationFrame(() => document.getElementById(hash)?.scrollIntoView())
-  } else {
-    window.scrollTo({ top: 0 })
-  }
-}
-
-function Link({ href, children, className, onClick, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  const isInternal = href.startsWith('/')
-  return <a className={className} href={href} onClick={(event) => {
-    if (isInternal) {
-      event.preventDefault()
-      go(href)
-    }
-    onClick?.(event)
-  }} {...props}>{children}</a>
-}
 
 const NOVA_LOGO_PATHS = [
   'M8.48183 3.85332L0 12.3352L11.5648 23.9L20.0467 15.4182L8.48183 3.85332Z',
