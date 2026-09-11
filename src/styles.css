@@ -1254,3 +1254,44 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .landing-partners img { height:78px; }
   .landing-cta { padding:72px 0; }
 }
+
+/* Archived project case studies — recovered from the pre-2026 site. */
+.archive-page { position: relative; }
+.archive-hero {
+  position: relative;
+  padding: 120px 24px 64px;
+  text-align: center;
+  background: radial-gradient(120% 140% at 50% 0%, rgba(23, 107, 223, 0.18), transparent 70%);
+}
+.archive-hero-copy { max-width: 760px; margin: 0 auto; }
+.archive-hero h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  background: linear-gradient(96deg, var(--blue), var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.archive-hero p { margin-top: 16px; font-size: 18px; line-height: 1.5; }
+.archive-content { max-width: 760px; margin: 0 auto; padding: 0 24px 96px; }
+.archive-meta {
+  padding: 24px 0;
+  border-block: 1px solid rgba(23, 107, 223, 0.25);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.archive-meta ul { margin: 4px 0 0; padding-left: 20px; }
+.archive-meta a { display: inline-flex; align-items: center; gap: 4px; }
+.archive-body { margin-top: 40px; }
+.archive-body h2 { margin: 48px 0 12px; font-size: 28px; }
+.archive-body h3 { margin: 32px 0 10px; font-size: 22px; }
+.archive-body h4 { margin: 24px 0 8px; font-size: 18px; }
+.archive-body p { margin: 0 0 18px; line-height: 1.7; }
+.archive-body ul { margin: 0 0 18px; padding-left: 22px; line-height: 1.7; }
+.archive-body li { margin-bottom: 8px; }
+.archive-body figure { margin: 32px 0; }
+.archive-body img { width: 100%; height: auto; border-radius: 12px; }
+.archive-body figcaption { margin-top: 8px; font-size: 14px; opacity: 0.7; }
+@media (max-width: 700px) {
+  .archive-hero { padding: 88px 20px 48px; }
+  .archive-content { padding: 0 20px 64px; }
+}

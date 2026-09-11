@@ -1,5 +1,33 @@
 import type { Project } from './data/projects'
 
+export function ArchiveDetailSkeleton() {
+  return <div className="archive-page">
+    <section className="archive-hero">
+      <div className="archive-hero-copy">
+        <div className="skel-line skel-line-heading" style={{ width: 320, margin: '0 auto 16px' }} />
+        <div className="skel-line" style={{ width: 460, margin: '0 auto' }} />
+      </div>
+    </section>
+    <section className="archive-content">
+      <div className="archive-meta">
+        <div className="skel-line skel-line-short" />
+        <div className="skel-line skel-line-short" />
+        <div className="skel-line" style={{ width: '60%' }} />
+      </div>
+      <div className="archive-body">
+        <div className="skel-line skel-line-heading" style={{ width: 220 }} />
+        <div className="skel-line" />
+        <div className="skel-line" />
+        <div className="skel-line skel-line-short" />
+        <div className="skel-block" style={{ width: '100%', height: 280 }} />
+        <div className="skel-line skel-line-heading" style={{ width: 180 }} />
+        <div className="skel-line" />
+        <div className="skel-line skel-line-short" />
+      </div>
+    </section>
+  </div>
+}
+
 export function GenericSkeleton() {
   return <div className="skel-generic" style={{ padding: '96px 24px', display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
     <div className="skel-line skel-line-heading" style={{ width: 240 }} />
