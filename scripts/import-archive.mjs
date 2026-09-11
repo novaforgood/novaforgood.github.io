@@ -195,7 +195,10 @@ const projects = indexNodes.map((indexNode) => {
       name: NONPROFIT_NAME_FIXES[rawNonprofit] ?? rawNonprofit,
       ...(NONPROFIT_URLS[slug] ? { url: NONPROFIT_URLS[slug] } : {}),
     },
-    technology: (node.technology ?? []).map(item => item.name),
+    // Four entries never had a stack recorded and store the literal string
+    // "TBA". Dropping it here leaves the array empty, so the page omits the
+    // tech line entirely rather than showing a placeholder to readers.
+    technology: (node.technology ?? []).map(item => item.name).filter(name => !PLACEHOLDER_TECH.test(name.trim())),
     team: (node.team ?? []).map(item => item.name),
     ...(cover ? { cover } : {}),
     body: convertBody(node.bodyArticle?.raw ?? '{"content":[]}', assetsById),

@@ -1049,9 +1049,7 @@ export const archiveProjects: ArchiveProject[] = [
       "name": "Beloved Beauty",
       "url": "https://www.belovedbeauty.org/"
     },
-    "technology": [
-      "N/A"
-    ],
+    "technology": [],
     "team": [
       "Sam Chai",
       "Kristopher Bakhtiar",
@@ -1435,9 +1433,7 @@ export const archiveProjects: ArchiveProject[] = [
       "name": "L.A. Waterkeeper",
       "url": "https://www.lawaterkeeper.org/"
     },
-    "technology": [
-      "TBA"
-    ],
+    "technology": [],
     "team": [
       "Tam Vo",
       "Aditi Karthik",
@@ -1502,9 +1498,7 @@ export const archiveProjects: ArchiveProject[] = [
       "name": "Alzheimer's San Diego",
       "url": "https://www.alzsd.org/"
     },
-    "technology": [
-      "TBA"
-    ],
+    "technology": [],
     "team": [
       "Kasie Yang",
       "Priyanshu Sharma",
@@ -1673,9 +1667,7 @@ export const archiveProjects: ArchiveProject[] = [
       "name": "Inner City Visions",
       "url": "https://innercityvisions.org/"
     },
-    "technology": [
-      "TBA"
-    ],
+    "technology": [],
     "team": [
       "Katelyn Doanla",
       "Jimin Kim",

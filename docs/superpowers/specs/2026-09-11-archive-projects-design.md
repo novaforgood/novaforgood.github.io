@@ -170,10 +170,14 @@ visuals-first because `/work` is a browsing surface:
 
 Each signal is normalised against the strongest project, and ties fall back to
 word count and then the archive's original position, so repeated runs are
-deterministic. Four entries store the literal string `TBA` as their technology
-and score as having none: Inner City Visions, L.A. Waterkeeper, Alzheimer's San
-Diego, Beloved Beauty. Their pages render no tech line, which is honest to the
-archive — no stack is invented to fill the gap.
+deterministic.
+
+Four entries never had a stack recorded and store a placeholder instead —
+`TBA` for Inner City Visions, L.A. Waterkeeper and Alzheimer's San Diego, and
+`N/A` for Beloved Beauty. The import script strips these, so the field arrives
+empty and the page omits the tech line rather than showing readers a
+placeholder. They also score as having no stack. No stack is invented to fill
+the gap.
 
 Resulting order: Coordinating Survival Kit Distribution, Project Ropa, Westside
 Food Bank, Swipe Out Hunger, Gladeo, UChicago RISC, Beloved Beauty, Global Lives
