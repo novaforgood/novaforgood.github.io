@@ -1,17 +1,7 @@
+// Projects without a recovered case study. Everything else that used to live
+// here now has its own page, generated into data/archiveProjects.ts.
 export const moreProjects: { name: string; description: string; npoUrl?: string }[] = [
-  { name: 'Inner City Visions', description: 'A client management system for Inner City Visions to support youth services and human trafficking intervention programs.', npoUrl: 'https://innercityvisions.org/' },
-  { name: 'L.A. Waterkeeper', description: 'An interactive web app that educates the public about the LA River’s impact.', npoUrl: 'https://www.lawaterkeeper.org/' },
-  { name: 'Alzheimer’s San Diego', description: 'A client management system that consolidates client onboarding, check-ins, and tracking all in one platform.', npoUrl: 'https://www.alzsd.org/' },
   { name: 'SaveCanto', description: 'A web app to act as a volunteer management system and a refined map and table system for verifying/displaying Cantonese language learning programs.' },
-  { name: 'Project Ropa Offline Forms App', description: 'A check-ins app for volunteers to track deliveries of clean clothing to the homeless in LA.', npoUrl: 'https://www.projectropa.org/' },
-  { name: 'Coordinating Survival Kit Distribution', description: 'A system streamlining on-the-ground distribution of homeless aid packages by thousands of volunteers.', npoUrl: 'https://www.thegivingspirit.org/' },
-  { name: 'iiDecide', description: 'A platform for anonymously connecting victims and survivors of sexual assault who have the same perpetrator.' },
-  { name: 'Oppia', description: 'Supporting free, interactive online learning opportunities for students with limited access to formal education.', npoUrl: 'https://www.oppia.org/' },
-  { name: 'Gladeo', description: 'A pathway mapper web application to assist community college students in planning their coursework.', npoUrl: 'https://www.gladeo.org/' },
-  { name: 'Swipe Out Hunger', description: 'A donor-donee matching app allowing students to share swipes with those struggling from food insecurity.', npoUrl: 'https://www.swipehunger.org/' },
-  { name: 'Westside Food Bank', description: 'A food pantry locator with information on the nearest available pantries.', npoUrl: 'http://www.westsidefoodbankca.org/' },
-  { name: 'Friends of the Semel Institute', description: 'Data analysis of a UCLA nonprofit’s donor base to maximize donations toward mental health awareness and research.', npoUrl: 'https://www.friendsofsemelinstitute.org/' },
-  { name: 'Beloved Beauty', description: 'A donor deck and user survey to support funding for victims of sex trafficking.', npoUrl: 'https://www.belovedbeauty.org/' },
 ]
 
 export const teamPhotos = ['/assets/team-1.png', '/assets/team-2.png', '/assets/team-3.png', '/assets/team-4.png']

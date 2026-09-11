@@ -3,6 +3,7 @@ import { WorkSkeleton } from '../Skeletons'
 import { Link } from '../router'
 import { AppShell } from '../components/AppShell'
 import { projects } from '../data/projects'
+import { archiveProjects } from '../data/archiveProjects'
 import { moreProjects } from '../data/site'
 
 export function WorkPage() {
@@ -36,6 +37,13 @@ export function WorkPage() {
         <section className="work-more-projects">
           <h2>...and more!</h2>
           <div className="work-more-list">
+            {[...archiveProjects].sort((a, b) => a.order - b.order).map(project => (
+              <Link className="work-more-row" href={`/work/${project.slug}`} key={project.slug}>
+                <strong>{project.name}</strong>
+                <span>{project.description}</span>
+                <ArrowUpRight size={12} strokeWidth={1.5}/>
+              </Link>
+            ))}
             {moreProjects.map(({ name, description, npoUrl }) => npoUrl
               ? <a className="work-more-row" href={npoUrl} target="_blank" rel="noopener noreferrer" key={name}><strong>{name}</strong><span>{description}</span><ArrowUpRight size={12} strokeWidth={1.5}/></a>
               : <div className="work-more-row work-more-row-static" key={name}><strong>{name}</strong><span>{description}</span></div>)}

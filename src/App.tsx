@@ -1,5 +1,7 @@
 import { usePath } from './router'
 import { projects } from './data/projects'
+import { archiveProjects } from './data/archiveProjects'
+import { ArchiveProjectPage } from './pages/ArchiveProjectPage'
 import { LandingPage } from './pages/LandingPage'
 import { WorkPage } from './pages/WorkPage'
 import { AboutPage } from './pages/AboutPage'
@@ -13,6 +15,7 @@ function App() {
   const path = usePath()
   const normalizedPath = path.replace(/\/$/, '') || '/'
   const project = projects.find(item => normalizedPath === `/work/${item.slug}`)
+  const archived = archiveProjects.find(item => normalizedPath === `/work/${item.slug}`)
 
   let page: React.ReactNode
   if (normalizedPath === '/') page = <LandingPage />
@@ -22,6 +25,7 @@ function App() {
   else if (normalizedPath === '/nonprofits') page = <NonprofitsPage />
   else if (normalizedPath === '/students') page = <StudentsPage />
   else if (project) page = <ProjectDetailPage project={project} />
+  else if (archived) page = <ArchiveProjectPage project={archived} />
   else page = <NotFoundPage />
 
   return <div key={normalizedPath}>{page}</div>
