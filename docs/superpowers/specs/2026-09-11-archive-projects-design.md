@@ -119,10 +119,21 @@ Outputs:
 - `src/data/archiveProjects.ts` — the 14 projects as `ArchiveProject[]`
 - `public/assets/archive/<slug>/<name>.<ext>` — images, slug-scoped
 
-Images wider than 1600 px are resized and re-encoded with `sips` (ships with
-macOS; no new dependency). Expected result: about 9.6 MB down to roughly 3 MB.
-The two GIFs stay GIFs and are lazy-loaded — re-encoding them would require
-adding `ffmpeg` for two images.
+Image handling, corrected after measuring the actual files (the original
+estimate of "about 3 MB via resizing" was wrong — the heavy files are badly
+compressed, not large in pixels; the worst is 2.6 MB at only 750 px wide):
+
+1. Cap dimensions at 1600 px with `sips`. This only helps the 5000 px cover art.
+2. Re-encode a PNG as JPEG (quality 80) **only when transparency is absent or
+   entirely unused**, determined by inspecting the alpha channel with Pillow.
+   This is where the savings are: 2,636 KB → 208 KB on the Project Ropa
+   screenshot, 603 KB → 79 KB on the Global Lives prototype. The three cover
+   images have genuine transparency (minimum alpha 0) and stay PNG, since
+   flattening them would put black boxes behind logo art.
+3. GIFs are copied untouched and lazy-loaded. `sips` cannot even read their
+   frame count, and re-encoding would need `ffmpeg` for two files.
+
+The 2.1 MB Westside Food Bank GIF therefore remains the single heaviest asset.
 
 ## Pages and routing
 
