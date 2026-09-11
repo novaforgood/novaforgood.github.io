@@ -1,4 +1,4 @@
-import type { Project } from './App'
+import type { Project } from './data/projects'
 
 export function GenericSkeleton() {
   return <div className="skel-generic" style={{ padding: '96px 24px', display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
