@@ -210,6 +210,14 @@ build` is the only automated gate that exists.
   text and images against the archived HTML in `6ce137d:work/<slug>/index.html`.
 - Responsive check at phone width for the pages with wide images.
 
+**Known verification gap:** phone-width rendering could not be confirmed in this
+environment. `resize_window` shrinks the browser window (`outerWidth` 328) without
+changing the rendered viewport (`innerWidth` stays 1512), so `@media (max-width:
+700px)` never activates and no screenshot reflects a real phone layout. The
+narrow-width layout still needs a manual check in a real browser. Horizontal
+overflow *was* verified at desktop width via `documentElement.scrollWidth` vs
+`clientWidth`, which caught the decorative-star overflow on archive pages.
+
 ## Out of scope
 
 - Adding a test framework, linter, or formatter.

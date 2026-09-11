@@ -1259,6 +1259,9 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .archive-page { position: relative; }
 .archive-hero {
   position: relative;
+  /* The decorative stars are absolutely positioned and reach past the hero's
+     right edge; without clipping they add ~113px of horizontal page scroll. */
+  overflow: hidden;
   padding: 120px 24px 64px;
   text-align: center;
   background: radial-gradient(120% 140% at 50% 0%, rgba(23, 107, 223, 0.18), transparent 70%);
