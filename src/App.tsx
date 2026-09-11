@@ -283,7 +283,7 @@ function Footer() {
       <Link href="/team">Our Team</Link>
       <Link href="/students">For Students</Link>
     </div>
-    <small>© 2026 nova for good | Last updated June 13, 2026</small>
+    <small>© 2026 nova for good | Last updated Sept 11, 2026</small>
     <div className="footer-socials" aria-label="Social links">
       <a href="https://www.instagram.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on Instagram"><SocialIcon name="instagram" /></a>
       <a href="https://github.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on GitHub"><SocialIcon name="github" /></a>
@@ -634,12 +634,12 @@ function NonprofitsPage() {
 
 function StudentsPage() {
   const events = [
-    ['Applications open', 'TBD', 'tinyurl.com/nova-2627'],
-    ['Infosession #1', 'TBD', 'in-person'],
-    ['Infosession #2', 'TBD', 'on Zoom'],
-    ['Applications Due', 'TBD', ''],
-    ['Meet & Greet', 'TBD', 'Invite only'],
-    ['Interviews', 'TBD', 'Invite only'],
+    ['Applications open', 'SEP 22', 'tinyurl.com/nova-2627'],
+    ['Infosession #1', 'SEP 29', 'in-person'],
+    ['Infosession #2', 'SEP 30', 'on Zoom'],
+    ['Applications Due', 'OCT 2', ''],
+    ['Meet & Greet', 'OCT 6-7', 'Invite only'],
+    ['Interviews', 'OCT 12-15', 'Invite only'],
   ]
   const reflections = [
     ['Jimin Kim', 'Developer', 'i didn’t apply to a single club until my sophomore year out of fear of how intensive and competitive technical clubs can be. i just knew that i wanted to surround myself with people who work not for a line on a resume, but out of empathy and creativity. stalking nova’s instagram & EAF booth, it was clear that nova was exactly that :)'],
