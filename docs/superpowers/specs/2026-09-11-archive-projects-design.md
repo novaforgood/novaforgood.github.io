@@ -153,11 +153,36 @@ A dedicated skeleton matching this layout, alongside the existing ones.
 
 ### Work page
 
-Fifteen rows in the old site's own order: Inner City Visions, L.A. Waterkeeper,
-Alzheimer's San Diego (the three the old site featured, and the three with
-covers), then Project Ropa, Coordinating Survival Kit Distribution, iiDecide,
-Global Lives Project, UChicago RISC, Oppia, Gladeo, Swipe Out Hunger, Westside
-Food Bank, Friends of the Semel Institute, Beloved Beauty, then SaveCanto last.
+Fifteen rows, the archived fourteen ranked by how substantial each case study
+is, then SaveCanto last. The old site's own order is not used: it led with the
+three projects it happened to feature, all of which have no recorded tech stack
+and among the thinnest write-ups.
+
+Rank is computed in the import script from four measured signals, weighted
+visuals-first because `/work` is a browsing surface:
+
+| Signal | Weight |
+|---|---|
+| Images (body images plus cover) | 0.45 |
+| Body words (paragraphs, lists, headings) | 0.30 |
+| Technologies, excluding placeholders | 0.15 |
+| Team members credited | 0.10 |
+
+Each signal is normalised against the strongest project, and ties fall back to
+word count and then the archive's original position, so repeated runs are
+deterministic. Four entries store the literal string `TBA` as their technology
+and score as having none: Inner City Visions, L.A. Waterkeeper, Alzheimer's San
+Diego, Beloved Beauty. Their pages render no tech line, which is honest to the
+archive — no stack is invented to fill the gap.
+
+Resulting order: Coordinating Survival Kit Distribution, Project Ropa, Westside
+Food Bank, Swipe Out Hunger, Gladeo, UChicago RISC, Beloved Beauty, Global Lives
+Project, iiDecide, L.A. Waterkeeper, Alzheimer's San Diego, Oppia, Inner City
+Visions, Friends of the Semel Institute.
+
+The generated array is written in this same order, because `ArchiveProjectPage`
+derives previous/next from array position — if the two disagreed, the list and
+the page navigation would lead readers in different directions.
 
 Fourteen rows link internally. SaveCanto keeps its external link.
 

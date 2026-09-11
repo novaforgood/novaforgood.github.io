@@ -3,372 +3,6 @@ import type { ArchiveProject } from './archive'
 
 export const archiveProjects: ArchiveProject[] = [
   {
-    "slug": "inner-city-visions",
-    "name": "Inner City Visions",
-    "description": "A client management system for Inner City Visions",
-    "nonprofit": {
-      "name": "Inner City Visions",
-      "url": "https://innercityvisions.org/"
-    },
-    "technology": [
-      "TBA"
-    ],
-    "team": [
-      "Katelyn Doanla",
-      "Jimin Kim",
-      "Akhilesh Basetty",
-      "Travis Ha",
-      "Kylie Bach",
-      "Sonav Agarwal",
-      "Janys Li",
-      "Emma Teng"
-    ],
-    "cover": {
-      "src": "/assets/archive/inner-city-visions/inner-city-visions-cover.png",
-      "width": 1600,
-      "height": 1600
-    },
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Inner City Visions (ICV) is a South Los Angeles-based nonprofit dedicated to protecting and empowering vulnerable youth, families, and individuals in need. Their work spans crisis intervention, human trafficking prevention, and youth development, offering services such as mental health and substance abuse referrals, care packages, and shelter connections."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 4,
-        "text": "THE CHALLENGE"
-      },
-      {
-        "type": "heading",
-        "level": 4,
-        "text": "Create a system that automates client intake and data analysis through a unified database"
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Our Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We designed an integrated volunteer management platform that improved both usability and communication. The platform included a simple form for volunteers to log hours and case notes, an admin dashboard to track engagement and view metrics, and a centralized homepage for announcements and updates. This solution streamlined coordination and helped build a more connected, informed volunteer community at Alzheimer’s San Diego."
-          }
-        ]
-      }
-    ],
-    "order": 1
-  },
-  {
-    "slug": "la-waterkeeper",
-    "name": "L.A. Waterkeeper",
-    "description": "An interactive web app that educates the public about LA River’s impact.",
-    "nonprofit": {
-      "name": "L.A. Waterkeeper",
-      "url": "https://www.lawaterkeeper.org/"
-    },
-    "technology": [
-      "TBA"
-    ],
-    "team": [
-      "Tam Vo",
-      "Aditi Karthik",
-      "Noah Hrung",
-      "Sophie Kim",
-      "Anusha Ladha",
-      "Ashley Varghese",
-      "Clare Jin",
-      "Jason Chan",
-      "Sean Choi"
-    ],
-    "cover": {
-      "src": "/assets/archive/la-waterkeeper/la-waterkeeper-cover.png",
-      "width": 1600,
-      "height": 1600
-    },
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Los Angeles Waterkeeper is dedicated to protecting the LA River and LA water systems. The organization works towards making Los Angeles a water self-sufficient region by bringing sustainable and equitable water management.\n\nFor the past 3 decades, they have guided investments and policy decisions, advocating for health and protection of LA’s waterways. Their projects target pollution prevention, habitat restoration, efficient water infrastructure, building healthy ecosystems, and more."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 4,
-        "text": "THE CHALLENGE"
-      },
-      {
-        "type": "heading",
-        "level": 4,
-        "text": "Create an immersive website that emphasizes the impact of LA River’s restoration to the community and donors"
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Our Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Our team created an interactive web app to help educate the public about the LA River's history, importance, and future. The app includes an interactive map that shows active project areas along the river and highlights key project areas. Along with the interactive map, we added a key focus area on the website known as the “7 Wins,” which includes biodiversity, water supply, habitat restoration, water quality, climate resilience, public access, and cultural heritage. \n\nThrough an engaging, user-friendly design, the app empowers users to learn more about the river’s role in the local ecosystem and how ongoing efforts are shaping a healthier, more sustainable Los Angeles."
-          }
-        ]
-      }
-    ],
-    "order": 2
-  },
-  {
-    "slug": "alzheimers-san-diego",
-    "name": "Alzheimer’s San Diego",
-    "description": "A client management system that consolidates client onboarding, check-ins, and tracking all in one platform.",
-    "nonprofit": {
-      "name": "Alzheimer's San Diego",
-      "url": "https://www.alzsd.org/"
-    },
-    "technology": [
-      "TBA"
-    ],
-    "team": [
-      "Kasie Yang",
-      "Priyanshu Sharma",
-      "Arya Bhalla",
-      "Olivia Qi",
-      "Cao Nhan Nguyen",
-      "Lian Elsa Linton",
-      "Himani Jha",
-      "Anthony Chui",
-      "Rahul Ravi",
-      "Richelle Shim"
-    ],
-    "cover": {
-      "src": "/assets/archive/alzheimers-san-diego/alzheimers-san-diego-cover.png",
-      "width": 1600,
-      "height": 1600
-    },
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Alzheimerʼs San Diego (ASD) is a local, independent nonprofit organization that provides comprehensive support for individuals and families affected by Alzheimerʼs. They provide caregiver support, community education, and clinical services throughout the San Diego area. ASD has a network of 200+ active volunteers."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 4,
-        "text": "THE CHALLENGE"
-      },
-      {
-        "type": "heading",
-        "level": 4,
-        "text": "Resolve unpredictability in ASD’s operations by automating volunteer session logs and feedback"
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Our Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We designed an integrated volunteer management platform that improved both usability and communication. The platform included a simple form for volunteers to log hours and case notes, an admin dashboard to track engagement and view metrics, and a centralized homepage for announcements and updates.\n\nThis solution streamlined coordination and helped build a more connected, informed volunteer community at Alzheimer’s San Diego."
-          }
-        ]
-      }
-    ],
-    "order": 3
-  },
-  {
-    "slug": "project-ropa",
-    "name": "Project Ropa Offline Forms App",
-    "description": "A check-ins app for volunteers to track deliveries of clean clothing to the homeless in LA",
-    "nonprofit": {
-      "name": "Project Ropa",
-      "url": "https://www.projectropa.org/"
-    },
-    "technology": [
-      "Firebase",
-      "iOS"
-    ],
-    "team": [
-      "Kevin Li",
-      "Jessica Lam"
-    ],
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Project Ropa is a free mobile hygiene service that brings clean clothing and hygiene kits directly to people experiencing homelessness in the Greater Los Angeles area in a safe, humane and dignified way. Project Ropa has a retrofitted van that functions as a mobile walk-in closet, carrying a full selection of clothes, shoes and accessories. They have served over 32,000 individuals in the last 5 years and distributed over 87,000 lbs of clothing."
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "src": "/assets/archive/project-ropa/project-ropa-picture.jpeg",
-        "alt": "Project Ropa: Picture",
-        "caption": "Project Ropa: Picture",
-        "width": 724,
-        "height": 426
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Problem"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Although Project Ropa serves hundreds of people per month, they didn’t have a simple but efficient way to keep track of the individuals they served in the homeless community."
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          [
-            {
-              "text": "Returning visitors: ",
-              "bold": true
-            },
-            {
-              "text": "Without a digitized mechanism, it is difficult to keep track of who is new and who is a returning visitor. Project Ropa would not have to ask survey questions to its returning visitors."
-            }
-          ],
-          [
-            {
-              "text": "Lack of internet access: ",
-              "bold": true
-            },
-            {
-              "text": "Existing solutions like Google Forms only work when connected online, but many of Project Ropa's distribution locations do not have internet access."
-            }
-          ]
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Solution"
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Offline Forms"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "In order to help solve this problem, we created an offline forms mobile application, so volunteers would be able to better track their deliveries of hygiene kits and clean clothing to the homeless population in LA, regardless of internet connection."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Efficient Check-In"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Within this platform, we also created a check-in feature; once a user was registered and recorded in the database, each time they used Project Ropa, volunteers would just have to enter their name to check-in, as their data was stored in our database."
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "src": "/assets/archive/project-ropa/project-ropa-app-flow.png",
-        "alt": "Project Ropa: App Flow",
-        "caption": "Project Ropa: App Flow",
-        "width": 697,
-        "height": 394
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Better Understanding of LA’s Homeless Community"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Questions asked during the original registration of a person experiencing homelessness included: race, ethnicity, age, gender, current living situation, and whether they were seeking housing or employment. This data can be used to:"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          [
-            {
-              "text": "Help Project Ropa apply for funding grants to better serve their community and expand their service"
-            }
-          ],
-          [
-            {
-              "text": "Better understand socioeconomic and demographic factors that are correlated/cause homelessness in LA."
-            }
-          ]
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Impact"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Since its release, our app has been used to record 150 people a week, enabling Project Ropa to collect data in larger volumes, more efficiently, and more robustly without post-processing."
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "src": "/assets/archive/project-ropa/project-ropa-impact.jpg",
-        "alt": "Project Ropa: Impact",
-        "caption": "Project Ropa: Impact",
-        "width": 750,
-        "height": 1334
-      }
-    ],
-    "order": 4
-  },
-  {
     "slug": "survival-kit-distribution",
     "name": "Coordinating Survival Kit Distribution",
     "description": "A system streamlining on-the-ground distribution of homeless aid packages by thousands of volunteers",
@@ -663,115 +297,23 @@ export const archiveProjects: ArchiveProject[] = [
         "height": 979
       }
     ],
-    "order": 5
+    "order": 1
   },
   {
-    "slug": "iidecide",
-    "name": "iiDecide",
-    "description": "A platform for anonymously connecting victims and survivors of sexual assault who have the same perpetrator",
+    "slug": "project-ropa",
+    "name": "Project Ropa Offline Forms App",
+    "description": "A check-ins app for volunteers to track deliveries of clean clothing to the homeless in LA",
     "nonprofit": {
-      "name": "iiDecide"
+      "name": "Project Ropa",
+      "url": "https://www.projectropa.org/"
     },
     "technology": [
-      "iOS",
       "Firebase",
-      "Python",
-      "Flask"
+      "iOS"
     ],
     "team": [
-      "Yuhan Liu",
-      "Jessica Lam",
-      "Max Wu",
-      "Sriram Balachandran",
-      "Anivrit Subramaniam",
-      "Hannah Chu",
-      "Janice Tsai",
-      "Natalia Luzuriaga",
-      "Valentin Nguyen",
-      "Yili Liu",
-      "Joshua Zhang",
-      "Tanaya Nawathe"
-    ],
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Problem"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Every 73 seconds, an American is sexually assaulted."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "However, only 1 in 4 of sexual assaults are reported to the police. Victims and survivors often feel isolated and unsure of who to speak to or what to do. Although 51% of alleged rapists are repeat offenders that have been convicted previously, in many cases victims and survivors of a perpetrator are not aware of other incidents from the same person. This further isolates them, discouraging them from taking action."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Nova is working with iiDecide to create an app for sexual assault survivors and victims, allowing them to log incidents of harassment, threats, and abuse. Reports are automatically matched, and following a few verification steps, users will have the opportunity to anonymously connect with other victims of the same perpetrator."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Creating these connections will empower users, providing them with information, support and confidence as they consider their next steps."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Progress"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We have built out the MVP, and are currently beta testing it with a group of 50 victims and survivors of sexual assault."
-          }
-        ]
-      }
-    ],
-    "order": 6
-  },
-  {
-    "slug": "global-lives-project",
-    "name": "Global Lives Project",
-    "description": "An immersive, interactive VR experience promoting empathy and cross-cultural understanding",
-    "nonprofit": {
-      "name": "Global Lives Project",
-      "url": "https://globallives.org/"
-    },
-    "technology": [
-      "Virtual Reality",
-      "Unity",
-      "3D Modeling",
-      "Oculus Quest 2"
-    ],
-    "team": [
-      "Edward Zhang",
-      "Dean Jones",
-      "Hannah Chu",
       "Kevin Li",
-      "Aneri Patel",
-      "Max Wu"
+      "Jessica Lam"
     ],
     "body": [
       {
@@ -783,222 +325,164 @@ export const archiveProjects: ArchiveProject[] = [
         "type": "paragraph",
         "spans": [
           {
-            "text": "Founded in 2002, the "
-          },
-          {
-            "text": "Global Lives Project",
-            "href": "https://globallives.org/"
-          },
-          {
-            "text": " is an ambitious mission to build a video library documenting the daily lives of people all across the world. The ultimate goal is to open our eyes to the livelihoods of people in communities far outside our own."
+            "text": "Project Ropa is a free mobile hygiene service that brings clean clothing and hygiene kits directly to people experiencing homelessness in the Greater Los Angeles area in a safe, humane and dignified way. Project Ropa has a retrofitted van that functions as a mobile walk-in closet, carrying a full selection of clothes, shoes and accessories. They have served over 32,000 individuals in the last 5 years and distributed over 87,000 lbs of clothing."
           }
         ]
+      },
+      {
+        "type": "image",
+        "src": "/assets/archive/project-ropa/project-ropa-picture.jpeg",
+        "alt": "Project Ropa: Picture",
+        "caption": "Project Ropa: Picture",
+        "width": 724,
+        "height": 426
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Problem"
       },
       {
         "type": "paragraph",
         "spans": [
           {
-            "text": "The Global Lives Project has since collected and indexed "
-          },
-          {
-            "text": "continuous 24-hour clips",
-            "href": "https://globallives.org/explore/"
-          },
-          {
-            "text": " following a day-in-the-life of 10 individuals located from Brazil to Kazakhstan, ranging across every age group, and having professions from farming to cable car operation. This footage is used to create impactful exhibits as well as curriculum for elementary to high school students."
+            "text": "Although Project Ropa serves hundreds of people per month, they didn’t have a simple but efficient way to keep track of the individuals they served in the homeless community."
           }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          [
+            {
+              "text": "Returning visitors: ",
+              "bold": true
+            },
+            {
+              "text": "Without a digitized mechanism, it is difficult to keep track of who is new and who is a returning visitor. Project Ropa would not have to ask survey questions to its returning visitors."
+            }
+          ],
+          [
+            {
+              "text": "Lack of internet access: ",
+              "bold": true
+            },
+            {
+              "text": "Existing solutions like Google Forms only work when connected online, but many of Project Ropa's distribution locations do not have internet access."
+            }
+          ]
         ]
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "The Project"
+        "text": "Solution"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Offline Forms"
       },
       {
         "type": "paragraph",
         "spans": [
           {
-            "text": "Nova and Global Lives Project are working together to create more affecting exhibits using a fully immersive, "
-          },
-          {
-            "text": "interactive VR experience",
-            "bold": true
-          },
-          {
-            "text": " to promote empathy beyond a 2D interface. Users will be able to explore the living spaces of subjects in different countries and interact with culturally significant elements, accessing supplementary info and relevant media."
+            "text": "In order to help solve this problem, we created an offline forms mobile application, so volunteers would be able to better track their deliveries of hygiene kits and clean clothing to the homeless population in LA, regardless of internet connection."
           }
         ]
       },
       {
         "type": "heading",
         "level": 3,
-        "text": "Progress"
+        "text": "Efficient Check-In"
       },
       {
         "type": "paragraph",
         "spans": [
           {
-            "text": "We've successfully recreated Rumi's room in VR, and added basic movement controls for users to navigate around the room. The next step is to add interactive objects, a video player, and ultimately create a user experience that fosters empathy!"
+            "text": "Within this platform, we also created a check-in feature; once a user was registered and recorded in the database, each time they used Project Ropa, volunteers would just have to enter their name to check-in, as their data was stored in our database."
           }
         ]
       },
       {
         "type": "image",
-        "src": "/assets/archive/global-lives-project/rumi-s-room-prototype.jpg",
-        "alt": "Rumi's Room prototype",
-        "caption": "Rumi's Room prototype",
-        "width": 1075,
-        "height": 360
+        "src": "/assets/archive/project-ropa/project-ropa-app-flow.png",
+        "alt": "Project Ropa: App Flow",
+        "caption": "Project Ropa: App Flow",
+        "width": 697,
+        "height": 394
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Better Understanding of LA’s Homeless Community"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Questions asked during the original registration of a person experiencing homelessness included: race, ethnicity, age, gender, current living situation, and whether they were seeking housing or employment. This data can be used to:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          [
+            {
+              "text": "Help Project Ropa apply for funding grants to better serve their community and expand their service"
+            }
+          ],
+          [
+            {
+              "text": "Better understand socioeconomic and demographic factors that are correlated/cause homelessness in LA."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Impact"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Since its release, our app has been used to record 150 people a week, enabling Project Ropa to collect data in larger volumes, more efficiently, and more robustly without post-processing."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/assets/archive/project-ropa/project-ropa-impact.jpg",
+        "alt": "Project Ropa: Impact",
+        "caption": "Project Ropa: Impact",
+        "width": 750,
+        "height": 1334
       }
     ],
-    "order": 7
+    "order": 2
   },
   {
-    "slug": "risc",
-    "name": "UChicago RISC",
-    "description": "A platform making it simple for anyone to start an effective peer mentorship program",
+    "slug": "westside-food-bank",
+    "name": "Westside Food Bank",
+    "description": "A food pantry locator to provide information on the nearest available pantries for the food-insecure",
     "nonprofit": {
-      "name": "Center for RISC",
-      "url": "https://risc.uchicago.edu/"
+      "name": "Westside Food Bank",
+      "url": "http://www.westsidefoodbankca.org/"
     },
     "technology": [
-      "Next.js",
       "React.js",
-      "Apollo GraphQL",
-      "Google Cloud Platform"
+      "Mapbox",
+      "Google Sheets",
+      "Digital Ocean"
     ],
     "team": [
-      "Ashley Zhu",
-      "Serene Supakkul",
       "Max Wu",
-      "Kevin Li",
-      "Ingrid Chang",
-      "Joanna Chen",
-      "Adithya Nair",
-      "Steve Jiang",
-      "Stephanie Doan",
-      "Bryan Song",
-      "Carter Bian",
-      "Catherine Hu",
-      "Chinmaya Vempati"
-    ],
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Problem"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "71% of Fortune 500 companies have peer mentorship programs, and in these programs, 97% of participants find it to be valuable. However, most communities (such as college organizations and local support groups) do not have such infrastructure, and their mentorship programs are often run by a single administrator."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Creating an effective mentorship structure is difficult due to some persistent barriers:"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          [
-            {
-              "text": "A burdened admin: ",
-              "bold": true
-            },
-            {
-              "text": "Peer mentorship leaders use multiple platforms, like Google Forms for matching, Slack for communication, and Microsoft Excel to manage programs. Scattered information and communication makes it difficult for a single person to manage, let alone scale, their mentorship program."
-            }
-          ],
-          [
-            {
-              "text": "Neglect in relationships: ",
-              "bold": true
-            },
-            {
-              "text": "Because admins are often bogged down by the sheer amount of logistics required to run the programs, they are constricted in their ability to focus on other important aspects of peer mentorships, such as creating better matches, ensuring better experiences, and tracking outcomes."
-            }
-          ]
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We are collaborating with the "
-          },
-          {
-            "text": "Center for Radical Innovation for Social Change (RISC)",
-            "href": "https://risc.uchicago.edu/"
-          },
-          {
-            "text": " at the University of Chicago to build "
-          },
-          {
-            "text": "Mentor Center",
-            "bold": true
-          },
-          {
-            "text": ", a one-stop-shop integrating key mentorship functionalities.  By reducing the time spent on logistics, there is less friction for anyone interested in a cause to start and maintain an effective, sustainable mentorship program for it."
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "src": "/assets/archive/risc/mentor-center-homepage.jpg",
-        "alt": "Mentor Center Homepage",
-        "caption": "Mentor Center Homepage",
-        "width": 1600,
-        "height": 894
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Progress"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We have built our MVP and refined it through internal testing processes. This Fall, we are beta testing it with mentorship programs across the country, based in universities including Stanford, UChicago, Brown, and UCLA."
-          }
-        ]
-      }
-    ],
-    "order": 8
-  },
-  {
-    "slug": "oppia",
-    "name": "Oppia",
-    "description": "Supporting free, interactive online learning opportunities for students with limited access to formal education",
-    "nonprofit": {
-      "name": "Oppia",
-      "url": "https://www.oppia.org/"
-    },
-    "technology": [
-      "Python",
-      "Angular.js",
-      "Google Analytics",
-      "Facebook Ads"
-    ],
-    "team": [
       "Kevin Zhang",
-      "Aneri Patel",
-      "Jessica Wong",
-      "Michael Wu",
-      "Steve Jiang",
-      "Nikhil Suresh"
+      "Jessica Lam",
+      "Stephanie Doan"
     ],
     "body": [
       {
@@ -1010,11 +494,14 @@ export const archiveProjects: ArchiveProject[] = [
         "type": "paragraph",
         "spans": [
           {
-            "text": "Oppia",
-            "href": "https://www.oppia.org/about"
+            "text": "In 2017, "
           },
           {
-            "text": " is a nonprofit organization that provides students with free, interactive online lessons created by experts from a diverse range of subjects via their open-source web platform. Their mission is to provide students with quality education, regardless of where they are or what traditional educational resources they have access to."
+            "text": "15 million",
+            "bold": true
+          },
+          {
+            "text": " (11.8%) of US households reported being food insecure, meaning that there were times when they wondered where their next meal would come from. Alongside their other coping strategies, these families often relied on community food pantries for emergency food."
           }
         ]
       },
@@ -1022,64 +509,249 @@ export const archiveProjects: ArchiveProject[] = [
         "type": "paragraph",
         "spans": [
           {
-            "text": "So far, educators have created 11,000 lessons serving 430,000 students worldwide."
+            "text": "Since 1981, the "
+          },
+          {
+            "text": "Westside Food Bank",
+            "href": "http://www.westsidefoodbankca.org/"
+          },
+          {
+            "text": " has been serving LA by collecting food via donations and bulk purchases. Once they aggregate enough food, they deliver it to local food pantries for distribution."
           }
         ]
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "Our contributions"
+        "text": "Problem"
       },
       {
         "type": "paragraph",
         "spans": [
           {
-            "text": "We've made contributions to Oppia across several fronts:"
+            "text": "Once food is delivered to food pantries, it can still be difficult for people to access. Food pantries are often sparsely located and open for only a few hours per week. Sometimes, they don’t even serve the zipcode they’re in! A need arises for a convenient tool to aid in finding the right food pantry. The display must be easy to update in case information changes as well to ensure that those who rely on food pantries aren't blindsided and unable to get what they need."
           }
         ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We set out with WSFB to solve this problem by working together on a food pantry locator for their"
+          },
+          {
+            "text": " ",
+            "href": "http://www.westsidefoodbankca.org/index.php?option=com_wrapper&Itemid=145"
+          },
+          {
+            "text": "website. The locator is powered by Google Sheets, making it simple to update in real time."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "If a family were looking for a nearby food pantry, they could start by looking at our interactive map. By entering their zip code, they can filter out food pantries that don’t serve them."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Once they click a pantry, the map will automatically zoom to its location. Our app then provides the pantry's address, contact information, and Google Maps directions to the desired pantry."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/assets/archive/westside-food-bank/wsfb-web-app.gif",
+        "alt": "WSFB: Web App",
+        "caption": "WSFB: Web App",
+        "width": 480,
+        "height": 275
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We also created a mobile version of the app so that our tool can be conveniently accessed even by those without access to a laptop or tablet."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "For staff at WSFB, adding food pantries to the map is simple--add a row to Google Sheets, and the map will instantly update."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/assets/archive/westside-food-bank/wsfb-mobile-app.jpg",
+        "alt": "WSFB: Mobile App",
+        "caption": "WSFB: Mobile App",
+        "width": 990,
+        "height": 1638
+      }
+    ],
+    "order": 3
+  },
+  {
+    "slug": "swipe-out-hunger",
+    "name": "Swipe Out Hunger",
+    "description": "A donor-donee matching app allowing students to share swipes with those struggling from food insecurity",
+    "nonprofit": {
+      "name": "Swipe Out Hunger",
+      "url": "https://www.swipehunger.org/"
+    },
+    "technology": [
+      "Firebase",
+      "React Native",
+      "iOS",
+      "Android",
+      "Twilio"
+    ],
+    "team": [
+      "Michael Wu",
+      "Natalia Luzuriaga",
+      "Vivek Menon",
+      "Sriram Balachandran",
+      "Kevin Zhang",
+      "Dean Jones"
+    ],
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Almost "
+          },
+          {
+            "text": "40%",
+            "bold": true
+          },
+          {
+            "text": " of college students experience hunger and lack stable housing, and that number is surely higher in light of COVID-19. Considering the normal factors of rising tuition costs, limited financial aid, and dangerous student loans, it's no surprise that many students frequently put other needs before nutrition."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Swipe Out Hunger",
+            "href": "https://www.swipehunger.org/"
+          },
+          {
+            "text": ", founded by a group of friends at UCLA in 2010 to address campus food insecurity, is a leading nonprofit nationwide spanning more than 120 colleges and having served 2 million meals to date. Each campus does things a bit differently, but the original UCLA Swipe Out Hunger has various events and programs operating each quarter (e.g. the recently established "
+          },
+          {
+            "text": "Bruin Dine",
+            "href": "https://www.facebook.com/uclabruindine/"
+          },
+          {
+            "text": " collects leftover food from dining halls and allows anyone to select a portion) before concluding with a swipes drive."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Problem"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "The drive is aimed at convincing all students with leftover swipes for the quarter to donate to the Economic Crisis Response Team (ECRT), where swipes are converted to 1:1 meal vouchers for food-insecure students to collect in the future. These efforts are often very productive, as many students end up with extra meals at the quarter's end and would like to see them go to a good cause rather than otherwise being wasted."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Unfortunately, the ECRT meal vouchers have certain criteria before recipients can qualify for them, and for many students, significant stigma is still associated with visiting the ECRT and seeking help."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Nova is currently working with UCLA Swipe Out Hunger on a donor-donee matching app, allowing Bruins to directly meet with each other at any of the campus dining halls or takeout places and share swipes with those who need them."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "The goals behind this solution are multi-faceted:"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/assets/archive/swipe-out-hunger/swoh-cover.jpeg",
+        "alt": "swoh-cover",
+        "caption": "swoh-cover",
+        "width": 1600,
+        "height": 1066
       },
       {
         "type": "list",
         "items": [
           [
             {
-              "text": "Analytics: ",
-              "bold": true
-            },
-            {
-              "text": "Using Google Analytics, we determined in which countries Oppia had the most traction, and which channels were most successful in driving lesson engagement."
+              "text": "The app will have little to no restrictions on who qualifies to be a donee, encouraging all who need a swipe to ask for one. To sign up for the app one must be a UCLA student though, making this a Bruin-secure endeavor."
             }
           ],
           [
             {
-              "text": "Marketing: ",
-              "bold": true
-            },
-            {
-              "text": "Using our insights, we are currently using a hypothesis-driven approach to kickstart ad campaigns in Palestine, India, and Ghana, creating a content distribution strategy from Oppia to partner organizations, as well as creating content for social media feeds."
+              "text": "We hope that this app will increase awareness of the food insecurity issue and compassion towards other students as a more consistent activity than a one-time end-of-quarter donation of meal swipes. Our ideal vision would be for some donors and donees to become friends, or at least grow closer together."
             }
           ],
           [
             {
-              "text": "Engineering: ",
-              "bold": true
-            },
-            {
-              "text": "We've also made several contributions to "
-            },
-            {
-              "text": "Oppia's codebase",
-              "href": "https://github.com/oppia/oppia"
-            },
-            {
-              "text": " via Github, including migrating the backend search functionality from Google App Engine Search to Elasticsearch."
+              "text": "In the future, the app will have a Resources feature with both real-time and long-running food resources. Campus events frequently have leftovers and offer them through social media announcements, but the app could centralize this information. Many Bruins are also unaware of programs like Bruin Dine, highlighting this need."
             }
           ]
         ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Acknowledgements"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We would like to thank Celina Lee from UCLA Swipe Out Hunger for discussions that have aided the development of this project."
+          }
+        ]
       }
     ],
-    "order": 9
+    "order": 4
   },
   {
     "slug": "gladeo",
@@ -1242,71 +914,38 @@ export const archiveProjects: ArchiveProject[] = [
         ]
       }
     ],
-    "order": 10
+    "order": 5
   },
   {
-    "slug": "swipe-out-hunger",
-    "name": "Swipe Out Hunger",
-    "description": "A donor-donee matching app allowing students to share swipes with those struggling from food insecurity",
+    "slug": "risc",
+    "name": "UChicago RISC",
+    "description": "A platform making it simple for anyone to start an effective peer mentorship program",
     "nonprofit": {
-      "name": "Swipe Out Hunger",
-      "url": "https://www.swipehunger.org/"
+      "name": "Center for RISC",
+      "url": "https://risc.uchicago.edu/"
     },
     "technology": [
-      "Firebase",
-      "React Native",
-      "iOS",
-      "Android",
-      "Twilio"
+      "Next.js",
+      "React.js",
+      "Apollo GraphQL",
+      "Google Cloud Platform"
     ],
     "team": [
-      "Michael Wu",
-      "Natalia Luzuriaga",
-      "Vivek Menon",
-      "Sriram Balachandran",
-      "Kevin Zhang",
-      "Dean Jones"
+      "Ashley Zhu",
+      "Serene Supakkul",
+      "Max Wu",
+      "Kevin Li",
+      "Ingrid Chang",
+      "Joanna Chen",
+      "Adithya Nair",
+      "Steve Jiang",
+      "Stephanie Doan",
+      "Bryan Song",
+      "Carter Bian",
+      "Catherine Hu",
+      "Chinmaya Vempati"
     ],
     "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Almost "
-          },
-          {
-            "text": "40%",
-            "bold": true
-          },
-          {
-            "text": " of college students experience hunger and lack stable housing, and that number is surely higher in light of COVID-19. Considering the normal factors of rising tuition costs, limited financial aid, and dangerous student loans, it's no surprise that many students frequently put other needs before nutrition."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Swipe Out Hunger",
-            "href": "https://www.swipehunger.org/"
-          },
-          {
-            "text": ", founded by a group of friends at UCLA in 2010 to address campus food insecurity, is a leading nonprofit nationwide spanning more than 120 colleges and having served 2 million meals to date. Each campus does things a bit differently, but the original UCLA Swipe Out Hunger has various events and programs operating each quarter (e.g. the recently established "
-          },
-          {
-            "text": "Bruin Dine",
-            "href": "https://www.facebook.com/uclabruindine/"
-          },
-          {
-            "text": " collects leftover food from dining halls and allows anyone to select a portion) before concluding with a swipes drive."
-          }
-        ]
-      },
       {
         "type": "heading",
         "level": 2,
@@ -1316,7 +955,7 @@ export const archiveProjects: ArchiveProject[] = [
         "type": "paragraph",
         "spans": [
           {
-            "text": "The drive is aimed at convincing all students with leftover swipes for the quarter to donate to the Economic Crisis Response Team (ECRT), where swipes are converted to 1:1 meal vouchers for food-insecure students to collect in the future. These efforts are often very productive, as many students end up with extra meals at the quarter's end and would like to see them go to a good cause rather than otherwise being wasted."
+            "text": "71% of Fortune 500 companies have peer mentorship programs, and in these programs, 97% of participants find it to be valuable. However, most communities (such as college organizations and local support groups) do not have such infrastructure, and their mentorship programs are often run by a single administrator."
           }
         ]
       },
@@ -1324,55 +963,29 @@ export const archiveProjects: ArchiveProject[] = [
         "type": "paragraph",
         "spans": [
           {
-            "text": "Unfortunately, the ECRT meal vouchers have certain criteria before recipients can qualify for them, and for many students, significant stigma is still associated with visiting the ECRT and seeking help."
+            "text": "Creating an effective mentorship structure is difficult due to some persistent barriers:"
           }
         ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Nova is currently working with UCLA Swipe Out Hunger on a donor-donee matching app, allowing Bruins to directly meet with each other at any of the campus dining halls or takeout places and share swipes with those who need them."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "The goals behind this solution are multi-faceted:"
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "src": "/assets/archive/swipe-out-hunger/swoh-cover.jpeg",
-        "alt": "swoh-cover",
-        "caption": "swoh-cover",
-        "width": 1600,
-        "height": 1066
       },
       {
         "type": "list",
         "items": [
           [
             {
-              "text": "The app will have little to no restrictions on who qualifies to be a donee, encouraging all who need a swipe to ask for one. To sign up for the app one must be a UCLA student though, making this a Bruin-secure endeavor."
+              "text": "A burdened admin: ",
+              "bold": true
+            },
+            {
+              "text": "Peer mentorship leaders use multiple platforms, like Google Forms for matching, Slack for communication, and Microsoft Excel to manage programs. Scattered information and communication makes it difficult for a single person to manage, let alone scale, their mentorship program."
             }
           ],
           [
             {
-              "text": "We hope that this app will increase awareness of the food insecurity issue and compassion towards other students as a more consistent activity than a one-time end-of-quarter donation of meal swipes. Our ideal vision would be for some donors and donees to become friends, or at least grow closer together."
-            }
-          ],
-          [
+              "text": "Neglect in relationships: ",
+              "bold": true
+            },
             {
-              "text": "In the future, the app will have a Resources feature with both real-time and long-running food resources. Campus events frequently have leftovers and offer them through social media announcements, but the app could centralize this information. Many Bruins are also unaware of programs like Bruin Dine, highlighting this need."
+              "text": "Because admins are often bogged down by the sheer amount of logistics required to run the programs, they are constricted in their ability to focus on other important aspects of peer mentorships, such as creating better matches, ensuring better experiences, and tracking outcomes."
             }
           ]
         ]
@@ -1380,241 +993,53 @@ export const archiveProjects: ArchiveProject[] = [
       {
         "type": "heading",
         "level": 2,
-        "text": "Acknowledgements"
+        "text": "Solution"
       },
       {
         "type": "paragraph",
         "spans": [
           {
-            "text": "We would like to thank Celina Lee from UCLA Swipe Out Hunger for discussions that have aided the development of this project."
-          }
-        ]
-      }
-    ],
-    "order": 11
-  },
-  {
-    "slug": "westside-food-bank",
-    "name": "Westside Food Bank",
-    "description": "A food pantry locator to provide information on the nearest available pantries for the food-insecure",
-    "nonprofit": {
-      "name": "Westside Food Bank",
-      "url": "http://www.westsidefoodbankca.org/"
-    },
-    "technology": [
-      "React.js",
-      "Mapbox",
-      "Google Sheets",
-      "Digital Ocean"
-    ],
-    "team": [
-      "Max Wu",
-      "Kevin Zhang",
-      "Jessica Lam",
-      "Stephanie Doan"
-    ],
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "In 2017, "
+            "text": "We are collaborating with the "
           },
           {
-            "text": "15 million",
+            "text": "Center for Radical Innovation for Social Change (RISC)",
+            "href": "https://risc.uchicago.edu/"
+          },
+          {
+            "text": " at the University of Chicago to build "
+          },
+          {
+            "text": "Mentor Center",
             "bold": true
           },
           {
-            "text": " (11.8%) of US households reported being food insecure, meaning that there were times when they wondered where their next meal would come from. Alongside their other coping strategies, these families often relied on community food pantries for emergency food."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Since 1981, the "
-          },
-          {
-            "text": "Westside Food Bank",
-            "href": "http://www.westsidefoodbankca.org/"
-          },
-          {
-            "text": " has been serving LA by collecting food via donations and bulk purchases. Once they aggregate enough food, they deliver it to local food pantries for distribution."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Problem"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Once food is delivered to food pantries, it can still be difficult for people to access. Food pantries are often sparsely located and open for only a few hours per week. Sometimes, they don’t even serve the zipcode they’re in! A need arises for a convenient tool to aid in finding the right food pantry. The display must be easy to update in case information changes as well to ensure that those who rely on food pantries aren't blindsided and unable to get what they need."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We set out with WSFB to solve this problem by working together on a food pantry locator for their"
-          },
-          {
-            "text": " ",
-            "href": "http://www.westsidefoodbankca.org/index.php?option=com_wrapper&Itemid=145"
-          },
-          {
-            "text": "website. The locator is powered by Google Sheets, making it simple to update in real time."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "If a family were looking for a nearby food pantry, they could start by looking at our interactive map. By entering their zip code, they can filter out food pantries that don’t serve them."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Once they click a pantry, the map will automatically zoom to its location. Our app then provides the pantry's address, contact information, and Google Maps directions to the desired pantry."
+            "text": ", a one-stop-shop integrating key mentorship functionalities.  By reducing the time spent on logistics, there is less friction for anyone interested in a cause to start and maintain an effective, sustainable mentorship program for it."
           }
         ]
       },
       {
         "type": "image",
-        "src": "/assets/archive/westside-food-bank/wsfb-web-app.gif",
-        "alt": "WSFB: Web App",
-        "caption": "WSFB: Web App",
-        "width": 480,
-        "height": 275
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We also created a mobile version of the app so that our tool can be conveniently accessed even by those without access to a laptop or tablet."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "For staff at WSFB, adding food pantries to the map is simple--add a row to Google Sheets, and the map will instantly update."
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "src": "/assets/archive/westside-food-bank/wsfb-mobile-app.jpg",
-        "alt": "WSFB: Mobile App",
-        "caption": "WSFB: Mobile App",
-        "width": 990,
-        "height": 1638
-      }
-    ],
-    "order": 12
-  },
-  {
-    "slug": "friends-of-semel",
-    "name": "Friends of the Semel Institute",
-    "description": "Data analysis (Blackbaud) of a UCLA nonprofit’s donor base to maximize donations toward mental health awareness and research",
-    "nonprofit": {
-      "name": "Friends of the Semel Institute",
-      "url": "https://www.friendsofsemelinstitute.org/"
-    },
-    "technology": [
-      "Data Science",
-      "Mapbox"
-    ],
-    "team": [
-      "Max Wu",
-      "Ashley Zhu",
-      "Adithya Nair",
-      "Jessica Wong",
-      "Katie Li",
-      "Kevin Li"
-    ],
-    "body": [
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Background"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Friends of the Semel Institute",
-            "href": "https://www.friendsofthesemelinstitute.com/"
-          },
-          {
-            "text": " (FoSI) is a UCLA-based nonprofit aiming to raise awareness and erase stigma for mental illnesses through educational programs. Their flagship film and lecture series, Open Mind, has aired since 2004. They also collect donations to fund a scholarship program for researchers at the Semel Institute for Neuroscience and Human Behavior at UCLA."
-          }
-        ]
+        "src": "/assets/archive/risc/mentor-center-homepage.jpg",
+        "alt": "Mentor Center Homepage",
+        "caption": "Mentor Center Homepage",
+        "width": 1600,
+        "height": 894
       },
       {
         "type": "heading",
-        "level": 2,
-        "text": "Problem"
+        "level": 3,
+        "text": "Progress"
       },
       {
         "type": "paragraph",
         "spans": [
           {
-            "text": "With thousands of attendees across their various programs but only a small number of staff and limited resources, FoSI is challenged with efficiently engaging their donor base."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "level": 2,
-        "text": "Solution"
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Provided with 20 years of donations and event registration data, we set out to help FoSI better organize their fundraising outreach."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "Working closely with fundraising staff, we analyzed correlations between event topic interest and donations, investigated trends over time, and identified geographic patterns in the data, which we worked to translate into actionable next steps. We also created an interactive map for FoSI's board to help them visualize their geographic reach and where their donations were coming from."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "spans": [
-          {
-            "text": "We presented our data-driven insights to FoSI’s development board, aiming to improve their fundraising strategy, especially in light of the current pandemic."
+            "text": "We have built our MVP and refined it through internal testing processes. This Fall, we are beta testing it with mentorship programs across the country, based in universities including Stanford, UChicago, Brown, and UCLA."
           }
         ]
       }
     ],
-    "order": 13
+    "order": 6
   },
   {
     "slug": "beloved-beauty",
@@ -1810,6 +1235,581 @@ export const archiveProjects: ArchiveProject[] = [
         "caption": "Beloved Beauty: Deck",
         "width": 478,
         "height": 266
+      }
+    ],
+    "order": 7
+  },
+  {
+    "slug": "global-lives-project",
+    "name": "Global Lives Project",
+    "description": "An immersive, interactive VR experience promoting empathy and cross-cultural understanding",
+    "nonprofit": {
+      "name": "Global Lives Project",
+      "url": "https://globallives.org/"
+    },
+    "technology": [
+      "Virtual Reality",
+      "Unity",
+      "3D Modeling",
+      "Oculus Quest 2"
+    ],
+    "team": [
+      "Edward Zhang",
+      "Dean Jones",
+      "Hannah Chu",
+      "Kevin Li",
+      "Aneri Patel",
+      "Max Wu"
+    ],
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Founded in 2002, the "
+          },
+          {
+            "text": "Global Lives Project",
+            "href": "https://globallives.org/"
+          },
+          {
+            "text": " is an ambitious mission to build a video library documenting the daily lives of people all across the world. The ultimate goal is to open our eyes to the livelihoods of people in communities far outside our own."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "The Global Lives Project has since collected and indexed "
+          },
+          {
+            "text": "continuous 24-hour clips",
+            "href": "https://globallives.org/explore/"
+          },
+          {
+            "text": " following a day-in-the-life of 10 individuals located from Brazil to Kazakhstan, ranging across every age group, and having professions from farming to cable car operation. This footage is used to create impactful exhibits as well as curriculum for elementary to high school students."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "The Project"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Nova and Global Lives Project are working together to create more affecting exhibits using a fully immersive, "
+          },
+          {
+            "text": "interactive VR experience",
+            "bold": true
+          },
+          {
+            "text": " to promote empathy beyond a 2D interface. Users will be able to explore the living spaces of subjects in different countries and interact with culturally significant elements, accessing supplementary info and relevant media."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Progress"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We've successfully recreated Rumi's room in VR, and added basic movement controls for users to navigate around the room. The next step is to add interactive objects, a video player, and ultimately create a user experience that fosters empathy!"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/assets/archive/global-lives-project/rumi-s-room-prototype.jpg",
+        "alt": "Rumi's Room prototype",
+        "caption": "Rumi's Room prototype",
+        "width": 1075,
+        "height": 360
+      }
+    ],
+    "order": 8
+  },
+  {
+    "slug": "iidecide",
+    "name": "iiDecide",
+    "description": "A platform for anonymously connecting victims and survivors of sexual assault who have the same perpetrator",
+    "nonprofit": {
+      "name": "iiDecide"
+    },
+    "technology": [
+      "iOS",
+      "Firebase",
+      "Python",
+      "Flask"
+    ],
+    "team": [
+      "Yuhan Liu",
+      "Jessica Lam",
+      "Max Wu",
+      "Sriram Balachandran",
+      "Anivrit Subramaniam",
+      "Hannah Chu",
+      "Janice Tsai",
+      "Natalia Luzuriaga",
+      "Valentin Nguyen",
+      "Yili Liu",
+      "Joshua Zhang",
+      "Tanaya Nawathe"
+    ],
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Problem"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Every 73 seconds, an American is sexually assaulted."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "However, only 1 in 4 of sexual assaults are reported to the police. Victims and survivors often feel isolated and unsure of who to speak to or what to do. Although 51% of alleged rapists are repeat offenders that have been convicted previously, in many cases victims and survivors of a perpetrator are not aware of other incidents from the same person. This further isolates them, discouraging them from taking action."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Nova is working with iiDecide to create an app for sexual assault survivors and victims, allowing them to log incidents of harassment, threats, and abuse. Reports are automatically matched, and following a few verification steps, users will have the opportunity to anonymously connect with other victims of the same perpetrator."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Creating these connections will empower users, providing them with information, support and confidence as they consider their next steps."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Progress"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We have built out the MVP, and are currently beta testing it with a group of 50 victims and survivors of sexual assault."
+          }
+        ]
+      }
+    ],
+    "order": 9
+  },
+  {
+    "slug": "la-waterkeeper",
+    "name": "L.A. Waterkeeper",
+    "description": "An interactive web app that educates the public about LA River’s impact.",
+    "nonprofit": {
+      "name": "L.A. Waterkeeper",
+      "url": "https://www.lawaterkeeper.org/"
+    },
+    "technology": [
+      "TBA"
+    ],
+    "team": [
+      "Tam Vo",
+      "Aditi Karthik",
+      "Noah Hrung",
+      "Sophie Kim",
+      "Anusha Ladha",
+      "Ashley Varghese",
+      "Clare Jin",
+      "Jason Chan",
+      "Sean Choi"
+    ],
+    "cover": {
+      "src": "/assets/archive/la-waterkeeper/la-waterkeeper-cover.png",
+      "width": 1600,
+      "height": 1600
+    },
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Los Angeles Waterkeeper is dedicated to protecting the LA River and LA water systems. The organization works towards making Los Angeles a water self-sufficient region by bringing sustainable and equitable water management.\n\nFor the past 3 decades, they have guided investments and policy decisions, advocating for health and protection of LA’s waterways. Their projects target pollution prevention, habitat restoration, efficient water infrastructure, building healthy ecosystems, and more."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "THE CHALLENGE"
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Create an immersive website that emphasizes the impact of LA River’s restoration to the community and donors"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Our Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Our team created an interactive web app to help educate the public about the LA River's history, importance, and future. The app includes an interactive map that shows active project areas along the river and highlights key project areas. Along with the interactive map, we added a key focus area on the website known as the “7 Wins,” which includes biodiversity, water supply, habitat restoration, water quality, climate resilience, public access, and cultural heritage. \n\nThrough an engaging, user-friendly design, the app empowers users to learn more about the river’s role in the local ecosystem and how ongoing efforts are shaping a healthier, more sustainable Los Angeles."
+          }
+        ]
+      }
+    ],
+    "order": 10
+  },
+  {
+    "slug": "alzheimers-san-diego",
+    "name": "Alzheimer’s San Diego",
+    "description": "A client management system that consolidates client onboarding, check-ins, and tracking all in one platform.",
+    "nonprofit": {
+      "name": "Alzheimer's San Diego",
+      "url": "https://www.alzsd.org/"
+    },
+    "technology": [
+      "TBA"
+    ],
+    "team": [
+      "Kasie Yang",
+      "Priyanshu Sharma",
+      "Arya Bhalla",
+      "Olivia Qi",
+      "Cao Nhan Nguyen",
+      "Lian Elsa Linton",
+      "Himani Jha",
+      "Anthony Chui",
+      "Rahul Ravi",
+      "Richelle Shim"
+    ],
+    "cover": {
+      "src": "/assets/archive/alzheimers-san-diego/alzheimers-san-diego-cover.png",
+      "width": 1600,
+      "height": 1600
+    },
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Alzheimerʼs San Diego (ASD) is a local, independent nonprofit organization that provides comprehensive support for individuals and families affected by Alzheimerʼs. They provide caregiver support, community education, and clinical services throughout the San Diego area. ASD has a network of 200+ active volunteers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "THE CHALLENGE"
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Resolve unpredictability in ASD’s operations by automating volunteer session logs and feedback"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Our Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We designed an integrated volunteer management platform that improved both usability and communication. The platform included a simple form for volunteers to log hours and case notes, an admin dashboard to track engagement and view metrics, and a centralized homepage for announcements and updates.\n\nThis solution streamlined coordination and helped build a more connected, informed volunteer community at Alzheimer’s San Diego."
+          }
+        ]
+      }
+    ],
+    "order": 11
+  },
+  {
+    "slug": "oppia",
+    "name": "Oppia",
+    "description": "Supporting free, interactive online learning opportunities for students with limited access to formal education",
+    "nonprofit": {
+      "name": "Oppia",
+      "url": "https://www.oppia.org/"
+    },
+    "technology": [
+      "Python",
+      "Angular.js",
+      "Google Analytics",
+      "Facebook Ads"
+    ],
+    "team": [
+      "Kevin Zhang",
+      "Aneri Patel",
+      "Jessica Wong",
+      "Michael Wu",
+      "Steve Jiang",
+      "Nikhil Suresh"
+    ],
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Oppia",
+            "href": "https://www.oppia.org/about"
+          },
+          {
+            "text": " is a nonprofit organization that provides students with free, interactive online lessons created by experts from a diverse range of subjects via their open-source web platform. Their mission is to provide students with quality education, regardless of where they are or what traditional educational resources they have access to."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "So far, educators have created 11,000 lessons serving 430,000 students worldwide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Our contributions"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We've made contributions to Oppia across several fronts:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          [
+            {
+              "text": "Analytics: ",
+              "bold": true
+            },
+            {
+              "text": "Using Google Analytics, we determined in which countries Oppia had the most traction, and which channels were most successful in driving lesson engagement."
+            }
+          ],
+          [
+            {
+              "text": "Marketing: ",
+              "bold": true
+            },
+            {
+              "text": "Using our insights, we are currently using a hypothesis-driven approach to kickstart ad campaigns in Palestine, India, and Ghana, creating a content distribution strategy from Oppia to partner organizations, as well as creating content for social media feeds."
+            }
+          ],
+          [
+            {
+              "text": "Engineering: ",
+              "bold": true
+            },
+            {
+              "text": "We've also made several contributions to "
+            },
+            {
+              "text": "Oppia's codebase",
+              "href": "https://github.com/oppia/oppia"
+            },
+            {
+              "text": " via Github, including migrating the backend search functionality from Google App Engine Search to Elasticsearch."
+            }
+          ]
+        ]
+      }
+    ],
+    "order": 12
+  },
+  {
+    "slug": "inner-city-visions",
+    "name": "Inner City Visions",
+    "description": "A client management system for Inner City Visions",
+    "nonprofit": {
+      "name": "Inner City Visions",
+      "url": "https://innercityvisions.org/"
+    },
+    "technology": [
+      "TBA"
+    ],
+    "team": [
+      "Katelyn Doanla",
+      "Jimin Kim",
+      "Akhilesh Basetty",
+      "Travis Ha",
+      "Kylie Bach",
+      "Sonav Agarwal",
+      "Janys Li",
+      "Emma Teng"
+    ],
+    "cover": {
+      "src": "/assets/archive/inner-city-visions/inner-city-visions-cover.png",
+      "width": 1600,
+      "height": 1600
+    },
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Inner City Visions (ICV) is a South Los Angeles-based nonprofit dedicated to protecting and empowering vulnerable youth, families, and individuals in need. Their work spans crisis intervention, human trafficking prevention, and youth development, offering services such as mental health and substance abuse referrals, care packages, and shelter connections."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "THE CHALLENGE"
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Create a system that automates client intake and data analysis through a unified database"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Our Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We designed an integrated volunteer management platform that improved both usability and communication. The platform included a simple form for volunteers to log hours and case notes, an admin dashboard to track engagement and view metrics, and a centralized homepage for announcements and updates. This solution streamlined coordination and helped build a more connected, informed volunteer community at Alzheimer’s San Diego."
+          }
+        ]
+      }
+    ],
+    "order": 13
+  },
+  {
+    "slug": "friends-of-semel",
+    "name": "Friends of the Semel Institute",
+    "description": "Data analysis (Blackbaud) of a UCLA nonprofit’s donor base to maximize donations toward mental health awareness and research",
+    "nonprofit": {
+      "name": "Friends of the Semel Institute",
+      "url": "https://www.friendsofsemelinstitute.org/"
+    },
+    "technology": [
+      "Data Science",
+      "Mapbox"
+    ],
+    "team": [
+      "Max Wu",
+      "Ashley Zhu",
+      "Adithya Nair",
+      "Jessica Wong",
+      "Katie Li",
+      "Kevin Li"
+    ],
+    "body": [
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Background"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Friends of the Semel Institute",
+            "href": "https://www.friendsofthesemelinstitute.com/"
+          },
+          {
+            "text": " (FoSI) is a UCLA-based nonprofit aiming to raise awareness and erase stigma for mental illnesses through educational programs. Their flagship film and lecture series, Open Mind, has aired since 2004. They also collect donations to fund a scholarship program for researchers at the Semel Institute for Neuroscience and Human Behavior at UCLA."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Problem"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "With thousands of attendees across their various programs but only a small number of staff and limited resources, FoSI is challenged with efficiently engaging their donor base."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Solution"
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Provided with 20 years of donations and event registration data, we set out to help FoSI better organize their fundraising outreach."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "Working closely with fundraising staff, we analyzed correlations between event topic interest and donations, investigated trends over time, and identified geographic patterns in the data, which we worked to translate into actionable next steps. We also created an interactive map for FoSI's board to help them visualize their geographic reach and where their donations were coming from."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "spans": [
+          {
+            "text": "We presented our data-driven insights to FoSI’s development board, aiming to improve their fundraising strategy, especially in light of the current pandemic."
+          }
+        ]
       }
     ],
     "order": 14
