@@ -5,98 +5,15 @@ import { useImagesLoaded } from './useImagesLoaded'
 import { GenericSkeleton, LandingSkeleton, WorkSkeleton, AboutSkeleton, TeamSkeleton, NonprofitsSkeleton, StudentsSkeleton, ProjectDetailSkeleton } from './Skeletons'
 import { usePath, Link } from './router'
 import { projects, type Project } from './data/projects'
-import { moreProjects, teamPhotos, teamPortraits, landingPhotos, landingPartners, boardMembers, generalMembers, alumniMembers, type LandingPhoto } from './data/site'
+import { moreProjects, teamPhotos, teamPortraits, landingPhotos, boardMembers, generalMembers, alumniMembers } from './data/site'
+import { AppShell } from './components/AppShell'
+import { PhotoStrip, carouselSpeedForWidth } from './components/PhotoStrip'
+import { NetworkSection } from './components/NetworkSection'
+import { CtaSection } from './components/CtaSection'
 
 // When false, the hero UFO just idle-bobs in place instead of wandering the
 // hero and running the carousel abduction/sucking sequence.
 const UFO_MOTION_ENABLED = false
-
-const NOVA_LOGO_PATHS = [
-  'M8.48183 3.85332L0 12.3352L11.5648 23.9L20.0467 15.4182L8.48183 3.85332Z',
-  'M9.64461 1.81385L23.4441 15.6133C23.4441 15.6133 22.1698 16.8399 20.937 18.0528C19.8048 19.1667 18.5732 20.0157 19.4823 21.1269C20.3915 22.2381 18.1186 20.8996 18.1186 20.8996L17.5731 21.3996L17.664 23.2179C16.3912 21.8542 15.1951 23.7467 14.1519 24.9055L0.352447 11.106L9.64461 1.81385Z',
-  'M38.1918 3.35755L46.6736 11.8394L34.097 24.416L25.6152 15.9341L38.1918 3.35755Z',
-  'M16.0018 23.9517C16.3569 23.5967 16.9325 23.5967 17.2876 23.9517L18.3161 24.9803C18.6712 25.3353 18.6712 25.911 18.3161 26.266L16.7964 27.7858L14.4821 25.4715L16.0018 23.9517Z',
-  'M18.9413 26.7104C19.2963 26.3554 19.872 26.3554 20.227 26.7104L21.1905 27.6739C21.5455 28.029 21.5455 28.6046 21.1905 28.9596L19.6707 30.4794L17.4215 28.2302L18.9413 26.7104Z',
-  'M21.623 29.4067C21.9781 29.0516 22.5537 29.0516 22.9088 29.4067L24.6263 31.1242L22.4788 33.2718L20.1184 30.9113L21.623 29.4067Z',
-  'M37.2347 2.94409L39.549 5.25838L23.2833 21.5241C22.5732 22.2342 21.4219 22.2342 20.7118 21.5241L20.3261 21.1384C19.9711 20.7833 19.9711 20.2077 20.3261 19.8527L37.2347 2.94409Z',
-  'M13.3277 18.8837L15.257 16.9545L28.4722 30.1696L26.5429 32.0989L13.3277 18.8837Z',
-  'M25.2115 20.7888L27.2367 18.7635L33.7597 25.2865L31.7344 27.3117L25.2115 20.7888Z',
-  'M22.6658 23.3342L24.691 21.309L31.214 27.8319L29.1887 29.8572L22.6658 23.3342Z',
-  'M21.9601 22.7193C22.5809 22.805 23.2079 22.6136 23.6749 22.1958L24.6661 21.3089L24.2115 24.8546L21.9601 22.7193Z',
-  'M23.5744 0L27.9458 4.37145L23.5744 8.7429L19.2029 4.37145L23.5744 0Z',
-]
-
-function Logo() {
-  return <Link className="logo" href="/" aria-label="Nova home">
-    <span className="logo-diamond">
-      <span className="logo-art">
-        <svg className="logo-mark" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="logoGradient" x1="0" y1="0" x2="46.6736" y2="33.2718" gradientUnits="userSpaceOnUse"><stop stopColor="var(--blue)" /><stop offset="1" stopColor="var(--pink)" /></linearGradient></defs>
-          {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="url(#logoGradient)" />)}
-        </svg>
-        <svg className="logo-mark logo-mark-overlay" viewBox="0 0 46.6736 33.2718" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          {NOVA_LOGO_PATHS.map((d, i) => <path key={i} d={d} fill="#176bdf" />)}
-        </svg>
-      </span>
-    </span>
-  </Link>
-}
-
-function SocialIcon({ name }: { name: 'instagram' | 'github' }) {
-  if (name === 'github') return <svg viewBox="0 0 34.5 34.02" aria-hidden="true"><path d="M12.93 33.24c-.28 1.6-2.6.32-3.49-.15C-6.54 24.8-.96.33 16.65 0c17.62-.32 24.71 23.4 9.58 32.46-.76.46-4.15 2.5-4.56 1.04-.27-1.97.25-4.5-.04-6.4-.12-.72-.9-1.22-.87-1.98 2.46-.21 5.19-1.27 6.47-3.51 1.36-2.4 1.62-5.82.43-8.34-.22-.45-.87-1.17-.92-1.57-.12-.99.4-2.1.06-3.56-.36-1.54-1.36-.97-2.48-.58-.7.24-2.26 1.26-2.62 1.31-.48.08-2.45-.4-3.18-.43-.68-.04-1.5-.04-2.18-.01-.9.04-3.02.56-3.66.34-.59-.21-1.38-.86-2.08-1.14-2.11-.82-2.79-.67-2.9 1.75-.04.78.25 1.9.14 2.49-.08.43-.81 1.21-1.04 1.74-.92 2.12-.54 6.26.75 8.22 1.6 2.43 3.61 2.68 6.17 3.29.18.04.27-.1.22.22l-1.11 2.28c-1.71.57-2.96.45-4.26-.81-1.02-.99-2.26-3.43-4.06-2.19.5.78 1.24 1.2 1.8 1.98.8 1.11 1.15 2.6 2.5 3.19.13.06.79.31.85.31h3.27c-.12.95.15 2.24 0 3.15Z"/></svg>
-  return <svg viewBox="0 0 34.02 34.02" aria-hidden="true"><circle cx="17.01" cy="17.01" r="17.01"/><rect x="8.1" y="8.1" width="17.82" height="17.82" rx="5.3" fill="none" stroke="white" strokeWidth="2.2"/><circle cx="17.01" cy="17.01" r="4.45" fill="none" stroke="white" strokeWidth="2.2"/><circle cx="23.1" cy="10.95" r="1.3" fill="white"/></svg>
-}
-
-function Header() {
-  const [open, setOpen] = useState(false)
-  const close = () => setOpen(false)
-  const links = [['About', '/about'], ['Our Work', '/work'], ['Our Team', '/team'], ['For Students', '/students'], ['For Nonprofits', '/nonprofits']]
-
-  return <header className="header">
-    <nav className="nav" aria-label="Main navigation">
-      <Logo />
-      <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
-      <div className={`nav-links ${open ? 'open' : ''}`}>
-        {links.map(([label, href]) => <Link key={href} href={href} onClick={close}>{label}</Link>)}
-        <a className="button button-solid" href="https://mail.google.com/mail/?view=cm&fs=1&to=novaforgood@gmail.com" target="_blank" rel="noopener noreferrer">Contact Us <ArrowUpRight size={15}/></a>
-      </div>
-    </nav>
-  </header>
-}
-
-function Footer() {
-  return <footer>
-    <div className="footer-brand"><Logo/><strong>NOVA, TECH FOR GOOD</strong></div>
-    <div className="footer-links">
-      <Link href="/about">About</Link>
-      <Link href="/work">Work</Link>
-      <Link href="/team">Our Team</Link>
-      <Link href="/students">For Students</Link>
-    </div>
-    <small>© 2026 nova for good | Last updated Sept 11, 2026</small>
-    <div className="footer-socials" aria-label="Social links">
-      <a href="https://www.instagram.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on Instagram"><SocialIcon name="instagram" /></a>
-      <a href="https://github.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on GitHub"><SocialIcon name="github" /></a>
-    </div>
-  </footer>
-}
-
-function AppShell({ children, skeleton }: { children: React.ReactNode; skeleton: React.ReactNode }) {
-  const contentRef = useRef<HTMLDivElement>(null)
-  const loaded = useImagesLoaded(contentRef)
-  return <main id="top">
-    <Header />
-    {!loaded && <div className="page-skeleton" aria-hidden="true">{skeleton}</div>}
-    <div className={`page-content${loaded ? ' page-content-visible' : ''}`} ref={contentRef}>{children}</div>
-    <Footer />
-  </main>
-}
-
-// Narrower viewports slow the photo carousels down: 1440px+ plays at normal
-// speed, down to 3x slower (i.e. 1/3 speed) around phone-width viewports.
-function carouselSpeedForWidth(width: number) {
-  return Math.min(3, Math.max(1, 1440 / width))
-}
 
 function LandingPage() {
   const landingPageRef = useRef<HTMLDivElement>(null)
@@ -174,31 +91,6 @@ function LandingPage() {
   </AppShell>
 }
 
-function PhotoStrip({ photos, widths, stripId, repeatsPerHalf, speed = 1, className = '' }: { photos: LandingPhoto[]; widths: number[]; stripId: string; repeatsPerHalf: number; speed?: number; className?: string }) {
-  // Two identical halves make the CSS loop seamless. Normal viewports only need
-  // one photo set per half; ultra-wide viewports get a second set to prevent gaps.
-  const half = Array.from({ length: repeatsPerHalf }, () => photos).flat()
-  const sequence = [...half, ...half]
-  const duration = (stripId === 'middle' ? 22 : 19) * repeatsPerHalf * speed
-  return <div className={`landing-carousel ${className}`} data-strip-id={stripId}>
-    <div className="landing-photo-track" style={{ animationDuration: `${duration}s` }}>{sequence.map((photo, index) =>
-      <picture key={`${photo.id}-${index}`} style={{ width: widths[index % widths.length] ?? 342.56 }}>
-        <source type="image/avif" srcSet={photo.avifSrcSet} sizes={`${Math.ceil(widths[index % widths.length] ?? 342.56)}px`} />
-        <img
-          src={photo.jpegSrc}
-          srcSet={photo.jpegSrcSet}
-          sizes={`${Math.ceil(widths[index % widths.length] ?? 342.56)}px`}
-          data-photo-id={photo.id}
-          data-copy-index={Math.floor(index / photos.length)}
-          data-logical-index={index % photos.length}
-          loading={stripId === 'bottom' || index >= photos.length ? 'lazy' : 'eager'}
-          decoding="async"
-          alt={index < photos.length ? 'Nova team' : ''}
-        />
-      </picture>)}</div>
-  </div>
-}
-
 function ProjectsPreview() {
   const landingProjectCopy = [
     ['Medical Inventory System', '@Mending Kids', 'A web-based inventory management system that lets Mending Kids staff log, categorize, and track a medical supply’s journey from donation to deployment.'],
@@ -212,19 +104,6 @@ function ProjectsPreview() {
     </div>
     <Link className="button button-outline" href="/work">More Projects <ArrowUpRight size={12}/></Link>
   </section>
-}
-
-function NetworkSection() {
-  return <section className="landing-network">
-    <div className="landing-section-intro"><h2>Our Network</h2><p>We wouldn't be able to do what we love alone. We're grateful for these organizations who have advised us and given us a hand in better understanding the social sector. Interested in becoming a partner or advisor? <a href="https://forms.gle/g6gmjG4uYwL1AP5T9" target="_blank" rel="noreferrer"><u>Let us know</u></a> — we'd love to talk with you!</p></div>
-    <div className="landing-partners">{landingPartners.map(partner => partner.url
-      ? <a key={partner.src} href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={partner.name}><img src={partner.src} alt={partner.name} /></a>
-      : <img key={partner.src} src={partner.src} alt={partner.name} />)}</div>
-  </section>
-}
-
-function CtaSection() {
-  return <section className="landing-cta" id="nonprofits"><h2>Interested?</h2><div className="cta-actions"><Link className="button button-outline" href="/nonprofits">Work With Us <ArrowUpRight size={12}/></Link><Link className="button button-outline" href="/students">Join Our Team <ArrowUpRight size={12}/></Link></div></section>
 }
 
 function WorkPage() {
