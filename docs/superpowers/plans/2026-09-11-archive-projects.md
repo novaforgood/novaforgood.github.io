@@ -137,8 +137,8 @@ Expected: no errors.
 
 ```bash
 diff /tmp/baseline.css dist/assets/index-*.css && echo "CSS IDENTICAL"
-diff <(sed 's/index-[A-Za-z0-9_-]*\.\(js\|css\)/index-HASH.\1/g' /tmp/baseline-index.html) \
-     <(sed 's/index-[A-Za-z0-9_-]*\.\(js\|css\)/index-HASH.\1/g' dist/index.html) && echo "HTML IDENTICAL"
+diff <(sed -E 's/index-[A-Za-z0-9_-]+\.(js|css)/index-HASH.\1/g' /tmp/baseline-index.html) \
+     <(sed -E 's/index-[A-Za-z0-9_-]+\.(js|css)/index-HASH.\1/g' dist/index.html) && echo "HTML IDENTICAL"
 ```
 
 Expected: both lines print IDENTICAL. If not, the move changed behavior — stop and fix before continuing.
@@ -344,8 +344,8 @@ Do **not** add the `archiveProjects` import or archive route yet — that arrive
 ```bash
 npx tsc -b && npm run build
 diff /tmp/baseline.css dist/assets/index-*.css && echo "CSS IDENTICAL"
-diff <(sed 's/index-[A-Za-z0-9_-]*\.\(js\|css\)/index-HASH.\1/g' /tmp/baseline-index.html) \
-     <(sed 's/index-[A-Za-z0-9_-]*\.\(js\|css\)/index-HASH.\1/g' dist/index.html) && echo "HTML IDENTICAL"
+diff <(sed -E 's/index-[A-Za-z0-9_-]+\.(js|css)/index-HASH.\1/g' /tmp/baseline-index.html) \
+     <(sed -E 's/index-[A-Za-z0-9_-]+\.(js|css)/index-HASH.\1/g' dist/index.html) && echo "HTML IDENTICAL"
 wc -l src/App.tsx
 ```
 
@@ -490,7 +490,7 @@ test('unknown asset ids and empty paragraphs are dropped, not rendered blank', (
 
 - [ ] **Step 3: Run the tests and watch them fail**
 
-Run: `node --test scripts/lib/`
+Run: `node --test scripts/lib/convert.test.mjs`
 Expected: FAIL — `Cannot find module './convert.mjs'`.
 
 - [ ] **Step 4: Write `scripts/lib/convert.mjs`**
@@ -548,7 +548,7 @@ export function convertBody(raw, assetsById) {
 
 - [ ] **Step 5: Run the tests and watch them pass**
 
-Run: `node --test scripts/lib/`
+Run: `node --test scripts/lib/convert.test.mjs`
 Expected: 5 passing tests.
 
 - [ ] **Step 6: Commit**
