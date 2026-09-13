@@ -6,7 +6,7 @@ import { Logo } from './Logo'
 export function Header() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
-  const links = [['About', '/about'], ['Our Work', '/work'], ['Our Team', '/team'], ['For Students', '/students'], ['For Nonprofits', '/nonprofits']]
+  const links = [['About', '/about'], ['Our Work', '/work'], ['Our Team', '/team'], ['For Students', '/students'], ['For Nonprofits', '/nonprofits'], ['Support Us', '/support']]
 
   return <header className="header">
     <nav className="nav" aria-label="Main navigation">

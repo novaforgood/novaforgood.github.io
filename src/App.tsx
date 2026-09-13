@@ -8,6 +8,7 @@ import { AboutPage } from './pages/AboutPage'
 import { TeamPage } from './pages/TeamPage'
 import { NonprofitsPage } from './pages/NonprofitsPage'
 import { StudentsPage } from './pages/StudentsPage'
+import { SupportPage } from './pages/SupportPage'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 
@@ -24,6 +25,7 @@ function App() {
   else if (normalizedPath === '/work') page = <WorkPage />
   else if (normalizedPath === '/nonprofits') page = <NonprofitsPage />
   else if (normalizedPath === '/students') page = <StudentsPage />
+  else if (normalizedPath === '/support') page = <SupportPage />
   else if (project) page = <ProjectDetailPage project={project} />
   else if (archived) page = <ArchiveProjectPage project={archived} />
   else page = <NotFoundPage />
