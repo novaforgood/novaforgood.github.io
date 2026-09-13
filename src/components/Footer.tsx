@@ -11,7 +11,7 @@ export function Footer() {
       <Link href="/team">Our Team</Link>
       <Link href="/students">For Students</Link>
     </div>
-    <small>© 2026 nova for good | Last updated Sept 11, 2026</small>
+    <small>© 2026 nova for good | Last updated Sept 12, 2026</small>
     <div className="footer-socials" aria-label="Social links">
       <a href="https://www.instagram.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on Instagram"><SocialIcon name="instagram" /></a>
       <a href="https://github.com/novaforgood" target="_blank" rel="noreferrer" aria-label="Nova on GitHub"><SocialIcon name="github" /></a>
