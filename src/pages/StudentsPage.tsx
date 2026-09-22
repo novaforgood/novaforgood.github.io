@@ -4,8 +4,8 @@ import { AppShell } from '../components/AppShell'
 export function StudentsPage() {
   const events = [
     ['Applications open', 'SEP 22', 'tinyurl.com/nova-2627'],
-    ['Infosession #1', 'SEP 29', 'in-person'],
-    ['Infosession #2', 'SEP 30', 'on Zoom'],
+    ['Infosession #1', 'SEP 29', 'on Zoom'],
+    ['Infosession #2', 'SEP 30', 'in-person'],
     ['Applications Due', 'OCT 2', ''],
     ['Meet & Greet', 'OCT 6-7', 'Invite only'],
     ['Interviews', 'OCT 12-15', 'Invite only'],
