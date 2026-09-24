@@ -3,7 +3,7 @@ import { AppShell } from '../components/AppShell'
 
 export function StudentsPage() {
   const events = [
-    ['Applications open', 'SEP 22', 'tinyurl.com/nova-2627'],
+    ['Applications open', 'SEP 22', 'forms.gle/fAAV8xHZkETVGnc3A'],
     ['Infosession #1', 'SEP 29', 'on Zoom'],
     ['Infosession #2', 'SEP 30', 'in-person'],
     ['Applications Due', 'OCT 2', ''],
@@ -42,7 +42,7 @@ export function StudentsPage() {
       <div className="student-banner"><span>✦</span><h2>Light the Way</h2><span>✦</span></div>
       <h3>Fall 2026 Recruitment</h3>
       <p className="student-intro-copy">At Nova, we’re building a team of developers and designers passionate about improving our communities through tech. We are so excited for you to join us this fall!</p>
-      <div className="event-list">{events.map(([name, date, detail]) => <article key={name}><strong>{name}</strong><span>{date}</span>{detail ? detail.startsWith('tinyurl') ? <a href={`https://${detail}`} target="_blank" rel="noreferrer">{detail}</a> : <small>{detail}</small> : null}</article>)}</div>
+      <div className="event-list">{events.map(([name, date, detail]) => <article key={name}><strong>{name}</strong><span>{date}</span>{detail ? detail.startsWith('forms.gle') ? <a href={`https://${detail}`} target="_blank" rel="noreferrer">{detail}</a> : <small>{detail}</small> : null}</article>)}</div>
     </section>
     <section className="reflections section-shell">
       <h2>Why Nova?</h2><h3 className="reflection-subtitle">Member Reflections</h3>
