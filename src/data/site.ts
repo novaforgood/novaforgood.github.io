@@ -49,21 +49,21 @@ export const landingPartners = [
 ].map((partner, index) => ({ ...partner, src: `/assets/figma/landing/partner-${index + 1}.png` }))
 
 export const boardMembers = [
-  ['Himani Jha', 'President'], ['Ashley Varghese', 'President'], ['Jay Thapar', 'External Vice-President'],
-  ['Gokul Nambiar', 'Internal Vice-President'], ['Akhilesh Basetty', 'Developer'], ['Linda Wang', 'Designer'],
-  ['Tawny Huang', 'Developer'], ['Anusha Ladha', 'Developer'],
+  ['Himani Jha', 'President', 'https://www.linkedin.com/in/himanijha/'], ['Ashley Varghese', 'President', 'https://www.linkedin.com/in/ashleyvarghesee/'], ['Jay Thapar', 'External Vice-President', 'https://www.linkedin.com/in/jay-thapar/'],
+  ['Gokul Nambiar', 'Internal Vice-President', 'https://www.linkedin.com/in/gokul-nambiar2/'], ['Akhilesh Basetty', 'Developer', 'https://www.linkedin.com/in/akhilesh-basetty-834414269/'], ['Linda Wang', 'Designer', 'https://www.linkedin.com/in/lindazwang/'],
+  ['Tawny Huang', 'Developer', 'https://www.linkedin.com/in/tawny-huang/'], ['Anusha Ladha', 'Developer', 'https://www.linkedin.com/in/anusha-ladha/'],
 ]
 
 export const generalMembers = [
-  ['Aditi Karthik', 'Developer'], ['Clare Jin', 'Developer'], ['Christine Han', 'Developer'],
-  ['Cao Ninh Nguyen', 'Developer'], ['Sophie Kim', 'Designer'], ['Edin Le', 'Designer'],
-  ['Katelyn Doanla', 'Designer'], ['Olivia Qi', 'Designer'], ['Jimin Kim', 'Developer'],
-  ['Travis Ha', 'Developer'], ['Kasie Yang', 'Designer'], ['Lian Elsa Linton', 'Developer'],
-  ['Shane Kuk', 'Developer'], ['Kian Shandi', 'Developer'], ['Haydn Man', 'Developer'],
-  ['Katie Azuma', 'Designer'], ['Tiffany Pham', 'Designer'], ['Viyan Dabke', 'Developer'],
-  ['Edi Zhang', 'Developer'], ['Kai Davey', 'Designer'], ['Nancy Tran', 'Designer'],
-  ['Sunny Gandhari', 'Developer'], ['Maya Yoder', 'Designer'], ['Alyssa Leung', 'Developer'],
-  ['Janani Acharya', 'Developer'], ['Clemente Irarrazaval', 'Developer'],
+  ['Aditi Karthik', 'Developer', 'https://www.linkedin.com/in/aditi-karthik-ucla/'], ['Clare Jin', 'Developer', 'https://www.linkedin.com/in/clarejin/'], ['Christine Han', 'Developer', 'https://www.linkedin.com/in/christine-han-designer/'],
+  ['Cao Nhan Nguyen', 'Designer', 'https://www.linkedin.com/in/nhannguyencao/'], ['Sophie Kim', 'Designer', 'https://www.linkedin.com/in/sophia-kim-299805336/'], ['Edin Le', 'Designer', 'https://www.linkedin.com/in/edinle/'],
+  ['Katelyn Doanla', 'Designer', 'https://www.linkedin.com/in/katelyndoanla/'], ['Olivia Qi', 'Designer', 'https://www.linkedin.com/in/olivia-qi-322049233/'], ['Jimin Kim', 'Developer', 'https://www.linkedin.com/in/jiminimkim/'],
+  ['Travis Ha', 'Developer', 'https://www.linkedin.com/in/travis-ha-/'], ['Kasie Yang', 'Designer', 'https://www.linkedin.com/in/kasiekexinyang/'], ['Lian Elsa Linton', 'Developer', 'https://www.linkedin.com/in/lianelsalinton/'],
+  ['Shane Kuk', 'Developer', 'https://www.linkedin.com/in/shanekuk/'], ['Kian Shandi', 'Developer', 'https://www.linkedin.com/in/kian0/'], ['Haydn Man', 'Developer', 'https://www.linkedin.com/in/haydn-man/'],
+  ['Katie Azuma', 'Designer', 'https://www.linkedin.com/in/katieazuma2006/'], ['Tiffany Pham', 'Designer', 'https://www.linkedin.com/in/ttiffanyphamm/'], ['Viyan Dabke', 'Developer', 'https://www.linkedin.com/in/viyandabke/'],
+  ['Edi Zhang', 'Developer', 'https://www.linkedin.com/in/edizhang/'], ['Kai Davey', 'Designer', 'https://www.linkedin.com/in/kai-davey/'], ['Nancy Tran', 'Designer', 'https://www.linkedin.com/in/nancyucla/'],
+  ['Sunny Gandhari', 'Developer'], ['Maya Yoder', 'Designer'], ['Alyssa Leung', 'Developer', 'https://www.linkedin.com/in/alyssa-leung-515a4022b/'],
+  ['Janani Acharya', 'Developer', 'https://www.linkedin.com/in/janani-acharya/'], ['Clemente Irarrazaval', 'Developer', 'https://www.linkedin.com/in/clemente-irarrazaval-399350268/'],
 ]
 
 export const alumniMembers = [

@@ -8,7 +8,7 @@ function TeamMember({ member, index }: { member: string[]; index: number }) {
   return <article className="team-member">
     <img src={teamPortraits[index]} onError={event => { event.currentTarget.src = teamPhotos[index % teamPhotos.length] }} alt={`${member[0]}, ${member[1]}`} />
     <h3>{member[0]}</h3><p>{member[1]}</p>
-    <a className="linkedin-mark" href="https://www.linkedin.com/company/nova-tech-for-good/" target="_blank" rel="noreferrer" aria-label={`${member[0]} on LinkedIn`}>in</a>
+    {member[2] && <a className="linkedin-mark" href={member[2]} target="_blank" rel="noreferrer" aria-label={`${member[0]} on LinkedIn`}>in</a>}
   </article>
 }
 
