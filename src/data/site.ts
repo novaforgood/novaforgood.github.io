@@ -62,7 +62,7 @@ export const generalMembers = [
   ['Shane Kuk', 'Developer', 'https://www.linkedin.com/in/shanekuk/'], ['Kian Shandi', 'Developer', 'https://www.linkedin.com/in/kian0/'], ['Haydn Man', 'Developer', 'https://www.linkedin.com/in/haydn-man/'],
   ['Katie Azuma', 'Designer', 'https://www.linkedin.com/in/katieazuma2006/'], ['Tiffany Pham', 'Designer', 'https://www.linkedin.com/in/ttiffanyphamm/'], ['Viyan Dabke', 'Developer', 'https://www.linkedin.com/in/viyandabke/'],
   ['Edi Zhang', 'Developer', 'https://www.linkedin.com/in/edizhang/'], ['Kai Davey', 'Designer', 'https://www.linkedin.com/in/kai-davey/'], ['Nancy Tran', 'Designer', 'https://www.linkedin.com/in/nancyucla/'],
-  ['Sunny Gandhari', 'Developer'], ['Maya Yoder', 'Designer'], ['Alyssa Leung', 'Developer', 'https://www.linkedin.com/in/alyssa-leung-515a4022b/'],
+  ['Sunny Gandhari', 'Developer', 'https://www.linkedin.com/in/sankeerthgandhari/'], ['Maya Yoder', 'Designer'], ['Alyssa Leung', 'Developer', 'https://www.linkedin.com/in/alyssa-leung-515a4022b/'],
   ['Janani Acharya', 'Developer', 'https://www.linkedin.com/in/janani-acharya/'], ['Clemente Irarrazaval', 'Developer', 'https://www.linkedin.com/in/clemente-irarrazaval-399350268/'],
 ]
 
