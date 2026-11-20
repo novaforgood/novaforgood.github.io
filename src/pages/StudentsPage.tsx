@@ -18,22 +18,22 @@ export function StudentsPage() {
     ['Lian Elsa Linton', 'Developer', 'Nova not only gives you the space to grow your technical experience, but it also gives you a really fun and amazing community that makes you feel at home :)'],
   ]
   const reflectionPortraits = [
-    '/assets/figma/students-exact/candidate-2.png',
-    '/assets/figma/students-exact/candidate-3.png',
-    '/assets/figma/students-exact/candidate-6.png',
-    '/assets/figma/students-exact/candidate-7.png',
-    '/assets/figma/students-exact/candidate-10.png',
+    '/assets/figma/students-exact/candidate-2.webp',
+    '/assets/figma/students-exact/candidate-3.webp',
+    '/assets/figma/students-exact/candidate-6.webp',
+    '/assets/figma/students-exact/candidate-7.webp',
+    '/assets/figma/students-exact/candidate-10.webp',
   ]
 
   return <AppShell skeleton={<StudentsSkeleton />}>
     <div className="students-page" data-node-id="514:2273">
     <div className="students-background" aria-hidden="true">
-      <img className="students-mesh students-mesh-middle" src="/assets/figma/students/gradient-mesh-middle.png" alt="" />
-      <img className="students-mesh students-mesh-bottom" src="/assets/figma/students/gradient-mesh-bottom.png" alt="" />
+      <img className="students-mesh students-mesh-middle" src="/assets/figma/students/gradient-mesh-middle.webp" alt="" />
+      <img className="students-mesh students-mesh-bottom" src="/assets/figma/students/gradient-mesh-bottom.webp" alt="" />
       <img className="students-sparkles students-sparkles-wide" src="/assets/figma/students/sparkles-wide.svg" alt="" />
       <img className="students-sparkles students-sparkles-right" src="/assets/figma/students/sparkles-right.svg" alt="" />
-      <span className="students-soft-star students-soft-star-right"><img src="/assets/figma/students/soft-star.png" alt="" /></span>
-      <span className="students-soft-star students-soft-star-bottom-left"><img src="/assets/figma/students/soft-star.png" alt="" /></span>
+      <span className="students-soft-star students-soft-star-right"><img src="/assets/figma/students/soft-star.webp" alt="" /></span>
+      <span className="students-soft-star students-soft-star-bottom-left"><img src="/assets/figma/students/soft-star.webp" alt="" /></span>
     </div>
     <section className="page-hero">
       <h1>Join Us!</h1>
@@ -47,7 +47,7 @@ export function StudentsPage() {
     <section className="reflections section-shell">
       <h2>Why Nova?</h2><h3 className="reflection-subtitle">Member Reflections</h3>
       <div className="reflection-grid">
-        {reflections.map(([name, role, quote], index) => <article className={index % 2 ? 'reverse' : ''} key={name}><div><p>“{quote}”</p><strong>— {name}, {role}</strong></div><img src={reflectionPortraits[index]} alt={`${name}, ${role}`} /></article>)}
+        {reflections.map(([name, role, quote], index) => <article className={index % 2 ? 'reverse' : ''} key={name}><div><p>“{quote}”</p><strong>— {name}, {role}</strong></div><img loading="lazy" decoding="async" src={reflectionPortraits[index]} alt={`${name}, ${role}`} /></article>)}
       </div>
     </section>
     </div>

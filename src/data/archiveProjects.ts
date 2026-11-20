@@ -104,7 +104,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/survival-kit-distribution/tgs-map.jpeg",
+        "src": "/assets/archive/survival-kit-distribution/tgs-map.webp",
         "alt": "TGS: Map",
         "caption": "TGS: Map",
         "width": 886,
@@ -203,7 +203,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/survival-kit-distribution/tgs-app-flow-1.png",
+        "src": "/assets/archive/survival-kit-distribution/tgs-app-flow-1.webp",
         "alt": "TGS: App Flow 1",
         "caption": "TGS: App Flow 1",
         "width": 792,
@@ -234,7 +234,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/survival-kit-distribution/tgs-app-flow-2.png",
+        "src": "/assets/archive/survival-kit-distribution/tgs-app-flow-2.webp",
         "alt": "TGS: App Flow 2",
         "caption": "TGS: App Flow 2",
         "width": 1191,
@@ -290,7 +290,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/survival-kit-distribution/tgs-outreach-event.jpg",
+        "src": "/assets/archive/survival-kit-distribution/tgs-outreach-event.webp",
         "alt": "TGS: Outreach Event",
         "caption": "TGS: Outreach Event",
         "width": 1480,
@@ -331,7 +331,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/project-ropa/project-ropa-picture.jpeg",
+        "src": "/assets/archive/project-ropa/project-ropa-picture.webp",
         "alt": "Project Ropa: Picture",
         "caption": "Project Ropa: Picture",
         "width": 724,
@@ -406,7 +406,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/project-ropa/project-ropa-app-flow.png",
+        "src": "/assets/archive/project-ropa/project-ropa-app-flow.webp",
         "alt": "Project Ropa: App Flow",
         "caption": "Project Ropa: App Flow",
         "width": 697,
@@ -455,7 +455,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/project-ropa/project-ropa-impact.jpg",
+        "src": "/assets/archive/project-ropa/project-ropa-impact.webp",
         "alt": "Project Ropa: Impact",
         "caption": "Project Ropa: Impact",
         "width": 750,
@@ -571,7 +571,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/westside-food-bank/wsfb-web-app.gif",
+        "src": "/assets/archive/westside-food-bank/wsfb-web-app.webp",
         "alt": "WSFB: Web App",
         "caption": "WSFB: Web App",
         "width": 480,
@@ -595,7 +595,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/westside-food-bank/wsfb-mobile-app.jpg",
+        "src": "/assets/archive/westside-food-bank/wsfb-mobile-app.webp",
         "alt": "WSFB: Mobile App",
         "caption": "WSFB: Mobile App",
         "width": 990,
@@ -711,7 +711,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/swipe-out-hunger/swoh-cover.jpeg",
+        "src": "/assets/archive/swipe-out-hunger/swoh-cover.webp",
         "alt": "swoh-cover",
         "caption": "swoh-cover",
         "width": 1600,
@@ -793,7 +793,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/gladeo/gladeo-cover-photo.jpeg",
+        "src": "/assets/archive/gladeo/gladeo-cover-photo.webp",
         "alt": "Gladeo: Cover Photo",
         "caption": "Gladeo: Cover Photo",
         "width": 1600,
@@ -872,7 +872,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/gladeo/gladeo-screenshot.jpg",
+        "src": "/assets/archive/gladeo/gladeo-screenshot.webp",
         "alt": "Gladeo: Screenshot",
         "caption": "Gladeo: Screenshot",
         "width": 1192,
@@ -1019,7 +1019,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/risc/mentor-center-homepage.jpg",
+        "src": "/assets/archive/risc/mentor-center-homepage.webp",
         "alt": "Mentor Center Homepage",
         "caption": "Mentor Center Homepage",
         "width": 1600,
@@ -1228,7 +1228,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/beloved-beauty/beloved-beauty-deck.gif",
+        "src": "/assets/archive/beloved-beauty/beloved-beauty-deck.webp",
         "alt": "Beloved Beauty: Deck",
         "caption": "Beloved Beauty: Deck",
         "width": 478,
@@ -1330,7 +1330,7 @@ export const archiveProjects: ArchiveProject[] = [
       },
       {
         "type": "image",
-        "src": "/assets/archive/global-lives-project/rumi-s-room-prototype.jpg",
+        "src": "/assets/archive/global-lives-project/rumi-s-room-prototype.webp",
         "alt": "Rumi's Room prototype",
         "caption": "Rumi's Room prototype",
         "width": 1075,
@@ -1446,7 +1446,7 @@ export const archiveProjects: ArchiveProject[] = [
       "Sean Choi"
     ],
     "cover": {
-      "src": "/assets/archive/la-waterkeeper/la-waterkeeper-cover.png",
+      "src": "/assets/archive/la-waterkeeper/la-waterkeeper-cover.webp",
       "width": 1600,
       "height": 1600
     },
@@ -1512,7 +1512,7 @@ export const archiveProjects: ArchiveProject[] = [
       "Richelle Shim"
     ],
     "cover": {
-      "src": "/assets/archive/alzheimers-san-diego/alzheimers-san-diego-cover.png",
+      "src": "/assets/archive/alzheimers-san-diego/alzheimers-san-diego-cover.webp",
       "width": 1600,
       "height": 1600
     },
@@ -1679,7 +1679,7 @@ export const archiveProjects: ArchiveProject[] = [
       "Emma Teng"
     ],
     "cover": {
-      "src": "/assets/archive/inner-city-visions/inner-city-visions-cover.png",
+      "src": "/assets/archive/inner-city-visions/inner-city-visions-cover.webp",
       "width": 1600,
       "height": 1600
     },

@@ -4,11 +4,11 @@ export const moreProjects: { name: string; description: string; npoUrl?: string 
   { name: 'SaveCanto', description: 'A web app to act as a volunteer management system and a refined map and table system for verifying/displaying Cantonese language learning programs.' },
 ]
 
-export const teamPhotos = ['/assets/team-1.png', '/assets/team-2.png', '/assets/team-3.png', '/assets/team-4.png']
+export const teamPhotos = ['/assets/team-1.webp', '/assets/team-2.webp', '/assets/team-3.webp', '/assets/team-4.webp']
 
 export const teamPortraits = Array.from(
   { length: 34 },
-  (_, index) => `/assets/figma/team/portraits/member-${String(index + 1).padStart(2, '0')}.png`,
+  (_, index) => `/assets/figma/team/portraits/member-${String(index + 1).padStart(2, '0')}.webp`,
 )
 
 export type LandingPhoto = {
@@ -46,7 +46,7 @@ export const landingPartners = [
   { name: 'Handle with Care', url: 'https://handlewithcareus.org/' },
   { name: 'Beloved Beauty', url: 'https://www.belovedbeauty.org/' },
   { name: 'Swipe Out Hunger', url: 'https://www.swipehunger.org/' },
-].map((partner, index) => ({ ...partner, src: `/assets/figma/landing/partner-${index + 1}.png` }))
+].map((partner, index) => ({ ...partner, src: `/assets/figma/landing/partner-${index + 1}.webp` }))
 
 export const boardMembers = [
   ['Himani Jha', 'President', 'https://www.linkedin.com/in/himanijha/'], ['Ashley Varghese', 'President', 'https://www.linkedin.com/in/ashleyvarghesee/'], ['Jay Thapar', 'External Vice-President', 'https://www.linkedin.com/in/jay-thapar/'],

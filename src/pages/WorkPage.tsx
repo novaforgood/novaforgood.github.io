@@ -8,15 +8,15 @@ import { moreProjects } from '../data/site'
 
 export function WorkPage() {
   const featuredProjects = [
-    { ...projects[0], displayName: 'Medical Inventory System', client: '@Mending Kids', clientUrl: 'https://www.mendingkids.org/', image: '/assets/figma/work/mending-kids.png' },
-    { ...projects[1], displayName: 'Foster Onboarding Tracker', client: '@Wags and Walks', clientUrl: 'https://www.wagsandwalks.org/', image: '/assets/figma/work/wags-walks.png' },
-    { ...projects[2], displayName: 'Donation Allocation Portal', client: '@Center for Restorative Justice Works', clientUrl: 'https://www.crjw.org/', image: '/assets/figma/work/crjw.png' },
+    { ...projects[0], displayName: 'Medical Inventory System', client: '@Mending Kids', clientUrl: 'https://www.mendingkids.org/', image: '/assets/figma/work/mending-kids.webp' },
+    { ...projects[1], displayName: 'Foster Onboarding Tracker', client: '@Wags and Walks', clientUrl: 'https://www.wagsandwalks.org/', image: '/assets/figma/work/wags-walks.webp' },
+    { ...projects[2], displayName: 'Donation Allocation Portal', client: '@Center for Restorative Justice Works', clientUrl: 'https://www.crjw.org/', image: '/assets/figma/work/crjw.webp' },
   ]
 
   return <AppShell skeleton={<WorkSkeleton />}>
     <div className="work-page" data-node-id="345:778">
-      <span className="work-gradient-mesh work-gradient-mesh-top" aria-hidden="true"><img src="/assets/figma/work/gradient-mesh-4.png" alt="" /></span>
-      <span className="work-gradient-mesh work-gradient-mesh-left" aria-hidden="true"><img src="/assets/figma/work/gradient-mesh-4.png" alt="" /></span>
+      <span className="work-gradient-mesh work-gradient-mesh-top" aria-hidden="true"><img src="/assets/figma/work/gradient-mesh-4.webp" alt="" /></span>
+      <span className="work-gradient-mesh work-gradient-mesh-left" aria-hidden="true"><img src="/assets/figma/work/gradient-mesh-4.webp" alt="" /></span>
       <section className="work-content">
         <header className="work-intro">
           <span className="work-intro-spark work-intro-spark-left">✦</span>

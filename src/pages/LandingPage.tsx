@@ -50,13 +50,13 @@ export function LandingPage() {
       <div className="landing-decor" aria-hidden="true">
         <img className="landing-decor-sparkles landing-decor-sparkles-top" src="/assets/figma/landing/sparkle-field.svg" alt="" />
         <img className="landing-decor-sparkles landing-decor-sparkles-middle" src="/assets/figma/landing/sparkle-field-middle.svg" alt="" />
-        <img className="landing-decor-gallery-ribbon" src="/assets/figma/landing/gallery-ribbon-left.png" alt="" />
-        <img className="landing-decor-about-star" src="/assets/figma/landing/about-star-left.png" alt="" />
-        <img className="landing-decor-network-star-large" src="/assets/figma/landing/network-star-large.png" alt="" />
-        <img className="landing-decor-network-star-small" src="/assets/figma/landing/network-star-small.png" alt="" />
+        <img className="landing-decor-gallery-ribbon" src="/assets/figma/landing/gallery-ribbon-left.webp" alt="" />
+        <img className="landing-decor-about-star" src="/assets/figma/landing/about-star-left.webp" alt="" />
+        <img className="landing-decor-network-star-large" src="/assets/figma/landing/network-star-large.webp" alt="" />
+        <img className="landing-decor-network-star-small" src="/assets/figma/landing/network-star-small.webp" alt="" />
       </div>
       <section className="landing-hero">
-        <img className="landing-hero-star" src="/assets/figma/landing/hero-star.png" alt="" />
+        <img className="landing-hero-star" src="/assets/figma/landing/hero-star.webp" alt="" />
         <div className={`landing-ufo-flight${UFO_MOTION_ENABLED ? '' : ' ufo-bob-only'}`} ref={heroUfoRef} aria-hidden="true"><img className="landing-ufo" src="/assets/figma/landing/max-ufo.svg" alt="" /></div>
         <div className="landing-hero-copy">
           <img className="landing-wordmark" src="/assets/figma/landing/nova-wordmark.svg" alt="Nova" />
@@ -77,7 +77,7 @@ export function LandingPage() {
             <p>⟡&nbsp; Developers, designers, and innovators who love to solve problems.<br />⟡&nbsp; Students dedicated to learning about and supporting under-resourced communities.<br />⟡&nbsp; A team that strongly believes in making a difference.</p>
           </div>
           <Link className="button button-outline" href="/students">Learn More <ArrowUpRight size={12}/></Link>
-          <img className="landing-about-planet" src="/assets/figma/landing/about-planet.png" alt="" />
+          <img className="landing-about-planet" src="/assets/figma/landing/about-planet.webp" alt="" />
         </div>
         <PhotoStrip stripId="bottom" className="landing-bottom-strip" photos={landingPhotos.slice(8, 15)} widths={[342.56, 192.69, 342.56, 192.69, 342.56, 192.69, 342.56]} repeatsPerHalf={wideCarousel ? 2 : 1} speed={carouselSpeed} />
       </section>
@@ -99,7 +99,7 @@ function ProjectsPreview() {
   return <section className="landing-projects" id="work">
     <div className="landing-section-intro"><h2>Projects</h2><p>We were founded on the belief that even small solutions have the potential to create a large impact. We put together small interdisciplinary teams and work closely with nonprofits to bring a product to life through ideation, design, and implementation.</p></div>
     <div className="landing-project-list">
-      {landingProjectCopy.map(([name, client, summary], index) => <Link className="landing-project" href={`/work/${projects[index].slug}`} key={name}><img src={`/assets/figma/landing/project-${index + 1}.png`} alt="" /><div><h3>{name}</h3><strong>{client}</strong><p>{summary}</p></div></Link>)}
+      {landingProjectCopy.map(([name, client, summary], index) => <Link className="landing-project" href={`/work/${projects[index].slug}`} key={name}><img loading="lazy" decoding="async" src={`/assets/figma/landing/project-${index + 1}.webp`} alt="" /><div><h3>{name}</h3><strong>{client}</strong><p>{summary}</p></div></Link>)}
     </div>
     <Link className="button button-outline" href="/work">More Projects <ArrowUpRight size={12}/></Link>
   </section>

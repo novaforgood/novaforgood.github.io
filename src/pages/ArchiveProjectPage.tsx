@@ -14,8 +14,8 @@ export function ArchiveProjectPage({ project }: { project: ArchiveProject }) {
   return <AppShell skeleton={<ArchiveDetailSkeleton />}>
     <div className="archive-page">
       <section className="archive-hero">
-        <img className="detail-deco detail-star detail-star-left" src="/assets/figma/details/star2.png" alt="" />
-        <img className="detail-deco detail-star detail-star-right" src="/assets/figma/details/star2.png" alt="" />
+        <img className="detail-deco detail-star detail-star-left" src="/assets/figma/details/star2.webp" alt="" />
+        <img className="detail-deco detail-star detail-star-right" src="/assets/figma/details/star2.webp" alt="" />
         <div className="archive-hero-copy">
           <h1>{project.name}</h1>
           <p>{project.description}</p>

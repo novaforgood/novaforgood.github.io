@@ -47,7 +47,7 @@ export function SupportPage() {
       <section className="section-shell support-pillars">
         <h2 className="support-pillars-heading">What Your Support Funds</h2>
         <div className="support-pillars-layout">
-          <img className="support-pillars-photo" src="/assets/figma/support/wags-walks-team.png" alt="The Nova team behind the Wags & Walks foster onboarding tracker" />
+          <img className="support-pillars-photo" src="/assets/figma/support/wags-walks-team.webp" alt="The Nova team behind the Wags & Walks foster onboarding tracker" />
           <div className="support-pillars-cards">
             {pillars.map(pillar => <article key={pillar.title}>
               <h3>{pillar.title}</h3>

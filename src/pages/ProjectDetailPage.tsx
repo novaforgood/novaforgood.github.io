@@ -10,8 +10,8 @@ export function ProjectDetailPage({ project }: { project: Project }) {
   const next = projects[(projectIndex + 1) % projects.length]
   return <AppShell skeleton={<ProjectDetailSkeleton project={project} />}>
     <section className={`figma-detail-hero project-${project.slug}`} data-node-id={project.figmaNode}>
-      <img className="detail-deco detail-star detail-star-left" src="/assets/figma/details/star2.png" alt="" />
-      <img className="detail-deco detail-star detail-star-right" src="/assets/figma/details/star2.png" alt="" />
+      <img className="detail-deco detail-star detail-star-left" src="/assets/figma/details/star2.webp" alt="" />
+      <img className="detail-deco detail-star detail-star-right" src="/assets/figma/details/star2.webp" alt="" />
       <div className="figma-detail-gradient">
         <h1>{project.name}</h1>
         <div className="figma-laptop">
@@ -67,7 +67,7 @@ export function ProjectDetailPage({ project }: { project: Project }) {
 
         <section className="figma-team">
           <h2>Our Team:</h2>
-          {project.teamImages.map((src, index) => <img key={src} src={src} alt={`${project.name} team ${index + 1}`} />)}
+          {project.teamImages.map((src, index) => <img key={src} src={src} loading="lazy" decoding="async" alt={`${project.name} team ${index + 1}`} />)}
         </section>
 
         <nav className="figma-detail-nav" aria-label="Project navigation">

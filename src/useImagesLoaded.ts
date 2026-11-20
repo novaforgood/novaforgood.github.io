@@ -1,6 +1,6 @@
 import { useEffect, useState, type RefObject } from 'react'
 
-const SAFETY_TIMEOUT_MS = 6000
+const SAFETY_TIMEOUT_MS = 2000
 
 export function useImagesLoaded(containerRef: RefObject<HTMLElement | null>): boolean {
   const [loaded, setLoaded] = useState(false)

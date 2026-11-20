@@ -43,7 +43,7 @@ img { display:block; max-width:100%; }
 .button-outline { border:1px solid var(--accent); color:var(--accent); background:rgba(255,255,255,.75); }
 .button-outline:hover { background:var(--accent); color:white; }
 .button-outline:active { background:var(--accent); color:white; opacity:.85; }
-.landing-canvas { position:relative; overflow:hidden; background:#fafcff url('/assets/figma/landing/gradient-halo-4.png') top center/100% auto no-repeat; }
+.landing-canvas { position:relative; overflow:hidden; background:#fafcff url('/assets/figma/landing/gradient-halo-4.webp') top center/100% auto no-repeat; }
 .hero { min-height:890px; position:relative; display:grid; place-items:center; padding:170px 24px 100px; overflow:hidden; }
 .hero-copy { position:relative; z-index:3; text-align:center; max-width:840px; }
 .hero h1,.hero h2,.section-heading h2,.about h2,.cta h2 { font-family:'Syncopate',sans-serif; text-transform:uppercase; margin:0; color:white; text-shadow:0 4px 4px var(--accent); letter-spacing:-.05em; }
@@ -127,7 +127,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .reflections strong { display:block; margin-bottom:16px; color:var(--blue); font-family:'Raleway',sans-serif; }
 .figma-detail-hero { position:relative; height:745px; padding:104px 0 0; overflow:hidden; background:white; }
 .figma-detail-gradient { position:relative; width:min(1167px,calc(100% - 104px)); min-height:579px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:24px; padding:32px 0 56px; border-radius:24px; overflow:hidden; background:linear-gradient(132deg,#fff8de 0 20%,#ffc9ee 20% 46%,#0077db 78%,#ff83ed 105%); box-shadow:0 0 0 1px rgba(255,255,255,.4) inset; }
-.figma-detail-gradient:before { content:''; position:absolute; inset:0; background:url('/assets/hero-texture.png') center/420px repeat; opacity:.18; mix-blend-mode:soft-light; }
+.figma-detail-gradient:before { content:''; position:absolute; inset:0; background:url('/assets/hero-texture.webp') center/420px repeat; opacity:.18; mix-blend-mode:soft-light; }
 .figma-detail-gradient:after { content:''; position:absolute; inset:-10%; background:radial-gradient(circle at 22% 30%,rgba(255,255,255,.8),transparent 24%),radial-gradient(circle at 72% 16%,rgba(255,201,238,.9),transparent 22%),radial-gradient(circle at 64% 82%,rgba(116,182,255,.8),transparent 26%); }
 .figma-detail-gradient h1 { position:relative; z-index:1; width:min(780px,90%); margin:0; font-family:'Syncopate'; font-size:clamp(38px,5vw,64px); line-height:1; text-align:center; text-transform:uppercase; color:white; letter-spacing:-.03em; text-shadow:0 4px 4px var(--blue); }
 .figma-laptop { position:relative; z-index:1; width:min(710px,76%); aspect-ratio:710/383; display:grid; place-items:center; }
@@ -139,7 +139,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .detail-star-right { right:-60px; top:2100px; transform:rotate(18deg); }
 .figma-case-study { position:relative; padding:96px 0 0; color:#050505; background:linear-gradient(180deg,#fffbef 0%,#fff8de 13%,#ffc9ee 30%,#0077db 53%,#74b6ff 82%,#aca1e9 110%); overflow:hidden; }
 .project-mending-kids + .figma-case-study{min-height:4204px}.project-wags-walks + .figma-case-study{min-height:3894px}.project-crjw + .figma-case-study{min-height:3568px}
-.figma-case-study:before { content:''; position:absolute; inset:0; background:url('/assets/hero-texture.png') center/420px repeat; opacity:.16; mix-blend-mode:soft-light; }
+.figma-case-study:before { content:''; position:absolute; inset:0; background:url('/assets/hero-texture.webp') center/420px repeat; opacity:.16; mix-blend-mode:soft-light; }
 .figma-case-inner { position:relative; z-index:1; width:min(880px,calc(100% - 40px)); margin:0 auto; display:flex; flex-direction:column; gap:104px; }
 .figma-meta { font-family:'Raleway'; line-height:24px; }
 .figma-meta p { margin:0 0 16px; }
@@ -185,7 +185,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   gap:24px;
   padding:64px 0 0;
   border-radius:24px;
-  background:url('/assets/figma/details/mk-hero-gradient.png') center/100% 100% no-repeat;
+  background:url('/assets/figma/details/mk-hero-gradient.webp') center/100% 100% no-repeat;
 }
 .project-wags-walks .figma-detail-gradient:before,
 .project-wags-walks .figma-detail-gradient:after { display:none; }
@@ -204,7 +204,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-wags-walks .figma-laptop:before {
   inset:0;
   border-radius:0;
-  background:url('/assets/figma/details/mk-laptop-outer.png') 50% 50%/91.02% 97.65% no-repeat;
+  background:url('/assets/figma/details/mk-laptop-outer.webp') 50% 50%/91.02% 97.65% no-repeat;
   filter:drop-shadow(0 0 16px rgba(255,255,255,.5));
 }
 .project-wags-walks .figma-laptop:after {
@@ -241,7 +241,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-wags-walks + .figma-case-study {
   min-height:3894px;
   padding-top:0;
-  background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
+  background:#fff url('/assets/figma/details/mk-content-gradient.webp') bottom center/max(1280px,100%) auto no-repeat;
 }
 .project-wags-walks + .figma-case-study:before {
   display:none;
@@ -353,7 +353,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
     font-size:clamp(30px,7vw,64px);
     line-height:1;
   }
-  .project-wags-walks .detail-star-left { content:url('/assets/figma/details/mk-star-left.png'); top:390px; left:-48px; width:150px; height:auto; transform:none; }
+  .project-wags-walks .detail-star-left { content:url('/assets/figma/details/mk-star-left.webp'); top:390px; left:-48px; width:150px; height:auto; transform:none; }
   .project-wags-walks .detail-star-right { display:none; }
   .project-wags-walks + .figma-case-study {
     min-height:0;
@@ -462,7 +462,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   padding:64px 0 0;
   overflow:visible;
   border-radius:0;
-  background:url('/assets/figma/details/mk-hero-gradient.png') center/100% 100% no-repeat;
+  background:url('/assets/figma/details/mk-hero-gradient.webp') center/100% 100% no-repeat;
   box-shadow:none;
 }
 .project-mending-kids .figma-detail-gradient::before,
@@ -487,7 +487,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   inset:0;
   border:0;
   border-radius:0;
-  background:url('/assets/mk-project.png') 50% 50%/91.02% 97.65% no-repeat;
+  background:url('/assets/mk-project.webp') 50% 50%/91.02% 97.65% no-repeat;
   filter:drop-shadow(0 0 16px rgba(255,255,255,.5));
 }
 .project-mending-kids .figma-laptop::after {
@@ -515,7 +515,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   border-radius:0;
 }
 .project-mending-kids .detail-star-left {
-  content:url('/assets/figma/details/mk-star-left.png');
+  content:url('/assets/figma/details/mk-star-left.webp');
   top:477px;
   left:-48px;
   width:295px;
@@ -523,7 +523,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   transform:none;
 }
 .project-mending-kids .detail-star-right {
-  content:url('/assets/figma/details/mk-moon.png');
+  content:url('/assets/figma/details/mk-moon.webp');
   top:2646px;
   right:-550px;
   width:855px;
@@ -534,7 +534,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 .project-mending-kids + .figma-case-study {
   min-height:0;
   padding-top:48px;
-  background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
+  background:#fff url('/assets/figma/details/mk-content-gradient.webp') bottom center/max(1280px,100%) auto no-repeat;
 }
 .project-mending-kids + .figma-case-study::before {
   display:none;
@@ -700,7 +700,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
 }
 
 /* Landing page: coordinates follow the 1280px Figma artboard. */
-.landing-page { position:relative; overflow:hidden; background-color:#fafcff; background-image:url('/assets/figma/landing/gradient-halo-4.png'),url('/assets/figma/landing/gradient-mesh-2.png'); background-position:top center,center 4222px; background-size:100% 2873px,100% 1937px; background-repeat:no-repeat,no-repeat; }
+.landing-page { position:relative; overflow:hidden; background-color:#fafcff; background-image:url('/assets/figma/landing/gradient-halo-4.webp'),url('/assets/figma/landing/gradient-mesh-2.webp'); background-position:top center,center 4222px; background-size:100% 2873px,100% 1937px; background-repeat:no-repeat,no-repeat; }
 .landing-decor { position:absolute; z-index:0; inset:0; pointer-events:none; }
 .landing-decor img { position:absolute; object-fit:contain; }
 .landing-decor-sparkles { width:1121px; height:2801px; }
@@ -968,7 +968,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
     gap:26px;
     padding:64px 0 0;
     border-radius:24px;
-    background:url('/assets/figma/details/mk-hero-gradient.png') center/100% 100% no-repeat;
+    background:url('/assets/figma/details/mk-hero-gradient.webp') center/100% 100% no-repeat;
     box-shadow:none;
   }
   .project-crjw .figma-detail-gradient::before,
@@ -990,7 +990,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .project-crjw .figma-laptop::before {
     inset:0;
     border-radius:0;
-    background:url('/assets/figma/details/mk-laptop-outer.png') 50% 50%/91.02% 97.65% no-repeat;
+    background:url('/assets/figma/details/mk-laptop-outer.webp') 50% 50%/91.02% 97.65% no-repeat;
     filter:none;
   }
   .project-crjw .figma-laptop::after {
@@ -1028,7 +1028,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   .project-crjw + .figma-case-study {
     min-height:3568px;
     padding-top:0;
-    background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
+    background:#fff url('/assets/figma/details/mk-content-gradient.webp') bottom center/max(1280px,100%) auto no-repeat;
   }
   .project-crjw + .figma-case-study::before { display:none; }
   .project-crjw + .figma-case-study .figma-case-inner {
@@ -1137,14 +1137,14 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
     height:410px;
     min-height:410px;
     padding-top:48px;
-    background:url('/assets/figma/details/mk-hero-gradient.png') center/cover no-repeat;
+    background:url('/assets/figma/details/mk-hero-gradient.webp') center/cover no-repeat;
   }
   .project-crjw .figma-detail-gradient::before,
   .project-crjw .figma-detail-gradient::after { display:none; }
-  .project-crjw > .detail-star-left { content:url('/assets/figma/details/mk-star-left.png'); top:390px; left:-48px; width:150px; height:auto; transform:none; }
+  .project-crjw > .detail-star-left { content:url('/assets/figma/details/mk-star-left.webp'); top:390px; left:-48px; width:150px; height:auto; transform:none; }
   .project-crjw > .detail-star-right { display:none; }
   .project-crjw .figma-laptop::before {
-    background:url('/assets/figma/details/mk-laptop-outer.png') 50% 50%/91.02% 97.65% no-repeat;
+    background:url('/assets/figma/details/mk-laptop-outer.webp') 50% 50%/91.02% 97.65% no-repeat;
   }
   .project-crjw .figma-laptop::after {
     content:'';
@@ -1171,7 +1171,7 @@ footer { height:172px; padding:35px max(56px,calc((100% - 1168px)/2)); display:g
   }
   .project-crjw + .figma-case-study {
     min-height:0;
-    background:#fff url('/assets/figma/details/mk-content-gradient.png') bottom center/max(1280px,100%) auto no-repeat;
+    background:#fff url('/assets/figma/details/mk-content-gradient.webp') bottom center/max(1280px,100%) auto no-repeat;
   }
 }
 
